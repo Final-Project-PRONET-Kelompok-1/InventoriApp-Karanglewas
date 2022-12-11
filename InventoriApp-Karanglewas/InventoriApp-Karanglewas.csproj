@@ -59,10 +59,19 @@
     <Compile Include="Form Login.Designer.cs">
       <DependentUpon>Form Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gambar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gambar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gambar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Gambar.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Banyumas.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo Banyumas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
