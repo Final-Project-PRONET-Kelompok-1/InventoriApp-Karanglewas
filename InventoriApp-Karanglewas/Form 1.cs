@@ -26,5 +26,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void btKeluar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
