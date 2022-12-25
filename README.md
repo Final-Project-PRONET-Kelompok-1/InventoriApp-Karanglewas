@@ -10,3 +10,8 @@ Aplikasi Inventori Barang Kecamatan Karanglewas
 5. 20SA1046	Ma'rifan Permadi
 6. 20SA1273	Rizki Arief Dehanudin
 7. 20SA1101	Zain Arif Wildan Sugandi
+
+
+Package Requirements :
+- System.Data.SqlClient ^4.8.5
+- FontAwesome.Sharp ^6.2.1
