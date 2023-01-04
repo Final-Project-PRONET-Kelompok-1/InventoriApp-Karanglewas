@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DBConfig.cs" />
-    <Compile Include="Form 1.cs">
+    <Compile Include="FormMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form 1.Designer.cs">
-      <DependentUpon>Form 1.cs</DependentUpon>
+    <Compile Include="FormMaster.Designer.cs">
+      <DependentUpon>FormMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Form Login.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form 1.resx">
-      <DependentUpon>Form 1.cs</DependentUpon>
+    <EmbeddedResource Include="FormMaster.resx">
+      <DependentUpon>FormMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.cs</DependentUpon>

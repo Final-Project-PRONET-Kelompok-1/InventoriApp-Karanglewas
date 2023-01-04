@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btClose = new FontAwesome.Sharp.IconButton();
             this.btMasuk = new System.Windows.Forms.Button();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btClose = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -68,6 +68,21 @@
             this.panel1.Size = new System.Drawing.Size(309, 397);
             this.panel1.TabIndex = 0;
             // 
+            // btClose
+            // 
+            this.btClose.FlatAppearance.BorderSize = 0;
+            this.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClose.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btClose.IconColor = System.Drawing.Color.White;
+            this.btClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btClose.IconSize = 25;
+            this.btClose.Location = new System.Drawing.Point(269, 12);
+            this.btClose.Name = "btClose";
+            this.btClose.Size = new System.Drawing.Size(28, 23);
+            this.btClose.TabIndex = 6;
+            this.btClose.UseVisualStyleBackColor = true;
+            this.btClose.Click += new System.EventHandler(this.btClose_Click);
+            // 
             // btMasuk
             // 
             this.btMasuk.BackColor = System.Drawing.Color.White;
@@ -80,6 +95,7 @@
             this.btMasuk.TabIndex = 5;
             this.btMasuk.Text = "Masuk";
             this.btMasuk.UseVisualStyleBackColor = false;
+            this.btMasuk.Click += new System.EventHandler(this.btMasuk_Click);
             // 
             // iconButton2
             // 
@@ -101,7 +117,7 @@
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
@@ -226,21 +242,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(494, 80);
             this.panel3.TabIndex = 0;
-            // 
-            // btClose
-            // 
-            this.btClose.FlatAppearance.BorderSize = 0;
-            this.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btClose.IconColor = System.Drawing.Color.White;
-            this.btClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btClose.IconSize = 25;
-            this.btClose.Location = new System.Drawing.Point(269, 12);
-            this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(28, 23);
-            this.btClose.TabIndex = 6;
-            this.btClose.UseVisualStyleBackColor = true;
-            this.btClose.Click += new System.EventHandler(this.btClose_Click);
             // 
             // formLogin
             // 

@@ -21,5 +21,14 @@ namespace InventoriApp_Karanglewas
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void btMasuk_Click(object sender, EventArgs e)
+        {
+            FormMaster FM = new FormMaster(); // Instantiate a Form3 object.
+            this.Hide();
+            FM.ShowDialog(); // Show Form3 and
+            this.Close();
+        }
     }
+
 }
