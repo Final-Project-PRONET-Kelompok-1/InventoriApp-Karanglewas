@@ -26,5 +26,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void dataBM_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

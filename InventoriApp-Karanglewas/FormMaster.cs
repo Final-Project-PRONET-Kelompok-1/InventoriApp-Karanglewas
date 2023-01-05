@@ -143,7 +143,7 @@ namespace InventoriApp_Karanglewas
         private void btDataBarang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new FormDataBarang());
+            OpenChildForm(new FormDataBarang());
         }
 
         private void btnBarangMasuk_Click(object sender, EventArgs e)
@@ -189,6 +189,11 @@ namespace InventoriApp_Karanglewas
             this.Hide();
             FL.ShowDialog(); // Show Form3 and
             this.Close();
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
