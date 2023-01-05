@@ -1,6 +1,6 @@
 ﻿namespace InventoriApp_Karanglewas
 {
-    partial class formLogin
+    partial class Form_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -76,7 +76,7 @@
             this.btClose.IconColor = System.Drawing.Color.White;
             this.btClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btClose.IconSize = 25;
-            this.btClose.Location = new System.Drawing.Point(269, 12);
+            this.btClose.Location = new System.Drawing.Point(278, 3);
             this.btClose.Name = "btClose";
             this.btClose.Size = new System.Drawing.Size(28, 23);
             this.btClose.TabIndex = 6;
@@ -243,7 +243,7 @@
             this.panel3.Size = new System.Drawing.Size(494, 80);
             this.panel3.TabIndex = 0;
             // 
-            // formLogin
+            // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,9 +251,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formLogin";
+            this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Form_Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
