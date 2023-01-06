@@ -181,6 +181,7 @@ namespace InventoriApp_Karanglewas
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new FormAdmin());
         }
 
         private void btnKeluar_Click(object sender, EventArgs e)
