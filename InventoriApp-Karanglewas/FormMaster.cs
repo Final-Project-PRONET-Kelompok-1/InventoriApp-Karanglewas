@@ -157,7 +157,7 @@ namespace InventoriApp_Karanglewas
         private void btnBarangKeluar_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new FormBarangKeluar());
+            OpenChildForm(new FormBarangKeluar());
         }
 
         private void btnRiwayat_Click(object sender, EventArgs e)
