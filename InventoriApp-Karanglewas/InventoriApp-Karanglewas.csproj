@@ -93,6 +93,12 @@
     <Compile Include="FormRiwayat.Designer.cs">
       <DependentUpon>FormRiwayat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStock.Designer.cs">
+      <DependentUpon>FormStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gambar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRiwayat.resx">
       <DependentUpon>FormRiwayat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStock.resx">
+      <DependentUpon>FormStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gambar.resx">
       <Generator>ResXFileCodeGenerator</Generator>
