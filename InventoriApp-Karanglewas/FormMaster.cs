@@ -163,7 +163,7 @@ namespace InventoriApp_Karanglewas
         private void btnRiwayat_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new FormRiwayat());
+            OpenChildForm(new FormRiwayat());
         }
 
         private void btnStockOpname_Click(object sender, EventArgs e)
