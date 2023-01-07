@@ -10,7 +10,8 @@ namespace InventoriApp_Karanglewas
 
     internal class dbConfig
     {
-        SqlConnection conn = new SqlConnection(@"Data Source = MSI;Initial Catalog = InventoriApp;Integrated Security=True"); //sesuai pc masing2
+        public static string conn = @"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriApp; Integrated Security=True";
+        //public static SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriApp; Integrated Security=True");
     }
 
     

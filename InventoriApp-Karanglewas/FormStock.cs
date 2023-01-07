@@ -16,9 +16,10 @@ namespace InventoriApp_Karanglewas
     {
 
 
-        SqlConnection conn = new SqlConnection
-            (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
+        //SqlConnection conn = new SqlConnection
+        //(@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
 
+        SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
