@@ -14,6 +14,7 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormStock : Form
     {
+        
 
         SqlConnection conn = new SqlConnection
             (@"Data Source=MSI;Initial Catalog = InventoriApp; Integrated Security=True");
