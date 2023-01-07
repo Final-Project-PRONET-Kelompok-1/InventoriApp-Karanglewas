@@ -22,12 +22,13 @@ namespace InventoriApp_Karanglewas
         public FormBeranda()
         {
             InitializeComponent();
+            getAdmin();
         }
 
         public string getAdmin()
         {
             conn.Open();
-            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC LIMIT 1";
+            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
