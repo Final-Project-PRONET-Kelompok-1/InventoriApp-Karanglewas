@@ -33,7 +33,6 @@
             this.cbKBarang = new System.Windows.Forms.ComboBox();
             this.txtTambahBarang = new System.Windows.Forms.TextBox();
             this.btTambahBarang = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtKBarang
@@ -53,15 +52,21 @@
             this.btTambahKBarang.TabIndex = 1;
             this.btTambahKBarang.Text = "TAMBAH";
             this.btTambahKBarang.UseVisualStyleBackColor = true;
+            this.btTambahKBarang.Click += new System.EventHandler(this.btTambahKBarang_Click_1);
             // 
             // cbKBarang
             // 
             this.cbKBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKBarang.FormattingEnabled = true;
+            this.cbKBarang.Items.AddRange(new object[] {
+            "ATK",
+            "Kebersihan",
+            "Alat Listrik"});
             this.cbKBarang.Location = new System.Drawing.Point(494, 70);
             this.cbKBarang.Name = "cbKBarang";
             this.cbKBarang.Size = new System.Drawing.Size(153, 24);
             this.cbKBarang.TabIndex = 4;
+            this.cbKBarang.SelectedIndexChanged += new System.EventHandler(this.cbKBarang_SelectedIndexChanged);
             // 
             // txtTambahBarang
             // 
@@ -82,29 +87,16 @@
             this.btTambahBarang.Text = "TAMBAH";
             this.btTambahBarang.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(767, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormKategoriBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 205);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btTambahBarang);
             this.Controls.Add(this.txtTambahBarang);
             this.Controls.Add(this.cbKBarang);
             this.Controls.Add(this.btTambahKBarang);
             this.Controls.Add(this.txtKBarang);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormKategoriBarang";
             this.Text = "FormKategoriBarang";
             this.ResumeLayout(false);
@@ -119,6 +111,5 @@
         private System.Windows.Forms.ComboBox cbKBarang;
         private System.Windows.Forms.TextBox txtTambahBarang;
         private System.Windows.Forms.Button btTambahBarang;
-        private System.Windows.Forms.Button button1;
     }
 }

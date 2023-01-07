@@ -53,5 +53,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
