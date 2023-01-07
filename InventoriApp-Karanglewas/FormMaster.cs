@@ -22,6 +22,7 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
 
         string admin;
+        int autoId;
 
 
         public FormMaster()
@@ -30,12 +31,15 @@ namespace InventoriApp_Karanglewas
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 56);
             panelSidebar.Controls.Add(leftBorderBtn);
+
+            autoID();
+            getAdmin();
         }
 
         public string getAdmin()
         {
             conn.Open();
-            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC LIMIT 1";
+            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
@@ -205,6 +209,7 @@ namespace InventoriApp_Karanglewas
 
         private void btnKeluar_Click(object sender, EventArgs e)
         {
+            simpanLog();
             Form_Login FL = new Form_Login(); // Instantiate a Form3 object.
             this.Hide();
             FL.ShowDialog(); // Show Form3 and
@@ -226,6 +231,50 @@ namespace InventoriApp_Karanglewas
         {
             OpenChildForm(new FormBeranda());
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
+        }
+
+        private void autoID()
+        {
+            int id;
+            conn.Open();
+            string query = "SELECT id_log FROM tb_log ORDER BY id_log DESC";
+            cmd = new SqlCommand(query, conn);
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows && reader != null)
+            {
+                reader.Read();
+                string no = reader["id_log"].ToString();
+                id = Convert.ToInt32(no) + 1;
+
+            }
+            else
+            {
+                id = 1;
+            }
+            autoId = id;
+            conn.Close();
+        }
+
+        private void simpanLog()
+        {
+            string ket = "logout";
+            DateTime date = DateTime.Now;
+            try
+            {
+                conn.Open();
+                string query = "INSERT INTO tb_log (id_log, id_admin, keterangan, waktu)\n" +
+                                "SELECT '" + autoId + "', a.id_admin, '" + ket + "','" + date + "'\n" +
+                                "FROM tb_admin a\n" +
+                                "WHERE a.username = '" + admin + "'";
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
