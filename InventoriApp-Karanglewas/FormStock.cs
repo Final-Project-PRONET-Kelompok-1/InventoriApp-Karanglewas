@@ -14,10 +14,10 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormStock : Form
     {
-        
+
 
         SqlConnection conn = new SqlConnection
-            (@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
@@ -33,7 +33,7 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
 
             cbKategori();
-            
+
         }
         private void setCB()
         {
@@ -88,7 +88,7 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show(ex.Message);
             }
         }
-      
+
 
 
 
@@ -99,6 +99,7 @@ namespace InventoriApp_Karanglewas
             autoKode();
             autoID();
             txtKodeSO.Enabled = false;
+            fillDataSO();
 
         }
 
@@ -107,8 +108,8 @@ namespace InventoriApp_Karanglewas
             setCB();
             cbBarangSO.Text = "Pilih Barang";
             cbBarang();
-            
-            
+
+
         }
         private void autoKode()
         {
@@ -121,12 +122,12 @@ namespace InventoriApp_Karanglewas
             date = DateTime.Now;
             string dateBM = date.ToString("yyMMdd");
 
-           
+
 
             if (reader.HasRows && reader != null)
             {
                 reader.Read();
-//                string no = reader.GetString(int.Parse(reader[0].ToString()));
+                //                string no = reader.GetString(int.Parse(reader[0].ToString()));
                 string no = reader["kode_so"].ToString();
 
                 no = no.Substring(8, 4);
@@ -153,7 +154,7 @@ namespace InventoriApp_Karanglewas
             if (reader.HasRows && reader != null)
             {
                 reader.Read();
-//                string no = reader.GetString(int.Parse(reader[0].ToString()));
+                //                string no = reader.GetString(int.Parse(reader[0].ToString()));
 
                 string no = reader[0].ToString();
                 id = Convert.ToInt32(no) + 1;
@@ -166,8 +167,72 @@ namespace InventoriApp_Karanglewas
             autoId = id;
             conn.Close();
         }
+        private DataTable getDataSO()
+        {
+            try
+            {
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.jenis_kategori as Kategori, b.nama_barang as Barang, so.st_sistem as StokSistem, so.st_fisik as StokFisik, so.pic as PIC, so.status as Status\n" +
+                                "FROM tb_opname so\n" +
+                                "INNER JOIN tb_barang b ON so.id_barang = b.id_barang\n" +
+                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori\n" +
+                                "ORDER BY so.kode_so DESC";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
 
-        private void btSimpanBK_Click(object sender, EventArgs e)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dataTable;
+        }
+
+        private void fillDataSO()
+        {
+
+            dataSO.DataSource = getDataSO();
+        }
+        private void cekInput()
+        {
+            if (cbKategoriSO.Text == "Pilih Kategori")
+            {
+                MessageBox.Show("Anda belum memilih kategori!");
+                cbKategoriSO.Focus();
+            }
+            else if (cbBarangSO.Text == "Pilih Barang")
+            {
+                MessageBox.Show("Anda belum memilih barang!");
+                cbBarangSO.Focus();
+            }
+            else if (txtStokSistem.Text == "" | txtStokSistem.Text == "0")
+            {
+                MessageBox.Show("Jumlah tidak boleh kosong!");
+                txtStokSistem.Focus();
+            }
+            else if (txtStokFisik.Text == "" | txtStokFisik.Text == "0")
+            {
+                MessageBox.Show("Jumlah tidak boleh kosong!");
+                txtStokFisik.Focus();
+            }
+            else if (txtPIC.Text == "")
+            {
+                MessageBox.Show("PIC tidak boleh kosong!");
+                txtPIC.Focus();
+            }
+            else
+            {
+                simpanSO();
+                //simpanRiwayat();
+                //resetForm();
+                fillDataSO();
+            }
+        }
+        private void simpanSO()
         {
             date = Convert.ToDateTime(dtSO.Text);
             string dateBM = date.ToString("yyyy-MM-dd");
@@ -191,9 +256,32 @@ namespace InventoriApp_Karanglewas
             dataSO.FirstDisplayedScrollingRowIndex = dataSO.RowCount - 1;
         }
 
+        private void btSimpanBK_Click(object sender, EventArgs e)
+        {
+            cekInput();
+        }
+
         private void btEditBK_Click(object sender, EventArgs e)
         {
 
         }
+
+
+
+        private void btHapusBK_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dataSO.SelectedRows)
+            {
+                conn.Open();
+                string query = "DELETE FROM tb_opname WHERE kode_so = '" + dataSO.SelectedRows[0].Cells[0].Value + "'";
+                var cmd = new SqlCommand(query, conn);
+                dataSO.Rows.RemoveAt(this.dataSO.SelectedRows[0].Index);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
     }
 }
+        
+    
+
