@@ -164,6 +164,7 @@
             this.cbBarangSO.Name = "cbBarangSO";
             this.cbBarangSO.Size = new System.Drawing.Size(211, 24);
             this.cbBarangSO.TabIndex = 6;
+            this.cbBarangSO.SelectedIndexChanged += new System.EventHandler(this.cbBarangSO_SelectedIndexChanged);
             // 
             // cbKategoriSO
             // 
@@ -291,7 +292,7 @@
             this.ClientSize = new System.Drawing.Size(855, 554);
             this.Controls.Add(this.dataSO);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormStock";
             this.Text = "FormStock";
             this.Load += new System.EventHandler(this.FormStock_Load);

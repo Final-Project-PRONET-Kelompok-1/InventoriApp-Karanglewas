@@ -195,5 +195,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void cbBarangSO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
