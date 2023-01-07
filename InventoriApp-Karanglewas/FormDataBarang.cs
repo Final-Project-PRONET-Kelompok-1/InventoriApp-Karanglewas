@@ -21,5 +21,14 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void btTambah_Click(object sender, EventArgs e)
+        {
+
+            FormKategoriBarang FM = new FormKategoriBarang(); // Instantiate a Form3 object.
+          //  this.Hide();
+            FM.ShowDialog(); // Show Form3 and
+           // this.Close();
+        }
     }
 }
