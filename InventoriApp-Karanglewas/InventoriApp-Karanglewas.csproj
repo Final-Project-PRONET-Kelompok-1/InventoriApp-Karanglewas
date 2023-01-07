@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DBConfig.cs" />
+    <Compile Include="dbConfig.cs" />
     <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="FormBarangMasuk.Designer.cs">
       <DependentUpon>FormBarangMasuk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBeranda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBeranda.Designer.cs">
+      <DependentUpon>FormBeranda.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDataBarang.cs">
       <SubType>Form</SubType>
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBarangMasuk.resx">
       <DependentUpon>FormBarangMasuk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBeranda.resx">
+      <DependentUpon>FormBeranda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDataBarang.resx">
       <DependentUpon>FormDataBarang.cs</DependentUpon>
@@ -181,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo Amikom %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_Beranda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

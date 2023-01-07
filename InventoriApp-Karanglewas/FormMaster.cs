@@ -196,5 +196,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormBeranda());
+        }
     }
 }

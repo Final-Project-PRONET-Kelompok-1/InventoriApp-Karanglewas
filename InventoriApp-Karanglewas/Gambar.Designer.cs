@@ -63,6 +63,16 @@ namespace InventoriApp_Karanglewas {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_Beranda {
+            get {
+                object obj = ResourceManager.GetObject("image_Beranda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Amikom__2_ {
             get {
                 object obj = ResourceManager.GetObject("Logo Amikom (2)", resourceCulture);
