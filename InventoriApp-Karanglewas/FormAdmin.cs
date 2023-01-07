@@ -18,7 +18,7 @@ namespace InventoriApp_Karanglewas
     public partial class FormAdmin : Form
     {
         SqlConnection conn = new SqlConnection
-            (@"Data Source=MSI;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=DESKTOP-5KDEI2T;Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
@@ -115,6 +115,11 @@ namespace InventoriApp_Karanglewas
         private void btResetAdmin_Click(object sender, EventArgs e)
         {
             resetData();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     

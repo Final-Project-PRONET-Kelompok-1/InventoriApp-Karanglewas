@@ -15,7 +15,7 @@ namespace InventoriApp_Karanglewas
     public partial class Form_Login : Form
     {
         SqlConnection conn = new SqlConnection
-            (@"Data Source=MSI;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=DESKTOP-5KDEI2T;Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
@@ -61,6 +61,11 @@ namespace InventoriApp_Karanglewas
             {
                 conn.Close();
             }
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

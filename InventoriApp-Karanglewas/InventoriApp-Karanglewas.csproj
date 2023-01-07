@@ -123,6 +123,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gambar.resx</DependentUpon>
     </Compile>
+    <Compile Include="InventoriAppDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin.resx">
@@ -169,6 +174,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="InventoriAppDataSet.xsc">
+      <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventoriAppDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventoriAppDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InventoriAppDataSet.xss">
+      <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
