@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtPasswordAdmin = new System.Windows.Forms.TextBox();
+            this.txtNamaAdmin = new System.Windows.Forms.TextBox();
+            this.txtUsernameAdmin = new System.Windows.Forms.TextBox();
             this.btSimpanAdmin = new System.Windows.Forms.Button();
             this.btResetAdmin = new System.Windows.Forms.Button();
             this.txtIdAdmin = new System.Windows.Forms.TextBox();
@@ -37,9 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
-            this.txtUsernameAdmin = new System.Windows.Forms.TextBox();
-            this.txtNamaAdmin = new System.Windows.Forms.TextBox();
-            this.txtPasswordAdmin = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,36 @@
             this.panel2.Size = new System.Drawing.Size(811, 207);
             this.panel2.TabIndex = 5;
             // 
+            // txtPasswordAdmin
+            // 
+            this.txtPasswordAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtPasswordAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPasswordAdmin.Location = new System.Drawing.Point(556, 66);
+            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPasswordAdmin.Name = "txtPasswordAdmin";
+            this.txtPasswordAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtPasswordAdmin.TabIndex = 16;
+            // 
+            // txtNamaAdmin
+            // 
+            this.txtNamaAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtNamaAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNamaAdmin.Location = new System.Drawing.Point(133, 110);
+            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNamaAdmin.Name = "txtNamaAdmin";
+            this.txtNamaAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtNamaAdmin.TabIndex = 15;
+            // 
+            // txtUsernameAdmin
+            // 
+            this.txtUsernameAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtUsernameAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsernameAdmin.Location = new System.Drawing.Point(133, 66);
+            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsernameAdmin.Name = "txtUsernameAdmin";
+            this.txtUsernameAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtUsernameAdmin.TabIndex = 14;
+            // 
             // btSimpanAdmin
             // 
             this.btSimpanAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -73,6 +103,7 @@
             this.btSimpanAdmin.TabIndex = 12;
             this.btSimpanAdmin.Text = "Simpan";
             this.btSimpanAdmin.UseVisualStyleBackColor = true;
+            this.btSimpanAdmin.Click += new System.EventHandler(this.btSimpanAdmin_Click);
             // 
             // btResetAdmin
             // 
@@ -84,6 +115,7 @@
             this.btResetAdmin.TabIndex = 11;
             this.btResetAdmin.Text = "Reset";
             this.btResetAdmin.UseVisualStyleBackColor = true;
+            this.btResetAdmin.Click += new System.EventHandler(this.btResetAdmin_Click);
             // 
             // txtIdAdmin
             // 
@@ -154,36 +186,6 @@
             this.dgvAdmin.Size = new System.Drawing.Size(787, 611);
             this.dgvAdmin.TabIndex = 4;
             // 
-            // txtUsernameAdmin
-            // 
-            this.txtUsernameAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtUsernameAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsernameAdmin.Location = new System.Drawing.Point(133, 66);
-            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsernameAdmin.Name = "txtUsernameAdmin";
-            this.txtUsernameAdmin.Size = new System.Drawing.Size(175, 22);
-            this.txtUsernameAdmin.TabIndex = 14;
-            // 
-            // txtNamaAdmin
-            // 
-            this.txtNamaAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtNamaAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNamaAdmin.Location = new System.Drawing.Point(133, 110);
-            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNamaAdmin.Name = "txtNamaAdmin";
-            this.txtNamaAdmin.Size = new System.Drawing.Size(175, 22);
-            this.txtNamaAdmin.TabIndex = 15;
-            // 
-            // txtPasswordAdmin
-            // 
-            this.txtPasswordAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtPasswordAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPasswordAdmin.Location = new System.Drawing.Point(556, 66);
-            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPasswordAdmin.Name = "txtPasswordAdmin";
-            this.txtPasswordAdmin.Size = new System.Drawing.Size(175, 22);
-            this.txtPasswordAdmin.TabIndex = 16;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -195,6 +197,7 @@
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();

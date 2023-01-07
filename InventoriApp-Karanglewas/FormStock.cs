@@ -16,7 +16,7 @@ namespace InventoriApp_Karanglewas
     {
 
         SqlConnection conn = new SqlConnection
-            (@"Data Source=DESKTOP-TMHK1OT;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=MSI;Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
@@ -188,6 +188,11 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show(ex.Message);
             }
             dataSO.FirstDisplayedScrollingRowIndex = dataSO.RowCount - 1;
+        }
+
+        private void btEditBK_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
