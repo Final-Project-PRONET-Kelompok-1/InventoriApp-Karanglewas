@@ -128,6 +128,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InventoriAppDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoriAppDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin.resx">
@@ -184,6 +189,17 @@
     </None>
     <None Include="InventoriAppDataSet.xss">
       <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventoriAppDataSet1.xsc">
+      <DependentUpon>InventoriAppDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="InventoriAppDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventoriAppDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InventoriAppDataSet1.xss">
+      <DependentUpon>InventoriAppDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

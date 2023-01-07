@@ -77,7 +77,7 @@ namespace InventoriApp_Karanglewas
 
         private void cbKBarang_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btTambahKBarang_Click_1(object sender, EventArgs e)
@@ -90,7 +90,8 @@ namespace InventoriApp_Karanglewas
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                
+                MessageBox.Show("Kategori berhasil ditambahkan !");
+
 
             }
             catch (Exception ex)
@@ -98,10 +99,21 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show(ex.Message);
             }
             resetData();
-            MessageBox.Show("Kategori berhasil ditambahkan !");
             this.Close();
 
 
+        }
+
+        private void FormKategoriBarang_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'inventoriAppDataSet11.tb_kategori' table. You can move, or remove it, as needed.
+            this.tb_kategoriTableAdapter.Fill(this.inventoriAppDataSet11.tb_kategori);
+
+        }
+
+        private void btTambahBarang_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }
