@@ -23,6 +23,8 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
         string admin;
         int autoId;
+
+
         public Form_Login()
         {
             InitializeComponent();

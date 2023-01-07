@@ -17,7 +17,7 @@ namespace InventoriApp_Karanglewas
     {
 
         SqlConnection conn = new SqlConnection
-               (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
+               (@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
