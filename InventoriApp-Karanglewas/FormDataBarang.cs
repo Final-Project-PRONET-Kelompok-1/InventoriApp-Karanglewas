@@ -21,7 +21,7 @@ namespace InventoriApp_Karanglewas
         private void FormDataBarang_Load(object sender, EventArgs e)
         {
             // Buat koneksi ke database
-            string connectionString = "Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp;Integrated Security=True";
+            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriApp;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
 
             // Buat query untuk mengambil data dari beberapa tabel dengan relasi
