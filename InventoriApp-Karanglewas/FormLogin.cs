@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace InventoriApp_Karanglewas
     public partial class Form_Login : Form
     {
         SqlConnection conn = new SqlConnection
-            (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
@@ -100,8 +101,8 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_log (id_log, id_admin, keterangan)\n" +
-                                "SELECT '" + autoId + "', a.id_admin, '" + ket + "'\n" +
+                string query = "INSERT INTO tb_log (id_log, id_admin, keterangan, waktu)\n" +
+                                "SELECT '" + autoId + "', a.id_admin, '" + ket + "','" + date + "'\n" +
                                 "FROM tb_admin a\n" +
                                 "WHERE a.username = '" + txtUsername.Text + "'";
                 var cmd = new SqlCommand(query, conn);

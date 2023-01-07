@@ -43,6 +43,9 @@ namespace InventoriApp_Karanglewas
             return admin;
         }
 
+        private void FormBeranda_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
