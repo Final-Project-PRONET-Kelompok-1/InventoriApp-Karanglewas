@@ -18,7 +18,7 @@ namespace InventoriApp_Karanglewas
     public partial class FormAdmin : Form
     {
         SqlConnection conn = new SqlConnection
-            (@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataReader reader;
