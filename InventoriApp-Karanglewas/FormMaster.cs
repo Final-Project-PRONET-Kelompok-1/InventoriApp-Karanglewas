@@ -32,6 +32,24 @@ namespace InventoriApp_Karanglewas
             panelSidebar.Controls.Add(leftBorderBtn);
         }
 
+        public string getAdmin()
+        {
+            conn.Open();
+            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC LIMIT 1";
+            cmd = new SqlCommand(query, conn);
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows && reader != null)
+            {
+                reader.Read();
+                admin = reader["username"].ToString();
+
+            }
+            conn.Close();
+
+            return admin;
+        }
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(255, 255, 255);
@@ -133,6 +151,7 @@ namespace InventoriApp_Karanglewas
             }
             DisableButton();
             leftBorderBtn.Visible = false;
+            OpenChildForm(new FormBeranda());
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
         }
 
@@ -200,6 +219,13 @@ namespace InventoriApp_Karanglewas
         private void logo_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormBeranda());
+            lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormBeranda());
+            lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
         }
     }
 }

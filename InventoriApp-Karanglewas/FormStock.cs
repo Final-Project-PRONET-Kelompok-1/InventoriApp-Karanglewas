@@ -266,11 +266,10 @@ namespace InventoriApp_Karanglewas
 
         }
 
-<<<<<<< HEAD
         private void cbBarangSO_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-=======
+        }
 
 
         private void btHapusBK_Click(object sender, EventArgs e)
@@ -284,7 +283,6 @@ namespace InventoriApp_Karanglewas
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
->>>>>>> 438a7ad7aaa71f58c44201d2644d97746f0f3f41
         }
     }
 }

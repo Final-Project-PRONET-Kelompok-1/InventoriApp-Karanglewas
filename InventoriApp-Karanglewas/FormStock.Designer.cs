@@ -300,10 +300,7 @@
             this.ClientSize = new System.Drawing.Size(641, 450);
             this.Controls.Add(this.dataSO);
             this.Controls.Add(this.panel2);
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> 438a7ad7aaa71f58c44201d2644d97746f0f3f41
             this.Name = "FormStock";
             this.Text = "FormStock";
             this.Load += new System.EventHandler(this.FormStock_Load);
