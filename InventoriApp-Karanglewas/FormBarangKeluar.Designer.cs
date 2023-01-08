@@ -82,6 +82,7 @@
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(158, 20);
             this.txtPIC.TabIndex = 14;
+            this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
             // label5
             // 
@@ -104,6 +105,7 @@
             this.btSimpanBK.TabIndex = 12;
             this.btSimpanBK.Text = "Simpan";
             this.btSimpanBK.UseVisualStyleBackColor = true;
+            this.btSimpanBK.Click += new System.EventHandler(this.btSimpanBK_Click);
             // 
             // btResetBK
             // 
@@ -115,6 +117,7 @@
             this.btResetBK.TabIndex = 11;
             this.btResetBK.Text = "Reset";
             this.btResetBK.UseVisualStyleBackColor = true;
+            this.btResetBK.Click += new System.EventHandler(this.btResetBK_Click);
             // 
             // btHapusBK
             // 
@@ -126,6 +129,7 @@
             this.btHapusBK.TabIndex = 10;
             this.btHapusBK.Text = "Hapus";
             this.btHapusBK.UseVisualStyleBackColor = true;
+            this.btHapusBK.Click += new System.EventHandler(this.btHapusBK_Click);
             // 
             // btEditBK
             // 
@@ -155,6 +159,7 @@
             this.txtJumlahBK.Name = "txtJumlahBK";
             this.txtJumlahBK.Size = new System.Drawing.Size(159, 20);
             this.txtJumlahBK.TabIndex = 7;
+            this.txtJumlahBK.TextChanged += new System.EventHandler(this.txtJumlahBK_TextChanged);
             // 
             // cbBarangBK
             // 
@@ -175,6 +180,7 @@
             this.cbKategoriBK.Name = "cbKategoriBK";
             this.cbKategoriBK.Size = new System.Drawing.Size(159, 21);
             this.cbKategoriBK.TabIndex = 5;
+            this.cbKategoriBK.SelectedIndexChanged += new System.EventHandler(this.cbKategoriBK_SelectedIndexChanged);
             // 
             // txtKodeBK
             // 
