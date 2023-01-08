@@ -158,12 +158,33 @@ namespace InventoriApp_Karanglewas
 
         public void kodeRandom()
         {
-            int length = 12; // Specify the desired length of the random string
+            int length = 12;
             string randomString = RandomString(length);
+            while (ValueExistsInDatabase(randomString))
+            {
+                
+                randomString = RandomString(length);
+            }
+                                 
             txtKodeBK.Text = randomString;
         }
-        
-        
+
+        private bool ValueExistsInDatabase(string value)
+        {
+            
+            {
+                string query = "SELECT COUNT(*) FROM tb_barangkeluar WHERE kode_bk = @value";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@value", value);
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    conn.Close();
+                    return count > 0;
+                }
+            }
+        }
+
 
         private void cbKategoriBK_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -240,7 +261,7 @@ namespace InventoriApp_Karanglewas
                                 "FROM tb_barangkeluar bk\n" +
                                 "INNER JOIN tb_barang b ON bk.id_barang = b.id_barang\n" +
                                 "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori\n" +
-                                "ORDER BY bk.kode_bk DESC";
+                                "ORDER BY bk.tanggal DESC";
                 cmd = new SqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
