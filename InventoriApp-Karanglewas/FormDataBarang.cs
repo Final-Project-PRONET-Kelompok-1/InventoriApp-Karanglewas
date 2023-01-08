@@ -13,31 +13,30 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormDataBarang : Form
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp;Integrated Security=True");
+        SqlCommand cmd;
+        SqlDataReader reader;
         public FormDataBarang()
         {
             InitializeComponent();
         }
+        private void show()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from data_barang";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "data_barang");
+            dgvDB.DataSource = ds;
+            dgvDB.DataMember = "data_barang";
+            dgvDB.ReadOnly = true;
+        }
 
         private void FormDataBarang_Load(object sender, EventArgs e)
         {
-            // Buat koneksi ke database
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriApp;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            // Buat query untuk mengambil data dari beberapa tabel dengan relasi
-            string query = "SELECT tb_barangmasuk.id_kategori AS Kategori, tb_barangmasuk.kode_bm AS Barang, tb_barangmasuk.jumlah AS Masuk, tb_barangkeluar.jumlah AS keluar FROM tb_barangmasuk " +
-                           "INNER JOIN tb_barangkeluar ON tb_barangmasuk.id_kategori = tb_barangkeluar.id_kategori ";
-
-            // Buat adapter untuk menjalankan query dan mengisi dataset
-            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-            DataSet dataset = new DataSet();
-            adapter.Fill(dataset);
-
-            // Tambahkan dataset ke dalam gridview
-            dgvDB.DataSource = dataset;
-            dgvDB.DataMember = "Table";
-            // Tabel yang dihasilkan oleh query
-
+            show();   
         }
 
         private void btTambah_Click(object sender, EventArgs e)
@@ -57,6 +56,24 @@ namespace InventoriApp_Karanglewas
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btncari_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from data_barang where Barang like '%" + txtDB.Text + "%'";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "data_barang");
+            dgvDB.DataSource = ds;
+            dgvDB.DataMember = "data_barang";
+        }
+
+        private void btnrefres_Click(object sender, EventArgs e)
+        {
+            show();
         }
     }
 }
