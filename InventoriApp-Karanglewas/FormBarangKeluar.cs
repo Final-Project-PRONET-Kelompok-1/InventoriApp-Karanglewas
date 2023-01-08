@@ -33,7 +33,7 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
             setCB();
             cbKategori();
-            autoKode();
+            kodeRandom();
             autoID();
             fillDataBK();
             //fr.autoIDRiwayat();
@@ -109,8 +109,9 @@ namespace InventoriApp_Karanglewas
         private void resetForm()
         {
             autoID();
-            autoKode();
+            
             //fr.autoIDRiwayat();
+            kodeRandom();
 
             cbKategoriBK.Text = "Pilih Kategori";
             txtJumlahBK.Clear();
@@ -125,7 +126,7 @@ namespace InventoriApp_Karanglewas
         {
             int id;
             conn.Open();
-            string query = "SELECT * FROM tb_barangkeluar ORDER BY id_barangkeluar DESC LIMIT 1";
+            string query = "SELECT * FROM tb_barangkeluar ORDER BY id_barangkeluar DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
@@ -144,34 +145,25 @@ namespace InventoriApp_Karanglewas
             autoId = id;
             conn.Close();
         }
-        private void autoKode()
+
+        private static Random random = new Random();
+
+        public static string RandomString(int length)
         {
-            string kode;
-            conn.Open();
-            string query = "SELECT * FROM tb_barangkeluar ORDER BY kode_bk DESC LIMIT 1";
-            cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
-
-            date = DateTime.Now;
-            string dateBK = date.ToString("yyMMdd");
-
-            if (reader.HasRows && reader != null)
-            {
-                reader.Read();
-                //string no = reader.GetString("kode_bk");
-                string no = reader[0].ToString();
-                no = no.Substring(8, 4);
-                int str = Convert.ToInt32(no) + 1;
-                kode = "BK" + dateBK + Convert.ToString(str).PadLeft(no.Length, '0');
-
-            }
-            else
-            {
-                kode = "BK" + dateBK + "0001";
-            }
-            txtKodeBK.Text = kode;
-            conn.Close();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string (Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+            
         }
+
+        public void kodeRandom()
+        {
+            int length = 12; // Specify the desired length of the random string
+            string randomString = RandomString(length);
+            txtKodeBK.Text = randomString;
+        }
+        
+        
 
         private void cbKategoriBK_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -212,7 +204,7 @@ namespace InventoriApp_Karanglewas
         private void simpanBK()
         {
             date = Convert.ToDateTime(dtBK.Text);
-            string dateBK = date.ToString("yy-MM-dd");
+            string dateBK = date.ToString("yyyy-MM-dd");
 
             try
             {
@@ -281,7 +273,7 @@ namespace InventoriApp_Karanglewas
             foreach (DataGridViewRow item in this.dataBK.SelectedRows)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_barangkeluar WHERE kode_so = '" + dataBK.SelectedRows[0].Cells[0].Value + "'";
+                string query = "DELETE FROM tb_barangkeluar WHERE id_barangkeluar = '" + dataBK.SelectedRows[0].Cells[0].Value + "'";
                 var cmd = new SqlCommand(query, conn);
                 dataBK.Rows.RemoveAt(this.dataBK.SelectedRows[0].Index);
                 cmd.ExecuteNonQuery();
@@ -289,6 +281,9 @@ namespace InventoriApp_Karanglewas
             }
         }
 
+        private void FormBarangKeluar_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
