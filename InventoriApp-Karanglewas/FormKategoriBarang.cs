@@ -25,6 +25,8 @@ namespace InventoriApp_Karanglewas
         int autoIdKategori;
         int autoIdBarang;
 
+        int totalBarang = 0;
+
 
         public FormKategoriBarang()
 
@@ -149,8 +151,8 @@ namespace InventoriApp_Karanglewas
             {
                 
                 conn.Open();
-                string query =  "INSERT INTO tb_barang(id_barang, id_kategori, nama_barang)\n" +
-                                "SELECT '" + autoIdBarang + "', tb_kategori.id_kategori, '" + txtTambahBarang.Text+ "'"+
+                string query =  "INSERT INTO tb_barang(id_barang, id_kategori, nama_barang, total)\n" +
+                                "SELECT '" + autoIdBarang + "', tb_kategori.id_kategori, '" + txtTambahBarang.Text+ "', '"+totalBarang+"'"+
                                 "FROM tb_kategori "+
                                 "WHERE tb_kategori.jenis_kategori = '"+ cbKBarang.Text+ "'";
 

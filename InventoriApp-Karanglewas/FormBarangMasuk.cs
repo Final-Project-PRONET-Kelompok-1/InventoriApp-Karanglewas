@@ -158,8 +158,6 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
-            resetForm();
-            fillDataBM();
         }
 
         private void updateBM()
@@ -260,6 +258,8 @@ namespace InventoriApp_Karanglewas
         {
             simpanBM();
             simpanRiwayat("Simpan");
+            resetForm();
+            fillDataBM();
         }
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
