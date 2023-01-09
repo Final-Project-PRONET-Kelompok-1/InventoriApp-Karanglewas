@@ -74,11 +74,37 @@ namespace InventoriApp_Karanglewas
         {
             try
             {
-                conn.Open();
+                /*conn.Open();
                 string query = "INSERT INTO tb_admin (id_admin, username, nama_panjang, password)\n" +
                                 "VALUES ('" + autoId + "','" + txtUsernameAdmin.Text + "','" + txtNamaAdmin.Text + "','" + txtPasswordAdmin.Text + "')";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
+                conn.Close();*/
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "sp_addAdmin";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter idAdmin = new SqlParameter("@id_admin", SqlDbType.VarChar);
+                SqlParameter username = new SqlParameter("@username", SqlDbType.VarChar);
+                SqlParameter namaPanjang = new SqlParameter("@nama_panjang", SqlDbType.VarChar);
+                SqlParameter pass = new SqlParameter("@password", SqlDbType.VarChar);
+
+                idAdmin.Value = txtIdAdmin.Text;
+                username.Value = txtUsernameAdmin.Text;
+                namaPanjang.Value = txtNamaAdmin.Text;
+                pass.Value = txtPasswordAdmin.Text;
+
+
+                cmd.Parameters.Add(idAdmin);
+                cmd.Parameters.Add(username);
+                cmd.Parameters.Add(namaPanjang);
+                cmd.Parameters.Add(pass);
+
+                cmd.ExecuteNonQuery();
+
                 conn.Close();
             }
             catch (Exception ex)
