@@ -23,6 +23,8 @@ namespace InventoriApp_Karanglewas
 
         DateTime date;
         DataTable dataTable = new DataTable();
+        FormRiwayat fr = new FormRiwayat();
+        FormMaster f1 = new FormMaster();
         public FormBarangMasuk()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace InventoriApp_Karanglewas
             cbKategori();
             cbBarang();
             fillDataBM();
+            fr.autoIDRiwayat();
             txtKodeBM.Enabled = false;
         }
 
@@ -106,7 +109,34 @@ namespace InventoriApp_Karanglewas
             txtKodeBM.Text = kode;
             conn.Close();
         }
+        private void simpanRiwayat(string status)
+        {
+            string transaksi = "Barang Masuk";
+            string idRiwayat = fr.autoId.ToString();
+            string keterangan = status;
+            string username = f1.getAdmin();
+            date = Convert.ToDateTime(dtBM.Text);
+            string dateRiwayat = date.ToString("yyyy-MM-dd");
 
+            try
+            {
+                conn.Open();
+                string query = "INSERT INTO tb_riwayat (id_riwayat, tanggal, transaksi, id_kategori, id_barang, jumlah, keterangan, id_admin)\n" +
+                                "SELECT '" + idRiwayat + "', '" + dateRiwayat + "', '" + transaksi + "', k.id_kategori, b.id_barang, '" + txtJumlahBM.Text + "', '" + keterangan + "', a.id_admin\n" +
+                                "FROM tb_barang b, tb_kategori k, tb_admin a\n" +
+                                "WHERE k.jenis_kategori = '" + cbKategoriBM.Text + "'\n" +
+                                "AND b.nama_barang = '" + cbBarangBM.Text + "'" +
+                                "AND a.username = '" + username + "'";
+                cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void simpanBM()
         {
             date = Convert.ToDateTime(dtBM.Text);
@@ -128,6 +158,8 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
+            resetForm();
+            fillDataBM();
         }
 
         private void updateBM()
@@ -211,7 +243,7 @@ namespace InventoriApp_Karanglewas
         {
             autoID();
 
-            //fr.autoIDRiwayat();
+            fr.autoIDRiwayat();
             autoKode();
 
             cbKategoriBM.Text = "Pilih Kategori";
@@ -227,6 +259,7 @@ namespace InventoriApp_Karanglewas
         private void btSimpanBM_Click(object sender, EventArgs e)
         {
             simpanBM();
+            simpanRiwayat("Simpan");
         }
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
@@ -266,6 +299,7 @@ namespace InventoriApp_Karanglewas
             var cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+            simpanRiwayat("Hapus");
             resetForm();
             fillDataBM();
 
@@ -281,6 +315,7 @@ namespace InventoriApp_Karanglewas
         private void btEditBM_Click(object sender, EventArgs e)
         {
             updateBM();
+            simpanRiwayat("Edit");
             resetForm();
             fillDataBM();
         }
