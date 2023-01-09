@@ -102,6 +102,7 @@
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(210, 22);
             this.txtPIC.TabIndex = 16;
+            this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
             // label5
             // 

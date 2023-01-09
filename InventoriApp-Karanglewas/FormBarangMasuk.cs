@@ -20,14 +20,17 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
         int autoId;
         string kategori;
-
         DateTime date;
+
         DataTable dataTable = new DataTable();
+        
         FormRiwayat fr = new FormRiwayat();
+        
         FormMaster f1 = new FormMaster();
         public FormBarangMasuk()
         {
             InitializeComponent();
+            setCB();
             autoID();
             autoKode();
             cbKategori();
@@ -35,6 +38,19 @@ namespace InventoriApp_Karanglewas
             fillDataBM();
             fr.autoIDRiwayat();
             txtKodeBM.Enabled = false;
+        }
+
+        private void setCB()
+        {
+            if (cbKategoriBM.Text == "Pilih Kategori")
+            {
+                cbBarangBM.Text = "Pilih Barang";
+                cbBarangBM.Enabled = false;
+            }
+            else
+            {
+                cbBarangBM.Enabled = true;
+            }
         }
 
         private void FormBarangMasuk_Load(object sender, EventArgs e)
@@ -49,13 +65,17 @@ namespace InventoriApp_Karanglewas
 
         private void dataBM_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataBM.Rows[e.RowIndex];
-            txtKodeBM.Text = row.Cells["Kode"].Value.ToString();
-            cbKategoriBM.Text = row.Cells["Kategori"].Value.ToString();
-            cbBarangBM.Text = row.Cells["Barang"].Value.ToString();
-            txtJumlahBM.Text = row.Cells["Jumlah"].Value.ToString();
-            dtBM.Value = (DateTime)row.Cells["Tanggal"].Value;
-            txtPIC.Text = row.Cells["PIC"].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataBM.Rows[e.RowIndex];
+                txtKodeBM.Text = row.Cells["Kode"].Value.ToString();
+                cbKategoriBM.Text = row.Cells["Kategori"].Value.ToString();
+                cbBarangBM.Text = row.Cells["Barang"].Value.ToString();
+                txtJumlahBM.Text = row.Cells["Jumlah"].Value.ToString();
+                dtBM.Value = (DateTime)row.Cells["Tanggal"].Value;
+                txtPIC.Text = row.Cells["PIC"].Value.ToString();
+            }
+         
         }
 
         private void autoID()
@@ -256,10 +276,7 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBM_Click(object sender, EventArgs e)
         {
-            simpanBM();
-            simpanRiwayat("Simpan");
-            resetForm();
-            fillDataBM();
+            cekInput();
         }
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
@@ -294,16 +311,50 @@ namespace InventoriApp_Karanglewas
 
         private void btHapusBM_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            string query = "DELETE FROM tb_barangmasuk WHERE kode_bm = '" + txtKodeBM.Text + "'";
-            var cmd = new SqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            simpanRiwayat("Hapus");
-            resetForm();
-            fillDataBM();
+            var tanya = MessageBox.Show("Apakah anda yakin ?", "Hapus", MessageBoxButtons.YesNo);
+            if (tanya == DialogResult.Yes)
+            {
+                conn.Open();
+                string query = "DELETE FROM tb_barangmasuk WHERE kode_bm = '" + txtKodeBM.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                simpanRiwayat("Hapus");
+                resetForm();
+                fillDataBM();
+            }
 
+        }
 
+        private void cekInput()
+        {
+            if (cbKategoriBM.Text == "Pilih Kategori")
+            {
+                MessageBox.Show("Anda belum memilih kategori!");
+                cbKategoriBM.Focus();
+            }
+            else if (cbBarangBM.Text == "Pilih Barang")
+            {
+                MessageBox.Show("Anda belum memilih barang!");
+                cbBarangBM.Focus();
+            }
+            else if (txtJumlahBM.Text == "" | txtJumlahBM.Text == "0")
+            {
+                MessageBox.Show("Jumlah tidak boleh kosong!");
+                txtJumlahBM.Focus();
+            }
+            else if (txtPIC.Text == "")
+            {
+                MessageBox.Show("PIC tidak boleh kosong!");
+                txtPIC.Focus();
+            }
+            else
+            {
+                simpanBM();
+                simpanRiwayat("Simpan");
+                resetForm();
+                fillDataBM();
+            }
         }
 
         private void fillDataBM()
@@ -319,5 +370,16 @@ namespace InventoriApp_Karanglewas
             resetForm();
             fillDataBM();
         }
+
+        private void txtPIC_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-z]"))
+            {
+                MessageBox.Show("Input jumlah hanya bisa dimasukan nama.");
+                txtPIC.Clear();
+            }
+        }
+
+
     }
 }
