@@ -31,11 +31,11 @@
             this.DBarang = new System.Windows.Forms.DataGridView();
             this.cbKategoriBM = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnrefres = new System.Windows.Forms.Button();
             this.txtDB = new System.Windows.Forms.TextBox();
             this.btTambah = new FontAwesome.Sharp.IconButton();
             this.btncari = new System.Windows.Forms.Button();
             this.dgvDB = new System.Windows.Forms.DataGridView();
-            this.btnrefres = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DBarang)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).BeginInit();
@@ -54,7 +54,7 @@
             this.DBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DBarang.Enabled = false;
             this.DBarang.Location = new System.Drawing.Point(0, 165);
-            this.DBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DBarang.Margin = new System.Windows.Forms.Padding(2);
             this.DBarang.Name = "DBarang";
             this.DBarang.RowHeadersWidth = 51;
             this.DBarang.RowTemplate.Height = 24;
@@ -67,7 +67,7 @@
             this.cbKategoriBM.Enabled = false;
             this.cbKategoriBM.FormattingEnabled = true;
             this.cbKategoriBM.Location = new System.Drawing.Point(396, 54);
-            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(2);
             this.cbKategoriBM.Name = "cbKategoriBM";
             this.cbKategoriBM.Size = new System.Drawing.Size(133, 21);
             this.cbKategoriBM.TabIndex = 5;
@@ -89,6 +89,16 @@
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnrefres
+            // 
+            this.btnrefres.Location = new System.Drawing.Point(412, 98);
+            this.btnrefres.Name = "btnrefres";
+            this.btnrefres.Size = new System.Drawing.Size(75, 23);
+            this.btnrefres.TabIndex = 15;
+            this.btnrefres.Text = "Refres";
+            this.btnrefres.UseVisualStyleBackColor = true;
+            this.btnrefres.Click += new System.EventHandler(this.btnrefres_Click);
+            // 
             // txtDB
             // 
             this.txtDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -104,7 +114,7 @@
             this.btTambah.IconColor = System.Drawing.Color.Black;
             this.btTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btTambah.Location = new System.Drawing.Point(533, 96);
-            this.btTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btTambah.Margin = new System.Windows.Forms.Padding(2);
             this.btTambah.Name = "btTambah";
             this.btTambah.Size = new System.Drawing.Size(75, 26);
             this.btTambah.TabIndex = 13;
@@ -114,7 +124,7 @@
             // 
             // btncari
             // 
-            this.btncari.BackColor = System.Drawing.Color.Blue;
+            this.btncari.BackColor = System.Drawing.SystemColors.Control;
             this.btncari.Location = new System.Drawing.Point(533, 48);
             this.btncari.Name = "btncari";
             this.btncari.Size = new System.Drawing.Size(75, 34);
@@ -133,16 +143,6 @@
             this.dgvDB.RowHeadersWidth = 51;
             this.dgvDB.Size = new System.Drawing.Size(677, 278);
             this.dgvDB.TabIndex = 6;
-            // 
-            // btnrefres
-            // 
-            this.btnrefres.Location = new System.Drawing.Point(412, 98);
-            this.btnrefres.Name = "btnrefres";
-            this.btnrefres.Size = new System.Drawing.Size(75, 23);
-            this.btnrefres.TabIndex = 15;
-            this.btnrefres.Text = "Refres";
-            this.btnrefres.UseVisualStyleBackColor = true;
-            this.btnrefres.Click += new System.EventHandler(this.btnrefres_Click);
             // 
             // FormDataBarang
             // 
