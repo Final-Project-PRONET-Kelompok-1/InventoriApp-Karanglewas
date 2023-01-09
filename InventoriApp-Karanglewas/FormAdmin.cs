@@ -123,8 +123,9 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT id_admin as ID, username as Username, nama_panjang as Nama FROM tb_admin";
+                string query = "sp_showAdmin";
                 cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
                 conn.Close();
