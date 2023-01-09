@@ -78,7 +78,7 @@
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPIC.Location = new System.Drawing.Point(418, 69);
-            this.txtPIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPIC.Margin = new System.Windows.Forms.Padding(2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(158, 20);
             this.txtPIC.TabIndex = 14;
@@ -99,7 +99,7 @@
             // 
             this.btSimpanBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btSimpanBK.Location = new System.Drawing.Point(520, 106);
-            this.btSimpanBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSimpanBK.Margin = new System.Windows.Forms.Padding(2);
             this.btSimpanBK.Name = "btSimpanBK";
             this.btSimpanBK.Size = new System.Drawing.Size(56, 28);
             this.btSimpanBK.TabIndex = 12;
@@ -111,7 +111,7 @@
             // 
             this.btResetBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btResetBK.Location = new System.Drawing.Point(450, 106);
-            this.btResetBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btResetBK.Margin = new System.Windows.Forms.Padding(2);
             this.btResetBK.Name = "btResetBK";
             this.btResetBK.Size = new System.Drawing.Size(56, 28);
             this.btResetBK.TabIndex = 11;
@@ -123,7 +123,7 @@
             // 
             this.btHapusBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btHapusBK.Location = new System.Drawing.Point(382, 106);
-            this.btHapusBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btHapusBK.Margin = new System.Windows.Forms.Padding(2);
             this.btHapusBK.Name = "btHapusBK";
             this.btHapusBK.Size = new System.Drawing.Size(56, 28);
             this.btHapusBK.TabIndex = 10;
@@ -135,18 +135,19 @@
             // 
             this.btEditBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btEditBK.Location = new System.Drawing.Point(317, 107);
-            this.btEditBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditBK.Margin = new System.Windows.Forms.Padding(2);
             this.btEditBK.Name = "btEditBK";
             this.btEditBK.Size = new System.Drawing.Size(56, 26);
             this.btEditBK.TabIndex = 9;
             this.btEditBK.Text = "Edit";
             this.btEditBK.UseVisualStyleBackColor = true;
+            this.btEditBK.Click += new System.EventHandler(this.btEditBK_Click);
             // 
             // dtBK
             // 
             this.dtBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtBK.Location = new System.Drawing.Point(393, 35);
-            this.dtBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtBK.Margin = new System.Windows.Forms.Padding(2);
             this.dtBK.Name = "dtBK";
             this.dtBK.Size = new System.Drawing.Size(183, 20);
             this.dtBK.TabIndex = 8;
@@ -155,7 +156,7 @@
             // 
             this.txtJumlahBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtJumlahBK.Location = new System.Drawing.Point(125, 109);
-            this.txtJumlahBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtJumlahBK.Margin = new System.Windows.Forms.Padding(2);
             this.txtJumlahBK.Name = "txtJumlahBK";
             this.txtJumlahBK.Size = new System.Drawing.Size(159, 20);
             this.txtJumlahBK.TabIndex = 7;
@@ -166,7 +167,7 @@
             this.cbBarangBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbBarangBK.FormattingEnabled = true;
             this.cbBarangBK.Location = new System.Drawing.Point(125, 84);
-            this.cbBarangBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBarangBK.Margin = new System.Windows.Forms.Padding(2);
             this.cbBarangBK.Name = "cbBarangBK";
             this.cbBarangBK.Size = new System.Drawing.Size(159, 21);
             this.cbBarangBK.TabIndex = 6;
@@ -176,7 +177,7 @@
             this.cbKategoriBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriBK.FormattingEnabled = true;
             this.cbKategoriBK.Location = new System.Drawing.Point(125, 59);
-            this.cbKategoriBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbKategoriBK.Margin = new System.Windows.Forms.Padding(2);
             this.cbKategoriBK.Name = "cbKategoriBK";
             this.cbKategoriBK.Size = new System.Drawing.Size(159, 21);
             this.cbKategoriBK.TabIndex = 5;
@@ -187,7 +188,7 @@
             this.txtKodeBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtKodeBK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKodeBK.Location = new System.Drawing.Point(126, 35);
-            this.txtKodeBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKodeBK.Margin = new System.Windows.Forms.Padding(2);
             this.txtKodeBK.Name = "txtKodeBK";
             this.txtKodeBK.Size = new System.Drawing.Size(158, 20);
             this.txtKodeBK.TabIndex = 11;
@@ -248,7 +249,7 @@
             this.dataBK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataBK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBK.Location = new System.Drawing.Point(11, 173);
-            this.dataBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataBK.Margin = new System.Windows.Forms.Padding(2);
             this.dataBK.Name = "dataBK";
             this.dataBK.RowHeadersWidth = 51;
             this.dataBK.RowTemplate.Height = 24;

@@ -64,6 +64,11 @@ namespace InventoriApp_Karanglewas
                 DataSet ds = new DataSet();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(ds, "kategori");
+
+                DataRow row = ds.Tables["kategori"].NewRow();
+                row["jenis_kategori"] = "Pilih Kategori";
+                ds.Tables["kategori"].Rows.InsertAt(row, 0);
+
                 cbKategoriBK.DataSource = ds.Tables["kategori"];
                 cbKategoriBK.DisplayMember = "jenis_kategori";
                 conn.Close();
@@ -84,6 +89,11 @@ namespace InventoriApp_Karanglewas
                 DataSet ds = new DataSet();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(ds, "barang");
+
+                DataRow row = ds.Tables["barang"].NewRow();
+                row["nama_barang"] = "Pilih Barang";
+                ds.Tables["barang"].Rows.InsertAt(row, 0);
+
                 cbBarangBK.DataSource = ds.Tables["barang"];
                 cbBarangBK.DisplayMember = "nama_barang";
                 conn.Close();
@@ -381,6 +391,38 @@ namespace InventoriApp_Karanglewas
                 txtKodeBK.Text = row.Cells["Kode"].Value.ToString();
                 dtBK.Text = row.Cells["Tanggal"].Value.ToString();
             }
+        }
+
+        private void updateBK()
+        {
+            date = Convert.ToDateTime(dtBK.Text);
+            string dateBK = date.ToString("yyyy-MM-dd");
+
+            try
+            {
+                conn.Open();
+                string queryUpdate = "UPDATE tb_barangkeluar SET id_kategori = k.id_kategori, id_barang = b.id_barang, jumlah = '" + int.Parse(txtJumlahBK.Text) + "', pic = '" + txtPIC.Text + "' " +
+                  "FROM tb_barangkeluar bk " +
+                  "INNER JOIN tb_kategori k ON bk.id_kategori = k.id_kategori " +
+                  "INNER JOIN tb_barang b ON bk.id_barang = b.id_barang " +
+                  "WHERE bk.kode_bk= '" + txtKodeBK.Text + "' " +
+                  "AND k.jenis_kategori = '" + cbKategoriBK.Text + "' " +
+                  "AND b.nama_barang = '" + cbBarangBK.Text + "'";
+                cmd = new SqlCommand(queryUpdate, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                resetForm();
+                fillDataBK();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btEditBK_Click(object sender, EventArgs e)
+        {
+            updateBK();
         }
     }
 }
