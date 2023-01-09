@@ -31,10 +31,10 @@
             this.dataSO = new System.Windows.Forms.DataGridView();
             this.txtPIC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btSimpanBK = new System.Windows.Forms.Button();
-            this.btResetBK = new System.Windows.Forms.Button();
-            this.btHapusBK = new System.Windows.Forms.Button();
-            this.btEditBK = new System.Windows.Forms.Button();
+            this.btSimpanSO = new System.Windows.Forms.Button();
+            this.btResetSO = new System.Windows.Forms.Button();
+            this.btHapusSO = new System.Windows.Forms.Button();
+            this.btEditSO = new System.Windows.Forms.Button();
             this.dtSO = new System.Windows.Forms.DateTimePicker();
             this.txtStokSistem = new System.Windows.Forms.TextBox();
             this.cbBarangSO = new System.Windows.Forms.ComboBox();
@@ -64,7 +64,7 @@
             this.dataSO.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataSO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSO.Location = new System.Drawing.Point(11, 173);
-            this.dataSO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataSO.Margin = new System.Windows.Forms.Padding(2);
             this.dataSO.Name = "dataSO";
             this.dataSO.RowHeadersWidth = 51;
             this.dataSO.RowTemplate.Height = 24;
@@ -76,7 +76,7 @@
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPIC.Location = new System.Drawing.Point(373, 92);
-            this.txtPIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPIC.Margin = new System.Windows.Forms.Padding(2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(129, 20);
             this.txtPIC.TabIndex = 14;
@@ -92,58 +92,59 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "PIC";
             // 
-            // btSimpanBK
+            // btSimpanSO
             // 
-            this.btSimpanBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btSimpanBK.Location = new System.Drawing.Point(522, 124);
-            this.btSimpanBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btSimpanBK.Name = "btSimpanBK";
-            this.btSimpanBK.Size = new System.Drawing.Size(56, 28);
-            this.btSimpanBK.TabIndex = 12;
-            this.btSimpanBK.Text = "Simpan";
-            this.btSimpanBK.UseVisualStyleBackColor = true;
-            this.btSimpanBK.Click += new System.EventHandler(this.btSimpanBK_Click);
+            this.btSimpanSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btSimpanSO.Location = new System.Drawing.Point(522, 124);
+            this.btSimpanSO.Margin = new System.Windows.Forms.Padding(2);
+            this.btSimpanSO.Name = "btSimpanSO";
+            this.btSimpanSO.Size = new System.Drawing.Size(56, 28);
+            this.btSimpanSO.TabIndex = 12;
+            this.btSimpanSO.Text = "Simpan";
+            this.btSimpanSO.UseVisualStyleBackColor = true;
+            this.btSimpanSO.Click += new System.EventHandler(this.btSimpanSO_Click);
             // 
-            // btResetBK
+            // btResetSO
             // 
-            this.btResetBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btResetBK.Location = new System.Drawing.Point(452, 124);
-            this.btResetBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btResetBK.Name = "btResetBK";
-            this.btResetBK.Size = new System.Drawing.Size(56, 28);
-            this.btResetBK.TabIndex = 11;
-            this.btResetBK.Text = "Reset";
-            this.btResetBK.UseVisualStyleBackColor = true;
+            this.btResetSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btResetSO.Location = new System.Drawing.Point(452, 124);
+            this.btResetSO.Margin = new System.Windows.Forms.Padding(2);
+            this.btResetSO.Name = "btResetSO";
+            this.btResetSO.Size = new System.Drawing.Size(56, 28);
+            this.btResetSO.TabIndex = 11;
+            this.btResetSO.Text = "Reset";
+            this.btResetSO.UseVisualStyleBackColor = true;
+            this.btResetSO.Click += new System.EventHandler(this.btResetSO_Click_1);
             // 
-            // btHapusBK
+            // btHapusSO
             // 
-            this.btHapusBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btHapusBK.Location = new System.Drawing.Point(384, 124);
-            this.btHapusBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btHapusBK.Name = "btHapusBK";
-            this.btHapusBK.Size = new System.Drawing.Size(56, 28);
-            this.btHapusBK.TabIndex = 10;
-            this.btHapusBK.Text = "Hapus";
-            this.btHapusBK.UseVisualStyleBackColor = true;
-            this.btHapusBK.Click += new System.EventHandler(this.btHapusBK_Click);
+            this.btHapusSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btHapusSO.Location = new System.Drawing.Point(384, 124);
+            this.btHapusSO.Margin = new System.Windows.Forms.Padding(2);
+            this.btHapusSO.Name = "btHapusSO";
+            this.btHapusSO.Size = new System.Drawing.Size(56, 28);
+            this.btHapusSO.TabIndex = 10;
+            this.btHapusSO.Text = "Hapus";
+            this.btHapusSO.UseVisualStyleBackColor = true;
+            this.btHapusSO.Click += new System.EventHandler(this.btHapusSO_Click_1);
             // 
-            // btEditBK
+            // btEditSO
             // 
-            this.btEditBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btEditBK.Location = new System.Drawing.Point(319, 125);
-            this.btEditBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btEditBK.Name = "btEditBK";
-            this.btEditBK.Size = new System.Drawing.Size(56, 26);
-            this.btEditBK.TabIndex = 9;
-            this.btEditBK.Text = "Edit";
-            this.btEditBK.UseVisualStyleBackColor = true;
-            this.btEditBK.Click += new System.EventHandler(this.btEditBK_Click);
+            this.btEditSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btEditSO.Location = new System.Drawing.Point(319, 125);
+            this.btEditSO.Margin = new System.Windows.Forms.Padding(2);
+            this.btEditSO.Name = "btEditSO";
+            this.btEditSO.Size = new System.Drawing.Size(56, 26);
+            this.btEditSO.TabIndex = 9;
+            this.btEditSO.Text = "Edit";
+            this.btEditSO.UseVisualStyleBackColor = true;
+            this.btEditSO.Click += new System.EventHandler(this.btEditSO_Click_1);
             // 
             // dtSO
             // 
             this.dtSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtSO.Location = new System.Drawing.Point(319, 34);
-            this.dtSO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtSO.Margin = new System.Windows.Forms.Padding(2);
             this.dtSO.Name = "dtSO";
             this.dtSO.Size = new System.Drawing.Size(183, 20);
             this.dtSO.TabIndex = 8;
@@ -152,7 +153,7 @@
             // 
             this.txtStokSistem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtStokSistem.Location = new System.Drawing.Point(127, 105);
-            this.txtStokSistem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStokSistem.Margin = new System.Windows.Forms.Padding(2);
             this.txtStokSistem.Name = "txtStokSistem";
             this.txtStokSistem.Size = new System.Drawing.Size(159, 20);
             this.txtStokSistem.TabIndex = 7;
@@ -162,7 +163,7 @@
             this.cbBarangSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbBarangSO.FormattingEnabled = true;
             this.cbBarangSO.Location = new System.Drawing.Point(127, 80);
-            this.cbBarangSO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBarangSO.Margin = new System.Windows.Forms.Padding(2);
             this.cbBarangSO.Name = "cbBarangSO";
             this.cbBarangSO.Size = new System.Drawing.Size(159, 21);
             this.cbBarangSO.TabIndex = 6;
@@ -173,7 +174,7 @@
             this.cbKategoriSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriSO.FormattingEnabled = true;
             this.cbKategoriSO.Location = new System.Drawing.Point(127, 55);
-            this.cbKategoriSO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbKategoriSO.Margin = new System.Windows.Forms.Padding(2);
             this.cbKategoriSO.Name = "cbKategoriSO";
             this.cbKategoriSO.Size = new System.Drawing.Size(159, 21);
             this.cbKategoriSO.TabIndex = 5;
@@ -185,7 +186,7 @@
             this.txtKodeSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtKodeSO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKodeSO.Location = new System.Drawing.Point(127, 31);
-            this.txtKodeSO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKodeSO.Margin = new System.Windows.Forms.Padding(2);
             this.txtKodeSO.Name = "txtKodeSO";
             this.txtKodeSO.Size = new System.Drawing.Size(159, 20);
             this.txtKodeSO.TabIndex = 11;
@@ -241,10 +242,10 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtPIC);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.btSimpanBK);
-            this.panel2.Controls.Add(this.btResetBK);
-            this.panel2.Controls.Add(this.btHapusBK);
-            this.panel2.Controls.Add(this.btEditBK);
+            this.panel2.Controls.Add(this.btSimpanSO);
+            this.panel2.Controls.Add(this.btResetSO);
+            this.panel2.Controls.Add(this.btHapusSO);
+            this.panel2.Controls.Add(this.btEditSO);
             this.panel2.Controls.Add(this.dtSO);
             this.panel2.Controls.Add(this.txtStokSistem);
             this.panel2.Controls.Add(this.cbBarangSO);
@@ -266,7 +267,7 @@
             this.txtStokFisik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtStokFisik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStokFisik.Location = new System.Drawing.Point(373, 61);
-            this.txtStokFisik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStokFisik.Margin = new System.Windows.Forms.Padding(2);
             this.txtStokFisik.Name = "txtStokFisik";
             this.txtStokFisik.Size = new System.Drawing.Size(129, 20);
             this.txtStokFisik.TabIndex = 17;
@@ -316,10 +317,10 @@
         private System.Windows.Forms.DataGridView dataSO;
         private System.Windows.Forms.TextBox txtPIC;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btSimpanBK;
-        private System.Windows.Forms.Button btResetBK;
-        private System.Windows.Forms.Button btHapusBK;
-        private System.Windows.Forms.Button btEditBK;
+        private System.Windows.Forms.Button btSimpanSO;
+        private System.Windows.Forms.Button btResetSO;
+        private System.Windows.Forms.Button btHapusSO;
+        private System.Windows.Forms.Button btEditSO;
         private System.Windows.Forms.DateTimePicker dtSO;
         private System.Windows.Forms.TextBox txtStokSistem;
         private System.Windows.Forms.ComboBox cbBarangSO;

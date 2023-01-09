@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Windows.Media;
+using System.Net.NetworkInformation;
+using System.Reflection;
 
 namespace InventoriApp_Karanglewas
 {
@@ -23,6 +25,7 @@ namespace InventoriApp_Karanglewas
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
+        string status;
         int autoId;
         DateTime date;
 
@@ -109,9 +112,8 @@ namespace InventoriApp_Karanglewas
             setCB();
             cbBarangSO.Text = "Pilih Barang";
             cbBarang();
-
-
         }
+
         private void autoKode()
         {
             string kode;
@@ -168,6 +170,7 @@ namespace InventoriApp_Karanglewas
             autoId = id;
             conn.Close();
         }
+
         private DataTable getDataSO()
         {
             try
@@ -195,9 +198,9 @@ namespace InventoriApp_Karanglewas
 
         private void fillDataSO()
         {
-
             dataSO.DataSource = getDataSO();
         }
+
         private void cekInput()
         {
             if (cbKategoriSO.Text == "Pilih Kategori")
@@ -229,7 +232,7 @@ namespace InventoriApp_Karanglewas
             {
                 simpanSO();
                 //simpanRiwayat();
-                //resetForm();
+                resetForm();
                 fillDataSO();
             }
         }
@@ -237,6 +240,7 @@ namespace InventoriApp_Karanglewas
         {
             date = Convert.ToDateTime(dtSO.Text);
             string dateBM = date.ToString("yyyy-MM-dd");
+            setStatus();
 
             try
             {
@@ -245,7 +249,7 @@ namespace InventoriApp_Karanglewas
                                 "VALUES ('" + autoId + "','" + txtKodeSO.Text + "'," +
                                 "(select id_kategori from tb_kategori where jenis_kategori = '" + cbKategoriSO.Text + "')," +
                                 "(select id_barang from tb_barang where nama_barang = '" + cbBarangSO.Text + "')," +
-                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateBM + "','" + txtPIC.Text + "', 'sukses')";
+                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateBM + "','" + txtPIC.Text + "', '" + status + "')";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -257,23 +261,113 @@ namespace InventoriApp_Karanglewas
             dataSO.FirstDisplayedScrollingRowIndex = dataSO.RowCount - 1;
         }
 
-        private void btSimpanBK_Click(object sender, EventArgs e)
+        private void UpdateSO()
         {
-            cekInput();
+            date = Convert.ToDateTime(dtSO.Text);
+            string dateBK = date.ToString("yyyy-MM-dd");
+
+            try
+            {
+                conn.Open();
+                string queryUpdate = "UPDATE tb_opname SET id_kategori = k.id_kategori, id_barang = b.id_barang, st_sistem = '" + txtStokSistem.Text + "'" +
+                    ", st_fisik = '" + txtStokFisik.Text + "', pic = '" + txtPIC.Text + "' " +
+                  "FROM tb_opname so " +
+                  "INNER JOIN tb_kategori k ON so.id_kategori = k.id_kategori " +
+                  "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
+                  "WHERE so.kode_so= '" + txtKodeSO.Text + "' " +
+                  "AND k.jenis_kategori = '" + cbKategoriSO.Text + "' " +
+                  "AND b.nama_barang = '" + cbBarangSO.Text + "'";
+                cmd = new SqlCommand(queryUpdate, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void btEditBK_Click(object sender, EventArgs e)
+
+        private void resetForm()
         {
+            autoID();
+
+            //fr.autoIDRiwayat();
+            //kodeRandom();
+            autoKode();
+
+            cbKategoriSO.Text = "Pilih Kategori";
+            txtStokSistem.Clear();
+            txtStokFisik.Clear();
+            txtPIC.Clear();
+            cbBarangSO.Text = "Pilih Barang";
+            cbBarangSO.Enabled = false;
+
+            date = DateTime.Now;
+            dtSO.Text = date.ToString();
+        }
+
+        private void getStokSistem()
+        {
+            string query = "SELECT (bm.jumlah - bk.jumlah) as stoksistem FROM tb_opname so " +
+                "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
+                "INNER JOIN tb_barangmasuk bm ON b.id_barang = bm.id_barang " +
+                "INNER JOIN tb_barangkeluar bk ON b.id_barang = bk.id_barang " +
+                "WHERE b.nama_barang='" + cbBarangSO.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                txtStokSistem.Text = rd[0].ToString();
+                rd.Close();
+            }
+            conn.Close();
 
         }
 
         private void cbBarangSO_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            getStokSistem();
         }
 
+        private void dataSO_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataSO.Rows[e.RowIndex];
+                txtPIC.Text = row.Cells["PIC"].Value.ToString();
+                txtStokFisik.Text = row.Cells["StokFisik"].Value.ToString();
+                txtStokSistem.Text = row.Cells["StokSistem"].Value.ToString();
+                cbBarangSO.Text = row.Cells["Barang"].Value.ToString();
+                cbKategoriSO.Text = row.Cells["Kategori"].Value.ToString();
+                txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
+                dtSO.Text = row.Cells["Tanggal"].Value.ToString();
+            }
+        }
 
-        private void btHapusBK_Click(object sender, EventArgs e)
+        private void setStatus()
+        {
+            if (txtStokSistem.Text == txtStokFisik.Text)
+            {
+                status = "OK";
+            }
+            else
+            {
+                status = "Selisih";
+            }
+        }
+
+        private void btEditSO_Click_1(object sender, EventArgs e)
+        {
+            UpdateSO();
+            resetForm();
+            fillDataSO();
+        }
+
+        private void btHapusSO_Click_1(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dataSO.SelectedRows)
             {
@@ -285,8 +379,18 @@ namespace InventoriApp_Karanglewas
                 conn.Close();
             }
         }
+
+        private void btResetSO_Click_1(object sender, EventArgs e)
+        {
+            resetForm();
+        }
+
+        private void btSimpanSO_Click(object sender, EventArgs e)
+        {
+            cekInput();
+        }
     }
 }
-        
-    
+
+
 
