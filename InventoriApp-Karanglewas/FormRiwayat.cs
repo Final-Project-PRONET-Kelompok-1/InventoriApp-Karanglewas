@@ -13,9 +13,8 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormRiwayat : Form
     {
-        SqlConnection conn = new SqlConnection
-            (@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
 
+        SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
         public int autoId;
