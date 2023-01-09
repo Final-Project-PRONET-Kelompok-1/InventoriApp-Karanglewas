@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using FontAwesome.Sharp;
 using System.Xml;
+using System.Windows.Controls.Primitives;
 
 namespace InventoriApp_Karanglewas
 {
@@ -21,13 +22,16 @@ namespace InventoriApp_Karanglewas
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
-        int autoId;
+        int autoIdKategori;
+        int autoIdBarang;
+
 
         public FormKategoriBarang()
 
         {
             InitializeComponent();
-            autoKode();
+            autoIdK();
+            autoIdB();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace InventoriApp_Karanglewas
             txtKBarang.Text = "";
 
         }
-        private void autoKode()
+        private void autoIdK()
         {
             string id;
             conn.Open();
@@ -70,7 +74,35 @@ namespace InventoriApp_Karanglewas
             {
                 id = "1";
             }
-            autoId = Convert.ToInt32(id);
+            autoIdKategori = Convert.ToInt32(id);
+            //  txtIdAdmin.Text = id;
+            conn.Close();
+        }
+
+        private void autoIdB()
+        {
+            string id;
+            conn.Open();
+            string query = "SELECT id_barang FROM tb_barang ORDER BY id_barang DESC";
+            cmd = new SqlCommand(query, conn);
+            reader = cmd.ExecuteReader();
+
+
+
+            if (reader.HasRows && reader != null)
+            {
+                reader.Read();
+                //                string no = reader.GetString(int.Parse(reader[0].ToString()));
+                string no = reader["id_barang"].ToString();
+                int str = Convert.ToInt32(no) + 1;
+                id = Convert.ToString(str);
+
+            }
+            else
+            {
+                id = "1";
+            }
+            autoIdBarang = Convert.ToInt32(id);
             //  txtIdAdmin.Text = id;
             conn.Close();
         }
@@ -86,7 +118,7 @@ namespace InventoriApp_Karanglewas
             {
                 conn.Open();
                 string query = "INSERT INTO tb_kategori (id_kategori, jenis_kategori)\n" +
-                                "VALUES ('" + autoId + "','" + txtKBarang.Text + "')";
+                                "VALUES ('" + autoIdKategori + "','" + txtKBarang.Text + "')";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -113,7 +145,29 @@ namespace InventoriApp_Karanglewas
 
         private void btTambahBarang_Click_1(object sender, EventArgs e)
         {
-           
+            try
+            {
+                
+                conn.Open();
+                string query =  "INSERT INTO tb_barang(id_barang, id_kategori, nama_barang)\n" +
+                                "SELECT '" + autoIdBarang + "', tb_kategori.id_kategori, '" + txtTambahBarang.Text+ "'"+
+                                "FROM tb_kategori "+
+                                "WHERE tb_kategori.jenis_kategori = '"+ cbKBarang.Text+ "'";
+
+
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Barang berhasil ditambahkan !");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            resetData();
+            this.Close();
         }
     }
 }

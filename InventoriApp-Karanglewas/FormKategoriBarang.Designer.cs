@@ -32,6 +32,8 @@
             this.txtKBarang = new System.Windows.Forms.TextBox();
             this.btTambahKBarang = new System.Windows.Forms.Button();
             this.cbKBarang = new System.Windows.Forms.ComboBox();
+            this.tbkategoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoriAppDataSet11 = new InventoriApp_Karanglewas.InventoriAppDataSet1();
             this.txtTambahBarang = new System.Windows.Forms.TextBox();
             this.btTambahBarang = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,15 +42,13 @@
             this.inventoriAppDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoriAppDataSet1 = new InventoriApp_Karanglewas.InventoriAppDataSet();
             this.inventoriAppDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoriAppDataSet11 = new InventoriApp_Karanglewas.InventoriAppDataSet1();
-            this.tbkategoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_kategoriTableAdapter = new InventoriApp_Karanglewas.InventoriAppDataSet1TableAdapters.tb_kategoriTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbkategoriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbkategoriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKBarang
@@ -83,6 +83,16 @@
             this.cbKBarang.ValueMember = "jenis_kategori";
             this.cbKBarang.SelectedIndexChanged += new System.EventHandler(this.cbKBarang_SelectedIndexChanged);
             // 
+            // tbkategoriBindingSource
+            // 
+            this.tbkategoriBindingSource.DataMember = "tb_kategori";
+            this.tbkategoriBindingSource.DataSource = this.inventoriAppDataSet11;
+            // 
+            // inventoriAppDataSet11
+            // 
+            this.inventoriAppDataSet11.DataSetName = "InventoriAppDataSet1";
+            this.inventoriAppDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtTambahBarang
             // 
             this.txtTambahBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -95,7 +105,7 @@
             // btTambahBarang
             // 
             this.btTambahBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTambahBarang.Location = new System.Drawing.Point(653, 70);
+            this.btTambahBarang.Location = new System.Drawing.Point(653, 72);
             this.btTambahBarang.Name = "btTambahBarang";
             this.btTambahBarang.Size = new System.Drawing.Size(91, 31);
             this.btTambahBarang.TabIndex = 6;
@@ -141,16 +151,6 @@
             this.inventoriAppDataSet1BindingSource.DataSource = this.inventoriAppDataSet1;
             this.inventoriAppDataSet1BindingSource.Position = 0;
             // 
-            // inventoriAppDataSet11
-            // 
-            this.inventoriAppDataSet11.DataSetName = "InventoriAppDataSet1";
-            this.inventoriAppDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbkategoriBindingSource
-            // 
-            this.tbkategoriBindingSource.DataMember = "tb_kategori";
-            this.tbkategoriBindingSource.DataSource = this.inventoriAppDataSet11;
-            // 
             // tb_kategoriTableAdapter
             // 
             this.tb_kategoriTableAdapter.ClearBeforeFill = true;
@@ -170,12 +170,12 @@
             this.Name = "FormKategoriBarang";
             this.Text = "FormKategoriBarang";
             this.Load += new System.EventHandler(this.FormKategoriBarang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbkategoriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoriAppDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbkategoriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

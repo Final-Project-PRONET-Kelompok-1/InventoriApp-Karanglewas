@@ -13,7 +13,7 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormDataBarang : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(dbConfig.conn); 
         SqlCommand cmd;
         SqlDataReader reader;
         public FormDataBarang()
@@ -22,16 +22,20 @@ namespace InventoriApp_Karanglewas
         }
         private void show()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from data_barang";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "data_barang");
-            dgvDB.DataSource = ds;
-            dgvDB.DataMember = "data_barang";
-            dgvDB.ReadOnly = true;
+            conn.Open();
+            string query = "SELECT tb_kategori.jenis_kategori AS Kategori, tb_barang.nama_barang AS Barang, " +
+                           "SUM(tb_barangmasuk.jumlah) AS Masuk, SUM(tb_barangkeluar.jumlah) AS keluar, " +
+                           "SUM(tb_barangmasuk.jumlah) - SUM(tb_barangkeluar.jumlah) AS Total FROM tb_barang " +
+                           "INNER JOIN tb_kategori ON tb_barang.id_kategori = tb_kategori.id_kategori " +
+                           "INNER JOIN tb_barangmasuk ON tb_barang.id_barang = tb_barangmasuk.id_barang " +
+                           "INNER JOIN tb_barangkeluar ON tb_barang.id_barang = tb_barangkeluar.id_barang " +
+                           "GROUP BY tb_barang.id_kategori,tb_kategori.jenis_kategori,tb_barang.nama_barang";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            dgvDB.DataSource = ds.Tables[0];
+            conn.Close();
         }
 
         private void FormDataBarang_Load(object sender, EventArgs e)
