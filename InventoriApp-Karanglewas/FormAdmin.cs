@@ -27,6 +27,7 @@ namespace InventoriApp_Karanglewas
         int autoId;
         DateTime date;
 
+        DataTable dataTable = new DataTable();
         public FormAdmin()
         {
             InitializeComponent();
@@ -66,7 +67,7 @@ namespace InventoriApp_Karanglewas
         {
             autoKode();
             txtIdAdmin.Enabled = false;
-            showdata();
+            fillDataAdmin();
         }
 
         private void btSimpanAdmin_Click(object sender, EventArgs e)
@@ -84,26 +85,34 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
-            showdata();
+            fillDataAdmin();
             resetData();
             
         }
 
-        private void showdata()
+        private DataTable getDataAdmin()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM tb_admin";
+            try
+            {
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT id_admin as ID, username as Username, nama_panjang as Nama FROM tb_admin";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dataTable;
+        }
 
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "tb_admin");
+        private void fillDataAdmin()
+        {
 
-            dgvAdmin.DataSource = ds;
-            dgvAdmin.DataMember = "tb_admin";
-            dgvAdmin.Columns["password"].Visible = false;
-            dgvAdmin.ReadOnly = true;
+            dgvAdmin.DataSource = getDataAdmin();
         }
 
         private void resetData()
