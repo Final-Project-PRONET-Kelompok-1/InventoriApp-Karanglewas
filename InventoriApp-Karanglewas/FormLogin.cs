@@ -16,7 +16,7 @@ namespace InventoriApp_Karanglewas
     public partial class Form_Login : Form
     {
         //SqlConnection conn = new SqlConnection
-        //(@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
+            //(@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
 
         SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
