@@ -247,16 +247,16 @@ namespace InventoriApp_Karanglewas
             else
             {
                 simpanBK();
-                simpanRiwayat();
+                simpanRiwayat("Simpan");
                 resetForm();
                 fillDataBK();
             }
         }
-        private void simpanRiwayat()
+        private void simpanRiwayat(string status)
         {
             string transaksi = "Barang Keluar";
             string idRiwayat = fr.autoId.ToString();
-            string keterangan = "Simpan";
+            string keterangan = status;
             string username = f1.getAdmin();
             date = Convert.ToDateTime(dtBK.Text);
             string dateRiwayat = date.ToString("yyyy-MM-dd");
@@ -357,8 +357,10 @@ namespace InventoriApp_Karanglewas
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                simpanRiwayat("Hapus");
                 resetForm();
                 fillDataBK();
+
             }
         }
 
