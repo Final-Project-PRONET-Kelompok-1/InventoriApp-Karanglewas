@@ -25,7 +25,7 @@ namespace InventoriApp_Karanglewas
 
         DataTable dataTable = new DataTable();
 
-        //FormRiwayat fr = new FormRiwayat();
+        FormRiwayat fr = new FormRiwayat();
 
         FormMaster f1 = new FormMaster();
         public FormBarangKeluar()
@@ -37,7 +37,7 @@ namespace InventoriApp_Karanglewas
             //kodeRandom();
             autoID();
             fillDataBK();
-            //fr.autoIDRiwayat();
+            fr.autoIDRiwayat();
 
             txtKodeBK.Enabled = false;
         }
@@ -111,7 +111,7 @@ namespace InventoriApp_Karanglewas
         {
             autoID();
 
-            //fr.autoIDRiwayat();
+            fr.autoIDRiwayat();
             //kodeRandom();
             autoKode();
 
@@ -247,10 +247,38 @@ namespace InventoriApp_Karanglewas
             else
             {
                 simpanBK();
-                //simpanRiwayat();
+                simpanRiwayat();
                 resetForm();
                 fillDataBK();
             }
+        }
+        private void simpanRiwayat()
+        {
+            string transaksi = "Barang Keluar";
+            string idRiwayat = fr.autoId.ToString();
+            string keterangan = "Simpan";
+            string username = f1.getAdmin();
+            date = Convert.ToDateTime(dtBK.Text);
+            string dateRiwayat = date.ToString("yyyy-MM-dd");
+
+            try
+            {
+                conn.Open();
+                string query = "INSERT INTO tb_riwayat (id_riwayat, tanggal, transaksi, id_kategori, id_barang, jumlah, keterangan, id_admin)\n" +
+                                "SELECT '" + idRiwayat + "', '" + dateRiwayat + "', '" + transaksi + "', k.id_kategori, b.id_barang, '" + txtJumlahBK.Text + "', '" + keterangan + "', a.id_admin\n" +
+                                "FROM tb_barang b, tb_kategori k, tb_admin a\n" +
+                                "WHERE k.jenis_kategori = '" + cbKategoriBK.Text + "'\n" +
+                                "AND b.nama_barang = '" + cbBarangBK.Text + "'" +
+                                "AND a.username = '" + username + "'";
+                cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void simpanBK()
         {

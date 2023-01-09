@@ -18,8 +18,7 @@ namespace InventoriApp_Karanglewas
 
         SqlCommand cmd;
         SqlDataReader reader;
-        string admin;
-        int autoId;
+        public int autoId;
 
         DataTable dataTable = new DataTable();
 
