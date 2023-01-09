@@ -12,7 +12,7 @@ namespace InventoriApp_Karanglewas.Config
     class DBConfig
     {
         private SqlConnection conn = new SqlConnection
-            (@"Data Source=DESKTOP-TMHK1OT;Initial Catalog = InventoriApp; Integrated Security=True");
+            (@"Data Source=.\SQLEXPRESS;Initial Catalog = InventoriApp; Integrated Security=True");
         private SqlCommand cmd;
         private SqlDataAdapter da;
         private SqlDataReader rd;

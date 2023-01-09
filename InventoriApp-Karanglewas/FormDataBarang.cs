@@ -29,6 +29,7 @@ namespace InventoriApp_Karanglewas
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from data_barang";
+            //cmd.CommandText = "select * from data_coba";
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(ds, "data_barang");

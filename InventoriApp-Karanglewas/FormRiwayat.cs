@@ -38,7 +38,7 @@ namespace InventoriApp_Karanglewas
             if (reader.HasRows && reader != null)
             {
                 reader.Read();
-                string no = reader["id_Riwayat"].ToString();
+                string no = reader["id_riwayat"].ToString();
                 id = Convert.ToInt32(no) + 1;
 
             }

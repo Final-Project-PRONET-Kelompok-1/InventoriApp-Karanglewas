@@ -53,23 +53,22 @@
             this.DBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DBarang.Enabled = false;
-            this.DBarang.Location = new System.Drawing.Point(0, 165);
-            this.DBarang.Margin = new System.Windows.Forms.Padding(2);
+            this.DBarang.Location = new System.Drawing.Point(0, 203);
+            this.DBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DBarang.Name = "DBarang";
             this.DBarang.RowHeadersWidth = 51;
             this.DBarang.RowTemplate.Height = 24;
-            this.DBarang.Size = new System.Drawing.Size(675, 414);
+            this.DBarang.Size = new System.Drawing.Size(900, 510);
             this.DBarang.TabIndex = 4;
             // 
             // cbKategoriBM
             // 
             this.cbKategoriBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbKategoriBM.Enabled = false;
             this.cbKategoriBM.FormattingEnabled = true;
-            this.cbKategoriBM.Location = new System.Drawing.Point(396, 54);
-            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(2);
+            this.cbKategoriBM.Location = new System.Drawing.Point(528, 66);
+            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKategoriBM.Name = "cbKategoriBM";
-            this.cbKategoriBM.Size = new System.Drawing.Size(133, 21);
+            this.cbKategoriBM.Size = new System.Drawing.Size(176, 24);
             this.cbKategoriBM.TabIndex = 5;
             this.cbKategoriBM.Text = "Kategori";
             this.cbKategoriBM.SelectedIndexChanged += new System.EventHandler(this.cbKategoriBM_SelectedIndexChanged);
@@ -83,17 +82,18 @@
             this.panel2.Controls.Add(this.cbKategoriBM);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(677, 168);
+            this.panel2.Size = new System.Drawing.Size(903, 207);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnrefres
             // 
-            this.btnrefres.Location = new System.Drawing.Point(412, 98);
+            this.btnrefres.Location = new System.Drawing.Point(549, 121);
+            this.btnrefres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnrefres.Name = "btnrefres";
-            this.btnrefres.Size = new System.Drawing.Size(75, 23);
+            this.btnrefres.Size = new System.Drawing.Size(100, 28);
             this.btnrefres.TabIndex = 15;
             this.btnrefres.Text = "Refres";
             this.btnrefres.UseVisualStyleBackColor = true;
@@ -102,9 +102,10 @@
             // txtDB
             // 
             this.txtDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtDB.Location = new System.Drawing.Point(259, 56);
+            this.txtDB.Location = new System.Drawing.Point(345, 69);
+            this.txtDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDB.Name = "txtDB";
-            this.txtDB.Size = new System.Drawing.Size(118, 20);
+            this.txtDB.Size = new System.Drawing.Size(156, 22);
             this.txtDB.TabIndex = 14;
             this.txtDB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -113,10 +114,10 @@
             this.btTambah.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btTambah.IconColor = System.Drawing.Color.Black;
             this.btTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btTambah.Location = new System.Drawing.Point(533, 96);
-            this.btTambah.Margin = new System.Windows.Forms.Padding(2);
+            this.btTambah.Location = new System.Drawing.Point(711, 118);
+            this.btTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btTambah.Name = "btTambah";
-            this.btTambah.Size = new System.Drawing.Size(75, 26);
+            this.btTambah.Size = new System.Drawing.Size(100, 32);
             this.btTambah.TabIndex = 13;
             this.btTambah.Text = "TAMBAH";
             this.btTambah.UseVisualStyleBackColor = true;
@@ -125,9 +126,10 @@
             // btncari
             // 
             this.btncari.BackColor = System.Drawing.SystemColors.Control;
-            this.btncari.Location = new System.Drawing.Point(533, 48);
+            this.btncari.Location = new System.Drawing.Point(711, 59);
+            this.btncari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btncari.Name = "btncari";
-            this.btncari.Size = new System.Drawing.Size(75, 34);
+            this.btncari.Size = new System.Drawing.Size(100, 42);
             this.btncari.TabIndex = 12;
             this.btncari.Text = "Cari";
             this.btncari.UseVisualStyleBackColor = false;
@@ -138,20 +140,22 @@
             this.dgvDB.BackgroundColor = System.Drawing.Color.White;
             this.dgvDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvDB.Location = new System.Drawing.Point(0, 168);
+            this.dgvDB.Location = new System.Drawing.Point(0, 207);
+            this.dgvDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDB.Name = "dgvDB";
             this.dgvDB.RowHeadersWidth = 51;
-            this.dgvDB.Size = new System.Drawing.Size(677, 278);
+            this.dgvDB.Size = new System.Drawing.Size(903, 342);
             this.dgvDB.TabIndex = 6;
             // 
             // FormDataBarang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 450);
+            this.ClientSize = new System.Drawing.Size(903, 554);
             this.Controls.Add(this.dgvDB);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DBarang);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDataBarang";
             this.Text = "FormDataBarang";
             this.Load += new System.EventHandler(this.FormDataBarang_Load);

@@ -198,7 +198,7 @@ namespace InventoriApp_Karanglewas
         private void btnLaporan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new FormLaporan());
+            OpenChildForm(new FormLaporan());
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
