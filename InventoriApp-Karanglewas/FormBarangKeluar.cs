@@ -411,18 +411,20 @@ namespace InventoriApp_Karanglewas
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                resetForm();
-                fillDataBK();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void btEditBK_Click(object sender, EventArgs e)
         {
             updateBK();
+            simpanRiwayat("Edit");
+            resetForm();
+            fillDataBK();
         }
     }
 }
