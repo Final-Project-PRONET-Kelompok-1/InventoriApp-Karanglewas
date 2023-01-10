@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Windows.Media;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Windows.Controls.Primitives;
 
 namespace InventoriApp_Karanglewas
 {
@@ -18,7 +19,7 @@ namespace InventoriApp_Karanglewas
     {
 
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
 
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
@@ -103,6 +104,7 @@ namespace InventoriApp_Karanglewas
             autoID();
             txtKodeSO.Enabled = false;
             fillDataSO();
+            txtStokSistem.Enabled = false;
 
         }
 
@@ -308,11 +310,16 @@ namespace InventoriApp_Karanglewas
 
         private void getStokSistem()
         {
-            string query = "SELECT (bm.jumlah - bk.jumlah) as stoksistem FROM tb_opname so " +
-                "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
-                "INNER JOIN tb_barangmasuk bm ON b.id_barang = bm.id_barang " +
-                "INNER JOIN tb_barangkeluar bk ON b.id_barang = bk.id_barang " +
-                "WHERE b.nama_barang='" + cbBarangSO.Text + "'";
+            string query = "SELECT CASE WHEN (masuk.total_masuk - keluar.total_keluar) IS NULL THEN 0 ELSE (masuk.total_masuk - keluar.total_keluar) END AS Total " +
+                "FROM dbo.tb_barang LEFT OUTER JOIN " +
+                "dbo.tb_kategori ON dbo.tb_kategori.id_kategori = dbo.tb_barang.id_kategori LEFT OUTER JOIN " +
+                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_masuk " +
+                "FROM      dbo.tb_barangmasuk " +
+                "GROUP BY id_kategori, id_barang) AS masuk ON masuk.id_kategori = dbo.tb_kategori.id_kategori AND masuk.id_barang = dbo.tb_barang.id_barang LEFT OUTER JOIN " +
+                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_keluar " +
+                "FROM      dbo.tb_barangkeluar " +
+                "GROUP BY id_kategori, id_barang) AS keluar ON keluar.id_kategori = dbo.tb_kategori.id_kategori AND keluar.id_barang = dbo.tb_barang.id_barang " +
+                "WHERE dbo.tb_barang.nama_barang = '" + cbBarangSO.Text + "'";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
@@ -359,7 +366,7 @@ namespace InventoriApp_Karanglewas
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_opname WHERE kode_so = '" + txtKodeSO + "'";
+                string query = "DELETE FROM tb_opname WHERE kode_so = '" + txtKodeSO.Text + "'";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
