@@ -70,6 +70,7 @@
             this.dataSO.RowTemplate.Height = 24;
             this.dataSO.Size = new System.Drawing.Size(619, 266);
             this.dataSO.TabIndex = 6;
+            this.dataSO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSO_CellContentClick_1);
             // 
             // txtPIC
             // 

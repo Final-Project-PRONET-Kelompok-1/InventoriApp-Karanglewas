@@ -333,20 +333,7 @@ namespace InventoriApp_Karanglewas
             getStokSistem();
         }
 
-        private void dataSO_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataSO.Rows[e.RowIndex];
-                txtPIC.Text = row.Cells["PIC"].Value.ToString();
-                txtStokFisik.Text = row.Cells["StokFisik"].Value.ToString();
-                txtStokSistem.Text = row.Cells["StokSistem"].Value.ToString();
-                cbBarangSO.Text = row.Cells["Barang"].Value.ToString();
-                cbKategoriSO.Text = row.Cells["Kategori"].Value.ToString();
-                txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
-                dtSO.Text = row.Cells["Tanggal"].Value.ToString();
-            }
-        }
+        
 
         private void setStatus()
         {
@@ -369,14 +356,16 @@ namespace InventoriApp_Karanglewas
 
         private void btHapusSO_Click_1(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.dataSO.SelectedRows)
+            var tanya = MessageBox.Show("Apakah anda yakin ?", "Hapus", MessageBoxButtons.YesNo);
+            if (tanya == DialogResult.Yes)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_opname WHERE kode_so = '" + dataSO.SelectedRows[0].Cells[0].Value + "'";
+                string query = "DELETE FROM tb_opname WHERE kode_so = '" + txtKodeSO + "'";
                 var cmd = new SqlCommand(query, conn);
-                dataSO.Rows.RemoveAt(this.dataSO.SelectedRows[0].Index);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                resetForm();
+                fillDataSO();
             }
         }
 
@@ -388,6 +377,21 @@ namespace InventoriApp_Karanglewas
         private void btSimpanSO_Click(object sender, EventArgs e)
         {
             cekInput();
+        }
+
+        private void dataSO_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataSO.Rows[e.RowIndex];
+                txtPIC.Text = row.Cells["PIC"].Value.ToString();
+                txtStokFisik.Text = row.Cells["StokFisik"].Value.ToString();
+                txtStokSistem.Text = row.Cells["StokSistem"].Value.ToString();
+                cbBarangSO.Text = row.Cells["Barang"].Value.ToString();
+                cbKategoriSO.Text = row.Cells["Kategori"].Value.ToString();
+                txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
+                dtSO.Text = row.Cells["Tanggal"].Value.ToString();
+            }
         }
     }
 }
