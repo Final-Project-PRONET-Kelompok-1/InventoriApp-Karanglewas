@@ -65,6 +65,15 @@
             // 
             this.cbKategoriBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriBM.FormattingEnabled = true;
+            this.cbKategoriBM.Items.AddRange(new object[] {
+            "ATK",
+            "Mendoan",
+            "Tempe",
+            "Dapur",
+            "Kantor",
+            "Jajan",
+            "Kategori1",
+            "kategori2"});
             this.cbKategoriBM.Location = new System.Drawing.Point(396, 54);
             this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbKategoriBM.Name = "cbKategoriBM";

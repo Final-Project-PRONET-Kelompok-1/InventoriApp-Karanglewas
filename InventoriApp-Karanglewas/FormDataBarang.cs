@@ -91,23 +91,15 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategori()
         {
-            try
-            {
-                conn.Open();
-                string query = "SELECT * FROM totalBarang";
-                cmd = new SqlCommand(query, conn);
-
-                DataSet ds = new DataSet();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(ds, "kategori");
-                cbKategoriBM.DataSource = ds.Tables["kategori"];
-                cbKategoriBM.DisplayMember = "jenis_kategori";
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from totalBarang where kategori like '%" + cbKategoriBM.Text + "%'";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "totalBarang");
+            dgvDB.DataSource = ds;
+            dgvDB.DataMember = "totalBarang";
         }
 
         private void FormDataBarang_Load(object sender, EventArgs e)
