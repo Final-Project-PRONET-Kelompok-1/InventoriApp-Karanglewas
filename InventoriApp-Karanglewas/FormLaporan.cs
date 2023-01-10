@@ -28,7 +28,7 @@ namespace InventoriApp_Karanglewas
 
         private void btnBarangKeluar_Click(object sender, EventArgs e)
         {
-            reportViewer report = new reportViewer();
+            FormLaporanBarangKeluar report = new FormLaporanBarangKeluar();
             report.ShowDialog();
 
             if (conn.State != ConnectionState.Open)
@@ -39,7 +39,7 @@ namespace InventoriApp_Karanglewas
 
         private void btnBarangMasuk_Click(object sender, EventArgs e)
         {
-            dataBarangReport report2 = new dataBarangReport();
+            FormLaporanBarangMasuk report2 = new FormLaporanBarangMasuk();
             report2.ShowDialog();
 
             if (conn.State != ConnectionState.Open)
@@ -50,7 +50,7 @@ namespace InventoriApp_Karanglewas
 
         private void btnDataBarang_Click(object sender, EventArgs e)
         {
-            reportdtBarang report3 = new reportdtBarang();
+            FormLaporanDataBarang report3 = new FormLaporanDataBarang();
             report3.ShowDialog();
 
             if (conn.State != ConnectionState.Open)

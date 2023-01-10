@@ -16,14 +16,14 @@ namespace InventoriApp_Karanglewas {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReportBarangKeluar : ReportClass {
+    public class laporanBarangKeluar : ReportClass {
         
-        public ReportBarangKeluar() {
+        public laporanBarangKeluar() {
         }
         
         public override string ResourceName {
             get {
-                return "ReportBarangKeluar.rpt";
+                return "laporanBarangKeluar.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InventoriApp_Karanglewas {
         
         public override string FullResourceName {
             get {
-                return "InventoriApp_Karanglewas.ReportBarangKeluar.rpt";
+                return "InventoriApp_Karanglewas.laporanBarangKeluar.rpt";
             }
             set {
                 // Do nothing
@@ -122,9 +122,9 @@ namespace InventoriApp_Karanglewas {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportBarangKeluar : Component, ICachedReport {
+    public class CachedlaporanBarangKeluar : Component, ICachedReport {
         
-        public CachedReportBarangKeluar() {
+        public CachedlaporanBarangKeluar() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace InventoriApp_Karanglewas {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReportBarangKeluar rpt = new ReportBarangKeluar();
+            laporanBarangKeluar rpt = new laporanBarangKeluar();
             rpt.Site = this.Site;
             return rpt;
         }
