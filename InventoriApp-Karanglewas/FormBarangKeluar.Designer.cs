@@ -172,6 +172,7 @@
             this.cbBarangBK.Name = "cbBarangBK";
             this.cbBarangBK.Size = new System.Drawing.Size(159, 21);
             this.cbBarangBK.TabIndex = 6;
+            this.cbBarangBK.SelectedIndexChanged += new System.EventHandler(this.cbBarangBK_SelectedIndexChanged);
             // 
             // cbKategoriBK
             // 

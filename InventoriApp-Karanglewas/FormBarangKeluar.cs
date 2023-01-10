@@ -20,6 +20,7 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
         string kategori;
         int autoId;
+        int stoksementara;
         DateTime date;
 
         DataTable dataTable = new DataTable();
@@ -77,6 +78,31 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show(ex.Message);
             }
         }
+        private void getStokSistem()
+        {
+            string query = "SELECT CASE WHEN (masuk.total_masuk - keluar.total_keluar) IS NULL THEN 0 ELSE (masuk.total_masuk - keluar.total_keluar) END AS Total " +
+                "FROM dbo.tb_barang LEFT OUTER JOIN " +
+                "dbo.tb_kategori ON dbo.tb_kategori.id_kategori = dbo.tb_barang.id_kategori LEFT OUTER JOIN " +
+                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_masuk " +
+                "FROM      dbo.tb_barangmasuk " +
+                "GROUP BY id_kategori, id_barang) AS masuk ON masuk.id_kategori = dbo.tb_kategori.id_kategori AND masuk.id_barang = dbo.tb_barang.id_barang LEFT OUTER JOIN " +
+                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_keluar " +
+                "FROM      dbo.tb_barangkeluar " +
+                "GROUP BY id_kategori, id_barang) AS keluar ON keluar.id_kategori = dbo.tb_kategori.id_kategori AND keluar.id_barang = dbo.tb_barang.id_barang " +
+                "WHERE dbo.tb_barang.nama_barang = '" + cbBarangBK.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                stoksementara =int.Parse(rd[0].ToString());
+                rd.Close();
+            }
+            conn.Close();
+
+        }
         private void cbBarang()
         {
             kategori = cbKategoriBK.Text;
@@ -108,8 +134,9 @@ namespace InventoriApp_Karanglewas
             if (System.Text.RegularExpressions.Regex.IsMatch(txtJumlahBK.Text, "[^0-9]"))
             {
                 MessageBox.Show("Input jumlah hanya bisa dimasukan angka.");
-                txtJumlahBK.Text = txtJumlahBK.Text.Remove(txtJumlahBK.Text.Length - 1);
+                
             }
+            
         }
 
         private void btResetBK_Click(object sender, EventArgs e)
@@ -315,8 +342,17 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBK_Click(object sender, EventArgs e)
         {
-            cekInput();
-            MessageBox.Show("Data berhasil disimpan");
+            if (int.Parse(txtJumlahBK.Text.Trim()) >= stoksementara)
+            {
+                MessageBox.Show("Jumlah melebihi stok tersedia!\nStok tersedia '" + stoksementara.ToString() + "'");
+                txtJumlahBK.Focus();
+            }
+            else
+            {
+                cekInput();
+                MessageBox.Show("Data berhasil disimpan");
+            }
+            
         }
         private DataTable getDataBM()
         {
@@ -430,6 +466,11 @@ namespace InventoriApp_Karanglewas
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cbBarangBK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getStokSistem();
         }
     }
 }
