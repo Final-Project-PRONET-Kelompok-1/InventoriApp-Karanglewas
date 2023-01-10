@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace InventoriApp_Karanglewas
 {
-    public partial class dataBarangReport : Form
+    public partial class FormLaporanDataBarang : Form
     {
-        public dataBarangReport()
+        public FormLaporanDataBarang()
         {
             InitializeComponent();
-        }
-
-        private void dataBarangReport_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barangMasukReport1_InitReport(object sender, EventArgs e)
-        {
-
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)

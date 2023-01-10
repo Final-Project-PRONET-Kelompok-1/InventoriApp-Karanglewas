@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InventoriApp_Karanglewas
 {
-    public partial class reportdtBarang : Form
+    public partial class FormLaporanBarangMasuk : Form
     {
-        public reportdtBarang()
+        public FormLaporanBarangMasuk()
         {
             InitializeComponent();
         }
