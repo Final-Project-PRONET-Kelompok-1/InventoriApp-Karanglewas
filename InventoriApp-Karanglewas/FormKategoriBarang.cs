@@ -34,6 +34,7 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
             autoIdK();
             autoIdB();
+            cbKategori();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,10 +139,35 @@ namespace InventoriApp_Karanglewas
 
         }
 
+        private void cbKategori()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_kategori";
+                cmd = new SqlCommand(query, conn);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(ds, "kategori");
+
+                DataRow row = ds.Tables["kategori"].NewRow();
+                row["jenis_kategori"] = "Pilih Kategori";
+                ds.Tables["kategori"].Rows.InsertAt(row, 0);
+
+                cbKBarang.DataSource = ds.Tables["kategori"];
+                cbKBarang.DisplayMember = "jenis_kategori";
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void FormKategoriBarang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'inventoriAppDataSet11.tb_kategori' table. You can move, or remove it, as needed.
-            //this.tb_kategoriTableAdapter.Fill(this.inventoriAppDataSet11.tb_kategori);
+           
 
         }
 

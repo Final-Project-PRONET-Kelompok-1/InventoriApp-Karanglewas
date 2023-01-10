@@ -385,5 +385,10 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void btResetBM_Click(object sender, EventArgs e)
+        {
+            resetForm();
+        }
     }
 }
