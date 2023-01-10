@@ -57,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(294, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 28);
+            this.label1.Size = new System.Drawing.Size(183, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "CETAK LAPORAN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -68,7 +68,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(260, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 20);
+            this.label2.Size = new System.Drawing.Size(241, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pilih laporan yang akan dicetak:";
             // 
@@ -116,12 +116,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 130);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FormLaporan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 788);
+            this.ClientSize = new System.Drawing.Size(811, 749);
             this.Controls.Add(this.btnOpname);
             this.Controls.Add(this.btnBarangKeluar);
             this.Controls.Add(this.btnBarangMasuk);

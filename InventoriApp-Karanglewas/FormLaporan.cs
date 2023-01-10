@@ -14,7 +14,8 @@ namespace InventoriApp_Karanglewas
     public partial class FormLaporan : Form
     {
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
         public FormLaporan()
         {
             InitializeComponent();
@@ -56,6 +57,11 @@ namespace InventoriApp_Karanglewas
             {
                 conn.Open();
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

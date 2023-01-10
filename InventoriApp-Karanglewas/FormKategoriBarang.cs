@@ -17,7 +17,8 @@ namespace InventoriApp_Karanglewas
     public partial class FormKategoriBarang : Form
     {
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
@@ -140,7 +141,7 @@ namespace InventoriApp_Karanglewas
         private void FormKategoriBarang_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'inventoriAppDataSet11.tb_kategori' table. You can move, or remove it, as needed.
-            this.tb_kategoriTableAdapter.Fill(this.inventoriAppDataSet11.tb_kategori);
+            //this.tb_kategoriTableAdapter.Fill(this.inventoriAppDataSet11.tb_kategori);
 
         }
 

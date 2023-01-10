@@ -18,10 +18,9 @@ namespace InventoriApp_Karanglewas
     {
 
 
-        //SqlConnection conn = new SqlConnection
-        //(@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
@@ -392,6 +391,11 @@ namespace InventoriApp_Karanglewas
                 txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
                 dtSO.Text = row.Cells["Tanggal"].Value.ToString();
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

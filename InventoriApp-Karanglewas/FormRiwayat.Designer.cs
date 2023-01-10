@@ -45,6 +45,7 @@
             this.dataRiwayat.Name = "dataRiwayat";
             this.dataRiwayat.Size = new System.Drawing.Size(809, 409);
             this.dataRiwayat.TabIndex = 0;
+            this.dataRiwayat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRiwayat_CellContentClick);
             // 
             // dtRiwayat
             // 

@@ -17,7 +17,8 @@ namespace InventoriApp_Karanglewas
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
 
