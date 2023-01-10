@@ -404,6 +404,25 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void txtStokFisik_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtStokFisik.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Input jumlah hanya bisa dimasukan angka.");
+                txtStokFisik.Text = txtStokFisik.Text.Remove(txtStokFisik.Text.Length - 1);
+            }
+        }
+
+        private void txtPIC_TextChanged(object sender, EventArgs e)
+        {
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-z]"))
+            {
+                MessageBox.Show("Input jumlah hanya bisa dimasukan nama.");
+                txtPIC.Clear();
+            }
+        }
     }
 }
 
