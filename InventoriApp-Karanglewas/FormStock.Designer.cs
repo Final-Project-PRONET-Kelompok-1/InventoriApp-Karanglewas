@@ -81,6 +81,7 @@
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(129, 20);
             this.txtPIC.TabIndex = 14;
+            this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
             // label5
             // 
@@ -273,6 +274,7 @@
             this.txtStokFisik.Name = "txtStokFisik";
             this.txtStokFisik.Size = new System.Drawing.Size(129, 20);
             this.txtStokFisik.TabIndex = 17;
+            this.txtStokFisik.TextChanged += new System.EventHandler(this.txtStokFisik_TextChanged);
             // 
             // label7
             // 

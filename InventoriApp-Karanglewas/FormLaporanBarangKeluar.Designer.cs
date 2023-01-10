@@ -1,6 +1,6 @@
 ﻿namespace InventoriApp_Karanglewas
 {
-    partial class dataBarangReport
+    partial class FormLaporanBarangKeluar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.barangMasukReport1 = new InventoriApp_Karanglewas.barangMasukReport();
-            this.barangMasukReport2 = new InventoriApp_Karanglewas.barangMasukReport();
+            this.laporanBarangKeluar1 = new InventoriApp_Karanglewas.laporanBarangKeluar();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -41,21 +40,19 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.barangMasukReport2;
+            this.crystalReportViewer1.ReportSource = this.laporanBarangKeluar1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // dataBarangReport
+            // FormLaporanBarangKeluar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "dataBarangReport";
-            this.Text = "dataBarangReport";
-            this.Load += new System.EventHandler(this.dataBarangReport_Load);
+            this.Name = "FormLaporanBarangKeluar";
+            this.Text = "FormLaporanBarangKeluar";
             this.ResumeLayout(false);
 
         }
@@ -63,7 +60,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private barangMasukReport barangMasukReport1;
-        private barangMasukReport barangMasukReport2;
+        private laporanBarangKeluar laporanBarangKeluar1;
     }
 }
