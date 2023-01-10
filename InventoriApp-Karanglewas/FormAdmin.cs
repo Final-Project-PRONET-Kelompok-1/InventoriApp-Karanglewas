@@ -17,10 +17,9 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormAdmin : Form
     {
-        //SqlConnection conn = new SqlConnection
-        //(@"Data Source=(local);Initial Catalog = InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;

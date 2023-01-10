@@ -14,7 +14,8 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormDataBarang : Form
     {
-        SqlConnection conn = new SqlConnection(dbConfig.conn); 
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5KDEI2T;Initial Catalog=InventoriApp; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
 
@@ -88,17 +89,25 @@ namespace InventoriApp_Karanglewas
             dgvDB.DataSource = getDataDB();
         }
 
-        private void cbKategoridb()
+        private void cbKategori()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from data_barang where Kategori like '%" + cbKategoriBM.Text + "%'";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "data_barang");
-            dgvDB.DataSource = ds;
-            dgvDB.DataMember = "data_barang";
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM totalBarang";
+                cmd = new SqlCommand(query, conn);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(ds, "kategori");
+                cbKategoriBM.DataSource = ds.Tables["kategori"];
+                cbKategoriBM.DisplayMember = "jenis_kategori";
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormDataBarang_Load(object sender, EventArgs e)
@@ -123,7 +132,7 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbKategoridb();
+            cbKategori();
         }
 
         private void btncari_Click(object sender, EventArgs e)
@@ -131,12 +140,12 @@ namespace InventoriApp_Karanglewas
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from data_barang where Barang like '%" + txtDB.Text + "%'";
+            cmd.CommandText = "select * from totalBarang where Barang like '%" + txtDB.Text + "%'";
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "data_barang");
+            da.Fill(ds, "totalBarang");
             dgvDB.DataSource = ds;
-            dgvDB.DataMember = "data_barang";
+            dgvDB.DataMember = "totalBarang";
         }
 
         private void btnrefres_Click(object sender, EventArgs e)
