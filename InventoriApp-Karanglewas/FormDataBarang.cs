@@ -23,20 +23,20 @@ namespace InventoriApp_Karanglewas
         {
             InitializeComponent();
         }
-        /*private void show()
+        private void show()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from data_barang";
-            //cmd.CommandText = "select * from data_coba";
+            cmd.CommandText = "select * from totalBarang";
+            
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "data_barang");
+            da.Fill(ds, "totalBarang");
             dgvDB.DataSource = ds;
-            dgvDB.DataMember = "data_barang";
+            dgvDB.DataMember = "totalBarang";
             dgvDB.ReadOnly = true;
-        }*/
+        }
 
         private DataTable getDataDB()
         {
@@ -103,8 +103,8 @@ namespace InventoriApp_Karanglewas
 
         private void FormDataBarang_Load(object sender, EventArgs e)
         {
-            //show();
-            fillDataBarang();
+            show();
+            //fillDataBarang();
         }
 
         private void btTambah_Click(object sender, EventArgs e)
@@ -141,8 +141,8 @@ namespace InventoriApp_Karanglewas
 
         private void btnrefres_Click(object sender, EventArgs e)
         {
-            //show();
-            fillDataBarang();
+            show();
+            //fillDataBarang();
         }
     }
 }

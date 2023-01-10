@@ -173,6 +173,12 @@
       <DependentUpon>ReportBarangKeluar.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportDataBarang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataBarang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="reportdtBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,10 @@
     <EmbeddedResource Include="ReportBarangKeluar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportBarangKeluar.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDataBarang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDataBarang.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reportdtBarang.resx">
       <DependentUpon>reportdtBarang.cs</DependentUpon>
