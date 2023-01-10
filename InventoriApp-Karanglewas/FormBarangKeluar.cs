@@ -317,6 +317,7 @@ namespace InventoriApp_Karanglewas
         private void btSimpanBK_Click(object sender, EventArgs e)
         {
             cekInput();
+            MessageBox.Show("Data berhasil disimpan");
         }
         private DataTable getDataBM()
         {
