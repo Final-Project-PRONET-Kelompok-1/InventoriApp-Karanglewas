@@ -153,17 +153,13 @@ namespace InventoriApp_Karanglewas
 
         private void updateBM()
         {
-            date = Convert.ToDateTime(dtBM.Text);
-            string dateBK = dtBM.Value.TimeOfDay.ToString();
+            DateTime dateBK = dtBM.Value;
 
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_barangmasuk SET id_barang = b.id_barang, jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + txtPIC.Text + "' " +
-                  "FROM tb_barangmasuk bm " +
-                  "INNER JOIN tb_barang b ON bm.id_barang = b.id_barang " +
-                  "WHERE bm.kode_bm= '" + txtKodeBM.Text + "' " +
-                  "AND b.nama_barang = '" + cbBarangBM.Text + "'";
+                string queryUpdate = "UPDATE tb_barangmasuk SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangBM.Text + "'), tanggal='" + dateBK + "', jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + txtPIC.Text + "' " +
+                  "WHERE kode_bm= '" + txtKodeBM.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
