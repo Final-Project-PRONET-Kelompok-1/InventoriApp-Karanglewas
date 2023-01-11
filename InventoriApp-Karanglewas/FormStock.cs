@@ -255,7 +255,6 @@ namespace InventoriApp_Karanglewas
                 conn.Open();
                 string query = "INSERT INTO tb_stokopname (kode_so, id_barang, stok_sistem, stok_fisik, tanggal, pic, status)\n" +
                                 "VALUES ('" + txtKodeSO.Text + "'," +
-                                "(select id_kategori from tb_kategori where nama_kategori = '" + cbKategoriSO.Text + "')," +
                                 "(select id_barang from tb_barang where nama_barang = '" + cbBarangSO.Text + "')," +
                                 "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateSO + "','" + txtPIC.Text + "', '" + status + "')";
                 var cmd = new SqlCommand(query, conn);
