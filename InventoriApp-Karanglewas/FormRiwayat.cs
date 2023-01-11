@@ -15,10 +15,9 @@ namespace InventoriApp_Karanglewas
     {
 
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
-        public int autoId;
 
         DataTable dataTable = new DataTable();
 
@@ -28,31 +27,6 @@ namespace InventoriApp_Karanglewas
             fillDataRiwayat();
         }
 
-        public int autoIDRiwayat()
-        {
-            int id;
-            conn.Open();
-            string query = "SELECT * FROM tb_riwayat ORDER BY id_riwayat DESC";
-            cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows && reader != null)
-            {
-                reader.Read();
-                string no = reader["id_riwayat"].ToString();
-                id = Convert.ToInt32(no) + 1;
-
-            }
-            else
-            {
-                id = 1;
-            }
-            autoId = id;
-            conn.Close();
-
-            return id;
-        }
-
         private DataTable getDataRiwayat()
         {
             try
@@ -60,10 +34,10 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT r.tanggal as Tanggal,r.transaksi as Transaksi, k.jenis_kategori as Kategori, b.nama_barang as Barang, r.jumlah as Jumlah, r.keterangan as Ket, a.username as Admin\n" +
-                                "FROM tb_riwayat r\n" +
-                                "INNER JOIN tb_barang b ON r.id_barang = b.id_barang\n" +
-                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori\n" +
+                string query = "SELECT r.tanggal as Tanggal, r.aktifitas as Aktifitas, k.nama_kategori as Kategori, b.nama_barang as Barang, r.jumlah as Jumlah, r.keterangan as Ket, a.username as Admin\n" +
+                                "FROM tb_riwayat r " +
+                                "INNER JOIN tb_barang b ON r.id_barang = b.id_barang " +
+                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
                                 "INNER JOIN tb_admin a ON r.id_admin = a.id_admin\n" +
                                 "ORDER BY r.id_riwayat DESC";
                 cmd = new SqlCommand(query, conn);

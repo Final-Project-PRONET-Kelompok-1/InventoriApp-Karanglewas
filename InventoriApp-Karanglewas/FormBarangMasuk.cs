@@ -16,7 +16,7 @@ namespace InventoriApp_Karanglewas
     public partial class FormBarangMasuk : Form
     {
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
         int autoId;
@@ -32,12 +32,10 @@ namespace InventoriApp_Karanglewas
         {
             InitializeComponent();
             setCB();
-            autoID();
             autoKode();
             cbKategori();
             cbBarang();
             fillDataBM();
-            fr.autoIDRiwayat();
             txtKodeBM.Enabled = false;
         }
 
@@ -79,35 +77,11 @@ namespace InventoriApp_Karanglewas
          
         }
 
-        private void autoID()
-        {
-            int id;
-            conn.Open();
-            string query = "SELECT * FROM tb_barangmasuk ORDER BY id_barangmasuk DESC";
-            cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows && reader != null)
-            {
-                reader.Read();
-                //string no = reader.GetString("id_barangkeluar");
-                string no = reader[0].ToString();
-                id = Convert.ToInt32(no) + 1;
-
-            }
-            else
-            {
-                id = 1;
-            }
-            autoId = id;
-            conn.Close();
-        }
-
         private void autoKode()
         {
             string kode;
             conn.Open();
-            string query = "SELECT kode_bm FROM tb_barangmasuk ORDER BY kode_bm DESC";
+            string query = "SELECT kode_bm FROM tb_barangmasuk ORDER BY id_barangmasuk DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
@@ -132,21 +106,18 @@ namespace InventoriApp_Karanglewas
         }
         private void simpanRiwayat(string status)
         {
-            string transaksi = "Barang Masuk";
-            string idRiwayat = fr.autoId.ToString();
+            string aktifitas = "Barang Masuk";
             string keterangan = status;
             string username = f1.getAdmin();
-            date = Convert.ToDateTime(dtBM.Text);
-            string dateRiwayat = date.ToString("yyyy-MM-dd");
+            date = DateTime.Now;
 
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_riwayat (id_riwayat, tanggal, transaksi, id_kategori, id_barang, jumlah, keterangan, id_admin)\n" +
-                                "SELECT '" + idRiwayat + "', '" + dateRiwayat + "', '" + transaksi + "', k.id_kategori, b.id_barang, '" + txtJumlahBM.Text + "', '" + keterangan + "', a.id_admin\n" +
-                                "FROM tb_barang b, tb_kategori k, tb_admin a\n" +
-                                "WHERE k.jenis_kategori = '" + cbKategoriBM.Text + "'\n" +
-                                "AND b.nama_barang = '" + cbBarangBM.Text + "'" +
+                string query = "INSERT INTO tb_riwayat (tanggal, aktifitas, id_barang, jumlah, keterangan, id_admin)\n" +
+                                "SELECT '" + date + "', '" + aktifitas + "', b.id_barang, '" + txtJumlahBM.Text + "', '" + keterangan + "', a.id_admin\n" +
+                                "FROM tb_barang b, tb_admin a " +
+                                "WHERE b.nama_barang = '" + cbBarangBM.Text + "'" +
                                 "AND a.username = '" + username + "'";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
@@ -161,16 +132,15 @@ namespace InventoriApp_Karanglewas
         private void simpanBM()
         {
             date = Convert.ToDateTime(dtBM.Text);
-            string dateBK = date.ToString("yyyy-MM-dd");
+            DateTime dateBK = dtBM.Value;
 
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_barangmasuk (id_barangmasuk, kode_bm, id_kategori, id_barang, jumlah, tanggal, pic)\n" +
-                                "SELECT '" + autoId + "', '" + txtKodeBM.Text + "', k.id_kategori, b.id_barang, '" + txtJumlahBM.Text + "','" + dateBK + "','" + txtPIC.Text + "'" +
-                                "FROM tb_barang b, tb_kategori k\n" +
-                                "WHERE k.jenis_kategori = '" + cbKategoriBM.Text + "'\n" +
-                                "AND b.nama_barang = '" + cbBarangBM.Text + "' ";
+                string query = "INSERT INTO tb_barangmasuk (kode_bm, id_barang, jumlah, tanggal, pic)\n" +
+                                "SELECT '" + txtKodeBM.Text + "', b.id_barang, '" + txtJumlahBM.Text + "','" + dateBK + "','" + txtPIC.Text + "'" +
+                                "FROM tb_barang b " +
+                                "WHERE b.nama_barang = '" + cbBarangBM.Text + "' ";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -184,17 +154,15 @@ namespace InventoriApp_Karanglewas
         private void updateBM()
         {
             date = Convert.ToDateTime(dtBM.Text);
-            string dateBK = date.ToString("yyyy-MM-dd");
+            string dateBK = dtBM.Value.TimeOfDay.ToString();
 
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_barangmasuk SET id_kategori = k.id_kategori, id_barang = b.id_barang, jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + txtPIC.Text + "' " +
+                string queryUpdate = "UPDATE tb_barangmasuk SET id_barang = b.id_barang, jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + txtPIC.Text + "' " +
                   "FROM tb_barangmasuk bm " +
-                  "INNER JOIN tb_kategori k ON bm.id_kategori = k.id_kategori " +
                   "INNER JOIN tb_barang b ON bm.id_barang = b.id_barang " +
                   "WHERE bm.kode_bm= '" + txtKodeBM.Text + "' " +
-                  "AND k.jenis_kategori = '" + cbKategoriBM.Text + "' " +
                   "AND b.nama_barang = '" + cbBarangBM.Text + "'";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
@@ -211,7 +179,7 @@ namespace InventoriApp_Karanglewas
             kategori = cbKategoriBM.Text;
             try
             {
-                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.jenis_kategori = '" + kategori + "'";
+                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.nama_kategori = '" + kategori + "'";
                 cmd = new SqlCommand(query, conn);
 
                 DataSet ds = new DataSet();
@@ -245,11 +213,11 @@ namespace InventoriApp_Karanglewas
                 sda.Fill(ds, "kategori");
 
                 DataRow row = ds.Tables["kategori"].NewRow();
-                row["jenis_kategori"] = "Pilih Kategori";
+                row["nama_kategori"] = "Pilih Kategori";
                 ds.Tables["kategori"].Rows.InsertAt(row, 0);
 
                 cbKategoriBM.DataSource = ds.Tables["kategori"];
-                cbKategoriBM.DisplayMember = "jenis_kategori";
+                cbKategoriBM.DisplayMember = "nama_kategori";
                 conn.Close();
             }
             catch (Exception ex)
@@ -260,9 +228,6 @@ namespace InventoriApp_Karanglewas
 
         private void resetForm()
         {
-            autoID();
-
-            fr.autoIDRiwayat();
             autoKode();
 
             cbKategoriBM.Text = "Pilih Kategori";
@@ -292,11 +257,11 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT  bm.kode_bm as Kode, bm.tanggal as Tanggal, k.jenis_kategori as Kategori, b.nama_barang as Barang, bm.jumlah as Jumlah, bm.pic as PIC\n" +
-                                "FROM tb_barangmasuk bm\n" +
-                                "INNER JOIN tb_barang b ON bm.id_barang = b.id_barang\n" +
-                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori\n" +
-                                "ORDER BY bm.tanggal DESC";
+                string query = "SELECT  bm.kode_bm as Kode, bm.tanggal as Tanggal, k.nama_kategori as Kategori, b.nama_barang as Barang, bm.jumlah as Jumlah, bm.pic as PIC " +
+                                "FROM tb_barangmasuk bm " +
+                                "INNER JOIN tb_barang b ON bm.id_barang = b.id_barang " +
+                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
+                                "ORDER BY bm.tanggal DESC ";
                 cmd = new SqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);

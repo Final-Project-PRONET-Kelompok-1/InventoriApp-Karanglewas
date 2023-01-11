@@ -37,7 +37,6 @@ namespace InventoriApp_Karanglewas
             //kodeRandom();
             autoID();
             fillDataBK();
-            fr.autoIDRiwayat();
 
             txtKodeBK.Enabled = false;
         }
@@ -147,7 +146,6 @@ namespace InventoriApp_Karanglewas
         {
             autoID();
 
-            fr.autoIDRiwayat();
             //kodeRandom();
             autoKode();
 
@@ -291,7 +289,6 @@ namespace InventoriApp_Karanglewas
         private void simpanRiwayat(string status)
         {
             string transaksi = "Barang Keluar";
-            string idRiwayat = fr.autoId.ToString();
             string keterangan = status;
             string username = f1.getAdmin();
             date = Convert.ToDateTime(dtBK.Text);
@@ -300,8 +297,8 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_riwayat (id_riwayat, tanggal, transaksi, id_kategori, id_barang, jumlah, keterangan, id_admin)\n" +
-                                "SELECT '" + idRiwayat + "', '" + dateRiwayat + "', '" + transaksi + "', k.id_kategori, b.id_barang, '" + txtJumlahBK.Text + "', '" + keterangan + "', a.id_admin\n" +
+                string query = "INSERT INTO tb_riwayat (tanggal, transaksi, id_kategori, id_barang, jumlah, keterangan, id_admin)\n" +
+                                "SELECT '" + dateRiwayat + "', '" + transaksi + "', k.id_kategori, b.id_barang, '" + txtJumlahBK.Text + "', '" + keterangan + "', a.id_admin\n" +
                                 "FROM tb_barang b, tb_kategori k, tb_admin a\n" +
                                 "WHERE k.jenis_kategori = '" + cbKategoriBK.Text + "'\n" +
                                 "AND b.nama_barang = '" + cbBarangBK.Text + "'" +

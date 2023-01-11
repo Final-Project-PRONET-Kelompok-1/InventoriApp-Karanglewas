@@ -24,6 +24,7 @@ namespace InventoriApp_Karanglewas
         public FormDataBarang()
         {
             InitializeComponent();
+            fillDataBarang();
         }
         /*private void show()
         {
