@@ -36,7 +36,42 @@ namespace InventoriApp_Karanglewas
             cbKategori();
             cbBarang();
             fillDataBM();
+            cekKode();
             txtKodeBM.Enabled = false;
+        }
+
+        private void cekKode()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_barangmasuk WHERE kode_bm = '" + txtKodeBM.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    btEditBM.Enabled = true;
+                    btHapusBM.Enabled = true;
+                    btSimpanBM.Enabled = false;
+                }
+                else
+                {
+                    btEditBM.Enabled = false;
+                    btHapusBM.Enabled = false;
+                    btSimpanBM.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
+
+            }
         }
 
         private void setCB()
@@ -74,6 +109,8 @@ namespace InventoriApp_Karanglewas
                 dtBM.Value = (DateTime)row.Cells["Tanggal"].Value;
                 txtPIC.Text = row.Cells["PIC"].Value.ToString();
             }
+
+            cekKode();
          
         }
 
@@ -284,6 +321,7 @@ namespace InventoriApp_Karanglewas
                 simpanRiwayat("Hapus");
                 resetForm();
                 fillDataBM();
+                cekKode();
             }
 
         }
@@ -331,6 +369,7 @@ namespace InventoriApp_Karanglewas
             simpanRiwayat("Edit");
             resetForm();
             fillDataBM();
+            cekKode();
         }
 
         private void txtPIC_TextChanged(object sender, EventArgs e)
@@ -350,6 +389,7 @@ namespace InventoriApp_Karanglewas
         private void btResetBM_Click(object sender, EventArgs e)
         {
             resetForm();
+            cekKode();
         }
     }
 }

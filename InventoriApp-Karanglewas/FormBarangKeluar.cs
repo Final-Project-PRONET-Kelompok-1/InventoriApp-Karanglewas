@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace InventoriApp_Karanglewas
 {
@@ -35,7 +37,42 @@ namespace InventoriApp_Karanglewas
             autoKode();
             fillDataBK();
 
+            cekKode();
+
             txtKodeBK.Enabled = false;
+        }
+        private void cekKode()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_barangkeluar WHERE kode_bk = '" + txtKodeBK.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    btEditBK.Enabled = true;
+                    btHapusBK.Enabled = true;
+                    btSimpanBK.Enabled = false;
+                }
+                else
+                {
+                    btEditBK.Enabled = false;
+                    btHapusBK.Enabled = false;
+                    btSimpanBK.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
+
+            }
         }
         private void setCB()
         {
@@ -138,6 +175,7 @@ namespace InventoriApp_Karanglewas
         private void btResetBK_Click(object sender, EventArgs e)
         {
             resetForm();
+            cekKode();
         }
         private void resetForm()
         {
@@ -373,7 +411,7 @@ namespace InventoriApp_Karanglewas
                 simpanRiwayat("Hapus");
                 resetForm();
                 fillDataBK();
-
+                cekKode();
             }
         }
 
@@ -395,6 +433,7 @@ namespace InventoriApp_Karanglewas
                 dtBK.Value = (DateTime)row.Cells["Tanggal"].Value;
                 txtPIC.Text = row.Cells["PIC"].Value.ToString();
             }
+            cekKode();
         }
 
         private void updateBK()
@@ -423,6 +462,7 @@ namespace InventoriApp_Karanglewas
             simpanRiwayat("Edit");
             resetForm();
             fillDataBK();
+            cekKode();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

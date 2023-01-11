@@ -36,7 +36,42 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
 
             cbKategori();
+            cekKode();
 
+        }
+
+        private void cekKode()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_stokopname WHERE kode_so = '" + txtKodeSO.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    btEditSO.Enabled = true;
+                    btHapusSO.Enabled = true;
+                    btSimpanSO.Enabled = false;
+                }
+                else
+                {
+                    btEditSO.Enabled = false;
+                    btHapusSO.Enabled = false;
+                    btSimpanSO.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
+
+            }
         }
         private void setCB()
         {
@@ -315,6 +350,7 @@ namespace InventoriApp_Karanglewas
             UpdateSO();
             resetForm();
             fillDataSO();
+            cekKode();
         }
 
         private void btHapusSO_Click_1(object sender, EventArgs e)
@@ -329,12 +365,14 @@ namespace InventoriApp_Karanglewas
                 conn.Close();
                 resetForm();
                 fillDataSO();
+                cekKode();
             }
         }
 
         private void btResetSO_Click_1(object sender, EventArgs e)
         {
             resetForm();
+            cekKode();
         }
 
         private void btSimpanSO_Click(object sender, EventArgs e)
@@ -355,6 +393,8 @@ namespace InventoriApp_Karanglewas
                 txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
                 dtSO.Text = row.Cells["Tanggal"].Value.ToString();
             }
+
+            cekKode();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
