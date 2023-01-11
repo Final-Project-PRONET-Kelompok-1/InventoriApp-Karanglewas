@@ -18,7 +18,7 @@ namespace InventoriApp_Karanglewas
         private Panel leftBorderBtn;
         private Form currentChildForm;
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
 
@@ -33,7 +33,6 @@ namespace InventoriApp_Karanglewas
             leftBorderBtn.Size = new Size(7, 56);
             panelSidebar.Controls.Add(leftBorderBtn);
 
-            autoID();
             getAdmin();
         }
 
@@ -234,28 +233,6 @@ namespace InventoriApp_Karanglewas
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
         }
 
-        private void autoID()
-        {
-            int id;
-            conn.Open();
-            string query = "SELECT id_log FROM tb_log ORDER BY id_log DESC";
-            cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows && reader != null)
-            {
-                reader.Read();
-                string no = reader["id_log"].ToString();
-                id = Convert.ToInt32(no) + 1;
-
-            }
-            else
-            {
-                id = 1;
-            }
-            autoId = id;
-            conn.Close();
-        }
 
         private void simpanLog()
         {
@@ -264,8 +241,8 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_log (id_log, id_admin, keterangan, waktu)\n" +
-                                "SELECT '" + autoId + "', a.id_admin, '" + ket + "','" + date + "'\n" +
+                string query = "INSERT INTO tb_log (id_admin, keterangan, waktu)\n" +
+                                "SELECT a.id_admin, '" + ket + "','" + date + "'\n" +
                                 "FROM tb_admin a\n" +
                                 "WHERE a.username = '" + admin + "'";
                 var cmd = new SqlCommand(query, conn);

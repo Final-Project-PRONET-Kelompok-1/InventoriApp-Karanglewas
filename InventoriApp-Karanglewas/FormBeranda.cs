@@ -16,7 +16,7 @@ namespace InventoriApp_Karanglewas
     {
         FormMaster fm = new FormMaster();
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
         string admin;
@@ -29,14 +29,14 @@ namespace InventoriApp_Karanglewas
         public string getAdmin()
         {
             conn.Open();
-            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC";
+            string query = "SELECT a.nama_panjang FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
             if (reader.HasRows && reader != null)
             {
                 reader.Read();
-                admin = reader["username"].ToString();
+                admin = reader["nama_panjang"].ToString();
                 LblUser.Text = admin;
             }
             conn.Close();
