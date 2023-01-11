@@ -32,9 +32,8 @@ namespace InventoriApp_Karanglewas
         {
             InitializeComponent();
             setCB();
-            autoKode();
             cbKategori();
-            cbBarang();
+            autoKode();
             fillDataBM();
             cekKode();
             txtKodeBM.Enabled = false;
@@ -89,7 +88,7 @@ namespace InventoriApp_Karanglewas
 
         private void FormBarangMasuk_Load(object sender, EventArgs e)
         {
-
+            setCB();
         }
 
         private void txtKodeBM_TextChanged(object sender, EventArgs e)
@@ -280,6 +279,7 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
         {
+            setCB();
             cbBarang();
         }
 

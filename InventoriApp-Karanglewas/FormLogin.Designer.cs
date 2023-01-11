@@ -63,10 +63,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(492, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(369, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 398);
+            this.panel1.Size = new System.Drawing.Size(232, 323);
             this.panel1.TabIndex = 0;
             // 
             // btClose
@@ -77,10 +77,10 @@
             this.btClose.IconColor = System.Drawing.Color.White;
             this.btClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btClose.IconSize = 25;
-            this.btClose.Location = new System.Drawing.Point(277, 2);
-            this.btClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btClose.Location = new System.Drawing.Point(208, 2);
+            this.btClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(28, 23);
+            this.btClose.Size = new System.Drawing.Size(21, 19);
             this.btClose.TabIndex = 6;
             this.btClose.UseVisualStyleBackColor = true;
             this.btClose.Click += new System.EventHandler(this.btClose_Click);
@@ -91,10 +91,10 @@
             this.btMasuk.FlatAppearance.BorderSize = 0;
             this.btMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btMasuk.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btMasuk.Location = new System.Drawing.Point(117, 263);
-            this.btMasuk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btMasuk.Location = new System.Drawing.Point(88, 214);
+            this.btMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btMasuk.Name = "btMasuk";
-            this.btMasuk.Size = new System.Drawing.Size(97, 39);
+            this.btMasuk.Size = new System.Drawing.Size(73, 32);
             this.btMasuk.TabIndex = 5;
             this.btMasuk.Text = "Masuk";
             this.btMasuk.UseVisualStyleBackColor = false;
@@ -109,10 +109,10 @@
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(75, 218);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton2.Location = new System.Drawing.Point(56, 177);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(28, 23);
+            this.iconButton2.Size = new System.Drawing.Size(21, 19);
             this.iconButton2.TabIndex = 4;
             this.iconButton2.UseVisualStyleBackColor = true;
             // 
@@ -125,30 +125,31 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(75, 174);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Location = new System.Drawing.Point(56, 141);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(28, 23);
+            this.iconButton1.Size = new System.Drawing.Size(21, 19);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // txtPass
             // 
             this.txtPass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPass.Location = new System.Drawing.Point(117, 218);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPass.Location = new System.Drawing.Point(88, 177);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(133, 22);
+            this.txtPass.Size = new System.Drawing.Size(101, 20);
             this.txtPass.TabIndex = 2;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             // 
             // txtUsername
             // 
             this.txtUsername.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtUsername.Location = new System.Drawing.Point(117, 174);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Location = new System.Drawing.Point(88, 141);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(133, 22);
+            this.txtUsername.Size = new System.Drawing.Size(101, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // label1
@@ -156,9 +157,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(68, 113);
+            this.label1.Location = new System.Drawing.Point(51, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 32);
+            this.label1.Size = new System.Drawing.Size(96, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "MASUK";
             // 
@@ -170,19 +172,19 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(493, 398);
+            this.panel2.Size = new System.Drawing.Size(370, 323);
             this.panel2.TabIndex = 1;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 260);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(0, 211);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(493, 118);
+            this.panel5.Size = new System.Drawing.Size(370, 96);
             this.panel5.TabIndex = 1;
             // 
             // label4
@@ -191,9 +193,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(44, 2);
+            this.label4.Location = new System.Drawing.Point(33, 2);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(400, 25);
+            this.label4.Size = new System.Drawing.Size(328, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "INOVASI, INTEGRITAS, TRANSPARAN";
             // 
@@ -203,10 +206,10 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 80);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(0, 65);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(493, 180);
+            this.panel4.Size = new System.Drawing.Size(370, 146);
             this.panel4.TabIndex = 1;
             // 
             // label3
@@ -216,9 +219,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(197, 97);
+            this.label3.Location = new System.Drawing.Point(148, 79);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 36);
+            this.label3.Size = new System.Drawing.Size(205, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "KARANGLEWAS";
             // 
@@ -229,9 +233,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(197, 54);
+            this.label2.Location = new System.Drawing.Point(148, 44);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 36);
+            this.label2.Size = new System.Drawing.Size(170, 29);
             this.label2.TabIndex = 6;
             this.label2.Text = "KECAMATAN";
             // 
@@ -240,9 +245,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::InventoriApp_Karanglewas.Gambar.logo_Banyumas;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -251,21 +256,21 @@
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(493, 80);
+            this.panel3.Size = new System.Drawing.Size(370, 65);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Form_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 398);
+            this.ClientSize = new System.Drawing.Size(601, 323);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";

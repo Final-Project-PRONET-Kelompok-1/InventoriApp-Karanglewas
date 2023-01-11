@@ -36,8 +36,30 @@ namespace InventoriApp_Karanglewas
         {
             fillDataAdmin();
         }
+        private void cekInput()
+        {
+            if (txtUsernameAdmin.Text == "")
+            {
+                MessageBox.Show("Username tidak boleh kosong!");
+                txtUsernameAdmin.Focus();
+            }
+            else if(txtNamaAdmin.Text == "")
+            {
+                MessageBox.Show("Nama tidak boleh kosong!");
+                txtNamaAdmin.Focus();
+            }
+            else if (txtPasswordAdmin.Text == "")
+            {
+                MessageBox.Show("Password tidak boleh kosong!");
+                txtPasswordAdmin.Focus();
+            }
+            else
+            {
+                simpanAdmin();
+            }
+        }
 
-        private void btSimpanAdmin_Click(object sender, EventArgs e)
+        private void simpanAdmin()
         {
             try
             {
@@ -76,6 +98,11 @@ namespace InventoriApp_Karanglewas
             }
             fillDataAdmin();
             resetData();
+        }
+
+        private void btSimpanAdmin_Click(object sender, EventArgs e)
+        {
+            cekInput();
             
         }
 

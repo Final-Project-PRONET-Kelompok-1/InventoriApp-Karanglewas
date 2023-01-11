@@ -262,6 +262,7 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategoriBK_SelectedIndexChanged(object sender, EventArgs e)
         {
+            setCB();
             cbBarang();
         }
         private void cekInput()
@@ -417,7 +418,7 @@ namespace InventoriApp_Karanglewas
 
         private void FormBarangKeluar_Load(object sender, EventArgs e)
         {
-
+            cbBarangBK.Enabled = false;
         }
 
         private void dataBK_CellContentClick(object sender, DataGridViewCellEventArgs e)

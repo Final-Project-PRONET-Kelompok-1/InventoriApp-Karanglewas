@@ -98,6 +98,14 @@ namespace InventoriApp_Karanglewas
         {
 
         }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btMasuk_Click(this, new EventArgs());
+            }
+        }
     }
 
 }

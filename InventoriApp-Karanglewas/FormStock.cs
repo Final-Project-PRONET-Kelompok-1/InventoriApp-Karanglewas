@@ -97,6 +97,11 @@ namespace InventoriApp_Karanglewas
                 DataSet ds = new DataSet();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(ds, "kategori");
+
+                DataRow row = ds.Tables["kategori"].NewRow();
+                row["nama_kategori"] = "Pilih Kategori";
+                ds.Tables["kategori"].Rows.InsertAt(row, 0);
+
                 cbKategoriSO.DataSource = ds.Tables["kategori"];
                 cbKategoriSO.DisplayMember = "nama_kategori";
                 conn.Close();
@@ -117,6 +122,11 @@ namespace InventoriApp_Karanglewas
                 DataSet ds = new DataSet();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(ds, "barang");
+
+                DataRow row = ds.Tables["barang"].NewRow();
+                row["nama_barang"] = "Pilih Barang";
+                ds.Tables["barang"].Rows.InsertAt(row, 0);
+
                 cbBarangSO.DataSource = ds.Tables["barang"];
                 cbBarangSO.DisplayMember = "nama_barang";
                 conn.Close();
@@ -144,7 +154,6 @@ namespace InventoriApp_Karanglewas
         private void cbKategoriSO_SelectedIndexChanged(object sender, EventArgs e)
         {
             setCB();
-            cbBarangSO.Text = "Pilih Barang";
             cbBarang();
         }
 
@@ -311,7 +320,7 @@ namespace InventoriApp_Karanglewas
             string query = "SELECT total_stok FROM tb_stokbarang sb " +
                 "INNER JOIN tb_barang b ON sb.id_barang = b.id_barang " +
                 "WHERE b.nama_barang = '" + cbBarangSO.Text + "'";
-
+            conn.Close();
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
             SqlDataReader rd = cmd.ExecuteReader();
