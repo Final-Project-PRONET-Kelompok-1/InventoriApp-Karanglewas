@@ -19,14 +19,13 @@ namespace InventoriApp_Karanglewas
     {
 
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori;
         string status;
-        int autoId;
         DateTime date;
 
         DataTable dataTable = new DataTable();
@@ -64,7 +63,7 @@ namespace InventoriApp_Karanglewas
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(ds, "kategori");
                 cbKategoriSO.DataSource = ds.Tables["kategori"];
-                cbKategoriSO.DisplayMember = "jenis_kategori";
+                cbKategoriSO.DisplayMember = "nama_kategori";
                 conn.Close();
             }
             catch (Exception ex)
@@ -77,7 +76,7 @@ namespace InventoriApp_Karanglewas
             kategori = cbKategoriSO.Text;
             try
             {
-                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.jenis_kategori = '" + kategori + "'";
+                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.nama_kategori = '" + kategori + "'";
                 cmd = new SqlCommand(query, conn);
 
                 DataSet ds = new DataSet();
@@ -101,7 +100,6 @@ namespace InventoriApp_Karanglewas
             cbKategoriSO.Text = "Pilih Kategori";
             setCB();
             autoKode();
-            autoID();
             txtKodeSO.Enabled = false;
             fillDataSO();
             txtStokSistem.Enabled = false;
@@ -119,7 +117,7 @@ namespace InventoriApp_Karanglewas
         {
             string kode;
             conn.Open();
-            string query = "SELECT kode_so FROM tb_opname ORDER BY id_opname DESC";
+            string query = "SELECT kode_so FROM tb_stokopname ORDER BY id_opname DESC";
             cmd = new SqlCommand(query, conn);
             reader = cmd.ExecuteReader();
 
@@ -147,31 +145,6 @@ namespace InventoriApp_Karanglewas
             conn.Close();
         }
 
-        private void autoID()
-        {
-            int id;
-            conn.Open();
-            string query = "SELECT * FROM tb_opname ORDER BY id_opname DESC";
-            cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows && reader != null)
-            {
-                reader.Read();
-                //                string no = reader.GetString(int.Parse(reader[0].ToString()));
-
-                string no = reader[0].ToString();
-                id = Convert.ToInt32(no) + 1;
-
-            }
-            else
-            {
-                id = 1;
-            }
-            autoId = id;
-            conn.Close();
-        }
-
         private DataTable getDataSO()
         {
             try
@@ -179,8 +152,8 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.jenis_kategori as Kategori, b.nama_barang as Barang, so.st_sistem as StokSistem, so.st_fisik as StokFisik, so.pic as PIC, so.status as Status\n" +
-                                "FROM tb_opname so\n" +
+                string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.nama_kategori as Kategori, b.nama_barang as Barang, so.stok_sistem as StokSistem, so.stok_fisik as StokFisik, so.pic as PIC, so.status as Status\n" +
+                                "FROM tb_stokopname so\n" +
                                 "INNER JOIN tb_barang b ON so.id_barang = b.id_barang\n" +
                                 "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori\n" +
                                 "ORDER BY so.kode_so DESC";
@@ -239,18 +212,17 @@ namespace InventoriApp_Karanglewas
         }
         private void simpanSO()
         {
-            date = Convert.ToDateTime(dtSO.Text);
-            string dateBM = date.ToString("yyyy-MM-dd");
+            DateTime dateSO = dtSO.Value;
             setStatus();
 
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_opname (id_opname, kode_so, id_kategori, id_barang, st_sistem, st_fisik, tanggal, pic, status)\n" +
-                                "VALUES ('" + autoId + "','" + txtKodeSO.Text + "'," +
-                                "(select id_kategori from tb_kategori where jenis_kategori = '" + cbKategoriSO.Text + "')," +
+                string query = "INSERT INTO tb_stokopname (kode_so, id_barang, stok_sistem, stok_fisik, tanggal, pic, status)\n" +
+                                "VALUES ('" + txtKodeSO.Text + "'," +
+                                "(select id_kategori from tb_kategori where nama_kategori = '" + cbKategoriSO.Text + "')," +
                                 "(select id_barang from tb_barang where nama_barang = '" + cbBarangSO.Text + "')," +
-                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateBM + "','" + txtPIC.Text + "', '" + status + "')";
+                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateSO + "','" + txtPIC.Text + "', '" + status + "')";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -264,20 +236,14 @@ namespace InventoriApp_Karanglewas
 
         private void UpdateSO()
         {
-            date = Convert.ToDateTime(dtSO.Text);
-            string dateBK = date.ToString("yyyy-MM-dd");
+            DateTime dateSO = dtSO.Value;
 
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_opname SET id_kategori = k.id_kategori, id_barang = b.id_barang, st_sistem = '" + txtStokSistem.Text + "'" +
-                    ", st_fisik = '" + txtStokFisik.Text + "', pic = '" + txtPIC.Text + "' " +
-                  "FROM tb_opname so " +
-                  "INNER JOIN tb_kategori k ON so.id_kategori = k.id_kategori " +
-                  "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
-                  "WHERE so.kode_so= '" + txtKodeSO.Text + "' " +
-                  "AND k.jenis_kategori = '" + cbKategoriSO.Text + "' " +
-                  "AND b.nama_barang = '" + cbBarangSO.Text + "'";
+                string queryUpdate = "UPDATE tb_stokopname SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangSO.Text + "'), stok_sistem = '" + txtStokSistem.Text + "'" +
+                    ", stok_fisik = '" + txtStokFisik.Text + "', tanggal = '"+dateSO+"', pic = '" + txtPIC.Text + "' " +
+                  "WHERE kode_so= '" + txtKodeSO.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -291,8 +257,6 @@ namespace InventoriApp_Karanglewas
 
         private void resetForm()
         {
-            autoID();
-
             //fr.autoIDRiwayat();
             //kodeRandom();
             autoKode();
@@ -310,16 +274,9 @@ namespace InventoriApp_Karanglewas
 
         private void getStokSistem()
         {
-            string query = "SELECT CASE WHEN (masuk.total_masuk - keluar.total_keluar) IS NULL THEN 0 ELSE (masuk.total_masuk - keluar.total_keluar) END AS Total " +
-                "FROM dbo.tb_barang LEFT OUTER JOIN " +
-                "dbo.tb_kategori ON dbo.tb_kategori.id_kategori = dbo.tb_barang.id_kategori LEFT OUTER JOIN " +
-                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_masuk " +
-                "FROM      dbo.tb_barangmasuk " +
-                "GROUP BY id_kategori, id_barang) AS masuk ON masuk.id_kategori = dbo.tb_kategori.id_kategori AND masuk.id_barang = dbo.tb_barang.id_barang LEFT OUTER JOIN " +
-                "(SELECT id_kategori, id_barang, SUM(jumlah) AS total_keluar " +
-                "FROM      dbo.tb_barangkeluar " +
-                "GROUP BY id_kategori, id_barang) AS keluar ON keluar.id_kategori = dbo.tb_kategori.id_kategori AND keluar.id_barang = dbo.tb_barang.id_barang " +
-                "WHERE dbo.tb_barang.nama_barang = '" + cbBarangSO.Text + "'";
+            string query = "SELECT total_stok FROM tb_stokbarang sb " +
+                "INNER JOIN tb_barang b ON sb.id_barang = b.id_barang " +
+                "WHERE b.nama_barang = '" + cbBarangSO.Text + "'";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
@@ -366,7 +323,7 @@ namespace InventoriApp_Karanglewas
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_opname WHERE kode_so = '" + txtKodeSO.Text + "'";
+                string query = "DELETE FROM tb_stokopname WHERE kode_so = '" + txtKodeSO.Text + "'";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();

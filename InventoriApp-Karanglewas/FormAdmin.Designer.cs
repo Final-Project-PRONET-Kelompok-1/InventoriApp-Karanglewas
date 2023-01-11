@@ -34,11 +34,9 @@
             this.txtUsernameAdmin = new System.Windows.Forms.TextBox();
             this.btSimpanAdmin = new System.Windows.Forms.Button();
             this.btResetAdmin = new System.Windows.Forms.Button();
-            this.txtIdAdmin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
@@ -51,11 +49,9 @@
             this.panel2.Controls.Add(this.txtUsernameAdmin);
             this.panel2.Controls.Add(this.btSimpanAdmin);
             this.panel2.Controls.Add(this.btResetAdmin);
-            this.panel2.Controls.Add(this.txtIdAdmin);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -119,16 +115,6 @@
             this.btResetAdmin.UseVisualStyleBackColor = true;
             this.btResetAdmin.Click += new System.EventHandler(this.btResetAdmin_Click);
             // 
-            // txtIdAdmin
-            // 
-            this.txtIdAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtIdAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdAdmin.Location = new System.Drawing.Point(132, 30);
-            this.txtIdAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdAdmin.Name = "txtIdAdmin";
-            this.txtIdAdmin.Size = new System.Drawing.Size(175, 22);
-            this.txtIdAdmin.TabIndex = 11;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -158,16 +144,6 @@
             this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "No. ID";
             // 
             // dgvAdmin
             // 
@@ -213,11 +189,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btSimpanAdmin;
         private System.Windows.Forms.Button btResetAdmin;
-        private System.Windows.Forms.TextBox txtIdAdmin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAdmin;
         private System.Windows.Forms.TextBox txtUsernameAdmin;
         private System.Windows.Forms.TextBox txtPasswordAdmin;

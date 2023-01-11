@@ -18,10 +18,9 @@ namespace InventoriApp_Karanglewas
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
-        string kategori;
-        int autoId;
-        int stoksementara;
         DateTime date;
+
+        int stoksementara;
 
         DataTable dataTable = new DataTable();
 
@@ -102,10 +101,10 @@ namespace InventoriApp_Karanglewas
         }
         private void cbBarang()
         {
-            kategori = cbKategoriBK.Text;
+            
             try
             {
-                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.nama_kategori = '" + kategori + "'";
+                string query = "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_barang.id_kategori WHERE tb_kategori.nama_kategori = '" + cbKategoriBK.Text + "'";
                 cmd = new SqlCommand(query, conn);
 
                 DataSet ds = new DataSet();
@@ -225,8 +224,6 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategoriBK_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setCB();
-            cbBarangBK.Text = "Pilih Barang";
             cbBarang();
         }
         private void cekInput()

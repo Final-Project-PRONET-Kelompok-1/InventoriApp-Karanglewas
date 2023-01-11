@@ -92,13 +92,20 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
+                string query= "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
                                 "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
                                 "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
                                 "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
                                 "FROM tb_stokbarang sb " +
                                 "LEFT JOIN tb_barang b ON sb.id_barang = b.id_barang " +
                                 "LEFT JOIN tb_kategori k ON b.id_kategori = k.id_kategori ";
+                string query1 = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
+                    "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
+                    "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
+                    "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
+                    "FROM tb_kategori k " +
+                    "JOIN tb_barang b ON k.id_kategori = b.id_kategori " +
+                    "LEFT JOIN tb_stokbarang sb ON sb.id_barang = b.id_barang ";
                 cmd = new SqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
@@ -112,7 +119,7 @@ namespace InventoriApp_Karanglewas
             return dataTable;
         }
 
-        private void fillDataBarang()
+        public void fillDataBarang()
         {
 
             dgvDB.DataSource = getDataDB();
