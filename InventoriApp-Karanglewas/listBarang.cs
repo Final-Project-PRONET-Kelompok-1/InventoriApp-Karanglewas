@@ -137,9 +137,9 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show("Barang sudah ada !");
                 conn.Close();
             }
-            resetForm();
             autoKode();
             fillDataBarang();
+            resetForm();
             cekKode();
         }
 
@@ -180,6 +180,7 @@ namespace InventoriApp_Karanglewas
             txtNamaBarang.Text = "";
             cbKategori();
             txtKodeBarang.Text = "";
+            id_barang = 0;
             cekKode();
 
         }
@@ -212,9 +213,9 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
-            resetForm();
             autoKode();
             fillDataBarang();
+            resetForm();
             cekKode();
         }
 
