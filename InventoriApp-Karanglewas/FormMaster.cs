@@ -17,14 +17,17 @@ namespace InventoriApp_Karanglewas
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
        
 
         string admin;
-        int autoId;
+        
 
 
         public FormMaster()

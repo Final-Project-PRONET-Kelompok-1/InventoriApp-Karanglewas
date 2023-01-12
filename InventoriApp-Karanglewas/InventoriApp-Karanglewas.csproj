@@ -108,29 +108,12 @@
     <Compile Include="FormLaporan.Designer.cs">
       <DependentUpon>FormLaporan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLaporanBarangKeluar.cs">
+    <Compile Include=".cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLaporanBarangKeluar.Designer.cs">
-      <DependentUpon>FormLaporanBarangKeluar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLaporanBarangMasuk.cs">
+    <Compile Include=".Designer.cs">
+      <DependentUpon>.cs</DependentUpon>
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLaporanBarangMasuk.Designer.cs">
-      <DependentUpon>FormLaporanBarangMasuk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLaporanDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLaporanDataBarang.Designer.cs">
-      <DependentUpon>FormLaporanDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLaporanStokOpname.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLaporanStokOpname.Designer.cs">
-      <DependentUpon>FormLaporanStokOpname.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMaster.cs">
       <SubType>Form</SubType>
@@ -242,17 +225,8 @@
     <EmbeddedResource Include="FormLaporan.resx">
       <DependentUpon>FormLaporan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLaporanBarangKeluar.resx">
-      <DependentUpon>FormLaporanBarangKeluar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLaporanBarangMasuk.resx">
-      <DependentUpon>FormLaporanBarangMasuk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLaporanDataBarang.resx">
-      <DependentUpon>FormLaporanDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLaporanStokOpname.resx">
-      <DependentUpon>FormLaporanStokOpname.cs</DependentUpon>
+    <EmbeddedResource Include=".resx">
+      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaster.resx">
       <DependentUpon>FormMaster.cs</DependentUpon>

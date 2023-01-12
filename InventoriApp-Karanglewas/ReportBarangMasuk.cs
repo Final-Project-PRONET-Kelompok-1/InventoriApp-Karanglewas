@@ -13,8 +13,10 @@ namespace InventoriApp_Karanglewas
 {
     public partial class ReportBarangMasuk : Form
     {
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adapter;
         string date1;

@@ -14,12 +14,14 @@ namespace InventoriApp_Karanglewas
 
     public partial class listBarang : Form
     {
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         // SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
-        string kategori, getKategori, kode, validasi;
-        DateTime date;
+        string getKategori, kode, validasi;
+        
         int id_barang,id_kategori;
 
         DataTable dataTable = new DataTable();

@@ -14,41 +14,16 @@ namespace InventoriApp_Karanglewas
     public partial class FormLaporan : Form
     {
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
 
         DataTable dataTable = new DataTable();
 
-        private DataTable getDataDB()
-        {
-            try
-            {
-                dataTable.Reset();
-                dataTable = new DataTable();
-                conn.Open();
-                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
-                                "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
-                                "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
-                                "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
-                                "FROM tb_stokbarang sb " +
-                                "LEFT JOIN tb_barang b ON sb.id_barang = b.id_barang " +
-                                "LEFT JOIN tb_kategori k ON b.id_kategori = k.id_kategori ";
-           
-                cmd = new SqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
-                dataTable.Load(reader);
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dataTable;
-        }
-
+        
         private DataTable getDataBM()
         {
             try
@@ -147,12 +122,7 @@ namespace InventoriApp_Karanglewas
         
         private void cbPilih_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPilih.Text.ToString() == "Data Barang")
-            {
-                dgvLaporan.DataSource = getDataDB();
-
-            }
-
+            
             if (cbPilih.Text.ToString() == "Barang Masuk")
             {
                 dgvLaporan.DataSource = getDataBM();
@@ -180,10 +150,10 @@ namespace InventoriApp_Karanglewas
                 ReportStokOpname report = new ReportStokOpname();
                 report.Show();
 
-                if (conn.State != ConnectionState.Open)
+                /*if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                }
+                }*/
             }
 
             if (cbPilih.Text.ToString() == "Barang Masuk")
@@ -191,10 +161,10 @@ namespace InventoriApp_Karanglewas
                 ReportBarangMasuk report1 = new ReportBarangMasuk();
                 report1.Show();
 
-                if (conn.State != ConnectionState.Open)
+                /*if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                }
+                }*/
             }
 
             if (cbPilih.Text.ToString() == "Barang Keluar")
@@ -202,10 +172,10 @@ namespace InventoriApp_Karanglewas
                 ReportBarangKeluar report2 = new ReportBarangKeluar();
                 report2.Show();
 
-                if (conn.State != ConnectionState.Open)
+                /*if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                }
+                }*/
             }
         }
     }
