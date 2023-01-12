@@ -20,7 +20,7 @@ namespace InventoriApp_Karanglewas
         SqlCommand cmd;
         SqlDataReader reader;
         int autoId;
-        string kategori;
+        string kategori,validasi;
         DateTime date;
 
         DataTable dataTable = new DataTable();
@@ -274,7 +274,15 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBM_Click(object sender, EventArgs e)
         {
-            cekInput();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                simpanBM();
+                simpanRiwayat("Simpan");
+                resetForm();
+                MessageBox.Show("Data berhasil disimpan");
+                fillDataBM();
+            }
         }
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
@@ -310,7 +318,8 @@ namespace InventoriApp_Karanglewas
 
         private void btHapusBM_Click(object sender, EventArgs e)
         {
-            var tanya = MessageBox.Show("Apakah anda yakin ?", "Hapus", MessageBoxButtons.YesNo);
+            var tanya = MessageBox.Show("Apakah anda yakin \n" +
+                "akan menghapus data dengan kode = " + txtKodeBM.Text + " ?", "Hapus", MessageBoxButtons.YesNo);
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
@@ -326,35 +335,37 @@ namespace InventoriApp_Karanglewas
 
         }
 
-        private void cekInput()
+        private string cekValidasi()
         {
             if (cbKategoriBM.Text == "Pilih Kategori")
             {
                 MessageBox.Show("Anda belum memilih kategori!");
                 cbKategoriBM.Focus();
+                validasi = "gagal";
             }
             else if (cbBarangBM.Text == "Pilih Barang")
             {
                 MessageBox.Show("Anda belum memilih barang!");
                 cbBarangBM.Focus();
+                validasi = "gagal";
             }
             else if (txtJumlahBM.Text == "" | txtJumlahBM.Text == "0")
             {
                 MessageBox.Show("Jumlah tidak boleh kosong!");
                 txtJumlahBM.Focus();
+                validasi = "gagal";
             }
             else if (txtPIC.Text == "")
             {
                 MessageBox.Show("PIC tidak boleh kosong!");
                 txtPIC.Focus();
+                validasi = "gagal";
             }
             else
             {
-                simpanBM();
-                simpanRiwayat("Simpan");
-                resetForm();
-                fillDataBM();
+                validasi = "oke";
             }
+            return validasi; 
         }
 
         private void fillDataBM()
@@ -365,11 +376,16 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBM_Click(object sender, EventArgs e)
         {
-            updateBM();
-            simpanRiwayat("Edit");
-            resetForm();
-            fillDataBM();
-            cekKode();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                updateBM();
+                simpanRiwayat("Edit");
+                resetForm();
+                MessageBox.Show("Data berhasil diedit");
+                fillDataBM();
+                cekKode();
+            }
         }
 
         private void txtPIC_TextChanged(object sender, EventArgs e)
@@ -390,6 +406,15 @@ namespace InventoriApp_Karanglewas
         {
             resetForm();
             cekKode();
+        }
+
+        private void txtJumlahBM_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtJumlahBM.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Input jumlah hanya bisa dimasukan angka.");
+                txtJumlahBM.Clear();
+            }
         }
     }
 }
