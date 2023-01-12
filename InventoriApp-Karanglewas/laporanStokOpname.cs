@@ -16,14 +16,14 @@ namespace InventoriApp_Karanglewas {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class laporanDataBarang : ReportClass {
+    public class laporanStokOpname : ReportClass {
         
-        public laporanDataBarang() {
+        public laporanStokOpname() {
         }
         
         public override string ResourceName {
             get {
-                return "laporanDataBarang.rpt";
+                return "laporanStokOpname.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InventoriApp_Karanglewas {
         
         public override string FullResourceName {
             get {
-                return "InventoriApp_Karanglewas.laporanDataBarang.rpt";
+                return "InventoriApp_Karanglewas.laporanStokOpname.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace InventoriApp_Karanglewas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace InventoriApp_Karanglewas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,49 +82,17 @@ namespace InventoriApp_Karanglewas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[8];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedlaporanDataBarang : Component, ICachedReport {
+    public class CachedlaporanStokOpname : Component, ICachedReport {
         
-        public CachedlaporanDataBarang() {
+        public CachedlaporanStokOpname() {
         }
         
         [Browsable(false)]
@@ -161,7 +129,7 @@ namespace InventoriApp_Karanglewas {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            laporanDataBarang rpt = new laporanDataBarang();
+            laporanStokOpname rpt = new laporanStokOpname();
             rpt.Site = this.Site;
             return rpt;
         }
