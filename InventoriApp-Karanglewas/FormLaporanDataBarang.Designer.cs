@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.laporanDataBarang1 = new InventoriApp_Karanglewas.laporanDataBarang();
-            this.laporanDataBarang2 = new InventoriApp_Karanglewas.laporanDataBarang();
-            this.laporanDataBarang3 = new InventoriApp_Karanglewas.laporanDataBarang();
-            this.laporanDataBarang4 = new InventoriApp_Karanglewas.laporanDataBarang();
+            
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,7 +40,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.laporanDataBarang4;
+            
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -64,9 +61,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private laporanDataBarang laporanDataBarang1;
-        private laporanDataBarang laporanDataBarang3;
-        private laporanDataBarang laporanDataBarang2;
-        private laporanDataBarang laporanDataBarang4;
+        
     }
 }

@@ -515,6 +515,9 @@
             this.lblChildForm.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChildForm.ForeColor = System.Drawing.Color.White;
             this.lblChildForm.Location = new System.Drawing.Point(196, 9);
+
+            this.lblChildForm.MinimumSize = new System.Drawing.Size(428, 29);
+
             this.lblChildForm.Name = "lblChildForm";
             this.lblChildForm.Size = new System.Drawing.Size(428, 29);
             this.lblChildForm.TabIndex = 0;

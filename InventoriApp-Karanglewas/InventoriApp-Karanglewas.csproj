@@ -126,6 +126,12 @@
     <Compile Include="FormLaporanDataBarang.Designer.cs">
       <DependentUpon>FormLaporanDataBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLaporanStokOpname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaporanStokOpname.Designer.cs">
+      <DependentUpon>FormLaporanStokOpname.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,10 +183,10 @@
       <DependentUpon>laporanBarangMasuk.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="laporanDataBarang.cs">
+    <Compile Include="laporanStokOpname.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>laporanDataBarang.rpt</DependentUpon>
+      <DependentUpon>laporanStokOpname.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="listBarang.cs">
@@ -197,6 +203,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportBarangKeluar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBarangKeluar.Designer.cs">
+      <DependentUpon>ReportBarangKeluar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBarangMasuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBarangMasuk.Designer.cs">
+      <DependentUpon>ReportBarangMasuk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStokOpname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportStokOpname.Designer.cs">
+      <DependentUpon>ReportStokOpname.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +251,9 @@
     <EmbeddedResource Include="FormLaporanDataBarang.resx">
       <DependentUpon>FormLaporanDataBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporanStokOpname.resx">
+      <DependentUpon>FormLaporanStokOpname.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMaster.resx">
       <DependentUpon>FormMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,9 +279,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>laporanBarangMasuk.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="laporanDataBarang.rpt">
+    <EmbeddedResource Include="laporanStokOpname.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanDataBarang.cs</LastGenOutput>
+      <LastGenOutput>laporanStokOpname.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="listBarang.resx">
       <DependentUpon>listBarang.cs</DependentUpon>
@@ -272,6 +299,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportBarangKeluar.resx">
+      <DependentUpon>ReportBarangKeluar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBarangMasuk.resx">
+      <DependentUpon>ReportBarangMasuk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStokOpname.resx">
+      <DependentUpon>ReportStokOpname.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="InventoriAppDataSet.xsc">
       <DependentUpon>InventoriAppDataSet.xsd</DependentUpon>
     </None>
