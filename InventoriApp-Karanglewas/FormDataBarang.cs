@@ -15,8 +15,8 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormDataBarang : Form
     {
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
-        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
 
@@ -24,7 +24,7 @@ namespace InventoriApp_Karanglewas
         public FormDataBarang()
         {
             InitializeComponent();
-            fillDataBarang();
+            cbKategori();
         }
 
         private void cbKategori()
@@ -60,7 +60,7 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query= "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
+                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
                                 "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
                                 "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
                                 "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
@@ -79,6 +79,30 @@ namespace InventoriApp_Karanglewas
             }
             return dataTable;
         }
+        private void cari()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from stok_barang where Barang like '%" + txtSB.Text + "%'";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Barang");
+            dgvDB.DataSource = ds;
+            dgvDB.DataMember = "Barang";
+        }
+        private void filter()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from stok_barang where Kategori like '%" + cbKategoriSB.Text + "%'";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Kategori");
+            dgvDB.DataSource = ds;
+            dgvDB.DataMember = "Kategori";
+        }
 
         public void fillDataBarang()
         {
@@ -86,47 +110,20 @@ namespace InventoriApp_Karanglewas
             dgvDB.DataSource = getDataDB();
         }
 
-        private DataTable cbKategori1(string kategori)
-        {
-            try
-            {
-                dataTable.Reset();
-                dataTable = new DataTable();
-                conn.Open();
-                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
-                                "sb.total_masuk AS Total_Masuk, " +
-                                "sb.total_keluar AS Total_Keluar, " +
-                                "sb.total_stok AS Sisa_Stok " +
-                                "FROM tb_stokbarang sb " +
-                                "JOIN tb_barang b ON sb.id_barang = b.id_barang " +
-                                "JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
-                                "WHERE k.nama_kategori = '"+kategori+"'";
-                cmd = new SqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
-                dataTable.Load(reader);
-                conn.Close();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dataTable;
-        }
 
         private void FormDataBarang_Load(object sender, EventArgs e)
         {
             //show();
-            fillDataBarang();
-        }
-
-        private void btTambah_Click(object sender, EventArgs e)
-        {
-
-            FormKategoriBarang FM = new FormKategoriBarang(); // Instantiate a Form3 object.
-          //  this.Hide();
-            FM.ShowDialog(); // Show Form3 and
-           // this.Close();
+            cbKategori();
+            if (cbKategoriSB.Text == "Pilih Kategori")
+            {
+                fillDataBarang();
+            }
+            else
+            {
+                filter();
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -136,27 +133,20 @@ namespace InventoriApp_Karanglewas
 
         private void cbKategoriBM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string kategori = cbKategoriSB.Text;
-            cbKategori1(kategori);
+            conn.Close();
+            if (cbKategoriSB.Text == "Pilih Kategori")
+            {
+                fillDataBarang();
+            }
+            else
+            {
+                filter();
+            }
         }
 
         private void btncari_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from totalBarang where Barang like '%" + txtDB.Text + "%'";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "totalBarang");
-            dgvDB.DataSource = ds;
-            dgvDB.DataMember = "totalBarang";
-        }
-
-        private void btnrefres_Click(object sender, EventArgs e)
-        {
-            //show();
-            fillDataBarang();
+            cari();
         }
     }
 }
