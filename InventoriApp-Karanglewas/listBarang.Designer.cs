@@ -28,51 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btSimpanBM = new System.Windows.Forms.Button();
-            this.btEditBM = new System.Windows.Forms.Button();
-            this.txtKodeBM = new System.Windows.Forms.TextBox();
+            this.btSimpanBarang = new System.Windows.Forms.Button();
+            this.btEditBarang = new System.Windows.Forms.Button();
+            this.txtKodeBarang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btResetBarang = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbKategoriBM = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataBM = new System.Windows.Forms.DataGridView();
+            this.cbKategoriBarang = new System.Windows.Forms.ComboBox();
+            this.txtNamaBarang = new System.Windows.Forms.TextBox();
+            this.dataBarang = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBarang)).BeginInit();
             this.SuspendLayout();
             // 
-            // btSimpanBM
+            // btSimpanBarang
             // 
-            this.btSimpanBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btSimpanBM.Location = new System.Drawing.Point(412, 66);
-            this.btSimpanBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btSimpanBM.Name = "btSimpanBM";
-            this.btSimpanBM.Size = new System.Drawing.Size(75, 33);
-            this.btSimpanBM.TabIndex = 12;
-            this.btSimpanBM.Text = "Simpan";
-            this.btSimpanBM.UseVisualStyleBackColor = true;
+            this.btSimpanBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btSimpanBarang.Location = new System.Drawing.Point(402, 50);
+            this.btSimpanBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSimpanBarang.Name = "btSimpanBarang";
+            this.btSimpanBarang.Size = new System.Drawing.Size(75, 33);
+            this.btSimpanBarang.TabIndex = 12;
+            this.btSimpanBarang.Text = "Simpan";
+            this.btSimpanBarang.UseVisualStyleBackColor = true;
+            this.btSimpanBarang.Click += new System.EventHandler(this.btSimpanBarang_Click);
             // 
-            // btEditBM
+            // btEditBarang
             // 
-            this.btEditBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btEditBM.Location = new System.Drawing.Point(538, 68);
-            this.btEditBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btEditBM.Name = "btEditBM";
-            this.btEditBM.Size = new System.Drawing.Size(79, 31);
-            this.btEditBM.TabIndex = 9;
-            this.btEditBM.Text = "Edit";
-            this.btEditBM.UseVisualStyleBackColor = true;
+            this.btEditBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btEditBarang.Location = new System.Drawing.Point(402, 87);
+            this.btEditBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btEditBarang.Name = "btEditBarang";
+            this.btEditBarang.Size = new System.Drawing.Size(79, 31);
+            this.btEditBarang.TabIndex = 9;
+            this.btEditBarang.Text = "Edit";
+            this.btEditBarang.UseVisualStyleBackColor = true;
+            this.btEditBarang.Click += new System.EventHandler(this.btEditBarang_Click);
             // 
-            // txtKodeBM
+            // txtKodeBarang
             // 
-            this.txtKodeBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtKodeBM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKodeBM.Location = new System.Drawing.Point(174, 32);
-            this.txtKodeBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtKodeBM.Name = "txtKodeBM";
-            this.txtKodeBM.Size = new System.Drawing.Size(175, 22);
-            this.txtKodeBM.TabIndex = 11;
+            this.txtKodeBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtKodeBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKodeBarang.Location = new System.Drawing.Point(174, 32);
+            this.txtKodeBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKodeBarang.Name = "txtKodeBarang";
+            this.txtKodeBarang.Size = new System.Drawing.Size(175, 22);
+            this.txtKodeBarang.TabIndex = 11;
             // 
             // label2
             // 
@@ -96,71 +99,84 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btResetBarang);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cbKategoriBM);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.btSimpanBM);
-            this.panel2.Controls.Add(this.btEditBM);
-            this.panel2.Controls.Add(this.txtKodeBM);
+            this.panel2.Controls.Add(this.cbKategoriBarang);
+            this.panel2.Controls.Add(this.txtNamaBarang);
+            this.panel2.Controls.Add(this.btSimpanBarang);
+            this.panel2.Controls.Add(this.btEditBarang);
+            this.panel2.Controls.Add(this.txtKodeBarang);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(811, 206);
+            this.panel2.Size = new System.Drawing.Size(811, 154);
             this.panel2.TabIndex = 7;
+            // 
+            // btResetBarang
+            // 
+            this.btResetBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btResetBarang.Location = new System.Drawing.Point(487, 87);
+            this.btResetBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btResetBarang.Name = "btResetBarang";
+            this.btResetBarang.Size = new System.Drawing.Size(79, 31);
+            this.btResetBarang.TabIndex = 16;
+            this.btResetBarang.Text = "Reset";
+            this.btResetBarang.UseVisualStyleBackColor = true;
+            this.btResetBarang.Click += new System.EventHandler(this.btResetBarang_Click);
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 67);
+            this.label3.Location = new System.Drawing.Point(31, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "Kategori";
             // 
-            // cbKategoriBM
+            // cbKategoriBarang
             // 
-            this.cbKategoriBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbKategoriBM.FormattingEnabled = true;
-            this.cbKategoriBM.Location = new System.Drawing.Point(173, 66);
-            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbKategoriBM.Name = "cbKategoriBM";
-            this.cbKategoriBM.Size = new System.Drawing.Size(176, 24);
-            this.cbKategoriBM.TabIndex = 14;
-            this.cbKategoriBM.SelectedIndexChanged += new System.EventHandler(this.cbKategoriBM_SelectedIndexChanged);
+            this.cbKategoriBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbKategoriBarang.FormattingEnabled = true;
+            this.cbKategoriBarang.Location = new System.Drawing.Point(173, 66);
+            this.cbKategoriBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbKategoriBarang.Name = "cbKategoriBarang";
+            this.cbKategoriBarang.Size = new System.Drawing.Size(176, 24);
+            this.cbKategoriBarang.TabIndex = 14;
+            this.cbKategoriBarang.SelectedIndexChanged += new System.EventHandler(this.cbKategoriBarang_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtNamaBarang
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(174, 104);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 22);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNamaBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtNamaBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNamaBarang.Location = new System.Drawing.Point(174, 104);
+            this.txtNamaBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNamaBarang.Name = "txtNamaBarang";
+            this.txtNamaBarang.Size = new System.Drawing.Size(175, 22);
+            this.txtNamaBarang.TabIndex = 13;
             // 
-            // dataBM
+            // dataBarang
             // 
-            this.dataBM.AllowUserToOrderColumns = true;
-            this.dataBM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataBarang.AllowUserToOrderColumns = true;
+            this.dataBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataBM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataBM.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataBM.BackgroundColor = System.Drawing.Color.White;
-            this.dataBM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataBM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBM.Location = new System.Drawing.Point(-13, -15);
-            this.dataBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataBM.Name = "dataBM";
-            this.dataBM.RowHeadersWidth = 51;
-            this.dataBM.RowTemplate.Height = 24;
-            this.dataBM.Size = new System.Drawing.Size(836, 718);
-            this.dataBM.TabIndex = 6;
+            this.dataBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataBarang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataBarang.BackgroundColor = System.Drawing.Color.White;
+            this.dataBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataBarang.Location = new System.Drawing.Point(12, 160);
+            this.dataBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataBarang.Name = "dataBarang";
+            this.dataBarang.RowHeadersWidth = 51;
+            this.dataBarang.RowTemplate.Height = 24;
+            this.dataBarang.Size = new System.Drawing.Size(787, 450);
+            this.dataBarang.TabIndex = 6;
+            this.dataBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBarang_CellContentClick);
             // 
             // listBarang
             // 
@@ -168,27 +184,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 620);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataBM);
+            this.Controls.Add(this.dataBarang);
             this.Name = "listBarang";
             this.Text = "listBarang";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBarang)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btSimpanBM;
-        private System.Windows.Forms.Button btEditBM;
-        private System.Windows.Forms.TextBox txtKodeBM;
+        private System.Windows.Forms.Button btSimpanBarang;
+        private System.Windows.Forms.Button btEditBarang;
+        private System.Windows.Forms.TextBox txtKodeBarang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataBM;
+        private System.Windows.Forms.TextBox txtNamaBarang;
+        private System.Windows.Forms.DataGridView dataBarang;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbKategoriBM;
+        private System.Windows.Forms.ComboBox cbKategoriBarang;
+        private System.Windows.Forms.Button btResetBarang;
     }
 }

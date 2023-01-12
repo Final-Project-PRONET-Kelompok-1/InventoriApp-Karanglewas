@@ -194,7 +194,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
         //    OpenChildForm(new FormDataBarang());
             showChildMenu(panelChildSliding);
-            
+            button1_Click(sender, e);
         }
 
         private void btnBarangMasuk_Click_1(object sender, EventArgs e)
@@ -290,16 +290,19 @@ namespace InventoriApp_Karanglewas
         private void button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new listBarang());
+            lblChildForm.Text = "Data Barang - List Barang";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormDataBarang());
+            lblChildForm.Text = "Data Barang - Stok Barang";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new listKategori());
+            lblChildForm.Text = "Data Barang - List Kategori";
         }
     }
 }
