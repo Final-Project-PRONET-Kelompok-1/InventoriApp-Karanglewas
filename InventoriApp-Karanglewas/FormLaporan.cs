@@ -14,8 +14,8 @@ namespace InventoriApp_Karanglewas
     public partial class FormLaporan : Form
     {
 
-        //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriApp; Integrated Security=True");
         public FormLaporan()
         {
             InitializeComponent();

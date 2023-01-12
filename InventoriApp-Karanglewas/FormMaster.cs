@@ -17,10 +17,11 @@ namespace InventoriApp_Karanglewas
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
+       
 
         string admin;
         int autoId;
@@ -34,6 +35,31 @@ namespace InventoriApp_Karanglewas
             panelSidebar.Controls.Add(leftBorderBtn);
 
             getAdmin();
+            customDesignChild();
+        }
+
+        private void customDesignChild()
+        {
+            panelChildSliding.Visible = false;
+        }
+
+        private void hideChildMenu()
+        {
+            if (panelChildSliding.Visible == true)
+                panelChildSliding.Visible = false;
+        }
+
+        private void showChildMenu(Panel childMenu)
+        {
+            if (childMenu.Visible == false)
+            {
+                hideChildMenu();
+                childMenu.Visible = true;
+            }
+            else
+            {
+                childMenu.Visible = false;
+            }
         }
 
         public string getAdmin()
@@ -166,48 +192,54 @@ namespace InventoriApp_Karanglewas
         private void btDataBarang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormDataBarang());
+        //    OpenChildForm(new FormDataBarang());
+            showChildMenu(panelChildSliding);
+            
         }
 
-        private void btnBarangMasuk_Click(object sender, EventArgs e)
+        private void btnBarangMasuk_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangMasuk());
-
-
+            customDesignChild();
         }
 
-        private void btnBarangKeluar_Click(object sender, EventArgs e)
+        private void btnBarangKeluar_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangKeluar());
+            customDesignChild();
         }
 
-        private void btnRiwayat_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormRiwayat());
-        }
-
-        private void btnStockOpname_Click(object sender, EventArgs e)
+        private void btnStockOpname_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormStock());
+            customDesignChild();
         }
 
-        private void btnLaporan_Click(object sender, EventArgs e)
+        private void btnLaporan_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormLaporan());
+            customDesignChild();
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void btnRiwayat_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new FormRiwayat());
+            customDesignChild();
+        }
+
+        private void btnAdmin_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormAdmin());
+            customDesignChild();
         }
 
-        private void btnKeluar_Click(object sender, EventArgs e)
+        private void btnKeluar_Click_1(object sender, EventArgs e)
         {
             simpanLog();
             Form_Login FL = new Form_Login(); // Instantiate a Form3 object.
@@ -253,6 +285,21 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new listBarang());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDataBarang());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new listKategori());
         }
     }
 }

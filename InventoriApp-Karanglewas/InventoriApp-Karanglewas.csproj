@@ -183,6 +183,18 @@
       <DependentUpon>laporanDataBarang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="listBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listBarang.Designer.cs">
+      <DependentUpon>listBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listKategori.Designer.cs">
+      <DependentUpon>listKategori.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin.resx">
@@ -243,6 +255,12 @@
     <EmbeddedResource Include="laporanDataBarang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>laporanDataBarang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listBarang.resx">
+      <DependentUpon>listBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listKategori.resx">
+      <DependentUpon>listKategori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
