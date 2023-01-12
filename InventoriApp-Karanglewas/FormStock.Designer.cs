@@ -76,10 +76,12 @@
             // 
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
             this.txtPIC.Location = new System.Drawing.Point(528, 114);
             this.txtPIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(243, 22);
+
             this.txtPIC.TabIndex = 14;
             this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
@@ -144,7 +146,9 @@
             // dtSO
             // 
             this.dtSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+
             this.dtSO.Location = new System.Drawing.Point(528, 38);
+
             this.dtSO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtSO.Name = "dtSO";
             this.dtSO.Size = new System.Drawing.Size(243, 22);
@@ -264,10 +268,12 @@
             // 
             this.txtStokFisik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtStokFisik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
             this.txtStokFisik.Location = new System.Drawing.Point(688, 76);
             this.txtStokFisik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStokFisik.Name = "txtStokFisik";
             this.txtStokFisik.Size = new System.Drawing.Size(83, 22);
+
             this.txtStokFisik.TabIndex = 17;
             this.txtStokFisik.TextChanged += new System.EventHandler(this.txtStokFisik_TextChanged);
             // 
@@ -285,7 +291,9 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
+
             this.label6.Location = new System.Drawing.Point(422, 40);
+
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 15;

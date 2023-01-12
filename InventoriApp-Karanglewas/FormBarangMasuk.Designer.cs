@@ -180,6 +180,7 @@
             this.txtJumlahBM.Name = "txtJumlahBM";
             this.txtJumlahBM.Size = new System.Drawing.Size(176, 22);
             this.txtJumlahBM.TabIndex = 7;
+            this.txtJumlahBM.TextChanged += new System.EventHandler(this.txtJumlahBM_TextChanged);
             // 
             // cbBarangBM
             // 

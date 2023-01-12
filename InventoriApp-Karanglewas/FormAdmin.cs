@@ -17,13 +17,12 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormAdmin : Form
     {
-      //  SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+      SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+       // SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
-        string kategori;
-        DateTime date;
+        string validasi;
 
         DataTable dataTable = new DataTable();
         public FormAdmin()
@@ -36,39 +35,37 @@ namespace InventoriApp_Karanglewas
         {
             fillDataAdmin();
         }
-        private void cekInput()
+        private string cekValidasi()
         {
             if (txtUsernameAdmin.Text == "")
             {
                 MessageBox.Show("Username tidak boleh kosong!");
                 txtUsernameAdmin.Focus();
+                validasi = "gagal";
             }
             else if(txtNamaAdmin.Text == "")
             {
                 MessageBox.Show("Nama tidak boleh kosong!");
                 txtNamaAdmin.Focus();
+                validasi = "gagal";
             }
             else if (txtPasswordAdmin.Text == "")
             {
                 MessageBox.Show("Password tidak boleh kosong!");
                 txtPasswordAdmin.Focus();
+                validasi = "gagal";
             }
             else
             {
-                simpanAdmin();
+                validasi = "oke";
             }
+            return validasi;
         }
 
         private void simpanAdmin()
         {
             try
             {
-                /*conn.Open();
-                string query = "INSERT INTO tb_admin (id_admin, username, nama_panjang, password)\n" +
-                                "VALUES ('" + autoId + "','" + txtUsernameAdmin.Text + "','" + txtNamaAdmin.Text + "','" + txtPasswordAdmin.Text + "')";
-                var cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();*/
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
@@ -94,15 +91,21 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Username sudah Ada");
+                conn.Close();
             }
-            fillDataAdmin();
-            resetData();
         }
 
         private void btSimpanAdmin_Click(object sender, EventArgs e)
         {
-            cekInput();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                simpanAdmin();
+                resetData();
+                MessageBox.Show("Data berhasil disimpan");
+                fillDataAdmin();
+            }
             
         }
 

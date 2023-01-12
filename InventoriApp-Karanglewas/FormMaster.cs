@@ -17,8 +17,8 @@ namespace InventoriApp_Karanglewas
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
-        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
        
@@ -171,7 +171,12 @@ namespace InventoriApp_Karanglewas
 
         }
 
-               
+        private void FormMaster_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            simpanLog("Logout");
+        }
+
+
 
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
@@ -241,7 +246,7 @@ namespace InventoriApp_Karanglewas
 
         private void btnKeluar_Click_1(object sender, EventArgs e)
         {
-            simpanLog();
+            simpanLog("Logout");
             Form_Login FL = new Form_Login(); // Instantiate a Form3 object.
             this.Hide();
             FL.ShowDialog(); // Show Form3 and
@@ -266,9 +271,8 @@ namespace InventoriApp_Karanglewas
         }
 
 
-        private void simpanLog()
+        private void simpanLog(string ket)
         {
-            string ket = "logout";
             DateTime date = DateTime.Now;
             try
             {

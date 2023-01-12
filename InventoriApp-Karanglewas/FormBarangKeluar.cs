@@ -22,6 +22,7 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
         DateTime date;
 
+        string validasi;
         int stoksementara;
 
         DataTable dataTable = new DataTable();
@@ -161,7 +162,7 @@ namespace InventoriApp_Karanglewas
             if (System.Text.RegularExpressions.Regex.IsMatch(txtJumlahBK.Text, "[^0-9]"))
             {
                 MessageBox.Show("Input jumlah hanya bisa dimasukan angka.");
-                
+                txtJumlahBK.Clear();
             }
             
         }
@@ -214,44 +215,6 @@ namespace InventoriApp_Karanglewas
             conn.Close();
         }
 
-        //private static Random random = new Random();
-
-        /*public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string (Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-            
-        }
-
-        public void kodeRandom()
-        {
-            int length = 12;
-            string randomString = RandomString(length);
-            while (ValueExistsInDatabase(randomString))
-            {
-                
-                randomString = RandomString(length);
-            }
-                                 
-            txtKodeBK.Text = randomString;
-        }
-
-        private bool ValueExistsInDatabase(string value)
-        {
-            
-            {
-                string query = "SELECT COUNT(*) FROM tb_barangkeluar WHERE kode_bk = @value";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@value", value);
-                    conn.Open();
-                    int count = (int)cmd.ExecuteScalar();
-                    conn.Close();
-                    return count > 0;
-                }
-            }
-        }*/
 
 
         private void cbKategoriBK_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,35 +222,43 @@ namespace InventoriApp_Karanglewas
             setCB();
             cbBarang();
         }
-        private void cekInput()
+        private string cekValidasi()
         {
             if (cbKategoriBK.Text == "Pilih Kategori")
             {
                 MessageBox.Show("Anda belum memilih kategori!");
                 cbKategoriBK.Focus();
+                validasi = "gagal";
             }
             else if (cbBarangBK.Text == "Pilih Barang")
             {
                 MessageBox.Show("Anda belum memilih barang!");
                 cbBarangBK.Focus();
+                validasi = "gagal";
             }
             else if (txtJumlahBK.Text == "" | txtJumlahBK.Text == "0")
             {
                 MessageBox.Show("Jumlah tidak boleh kosong!");
                 txtJumlahBK.Focus();
+                validasi = "gagal";
             }
             else if (txtPIC.Text == "")
             {
                 MessageBox.Show("PIC tidak boleh kosong!");
                 txtPIC.Focus();
+                validasi = "gagal";
+            }
+            else if (int.Parse(txtJumlahBK.Text.Trim()) > stoksementara)
+            {
+                MessageBox.Show("Jumlah melebihi stok tersedia!\nStok tersedia '" + stoksementara.ToString() + "'");
+                txtJumlahBK.Focus();
+                validasi = "gagal";
             }
             else
             {
-                simpanBK();
-                simpanRiwayat("Simpan");
-                resetForm();
-                fillDataBK();
+                validasi = "oke";
             }
+            return validasi;
         }
         private void simpanRiwayat(string status)
         {
@@ -339,18 +310,15 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBK_Click(object sender, EventArgs e)
         {
-            if (int.Parse(txtJumlahBK.Text.Trim()) >= stoksementara)
+            cekValidasi();
+            if(validasi == "oke")
             {
-                MessageBox.Show("Jumlah melebihi stok tersedia!\nStok tersedia '" + stoksementara.ToString() + "'");
-                txtJumlahBK.Focus();
-            }
-            else
-            {
-                cekInput();
+                simpanBK();
+                simpanRiwayat("Simpan");
+                resetForm();
                 MessageBox.Show("Data berhasil disimpan");
+                fillDataBK();
             }
-            //cekInput();
-            //MessageBox.Show("Data berhasil disimpan");
 
         }
         private DataTable getDataBM()
@@ -395,7 +363,8 @@ namespace InventoriApp_Karanglewas
 
         private void btHapusBK_Click(object sender, EventArgs e)
         {
-            var tanya = MessageBox.Show("Apakah anda yakin ?", "Hapus", MessageBoxButtons.YesNo);
+            var tanya = MessageBox.Show("Apakah anda yakin \n" +
+                "akan menghapus data dengan kode = "+txtKodeBK.Text+" ?", "Hapus", MessageBoxButtons.YesNo);
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
@@ -453,11 +422,17 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBK_Click(object sender, EventArgs e)
         {
-            updateBK();
-            simpanRiwayat("Edit");
-            resetForm();
-            fillDataBK();
-            cekKode();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                updateBK();
+                simpanRiwayat("Edit");
+                resetForm();
+                MessageBox.Show("Data berhasil diedit");
+                fillDataBK();
+                cekKode();
+            }
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

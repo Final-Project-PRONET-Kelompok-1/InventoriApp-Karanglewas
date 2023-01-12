@@ -15,12 +15,12 @@ namespace InventoriApp_Karanglewas
     
     public partial class Form_Login : Form
     {
-        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
-        SqlConnection conn = new SqlConnection(dbConfig.conn);
+        //SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
-        string admin;
+        string admin, validasi;
         int autoId;
 
 
@@ -34,48 +34,72 @@ namespace InventoriApp_Karanglewas
             System.Windows.Forms.Application.Exit();
         }
 
+        private string cekValidasi()
+        {
+            if (txtUsername.Text == "")
+            {
+                MessageBox.Show("Harapan masukan username!");
+                txtUsername.Focus();
+                validasi = "gagal";
+
+            }
+            else if (txtPass.Text == "")
+            {
+                MessageBox.Show("Harap masukan password!");
+                txtPass.Focus();
+                validasi = "gagal";
+            }
+            else
+            {
+                validasi = "oke";
+            }
+
+            return validasi;
+        }
+
         private void btMasuk_Click(object sender, EventArgs e)
         {
-            simpanLog();
-
-            try
+            cekValidasi();
+            if(validasi == "oke")
             {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
-                var cmd = new SqlCommand(query, conn);
-                
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
+                simpanLog("Login");
+
+                try
                 {
-                    admin = txtUsername.Text;
-                    FormMaster FM = new FormMaster(); // Instantiate a Form3 object.
-                    this.Hide();
-                    FM.ShowDialog(); // Show Form3 and
-                    this.Close();
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = HASHBYTES('MD5', '" + txtPass.Text + "')";
+                    var cmd = new SqlCommand(query, conn);
 
+                    int count = (int)cmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        admin = txtUsername.Text;
+                        FormMaster FM = new FormMaster(); // Instantiate a Form3 object.
+                        this.Hide();
+                        FM.ShowDialog(); // Show Form3 and
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username atau Password salah!");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Invalid username or password!");
+                    MessageBox.Show(ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-
-                
+                finally
+                {
+                    conn.Close();
+                }
             }
 
         }
 
 
-        private void simpanLog()
+        private void simpanLog(string ket)
         {
-            string ket = "login";
             DateTime date = DateTime.Now;
             try
             {

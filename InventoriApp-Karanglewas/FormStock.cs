@@ -24,8 +24,7 @@ namespace InventoriApp_Karanglewas
         SqlConnection conn = new SqlConnection(dbConfig.conn);
         SqlCommand cmd;
         SqlDataReader reader;
-        string kategori;
-        string status;
+        string kategori, status, validasi;
         DateTime date;
 
         DataTable dataTable = new DataTable();
@@ -219,40 +218,43 @@ namespace InventoriApp_Karanglewas
             dataSO.DataSource = getDataSO();
         }
 
-        private void cekInput()
+        private string cekValidasi()
         {
             if (cbKategoriSO.Text == "Pilih Kategori")
             {
                 MessageBox.Show("Anda belum memilih kategori!");
                 cbKategoriSO.Focus();
+                validasi = "gagal";
             }
             else if (cbBarangSO.Text == "Pilih Barang")
             {
                 MessageBox.Show("Anda belum memilih barang!");
                 cbBarangSO.Focus();
+                validasi = "gagal";
             }
-            else if (txtStokSistem.Text == "" | txtStokSistem.Text == "0")
+            else if (txtStokSistem.Text == "")
             {
-                MessageBox.Show("Jumlah tidak boleh kosong!");
+                MessageBox.Show("Stok Sistem tidak boleh kosong!");
                 txtStokSistem.Focus();
+                validasi = "gagal";
             }
-            else if (txtStokFisik.Text == "" | txtStokFisik.Text == "0")
+            else if (txtStokFisik.Text == "")
             {
-                MessageBox.Show("Jumlah tidak boleh kosong!");
+                MessageBox.Show("Stok Fisik tidak boleh kosong!");
                 txtStokFisik.Focus();
+                validasi = "gagal";
             }
             else if (txtPIC.Text == "")
             {
                 MessageBox.Show("PIC tidak boleh kosong!");
                 txtPIC.Focus();
+                validasi = "gagal";
             }
             else
             {
-                simpanSO();
-                //simpanRiwayat();
-                resetForm();
-                fillDataSO();
+                validasi = "oke";
             }
+            return validasi;
         }
         private void simpanSO()
         {
@@ -300,8 +302,6 @@ namespace InventoriApp_Karanglewas
 
         private void resetForm()
         {
-            //fr.autoIDRiwayat();
-            //kodeRandom();
             autoKode();
 
             cbKategoriSO.Text = "Pilih Kategori";
@@ -355,15 +355,22 @@ namespace InventoriApp_Karanglewas
 
         private void btEditSO_Click_1(object sender, EventArgs e)
         {
-            UpdateSO();
-            resetForm();
-            fillDataSO();
-            cekKode();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                UpdateSO();
+                resetForm();
+                MessageBox.Show("Data berhasil diedit");
+                fillDataSO();
+                cekKode();
+            }
+            
         }
 
         private void btHapusSO_Click_1(object sender, EventArgs e)
         {
-            var tanya = MessageBox.Show("Apakah anda yakin ?", "Hapus", MessageBoxButtons.YesNo);
+            var tanya = MessageBox.Show("Apakah anda yakin \n" +
+                "akan menghapus data dengan kode = " + txtKodeSO.Text + " ?", "Hapus", MessageBoxButtons.YesNo);
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
@@ -385,7 +392,14 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanSO_Click(object sender, EventArgs e)
         {
-            cekInput();
+            cekValidasi();
+            if (validasi == "oke")
+            {
+                simpanSO();
+                resetForm();
+                MessageBox.Show("Data berhasil disimpan");
+                fillDataSO();
+            }
         }
 
         private void dataSO_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
