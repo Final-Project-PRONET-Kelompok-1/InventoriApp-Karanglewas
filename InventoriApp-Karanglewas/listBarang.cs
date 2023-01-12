@@ -20,6 +20,7 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
         string kategori, getKategori, kode, validasi;
         DateTime date;
+        int id_barang,id_kategori;
 
         DataTable dataTable = new DataTable();
         public listBarang()
@@ -59,6 +60,22 @@ namespace InventoriApp_Karanglewas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void getidKategori()
+        {
+            string query = "SELECT id_kategori FROM tb_kategori where nama_kategori = '"+cbKategoriBarang.Text+"' ";
+            conn.Close();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                id_kategori = int.Parse(rd[0].ToString());
+                rd.Close();
+            }
+            conn.Close();
+
         }
 
         private void autoKode()
@@ -116,7 +133,9 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Barang sudah ada !");
+                conn.Close();
             }
             resetForm();
             autoKode();
@@ -131,7 +150,7 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT b.kode_barang as Kode, k.nama_kategori as Kategori, b.nama_barang as Barang " +
+                string query = "SELECT b.id_barang,b.id_kategori, b.kode_barang as Kode, k.nama_kategori as Kategori, b.nama_barang as Barang " +
                                 "FROM tb_barang b " +
                                 "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
                                 "ORDER BY b.id_kategori ";
@@ -152,6 +171,8 @@ namespace InventoriApp_Karanglewas
         {
 
             dataBarang.DataSource = getDataBarang();
+            dataBarang.Columns["id_barang"].Visible = false;
+            dataBarang.Columns["id_kategori"].Visible = false;
         }
 
         private void resetForm()
@@ -179,8 +200,10 @@ namespace InventoriApp_Karanglewas
             {
                 conn.Open();
                 string queryUpdate = "UPDATE tb_barang SET  " +
+                    "kode_barang = '"+txtKodeBarang.Text+"', "+
+                    "id_kategori = '" + id_kategori + "', " +
                     "nama_barang = '" + txtNamaBarang.Text + "' " +
-                  "WHERE kode_barang = '" + txtKodeBarang.Text + "' ";
+                  "WHERE id_barang = '" + id_barang + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -200,6 +223,7 @@ namespace InventoriApp_Karanglewas
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataBarang.Rows[e.RowIndex];
+                id_barang = int.Parse(row.Cells["id_barang"].Value.ToString());
                 txtKodeBarang.Text = row.Cells["Kode"].Value.ToString();
                 cbKategoriBarang.Text = row.Cells["Kategori"].Value.ToString();
                 txtNamaBarang.Text = row.Cells["Barang"].Value.ToString();
@@ -218,7 +242,7 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM tb_barang WHERE kode_barang = '" + txtKodeBarang.Text + "'";
+                string query = "SELECT COUNT(*) FROM tb_barang WHERE id_barang = '" + id_barang + "'";
                 var cmd = new SqlCommand(query, conn);
 
                 int count = (int)cmd.ExecuteScalar();
@@ -269,6 +293,7 @@ namespace InventoriApp_Karanglewas
         private void cbKategoriBarang_SelectedIndexChanged(object sender, EventArgs e)
         {
             conn.Close();
+            getidKategori();
             getKategori = cbKategoriBarang.Text;
 
             if(getKategori == "Pilih Kategori")

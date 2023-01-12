@@ -339,7 +339,7 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBK_Click(object sender, EventArgs e)
         {
-            if (int.Parse(txtJumlahBK.Text.Trim()) >= stoksementara)
+            if (int.Parse(txtJumlahBK.Text.Trim()) > stoksementara)
             {
                 MessageBox.Show("Jumlah melebihi stok tersedia!\nStok tersedia '" + stoksementara.ToString() + "'");
                 txtJumlahBK.Focus();

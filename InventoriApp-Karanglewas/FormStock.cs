@@ -231,14 +231,14 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show("Anda belum memilih barang!");
                 cbBarangSO.Focus();
             }
-            else if (txtStokSistem.Text == "" | txtStokSistem.Text == "0")
+            else if (txtStokSistem.Text == "")
             {
-                MessageBox.Show("Jumlah tidak boleh kosong!");
+                MessageBox.Show("Stok Sistem tidak boleh kosong!");
                 txtStokSistem.Focus();
             }
-            else if (txtStokFisik.Text == "" | txtStokFisik.Text == "0")
+            else if (txtStokFisik.Text == "")
             {
-                MessageBox.Show("Jumlah tidak boleh kosong!");
+                MessageBox.Show("Stok Fisik tidak boleh kosong!");
                 txtStokFisik.Focus();
             }
             else if (txtPIC.Text == "")

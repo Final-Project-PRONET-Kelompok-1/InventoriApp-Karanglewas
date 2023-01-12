@@ -94,7 +94,8 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Username sudah Ada");
+                conn.Close();
             }
             fillDataAdmin();
             resetData();

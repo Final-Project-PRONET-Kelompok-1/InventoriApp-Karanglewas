@@ -62,7 +62,8 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Kategori sudah ada !");
+                conn.Close();
             }
             resetForm();
             autoKode();
