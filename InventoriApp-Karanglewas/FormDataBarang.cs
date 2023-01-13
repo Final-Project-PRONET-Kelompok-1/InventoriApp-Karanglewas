@@ -28,11 +28,12 @@ namespace InventoriApp_Karanglewas
         public FormDataBarang()
         {
             InitializeComponent();
-            cbKategori();
             fillDataBarang();
+
+            cbFilter.Text = "Semua Data";
         }
 
-        private void cbKategori()
+        private void cbKategori(ComboBox cb)
         {
             try
             {
@@ -48,8 +49,8 @@ namespace InventoriApp_Karanglewas
                 row["nama_kategori"] = "Semua Kategori";
                 ds.Tables["kategori"].Rows.InsertAt(row, 0);
 
-                cbKategoriSB.DataSource = ds.Tables["kategori"];
-                cbKategoriSB.DisplayMember = "nama_kategori";
+                cb.DataSource = ds.Tables["kategori"];
+                cb.DisplayMember = "nama_kategori";
                 conn.Close();
             }
             catch (Exception ex)
@@ -113,62 +114,6 @@ namespace InventoriApp_Karanglewas
             return dataTable;
         }
 
-        private DataTable getText()
-        {
-            try
-            {
-                dataTable.Reset();
-                dataTable = new DataTable();
-                conn.Open();
-                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
-                                "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
-                                "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
-                                "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
-                                "FROM tb_stokbarang sb " +
-                                "LEFT JOIN tb_barang b ON sb.id_barang = b.id_barang " +
-                                "LEFT JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
-                                "WHERE b.nama_barang like '%" + txtSB.Text + "%' ";
-                cmd = new SqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
-                dataTable.Load(reader);
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dataTable;
-        }
-        private void cari()
-        {
-            /*SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from stok_barang where Barang like '%" + txtSB.Text + "%'";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "Barang");
-            dgvDB.DataSource = ds;
-            dgvDB.DataMember = "Barang";*/
-            dgvDB.DataSource = getText();
-        }
-        private void filter()
-        {
-            /*SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from stok_barang where Kategori = '" + getKategori + "'";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "Kategori");
-            dgvDB.DataSource = ds;
-            dgvDB.DataMember = "Kategori";*/
-
-            dgvDB.DataSource = getFilter();
-
-        }
-
 
         public void fillDataBarang()
         {
@@ -189,31 +134,130 @@ namespace InventoriApp_Karanglewas
 
         }
 
-        
-
-        private void btncari_Click(object sender, EventArgs e)
-        {
-            cari();
-            txtSB.Text = "";
-        }
-
-        private void cbKategoriSB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            conn.Close();
-            getKategori = cbKategoriSB.Text;
-
-            if (getKategori == "Semua Kategori")
-            {
-                fillDataBarang();
-            }
-            else
-            {
-                filter();
-            }
-        }
+       
 
         private void txtSB_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilter.Text == "Semua Data")
+            {
+                fillDataBarang();
+                panelFilterKategori.Visible = false;
+                panelFilterText.Visible = false;
+
+                txtFilterBarang.Text = "";
+            }
+            else if (cbFilter.Text == "By Kategori")
+            {
+                panelFilterKategori.Visible = true;
+                panelFilterText.Visible = false;
+
+                cbKategori(cbFilterKategori);
+                fillDataBarang();
+                txtFilterBarang.Text = "";
+            }
+            else if (cbFilter.Text == "By Text")
+            {
+                panelFilterKategori.Visible = false;
+                panelFilterText.Visible = true;
+
+                fillDataBarang();
+            }
+        }
+
+        private void btCariText_Click(object sender, EventArgs e)
+        {
+            filterByText();
+        }
+
+        private void filterByText()
+        {
+            try
+            {
+
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
+                                "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
+                                "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
+                                "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
+                                "FROM tb_stokbarang sb " +
+                                "LEFT JOIN tb_barang b ON sb.id_barang = b.id_barang " +
+                                "LEFT JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
+                                "WHERE (k.nama_kategori LIKE '%" + txtFilterBarang.Text + "%' OR b.nama_barang LIKE '%" + txtFilterBarang.Text + "%' " +
+                                "OR sb.total_masuk LIKE '%" + txtFilterBarang.Text + "%' OR sb.total_keluar LIKE '%" + txtFilterBarang.Text + "%' OR sb.total_stok LIKE '%" + txtFilterBarang.Text + "%') ";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+
+                dgvDB.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbFilterKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            conn.Close();
+            filterByKategori();
+        }
+
+        private void filterByKategori()
+        {
+
+            try
+            {
+                if (cbFilterKategori.Text == "Semua Kategori")
+                {
+                    fillDataBarang();
+                }
+                else
+                {
+                    dataTable.Reset();
+                    dataTable = new DataTable();
+                    conn.Open();
+                    string query = "SELECT k.nama_kategori AS Kategori, b.nama_barang AS Barang, " +
+                                    "CASE WHEN sb.total_masuk IS NULL THEN 0 ELSE sb.total_masuk END AS Total_Masuk, " +
+                                    "CASE WHEN sb.total_keluar IS NULL THEN 0 ELSE sb.total_keluar END AS Total_Keluar, " +
+                                    "CASE WHEN sb.total_stok IS NULL THEN 0 ELSE sb.total_stok END AS Sisa_Stok " +
+                                    "FROM tb_stokbarang sb " +
+                                    "LEFT JOIN tb_barang b ON sb.id_barang = b.id_barang " +
+                                    "LEFT JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
+                                    "WHERE k.nama_kategori = '" + cbFilterKategori.Text + "' ";
+                    cmd = new SqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+                    dataTable.Load(reader);
+                    conn.Close();
+
+                    dgvDB.DataSource = dataTable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvDB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtFilterBarang_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilterBarang.Text == "")
+            {
+                fillDataBarang();
+            }
         }
     }
 }

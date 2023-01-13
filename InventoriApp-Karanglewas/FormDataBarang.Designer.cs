@@ -28,123 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DBarang = new System.Windows.Forms.DataGridView();
-            this.cbKategoriSB = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtSB = new System.Windows.Forms.TextBox();
-            this.btncari = new System.Windows.Forms.Button();
             this.dgvDB = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DBarang)).BeginInit();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.panelFilterText = new System.Windows.Forms.Panel();
+            this.btCariText = new System.Windows.Forms.Button();
+            this.txtFilterBarang = new System.Windows.Forms.TextBox();
+            this.panelFilterKategori = new System.Windows.Forms.Panel();
+            this.cbFilterKategori = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).BeginInit();
+            this.panelFilterText.SuspendLayout();
+            this.panelFilterKategori.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DBarang
-            // 
-            this.DBarang.AllowUserToOrderColumns = true;
-            this.DBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DBarang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DBarang.BackgroundColor = System.Drawing.Color.White;
-            this.DBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DBarang.Enabled = false;
-            this.DBarang.Location = new System.Drawing.Point(0, 203);
-            this.DBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DBarang.Name = "DBarang";
-            this.DBarang.RowHeadersWidth = 51;
-            this.DBarang.RowTemplate.Height = 24;
-            this.DBarang.Size = new System.Drawing.Size(900, 510);
-            this.DBarang.TabIndex = 4;
-            // 
-            // cbKategoriSB
-            // 
-            this.cbKategoriSB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbKategoriSB.FormattingEnabled = true;
-            this.cbKategoriSB.Location = new System.Drawing.Point(335, 69);
-            this.cbKategoriSB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbKategoriSB.Name = "cbKategoriSB";
-            this.cbKategoriSB.Size = new System.Drawing.Size(176, 24);
-            this.cbKategoriSB.TabIndex = 5;
-            this.cbKategoriSB.SelectedIndexChanged += new System.EventHandler(this.cbKategoriSB_SelectedIndexChanged);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtSB);
-            this.panel2.Controls.Add(this.btncari);
-            this.panel2.Controls.Add(this.cbKategoriSB);
+            this.panel2.Controls.Add(this.panelFilterText);
+            this.panel2.Controls.Add(this.cbFilter);
+            this.panel2.Controls.Add(this.panelFilterKategori);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(903, 207);
+            this.panel2.Size = new System.Drawing.Size(811, 78);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // txtSB
-            // 
-            this.txtSB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtSB.Location = new System.Drawing.Point(534, 69);
-            this.txtSB.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSB.Name = "txtSB";
-            this.txtSB.Size = new System.Drawing.Size(156, 22);
-            this.txtSB.TabIndex = 14;
-            this.txtSB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSB.TextChanged += new System.EventHandler(this.txtSB_TextChanged);
-            // 
-            // btncari
-            // 
-            this.btncari.BackColor = System.Drawing.SystemColors.Control;
-            this.btncari.Location = new System.Drawing.Point(711, 59);
-            this.btncari.Margin = new System.Windows.Forms.Padding(4);
-            this.btncari.Name = "btncari";
-            this.btncari.Size = new System.Drawing.Size(100, 42);
-            this.btncari.TabIndex = 12;
-            this.btncari.Text = "Cari";
-            this.btncari.UseVisualStyleBackColor = false;
-            this.btncari.Click += new System.EventHandler(this.btncari_Click);
             // 
             // dgvDB
             // 
             this.dgvDB.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvDB.Location = new System.Drawing.Point(0, 207);
+            this.dgvDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDB.ColumnHeadersHeight = 29;
+            this.dgvDB.Location = new System.Drawing.Point(12, 74);
             this.dgvDB.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDB.Name = "dgvDB";
             this.dgvDB.RowHeadersWidth = 51;
-            this.dgvDB.Size = new System.Drawing.Size(903, 342);
+            this.dgvDB.Size = new System.Drawing.Size(795, 778);
             this.dgvDB.TabIndex = 6;
+            this.dgvDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDB_CellContentClick);
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Semua Data",
+            "By Kategori",
+            "By Text"});
+            this.cbFilter.Location = new System.Drawing.Point(10, 28);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(160, 24);
+            this.cbFilter.TabIndex = 22;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
+            // panelFilterText
+            // 
+            this.panelFilterText.Controls.Add(this.btCariText);
+            this.panelFilterText.Controls.Add(this.txtFilterBarang);
+            this.panelFilterText.Location = new System.Drawing.Point(206, 28);
+            this.panelFilterText.Name = "panelFilterText";
+            this.panelFilterText.Size = new System.Drawing.Size(243, 60);
+            this.panelFilterText.TabIndex = 24;
+            // 
+            // btCariText
+            // 
+            this.btCariText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariText.Location = new System.Drawing.Point(176, 0);
+            this.btCariText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCariText.Name = "btCariText";
+            this.btCariText.Size = new System.Drawing.Size(67, 24);
+            this.btCariText.TabIndex = 21;
+            this.btCariText.Text = "Cari";
+            this.btCariText.UseVisualStyleBackColor = true;
+            this.btCariText.Click += new System.EventHandler(this.btCariText_Click);
+            // 
+            // txtFilterBarang
+            // 
+            this.txtFilterBarang.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtFilterBarang.Location = new System.Drawing.Point(0, 0);
+            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFilterBarang.Name = "txtFilterBarang";
+            this.txtFilterBarang.Size = new System.Drawing.Size(176, 22);
+            this.txtFilterBarang.TabIndex = 22;
+            this.txtFilterBarang.TextChanged += new System.EventHandler(this.txtFilterBarang_TextChanged);
+            // 
+            // panelFilterKategori
+            // 
+            this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
+            this.panelFilterKategori.Location = new System.Drawing.Point(206, 27);
+            this.panelFilterKategori.Name = "panelFilterKategori";
+            this.panelFilterKategori.Size = new System.Drawing.Size(210, 40);
+            this.panelFilterKategori.TabIndex = 25;
+            // 
+            // cbFilterKategori
+            // 
+            this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbFilterKategori.FormattingEnabled = true;
+            this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
+            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilterKategori.Name = "cbFilterKategori";
+            this.cbFilterKategori.Size = new System.Drawing.Size(176, 24);
+            this.cbFilterKategori.TabIndex = 19;
+            this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged);
             // 
             // FormDataBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 554);
+            this.ClientSize = new System.Drawing.Size(811, 788);
             this.Controls.Add(this.dgvDB);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.DBarang);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDataBarang";
             this.Text = "FormDataBarang";
             this.Load += new System.EventHandler(this.FormDataBarang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DBarang)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).EndInit();
+            this.panelFilterText.ResumeLayout(false);
+            this.panelFilterText.PerformLayout();
+            this.panelFilterKategori.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DBarang;
-        private System.Windows.Forms.ComboBox cbKategoriSB;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btncari;
         private System.Windows.Forms.DataGridView dgvDB;
-        private System.Windows.Forms.TextBox txtSB;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Panel panelFilterKategori;
+        private System.Windows.Forms.ComboBox cbFilterKategori;
+        private System.Windows.Forms.Panel panelFilterText;
+        private System.Windows.Forms.Button btCariText;
+        private System.Windows.Forms.TextBox txtFilterBarang;
     }
 }

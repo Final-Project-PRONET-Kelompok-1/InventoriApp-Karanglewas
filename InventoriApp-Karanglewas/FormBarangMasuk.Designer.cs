@@ -85,6 +85,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panelFilterText);
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.txtPIC);
             this.panel2.Controls.Add(this.label5);
@@ -101,7 +102,6 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.panelFilterText);
             this.panel2.Controls.Add(this.panelFilterKategori);
             this.panel2.Controls.Add(this.panelFilterTanggal);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -296,6 +296,7 @@
             this.panelFilterText.Name = "panelFilterText";
             this.panelFilterText.Size = new System.Drawing.Size(243, 60);
             this.panelFilterText.TabIndex = 20;
+            this.panelFilterText.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterText_Paint);
             // 
             // btCariText
             // 
@@ -326,6 +327,7 @@
             this.panelFilterKategori.Name = "panelFilterKategori";
             this.panelFilterKategori.Size = new System.Drawing.Size(210, 40);
             this.panelFilterKategori.TabIndex = 21;
+            this.panelFilterKategori.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterKategori_Paint);
             // 
             // cbFilterKategori
             // 
@@ -348,6 +350,7 @@
             this.panelFilterTanggal.Name = "panelFilterTanggal";
             this.panelFilterTanggal.Size = new System.Drawing.Size(583, 29);
             this.panelFilterTanggal.TabIndex = 18;
+            this.panelFilterTanggal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterTanggal_Paint);
             // 
             // btCariTanggal
             // 

@@ -492,7 +492,7 @@ namespace InventoriApp_Karanglewas
             
             try
             {
-                if (cbFilterKategori.Text == "Pilih Kategori")
+                if (cbFilterKategori.Text == "Semua Kategori")
                 {
                     fillDataBM();
                 }
@@ -574,6 +574,21 @@ namespace InventoriApp_Karanglewas
             {
                 fillDataBM();
             }
+        }
+
+        private void panelFilterText_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelFilterKategori_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelFilterTanggal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void txtJumlahBM_TextChanged(object sender, EventArgs e)
