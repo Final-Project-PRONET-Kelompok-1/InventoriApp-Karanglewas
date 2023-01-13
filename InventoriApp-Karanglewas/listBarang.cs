@@ -108,10 +108,43 @@ namespace InventoriApp_Karanglewas
             conn.Close();
         }
 
+        private string cekNamaBarang()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_barang WHERE nama_barang = '" + txtNamaBarang.Text + "' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Barang '" + txtNamaBarang.Text + "' sudah ada!");
+                    txtNamaBarang.Focus();
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
+        }
+
         private void btSimpanBarang_Click(object sender, EventArgs e)
         {
-            cekInput();
-            if (validasi == "oke")
+            if (cekInput() == "oke" && cekNamaBarang() == "oke" )
             {
                 simpanBarang();
             }
@@ -135,8 +168,7 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
-                MessageBox.Show("Barang sudah ada !");
+                MessageBox.Show(ex.Message);
                 conn.Close();
             }
             autoKode();
@@ -189,8 +221,7 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBarang_Click(object sender, EventArgs e)
         {
-            cekInput();
-            if (validasi == "oke")
+            if (cekInput() == "oke")
             {
                 updateBarang();
             }
@@ -240,6 +271,28 @@ namespace InventoriApp_Karanglewas
             cekKode();
         }
 
+        private void hapusBarang()
+        {
+            var tanya = MessageBox.Show("Semua data yang berhubungan dengan barang '" + txtNamaBarang.Text + "' akan terhapus.\n" +
+                "Apakah anda yakin akan menghapusnya ?", "Hapus", MessageBoxButtons.YesNo);
+            if (tanya == DialogResult.Yes)
+            {
+                conn.Open();
+                string query = "DELETE FROM tb_barang WHERE kode_barang = '"+txtKodeBarang.Text+"' ";
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        private void btHapusBarang_Click(object sender, EventArgs e)
+        {
+            hapusBarang();
+            resetForm();
+            fillDataBarang();
+            cekKode();
+        }
+
         private void cekKode()
         {
             try
@@ -253,10 +306,12 @@ namespace InventoriApp_Karanglewas
                 {
                     btEditBarang.Enabled = true;
                     btSimpanBarang.Enabled = false;
+                    btHapusBarang.Enabled = true;
                 }
                 else
                 {
                     btEditBarang.Enabled = false;
+                    btHapusBarang.Enabled = false;
                     btSimpanBarang.Enabled = true;
                 }
             }

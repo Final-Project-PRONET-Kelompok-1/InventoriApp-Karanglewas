@@ -34,9 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btResetKategori = new System.Windows.Forms.Button();
             this.txtNamaKategori = new System.Windows.Forms.TextBox();
             this.dataKategori = new System.Windows.Forms.DataGridView();
-            this.btResetKategori = new System.Windows.Forms.Button();
+            this.btHapusKategori = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataKategori)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // btEditKategori
             // 
             this.btEditKategori.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btEditKategori.Location = new System.Drawing.Point(403, 62);
+            this.btEditKategori.Location = new System.Drawing.Point(497, 22);
             this.btEditKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEditKategori.Name = "btEditKategori";
             this.btEditKategori.Size = new System.Drawing.Size(79, 31);
@@ -97,6 +98,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btHapusKategori);
             this.panel2.Controls.Add(this.btResetKategori);
             this.panel2.Controls.Add(this.txtNamaKategori);
             this.panel2.Controls.Add(this.btSimpanKategori);
@@ -110,6 +112,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(814, 136);
             this.panel2.TabIndex = 5;
+            // 
+            // btResetKategori
+            // 
+            this.btResetKategori.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btResetKategori.Location = new System.Drawing.Point(403, 64);
+            this.btResetKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btResetKategori.Name = "btResetKategori";
+            this.btResetKategori.Size = new System.Drawing.Size(79, 31);
+            this.btResetKategori.TabIndex = 14;
+            this.btResetKategori.Text = "Reset";
+            this.btResetKategori.UseVisualStyleBackColor = true;
+            this.btResetKategori.Click += new System.EventHandler(this.btResetKategori_Click);
             // 
             // txtNamaKategori
             // 
@@ -141,17 +155,17 @@
             this.dataKategori.TabIndex = 4;
             this.dataKategori.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataKategori_CellContentClick);
             // 
-            // btResetKategori
+            // btHapusKategori
             // 
-            this.btResetKategori.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btResetKategori.Location = new System.Drawing.Point(497, 62);
-            this.btResetKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btResetKategori.Name = "btResetKategori";
-            this.btResetKategori.Size = new System.Drawing.Size(79, 31);
-            this.btResetKategori.TabIndex = 14;
-            this.btResetKategori.Text = "Reset";
-            this.btResetKategori.UseVisualStyleBackColor = true;
-            this.btResetKategori.Click += new System.EventHandler(this.btResetKategori_Click);
+            this.btHapusKategori.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btHapusKategori.Location = new System.Drawing.Point(497, 64);
+            this.btHapusKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btHapusKategori.Name = "btHapusKategori";
+            this.btHapusKategori.Size = new System.Drawing.Size(79, 31);
+            this.btHapusKategori.TabIndex = 15;
+            this.btHapusKategori.Text = "Hapus";
+            this.btHapusKategori.UseVisualStyleBackColor = true;
+            this.btHapusKategori.Click += new System.EventHandler(this.btHapusKategori_Click);
             // 
             // listKategori
             // 
@@ -180,5 +194,6 @@
         private System.Windows.Forms.TextBox txtNamaKategori;
         private System.Windows.Forms.DataGridView dataKategori;
         private System.Windows.Forms.Button btResetKategori;
+        private System.Windows.Forms.Button btHapusKategori;
     }
 }

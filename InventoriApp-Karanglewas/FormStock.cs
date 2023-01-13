@@ -357,8 +357,7 @@ namespace InventoriApp_Karanglewas
 
         private void btEditSO_Click_1(object sender, EventArgs e)
         {
-            cekValidasi();
-            if (validasi == "oke")
+            if (cekValidasi() == "oke")
             {
                 UpdateSO();
                 resetForm();
@@ -394,8 +393,7 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanSO_Click(object sender, EventArgs e)
         {
-            cekValidasi();
-            if (validasi == "oke")
+            if (cekValidasi() == "oke")
             {
                 simpanSO();
                 resetForm();

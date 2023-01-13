@@ -64,7 +64,7 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kategori sudah ada !");
+                MessageBox.Show(ex.Message);
                 conn.Close();
             }
             resetForm();
@@ -120,10 +120,43 @@ namespace InventoriApp_Karanglewas
             conn.Close();
         }
 
+        private string cekKategori()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_kategori WHERE nama_kategori = '" + txtNamaKategori.Text + "' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Kategori '" + txtNamaKategori.Text + "' sudah ada!");
+                    txtNamaKategori.Focus();
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
+        }
+
         private void btSimpanKategori_Click(object sender, EventArgs e)
         {
-            cekInput();
-            if (validasi == "oke")
+            if (cekInput() == "oke" && cekKategori() == "oke")
             {
                 simpanKategori();
             }
@@ -190,11 +223,13 @@ namespace InventoriApp_Karanglewas
                 if (count > 0)
                 {
                     btEditKategori.Enabled = true;
+                    btHapusKategori.Enabled = true;
                     btSimpanKategori.Enabled = false;
                 }
                 else
                 {
                     btEditKategori.Enabled = false;
+                    btHapusKategori.Enabled = false;
                     btSimpanKategori.Enabled = true;
                 }
             }
@@ -216,11 +251,34 @@ namespace InventoriApp_Karanglewas
 
         private void btEditKategori_Click(object sender, EventArgs e)
         {
-            cekInput();
-            if (validasi == "oke")
+            if (cekInput() == "oke")
             {
                 updateKategori();
             }
+        }
+
+        private void hapusKategori()
+        {
+            var tanya = MessageBox.Show("Semua data yang berhubungan dengan kategori '" + txtNamaKategori.Text + "' akan terhapus.\n" +
+                "Apakah anda yakin akan menghapusnya ?", "Hapus", MessageBoxButtons.YesNo);
+            if (tanya == DialogResult.Yes)
+            {
+                conn.Open();
+                string query = "DELETE FROM tb_kategori WHERE kode_kategori = '" + txtKodeKategori.Text + "' ";
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                resetForm();
+                fillDataKategori();
+            }
+        }
+
+        private void btHapusKategori_Click(object sender, EventArgs e)
+        {
+            hapusKategori();
+            resetForm();
+            fillDataKategori();
+            cekKode();
         }
     }
 }

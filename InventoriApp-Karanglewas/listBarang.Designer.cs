@@ -39,6 +39,7 @@
             this.cbKategoriBarang = new System.Windows.Forms.ComboBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.dataBarang = new System.Windows.Forms.DataGridView();
+            this.btHapusBarang = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBarang)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +59,10 @@
             // btEditBarang
             // 
             this.btEditBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btEditBarang.Location = new System.Drawing.Point(402, 87);
+            this.btEditBarang.Location = new System.Drawing.Point(487, 52);
             this.btEditBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEditBarang.Name = "btEditBarang";
-            this.btEditBarang.Size = new System.Drawing.Size(79, 31);
+            this.btEditBarang.Size = new System.Drawing.Size(75, 31);
             this.btEditBarang.TabIndex = 9;
             this.btEditBarang.Text = "Edit";
             this.btEditBarang.UseVisualStyleBackColor = true;
@@ -99,6 +100,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btHapusBarang);
             this.panel2.Controls.Add(this.btResetBarang);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cbKategoriBarang);
@@ -118,10 +120,10 @@
             // btResetBarang
             // 
             this.btResetBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btResetBarang.Location = new System.Drawing.Point(487, 87);
+            this.btResetBarang.Location = new System.Drawing.Point(402, 87);
             this.btResetBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btResetBarang.Name = "btResetBarang";
-            this.btResetBarang.Size = new System.Drawing.Size(79, 31);
+            this.btResetBarang.Size = new System.Drawing.Size(75, 31);
             this.btResetBarang.TabIndex = 16;
             this.btResetBarang.Text = "Reset";
             this.btResetBarang.UseVisualStyleBackColor = true;
@@ -178,6 +180,18 @@
             this.dataBarang.TabIndex = 6;
             this.dataBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBarang_CellContentClick);
             // 
+            // btHapusBarang
+            // 
+            this.btHapusBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btHapusBarang.Location = new System.Drawing.Point(487, 87);
+            this.btHapusBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btHapusBarang.Name = "btHapusBarang";
+            this.btHapusBarang.Size = new System.Drawing.Size(75, 33);
+            this.btHapusBarang.TabIndex = 17;
+            this.btHapusBarang.Text = "Hapus";
+            this.btHapusBarang.UseVisualStyleBackColor = true;
+            this.btHapusBarang.Click += new System.EventHandler(this.btHapusBarang_Click);
+            // 
             // listBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,5 +221,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbKategoriBarang;
         private System.Windows.Forms.Button btResetBarang;
+        private System.Windows.Forms.Button btHapusBarang;
     }
 }

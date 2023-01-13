@@ -312,8 +312,7 @@ namespace InventoriApp_Karanglewas
 
         private void btSimpanBK_Click(object sender, EventArgs e)
         {
-            cekValidasi();
-            if(validasi == "oke")
+            if(cekValidasi() == "oke")
             {
                 simpanBK();
                 simpanRiwayat("Simpan");
@@ -424,8 +423,7 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBK_Click(object sender, EventArgs e)
         {
-            cekValidasi();
-            if (validasi == "oke")
+            if (cekValidasi() == "oke")
             {
                 updateBK();
                 simpanRiwayat("Edit");

@@ -65,6 +65,41 @@ namespace InventoriApp_Karanglewas
             return validasi;
         }
 
+        private string cekUsername()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsernameAdmin.Text + "' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Username '" + txtUsernameAdmin.Text +"' sudah dipakai!\n" +
+                        "Masukan username lain!");
+                    txtUsernameAdmin.Focus();
+
+                    validasi = "gagal";
+                } 
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
+        }
+
         private void simpanAdmin()
         {
             try
@@ -94,15 +129,13 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Username sudah Ada");
                 conn.Close();
             }
         }
 
         private void btSimpanAdmin_Click(object sender, EventArgs e)
         {
-            cekValidasi();
-            if (validasi == "oke")
+            if (cekValidasi() == "oke" && cekUsername() == "oke")
             {
                 simpanAdmin();
                 resetData();
