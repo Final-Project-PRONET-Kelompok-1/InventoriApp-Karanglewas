@@ -66,9 +66,9 @@ namespace InventoriApp_Karanglewas
                 try
                 {
                     conn.Open();
-                    //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = HASHBYTES('MD5', '" + txtPass.Text + "')";
+                    string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = HASHBYTES('MD5', '" + txtPass.Text + "')";
 
-                    string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                    //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
                     var cmd = new SqlCommand(query, conn);
 
                     int count = (int)cmd.ExecuteScalar();

@@ -45,8 +45,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.panelFilterTanggal = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btCariTanggal = new System.Windows.Forms.Button();
+            this.panelFilterKategori = new System.Windows.Forms.Panel();
+            this.cbFilterKategori = new System.Windows.Forms.ComboBox();
+            this.panelFilterText = new System.Windows.Forms.Panel();
+            this.txtFilterBarang = new System.Windows.Forms.TextBox();
+            this.btCariText = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataBM)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelFilterTanggal.SuspendLayout();
+            this.panelFilterKategori.SuspendLayout();
+            this.panelFilterText.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataBM
@@ -60,17 +74,18 @@
             this.dataBM.BackgroundColor = System.Drawing.Color.White;
             this.dataBM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataBM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBM.Location = new System.Drawing.Point(11, 213);
+            this.dataBM.Location = new System.Drawing.Point(12, 249);
             this.dataBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataBM.Name = "dataBM";
             this.dataBM.RowHeadersWidth = 51;
             this.dataBM.RowTemplate.Height = 24;
-            this.dataBM.Size = new System.Drawing.Size(787, 658);
+            this.dataBM.Size = new System.Drawing.Size(787, 526);
             this.dataBM.TabIndex = 2;
             this.dataBM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBM_CellContentClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.txtPIC);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btSimpanBM);
@@ -86,11 +101,14 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panelFilterText);
+            this.panel2.Controls.Add(this.panelFilterKategori);
+            this.panel2.Controls.Add(this.panelFilterTanggal);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(811, 207);
+            this.panel2.Size = new System.Drawing.Size(811, 243);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -117,8 +135,8 @@
             // 
             // btSimpanBM
             // 
-            this.btSimpanBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btSimpanBM.Location = new System.Drawing.Point(656, 124);
+            this.btSimpanBM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btSimpanBM.Location = new System.Drawing.Point(656, 142);
             this.btSimpanBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSimpanBM.Name = "btSimpanBM";
             this.btSimpanBM.Size = new System.Drawing.Size(75, 34);
@@ -129,8 +147,8 @@
             // 
             // btResetBM
             // 
-            this.btResetBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btResetBM.Location = new System.Drawing.Point(563, 124);
+            this.btResetBM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btResetBM.Location = new System.Drawing.Point(563, 142);
             this.btResetBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btResetBM.Name = "btResetBM";
             this.btResetBM.Size = new System.Drawing.Size(75, 34);
@@ -141,8 +159,8 @@
             // 
             // btHapusBM
             // 
-            this.btHapusBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btHapusBM.Location = new System.Drawing.Point(472, 124);
+            this.btHapusBM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btHapusBM.Location = new System.Drawing.Point(472, 142);
             this.btHapusBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btHapusBM.Name = "btHapusBM";
             this.btHapusBM.Size = new System.Drawing.Size(75, 34);
@@ -153,8 +171,8 @@
             // 
             // btEditBM
             // 
-            this.btEditBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btEditBM.Location = new System.Drawing.Point(385, 126);
+            this.btEditBM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btEditBM.Location = new System.Drawing.Point(385, 144);
             this.btEditBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEditBM.Name = "btEditBM";
             this.btEditBM.Size = new System.Drawing.Size(75, 32);
@@ -254,6 +272,123 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kode";
             // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Semua Data",
+            "By Tanggal",
+            "By Kategori",
+            "By Text"});
+            this.cbFilter.Location = new System.Drawing.Point(34, 201);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(160, 24);
+            this.cbFilter.TabIndex = 17;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
+            // panelFilterTanggal
+            // 
+            this.panelFilterTanggal.Controls.Add(this.btCariTanggal);
+            this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
+            this.panelFilterTanggal.Controls.Add(this.label6);
+            this.panelFilterTanggal.Controls.Add(this.dateTimePicker1);
+            this.panelFilterTanggal.Location = new System.Drawing.Point(216, 201);
+            this.panelFilterTanggal.Name = "panelFilterTanggal";
+            this.panelFilterTanggal.Size = new System.Drawing.Size(583, 29);
+            this.panelFilterTanggal.TabIndex = 18;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Location = new System.Drawing.Point(243, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "--";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimePicker2.Location = new System.Drawing.Point(258, 0);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker2.TabIndex = 20;
+            // 
+            // btCariTanggal
+            // 
+            this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTanggal.Location = new System.Drawing.Point(501, 0);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCariTanggal.Name = "btCariTanggal";
+            this.btCariTanggal.Size = new System.Drawing.Size(82, 24);
+            this.btCariTanggal.TabIndex = 19;
+            this.btCariTanggal.Text = "Cari";
+            this.btCariTanggal.UseVisualStyleBackColor = true;
+            this.btCariTanggal.Click += new System.EventHandler(this.btCariTanggal_Click);
+            // 
+            // panelFilterKategori
+            // 
+            this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
+            this.panelFilterKategori.Location = new System.Drawing.Point(216, 200);
+            this.panelFilterKategori.Name = "panelFilterKategori";
+            this.panelFilterKategori.Size = new System.Drawing.Size(210, 40);
+            this.panelFilterKategori.TabIndex = 21;
+            // 
+            // cbFilterKategori
+            // 
+            this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbFilterKategori.FormattingEnabled = true;
+            this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
+            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilterKategori.Name = "cbFilterKategori";
+            this.cbFilterKategori.Size = new System.Drawing.Size(176, 24);
+            this.cbFilterKategori.TabIndex = 19;
+            this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged);
+            // 
+            // panelFilterText
+            // 
+            this.panelFilterText.Controls.Add(this.btCariText);
+            this.panelFilterText.Controls.Add(this.txtFilterBarang);
+            this.panelFilterText.Location = new System.Drawing.Point(216, 201);
+            this.panelFilterText.Name = "panelFilterText";
+            this.panelFilterText.Size = new System.Drawing.Size(243, 60);
+            this.panelFilterText.TabIndex = 20;
+            // 
+            // txtFilterBarang
+            // 
+            this.txtFilterBarang.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtFilterBarang.Location = new System.Drawing.Point(0, 0);
+            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFilterBarang.Name = "txtFilterBarang";
+            this.txtFilterBarang.Size = new System.Drawing.Size(176, 22);
+            this.txtFilterBarang.TabIndex = 22;
+            this.txtFilterBarang.TextChanged += new System.EventHandler(this.txtFilterBarang_TextChanged);
+            // 
+            // btCariText
+            // 
+            this.btCariText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariText.Location = new System.Drawing.Point(176, 0);
+            this.btCariText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCariText.Name = "btCariText";
+            this.btCariText.Size = new System.Drawing.Size(67, 24);
+            this.btCariText.TabIndex = 21;
+            this.btCariText.Text = "Cari";
+            this.btCariText.UseVisualStyleBackColor = true;
+            this.btCariText.Click += new System.EventHandler(this.btCariText_Click);
+            // 
             // FormBarangMasuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,6 +405,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataBM)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelFilterTanggal.ResumeLayout(false);
+            this.panelFilterTanggal.PerformLayout();
+            this.panelFilterKategori.ResumeLayout(false);
+            this.panelFilterText.ResumeLayout(false);
+            this.panelFilterText.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +433,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPIC;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelFilterTanggal;
+        private System.Windows.Forms.Button btCariTanggal;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Panel panelFilterKategori;
+        private System.Windows.Forms.ComboBox cbFilterKategori;
+        private System.Windows.Forms.Panel panelFilterText;
+        private System.Windows.Forms.Button btCariText;
+        private System.Windows.Forms.TextBox txtFilterBarang;
     }
 }

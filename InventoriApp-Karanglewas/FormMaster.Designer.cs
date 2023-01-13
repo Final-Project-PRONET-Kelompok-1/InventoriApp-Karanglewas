@@ -515,9 +515,7 @@
             this.lblChildForm.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChildForm.ForeColor = System.Drawing.Color.White;
             this.lblChildForm.Location = new System.Drawing.Point(196, 9);
-
             this.lblChildForm.MinimumSize = new System.Drawing.Size(428, 29);
-
             this.lblChildForm.Name = "lblChildForm";
             this.lblChildForm.Size = new System.Drawing.Size(428, 29);
             this.lblChildForm.TabIndex = 0;
@@ -542,7 +540,7 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1078, 723);
+            this.MinimumSize = new System.Drawing.Size(1098, 797);
             this.Name = "FormMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaster";
