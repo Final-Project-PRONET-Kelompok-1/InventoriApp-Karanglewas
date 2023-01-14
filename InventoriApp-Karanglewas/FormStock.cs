@@ -19,11 +19,11 @@ namespace InventoriApp_Karanglewas
     {
 
 
-        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
         //SqlConnection conn = new SqlConnection(dbConfig.conn);
 
-        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori, status, validasi;
@@ -35,9 +35,9 @@ namespace InventoriApp_Karanglewas
         public FormStock()
         {
             InitializeComponent();
-
-            cbKategori();
             cekKode();
+            cbKategori(cbKategoriSO);
+            cbFilter.Text = "Semua Data";
 
         }
 
@@ -87,7 +87,7 @@ namespace InventoriApp_Karanglewas
             }
         }
 
-        private void cbKategori()
+        private void cbKategori(ComboBox cb)
         {
             try
             {
@@ -103,8 +103,8 @@ namespace InventoriApp_Karanglewas
                 row["nama_kategori"] = "Pilih Kategori";
                 ds.Tables["kategori"].Rows.InsertAt(row, 0);
 
-                cbKategoriSO.DataSource = ds.Tables["kategori"];
-                cbKategoriSO.DisplayMember = "nama_kategori";
+                cb.DataSource = ds.Tables["kategori"];
+                cb.DisplayMember = "nama_kategori";
                 conn.Close();
             }
             catch (Exception ex)
@@ -149,6 +149,8 @@ namespace InventoriApp_Karanglewas
             txtKodeSO.Enabled = false;
             fillDataSO();
             txtStokSistem.Enabled = false;
+            
+            
 
         }
 
@@ -422,6 +424,174 @@ namespace InventoriApp_Karanglewas
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void cbFilter_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cbFilter.Text == "Semua Data")
+            {
+                fillDataSO();
+                panelFilterTanggal.Visible = false;
+                panelFilterKategori.Visible = false;
+                panelFilterText.Visible = false;
+
+                resetDTP();
+                txtFilterBarang.Text = "";
+            }
+            else if (cbFilter.Text == "By Tanggal")
+            {
+                panelFilterTanggal.Visible = true;
+                panelFilterKategori.Visible = false;
+                panelFilterText.Visible = false;
+
+                fillDataSO();
+                txtFilterBarang.Text = "";
+            }
+            else if (cbFilter.Text == "By Kategori")
+            {
+                panelFilterKategori.Visible = true;
+                panelFilterTanggal.Visible = false;
+                panelFilterText.Visible = false;
+
+                resetDTP();
+                cbKategori(cbFilterKategori);
+                fillDataSO();
+                txtFilterBarang.Text = "";
+            }
+            else if (cbFilter.Text == "By Text")
+            {
+                panelFilterTanggal.Visible = false;
+                panelFilterKategori.Visible = false;
+                panelFilterText.Visible = true;
+
+                resetDTP();
+                fillDataSO();
+            }
+        }
+        private void resetDTP()
+        {
+            date = DateTime.Now;
+            dateTimePicker1.Text = date.ToString();
+            dateTimePicker2.Text = date.ToString();
+        }
+        private void filterByText()
+        {
+            try
+            {
+
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.nama_kategori as Kategori, b.nama_barang as Barang, so.stok_sistem as StokSistem, so.stok_fisik as StokFisik, so.pic as PIC, so.status as Status " +
+                                "FROM tb_stokopname so " +
+                                "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
+                                "INNER JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
+                                "WHERE (so.kode_so LIKE '%" + txtFilterBarang.Text + "%' OR k.nama_kategori LIKE '%" + txtFilterBarang.Text + "%' " +
+                                "OR b.nama_barang LIKE '%" + txtFilterBarang.Text + "%' OR so.stok_fisik LIKE '%" + txtFilterBarang.Text + "%' " +
+                                "OR so.stok_sistem LIKE '%" + txtFilterBarang.Text + "%' OR so.pic LIKE '%" + txtFilterBarang.Text + "%' " +
+                                "OR so.stok_fisik LIKE '%" + txtFilterBarang.Text + "%' OR so.status LIKE '" + txtFilterBarang.Text + "%') " +
+                                "ORDER BY so.tanggal DESC ";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+
+                dataSO.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void filterByKategori()
+        {
+
+            try
+            {
+                if (cbFilterKategori.Text == "Semua Kategori")
+                {
+                    fillDataSO();
+                }
+                else
+                {
+                    dataTable.Reset();
+                    dataTable = new DataTable();
+                    conn.Open();
+                    string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.nama_kategori as Kategori, b.nama_barang as Barang, so.stok_sistem as StokSistem, so.stok_fisik as StokFisik, so.pic as PIC, so.status as Status " +
+                                    "FROM tb_stokopname so " +
+                                    "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
+                                    "INNER JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
+                                    "WHERE k.nama_kategori = '" + cbFilterKategori.Text + "' " +
+                                    "ORDER BY so.tanggal DESC";
+                    cmd = new SqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+                    dataTable.Load(reader);
+                    conn.Close();
+
+                    dataSO.DataSource = dataTable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void filterByTanggal()
+        {
+            string date1 = dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day;
+            string date2 = dateTimePicker2.Value.Year + "-" + dateTimePicker2.Value.Month + "-" + dateTimePicker2.Value.Day;
+
+            try
+            {
+                
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT so.kode_so as Kode, so.tanggal as Tanggal, k.nama_kategori as Kategori, b.nama_barang as Barang, so.stok_sistem as StokSistem, so.stok_fisik as StokFisik, so.pic as PIC, so.status as Status " +
+                                "FROM tb_stokopname so " +
+                                "INNER JOIN tb_barang b ON so.id_barang = b.id_barang " +
+                                "INNER JOIN tb_kategori k ON b.id_kategori = k.id_kategori " +
+                                "WHERE so.tanggal BETWEEN '" + date1 + "' AND '" + date2 + "' " +
+                                "ORDER BY so.tanggal DESC";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+
+                dataSO.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+
+        private void btCariText_Click(object sender, EventArgs e)
+        {
+            filterByText();
+        }
+
+        private void btCariTanggal_Click(object sender, EventArgs e)
+        {
+            filterByTanggal();
+        }
+        private void txtFilterBarang_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilterBarang.Text == "")
+            {
+                fillDataSO();
+            }
+        }
+
+        private void cbFilterKategori_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            conn.Close();
+            filterByKategori();
         }
 
         private void txtStokFisik_TextChanged(object sender, EventArgs e)
