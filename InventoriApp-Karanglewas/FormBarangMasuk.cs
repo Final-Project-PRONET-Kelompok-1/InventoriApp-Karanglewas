@@ -536,7 +536,7 @@ namespace InventoriApp_Karanglewas
                                 "FROM tb_barangmasuk bm " +
                                 "INNER JOIN tb_barang b ON bm.id_barang = b.id_barang " +
                                 "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
-                                "WHERE bm.tanggal BETWEEN '" + date1 + "' AND '" + date2 + "' " +
+                                "WHERE CAST(bm.tanggal as DATE) BETWEEN '" + date1 + "' AND '" + date2 + "' " +
                                 "ORDER BY bm.tanggal DESC ";
                 cmd = new SqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
