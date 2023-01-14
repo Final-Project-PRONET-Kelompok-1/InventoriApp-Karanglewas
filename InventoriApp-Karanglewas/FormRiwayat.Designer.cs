@@ -46,33 +46,38 @@
             this.dataRiwayat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataRiwayat.BackgroundColor = System.Drawing.Color.White;
             this.dataRiwayat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataRiwayat.Location = new System.Drawing.Point(1, 113);
+            this.dataRiwayat.Location = new System.Drawing.Point(1, 139);
+            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataRiwayat.Name = "dataRiwayat";
-            this.dataRiwayat.Size = new System.Drawing.Size(809, 344);
+            this.dataRiwayat.RowHeadersWidth = 51;
+            this.dataRiwayat.Size = new System.Drawing.Size(1067, 423);
             this.dataRiwayat.TabIndex = 0;
             this.dataRiwayat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRiwayat_CellContentClick);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(93, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(124, 32);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(175, 22);
             this.dateTimePicker2.TabIndex = 6;
             // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(358, 26);
+            this.dateTimePicker3.Location = new System.Drawing.Point(477, 32);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(156, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(207, 22);
             this.dateTimePicker3.TabIndex = 7;
             // 
             // btnSemua
             // 
-            this.btnSemua.Location = new System.Drawing.Point(14, 66);
+            this.btnSemua.Location = new System.Drawing.Point(19, 81);
+            this.btnSemua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSemua.Name = "btnSemua";
-            this.btnSemua.Size = new System.Drawing.Size(91, 23);
+            this.btnSemua.Size = new System.Drawing.Size(121, 28);
             this.btnSemua.TabIndex = 11;
             this.btnSemua.Text = "Semua";
             this.btnSemua.UseVisualStyleBackColor = true;
@@ -80,9 +85,10 @@
             // 
             // btnTanggal
             // 
-            this.btnTanggal.Location = new System.Drawing.Point(111, 66);
+            this.btnTanggal.Location = new System.Drawing.Point(148, 81);
+            this.btnTanggal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTanggal.Name = "btnTanggal";
-            this.btnTanggal.Size = new System.Drawing.Size(95, 23);
+            this.btnTanggal.Size = new System.Drawing.Size(127, 28);
             this.btnTanggal.TabIndex = 12;
             this.btnTanggal.Text = "Filter Tanggal";
             this.btnTanggal.UseVisualStyleBackColor = true;
@@ -91,28 +97,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(15, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Dari tanggal:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(261, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(348, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(105, 16);
             this.label1.TabIndex = 14;
             this.label1.Text = "Sampai tanggal:";
             // 
             // FormRiwayat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTanggal);
@@ -120,6 +124,7 @@
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dataRiwayat);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormRiwayat";
             this.Text = "FormRiwayat";
             this.Load += new System.EventHandler(this.FormRiwayat_Load);

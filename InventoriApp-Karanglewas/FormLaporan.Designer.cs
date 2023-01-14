@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCetak = new System.Windows.Forms.Button();
             this.cbPilih = new System.Windows.Forms.ComboBox();
-            this.dgvLaporan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvLaporan = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(29, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(244, 20);
             this.label2.TabIndex = 2;
@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
             this.panel1.Controls.Add(this.btnCetak);
             this.panel1.Controls.Add(this.cbPilih);
             this.panel1.Controls.Add(this.label2);
@@ -67,13 +67,13 @@
             // 
             this.btnCetak.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCetak.BackColor = System.Drawing.Color.Salmon;
+            this.btnCetak.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCetak.FlatAppearance.BorderSize = 0;
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCetak.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCetak.Location = new System.Drawing.Point(685, 2);
+            this.btnCetak.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCetak.Location = new System.Drawing.Point(623, 5);
             this.btnCetak.Name = "btnCetak";
-            this.btnCetak.Size = new System.Drawing.Size(114, 36);
+            this.btnCetak.Size = new System.Drawing.Size(84, 28);
             this.btnCetak.TabIndex = 8;
             this.btnCetak.Text = "CETAK";
             this.btnCetak.UseVisualStyleBackColor = false;
@@ -81,37 +81,17 @@
             // 
             // cbPilih
             // 
-            this.cbPilih.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPilih.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPilih.FormattingEnabled = true;
             this.cbPilih.Items.AddRange(new object[] {
             "Barang Masuk",
             "Barang Keluar",
             "Stok Opname"});
-            this.cbPilih.Location = new System.Drawing.Point(253, 7);
+            this.cbPilih.Location = new System.Drawing.Point(313, 7);
             this.cbPilih.Name = "cbPilih";
-            this.cbPilih.Size = new System.Drawing.Size(219, 32);
+            this.cbPilih.Size = new System.Drawing.Size(219, 28);
             this.cbPilih.TabIndex = 7;
             this.cbPilih.SelectedIndexChanged += new System.EventHandler(this.cbPilih_SelectedIndexChanged);
-            // 
-            // dgvLaporan
-            // 
-            this.dgvLaporan.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.dgvLaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLaporan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaporan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvLaporan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvLaporan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvLaporan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaporan.Location = new System.Drawing.Point(3, 6);
-            this.dgvLaporan.Name = "dgvLaporan";
-            this.dgvLaporan.RowHeadersWidth = 51;
-            this.dgvLaporan.RowTemplate.Height = 24;
-            this.dgvLaporan.Size = new System.Drawing.Size(805, 686);
-            this.dgvLaporan.TabIndex = 6;
             // 
             // panel2
             // 
@@ -121,6 +101,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(811, 695);
             this.panel2.TabIndex = 9;
+            // 
+            // dgvLaporan
+            // 
+            this.dgvLaporan.AllowUserToOrderColumns = true;
+            this.dgvLaporan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLaporan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLaporan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLaporan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaporan.Location = new System.Drawing.Point(0, 0);
+            this.dgvLaporan.Name = "dgvLaporan";
+            this.dgvLaporan.RowHeadersWidth = 51;
+            this.dgvLaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLaporan.RowTemplate.Height = 24;
+            this.dgvLaporan.Size = new System.Drawing.Size(811, 703);
+            this.dgvLaporan.TabIndex = 0;
             // 
             // FormLaporan
             // 
@@ -136,8 +134,8 @@
             this.Text = "FormLaporan";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,8 +144,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbPilih;
-        private System.Windows.Forms.DataGridView dgvLaporan;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCetak;
+        private System.Windows.Forms.DataGridView dgvLaporan;
     }
 }

@@ -44,6 +44,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Salmon;
             this.panel2.Controls.Add(this.txtPasswordAdmin);
             this.panel2.Controls.Add(this.txtNamaAdmin);
             this.panel2.Controls.Add(this.txtUsernameAdmin);

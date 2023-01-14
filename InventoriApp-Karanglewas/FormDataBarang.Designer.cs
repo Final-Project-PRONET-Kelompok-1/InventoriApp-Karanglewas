@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvDB = new System.Windows.Forms.DataGridView();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.panelFilterText = new System.Windows.Forms.Panel();
             this.btCariText = new System.Windows.Forms.Button();
             this.txtFilterBarang = new System.Windows.Forms.TextBox();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.panelFilterKategori = new System.Windows.Forms.Panel();
             this.cbFilterKategori = new System.Windows.Forms.ComboBox();
+            this.dgvDB = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).BeginInit();
             this.panelFilterText.SuspendLayout();
             this.panelFilterKategori.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Salmon;
             this.panel2.Controls.Add(this.panelFilterText);
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.panelFilterKategori);
@@ -54,34 +55,6 @@
             this.panel2.Size = new System.Drawing.Size(811, 78);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // dgvDB
-            // 
-            this.dgvDB.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDB.ColumnHeadersHeight = 29;
-            this.dgvDB.Location = new System.Drawing.Point(12, 74);
-            this.dgvDB.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvDB.Name = "dgvDB";
-            this.dgvDB.RowHeadersWidth = 51;
-            this.dgvDB.Size = new System.Drawing.Size(795, 778);
-            this.dgvDB.TabIndex = 6;
-            this.dgvDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDB_CellContentClick);
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Items.AddRange(new object[] {
-            "Semua Data",
-            "By Kategori",
-            "By Text"});
-            this.cbFilter.Location = new System.Drawing.Point(10, 28);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(160, 24);
-            this.cbFilter.TabIndex = 22;
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // panelFilterText
             // 
@@ -114,6 +87,21 @@
             this.txtFilterBarang.TabIndex = 22;
             this.txtFilterBarang.TextChanged += new System.EventHandler(this.txtFilterBarang_TextChanged);
             // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Semua Data",
+            "By Kategori",
+            "By Text"});
+            this.cbFilter.Location = new System.Drawing.Point(10, 28);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(160, 24);
+            this.cbFilter.TabIndex = 22;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
             // panelFilterKategori
             // 
             this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
@@ -133,6 +121,23 @@
             this.cbFilterKategori.TabIndex = 19;
             this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged);
             // 
+            // dgvDB
+            // 
+            this.dgvDB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDB.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDB.ColumnHeadersHeight = 29;
+            this.dgvDB.Location = new System.Drawing.Point(12, 74);
+            this.dgvDB.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDB.Name = "dgvDB";
+            this.dgvDB.RowHeadersWidth = 51;
+            this.dgvDB.Size = new System.Drawing.Size(795, 778);
+            this.dgvDB.TabIndex = 6;
+            this.dgvDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDB_CellContentClick);
+            // 
             // FormDataBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,10 +151,10 @@
             this.Text = "FormDataBarang";
             this.Load += new System.EventHandler(this.FormDataBarang_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).EndInit();
             this.panelFilterText.ResumeLayout(false);
             this.panelFilterText.PerformLayout();
             this.panelFilterKategori.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDB)).EndInit();
             this.ResumeLayout(false);
 
         }

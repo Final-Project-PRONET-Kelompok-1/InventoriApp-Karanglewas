@@ -107,8 +107,10 @@ namespace InventoriApp_Karanglewas
                 row["nama_kategori"] = "Pilih Kategori";
                 ds.Tables["kategori"].Rows.InsertAt(row, 0);
 
-                cbKategoriBK.DataSource = ds.Tables["kategori"];
-                cbKategoriBK.DisplayMember = "nama_kategori";
+                //cbKategoriBK.DataSource = ds.Tables["kategori"];
+                //cbKategoriBK.DisplayMember = "nama_kategori";
+                cb.DataSource = ds.Tables["kategori"];
+                cb.DisplayMember = "nama_kategori";
                 conn.Close();
             }
             catch (Exception ex)

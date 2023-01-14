@@ -58,7 +58,7 @@
             this.dataSO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataSO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataSO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataSO.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataSO.BackgroundColor = System.Drawing.Color.White;
             this.dataSO.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -76,12 +76,10 @@
             // 
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
             this.txtPIC.Location = new System.Drawing.Point(528, 114);
             this.txtPIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(243, 22);
-
             this.txtPIC.TabIndex = 14;
             this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
@@ -146,9 +144,7 @@
             // dtSO
             // 
             this.dtSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-
             this.dtSO.Location = new System.Drawing.Point(528, 38);
-
             this.dtSO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtSO.Name = "dtSO";
             this.dtSO.Size = new System.Drawing.Size(243, 22);
@@ -238,6 +234,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Salmon;
             this.panel2.Controls.Add(this.txtStokFisik);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -268,12 +265,10 @@
             // 
             this.txtStokFisik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtStokFisik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
             this.txtStokFisik.Location = new System.Drawing.Point(688, 76);
             this.txtStokFisik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStokFisik.Name = "txtStokFisik";
             this.txtStokFisik.Size = new System.Drawing.Size(83, 22);
-
             this.txtStokFisik.TabIndex = 17;
             this.txtStokFisik.TextChanged += new System.EventHandler(this.txtStokFisik_TextChanged);
             // 
@@ -291,9 +286,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
-
             this.label6.Location = new System.Drawing.Point(422, 40);
-
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 15;
@@ -306,7 +299,7 @@
             this.ClientSize = new System.Drawing.Size(855, 554);
             this.Controls.Add(this.dataSO);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormStock";
             this.Text = "FormStock";
             this.Load += new System.EventHandler(this.FormStock_Load);

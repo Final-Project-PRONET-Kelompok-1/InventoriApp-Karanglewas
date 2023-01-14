@@ -43,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -51,34 +52,34 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 57);
+            this.panel1.Size = new System.Drawing.Size(1081, 57);
             this.panel1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Salmon;
+            this.button1.BackColor = System.Drawing.Color.SeaGreen;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(915, 10);
+            this.button1.Location = new System.Drawing.Point(982, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 33);
             this.button1.TabIndex = 4;
-            this.button1.Text = "OK";
+            this.button1.Text = "FILTER";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(603, 14);
+            this.dateTimePicker2.Location = new System.Drawing.Point(606, 15);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(245, 22);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(144, 14);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 22);
             this.dateTimePicker1.TabIndex = 2;
@@ -86,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(448, 19);
+            this.label2.Location = new System.Drawing.Point(450, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 1;
@@ -95,11 +96,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dari tanggal:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -109,19 +111,21 @@
             this.panel2.Controls.Add(this.crvKeluar);
             this.panel2.Location = new System.Drawing.Point(0, 75);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 532);
+            this.panel2.Size = new System.Drawing.Size(1081, 532);
             this.panel2.TabIndex = 1;
             // 
             // crvKeluar
             // 
             this.crvKeluar.ActiveViewIndex = 0;
+            this.crvKeluar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.crvKeluar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvKeluar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvKeluar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvKeluar.Location = new System.Drawing.Point(0, 0);
             this.crvKeluar.Name = "crvKeluar";
             this.crvKeluar.ReportSource = this.laporanBarangKeluar1;
-            this.crvKeluar.Size = new System.Drawing.Size(1014, 532);
+            this.crvKeluar.Size = new System.Drawing.Size(1081, 532);
             this.crvKeluar.TabIndex = 0;
             this.crvKeluar.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -129,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 607);
+            this.ClientSize = new System.Drawing.Size(1081, 607);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ReportBarangKeluar";
