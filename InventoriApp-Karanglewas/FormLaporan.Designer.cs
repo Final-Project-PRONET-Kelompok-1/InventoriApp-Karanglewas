@@ -46,7 +46,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(29, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 17);
+            this.label2.Size = new System.Drawing.Size(244, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pilih laporan yang akan dicetak:";
             // 
@@ -67,11 +67,11 @@
             // 
             this.btnCetak.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCetak.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCetak.BackColor = System.Drawing.Color.Salmon;
             this.btnCetak.FlatAppearance.BorderSize = 0;
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCetak.Location = new System.Drawing.Point(623, 5);
+            this.btnCetak.Location = new System.Drawing.Point(633, 8);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(84, 28);
             this.btnCetak.TabIndex = 8;
@@ -89,7 +89,7 @@
             "Stok Opname"});
             this.cbPilih.Location = new System.Drawing.Point(313, 7);
             this.cbPilih.Name = "cbPilih";
-            this.cbPilih.Size = new System.Drawing.Size(219, 25);
+            this.cbPilih.Size = new System.Drawing.Size(219, 28);
             this.cbPilih.TabIndex = 7;
             this.cbPilih.SelectedIndexChanged += new System.EventHandler(this.cbPilih_SelectedIndexChanged);
             // 
@@ -122,7 +122,7 @@
             // 
             // FormLaporan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 749);
             this.Controls.Add(this.panel2);

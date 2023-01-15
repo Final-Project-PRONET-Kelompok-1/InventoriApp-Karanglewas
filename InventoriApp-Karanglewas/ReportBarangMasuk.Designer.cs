@@ -58,13 +58,13 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnOk.BackColor = System.Drawing.Color.SteelBlue;
             this.btnOk.FlatAppearance.BorderSize = 0;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Location = new System.Drawing.Point(949, 8);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(85, 27);
+            this.btnOk.Size = new System.Drawing.Size(82, 27);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "FILTER";
             this.btnOk.UseVisualStyleBackColor = false;

@@ -375,6 +375,7 @@ namespace InventoriApp_Karanglewas
                 string query = "DELETE FROM tb_barangkeluar WHERE kode_bk = '" + txtKodeBK.Text + "'";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil dihapus");
                 conn.Close();
                 simpanRiwayat("Hapus");
                 resetForm();

@@ -34,7 +34,7 @@ namespace InventoriApp_Karanglewas
 
             conn.Open();
             DataTable dt = new DataTable();
-            cmd = new SqlCommand("SELECT * FROM viewBarangKeluar WHERE tanggal BETWEEN '" + date1 + "' AND '" + date2 + "'", conn);
+            cmd = new SqlCommand("SELECT * FROM viewBarangKeluar WHERE CAST(viewBarangKeluar.Tanggal as DATE) BETWEEN '" + date1 + "' AND '" + date2 + "'", conn);
             adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             laporanBarangKeluar rptKeluar = new laporanBarangKeluar();

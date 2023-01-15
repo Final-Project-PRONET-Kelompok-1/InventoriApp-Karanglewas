@@ -380,6 +380,7 @@ namespace InventoriApp_Karanglewas
                 string query = "DELETE FROM tb_stokopname WHERE kode_so = '" + txtKodeSO.Text + "'";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil dihapus");
                 conn.Close();
                 resetForm();
                 fillDataSO();

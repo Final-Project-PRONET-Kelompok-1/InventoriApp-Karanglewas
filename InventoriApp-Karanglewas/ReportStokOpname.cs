@@ -44,7 +44,7 @@ namespace InventoriApp_Karanglewas
         
             conn.Open();
             DataTable dt = new DataTable();
-            cmd = new SqlCommand("SELECT * FROM viewStokOpname WHERE tanggal BETWEEN '"+date1+"' AND '"+date2+"'", conn);
+            cmd = new SqlCommand("SELECT * FROM viewStokOpname WHERE CAST(viewStokOpname.Tanggal as DATE) BETWEEN '" + date1+"' AND '"+date2+"'", conn);
             adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             laporanStokOpname rptOpname = new laporanStokOpname();

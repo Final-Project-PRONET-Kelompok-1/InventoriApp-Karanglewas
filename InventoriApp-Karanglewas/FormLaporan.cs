@@ -147,6 +147,7 @@ namespace InventoriApp_Karanglewas
         {
             if (cbPilih.Text.ToString() == "Stok Opname")
             {
+                MessageBox.Show("Data akan segera diproses. Mohon tunggu sebentar");
                 ReportStokOpname report = new ReportStokOpname();
                 report.Show();
 
@@ -158,6 +159,7 @@ namespace InventoriApp_Karanglewas
 
             if (cbPilih.Text.ToString() == "Barang Masuk")
             {
+                MessageBox.Show("Data akan segera diproses. Mohon tunggu sebentar");
                 ReportBarangMasuk report1 = new ReportBarangMasuk();
                 report1.Show();
 
@@ -169,6 +171,7 @@ namespace InventoriApp_Karanglewas
 
             if (cbPilih.Text.ToString() == "Barang Keluar")
             {
+                MessageBox.Show("Data akan segera diproses. Mohon tunggu sebentar");
                 ReportBarangKeluar report2 = new ReportBarangKeluar();
                 report2.Show();
 
