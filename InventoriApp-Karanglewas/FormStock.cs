@@ -258,6 +258,8 @@ namespace InventoriApp_Karanglewas
         {
             DateTime dateSO = dtSO.Value;
             setStatus();
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
@@ -265,7 +267,7 @@ namespace InventoriApp_Karanglewas
                 string query = "INSERT INTO tb_stokopname (kode_so, id_barang, stok_sistem, stok_fisik, tanggal, pic, status)\n" +
                                 "VALUES ('" + txtKodeSO.Text + "'," +
                                 "(select id_barang from tb_barang where nama_barang = '" + cbBarangSO.Text + "')," +
-                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateSO + "','" + txtPIC.Text + "', '" + status + "')";
+                                "'" + txtStokSistem.Text + "','" + txtStokFisik.Text + "','" + dateSO + "','" + PIC + "', '" + status + "')";
                 var cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -280,12 +282,14 @@ namespace InventoriApp_Karanglewas
         private void UpdateSO()
         {
             DateTime dateSO = dtSO.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
                 conn.Open();
                 string queryUpdate = "UPDATE tb_stokopname SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangSO.Text + "'), stok_sistem = '" + txtStokSistem.Text + "'" +
-                    ", stok_fisik = '" + txtStokFisik.Text + "', tanggal = '"+dateSO+"', pic = '" + txtPIC.Text + "' " +
+                    ", stok_fisik = '" + txtStokFisik.Text + "', tanggal = '"+dateSO+"', pic = '" + PIC + "' " +
                   "WHERE kode_so= '" + txtKodeSO.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();

@@ -290,12 +290,14 @@ namespace InventoriApp_Karanglewas
         private void simpanBK()
         {
             DateTime dateBK = dtBK.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
                 conn.Open();
                 string query = "INSERT INTO tb_barangkeluar (kode_bk, id_barang, jumlah, tanggal, pic)\n" +
-                                "SELECT  '" + txtKodeBK.Text + "', b.id_barang, '" + txtJumlahBK.Text + "','" + dateBK + "','" + txtPIC.Text + "'" +
+                                "SELECT  '" + txtKodeBK.Text + "', b.id_barang, '" + txtJumlahBK.Text + "','" + dateBK + "','" + PIC + "'" +
                                 "FROM tb_barang b " +
                                 "WHERE b.nama_barang = '" + cbBarangBK.Text + "' ";
                 cmd = new SqlCommand(query, conn);
@@ -354,7 +356,7 @@ namespace InventoriApp_Karanglewas
 
         private void txtPIC_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-z]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-Za-z'\\s]"))
             {
                 MessageBox.Show("Input PIC hanya bisa dimasukan nama.");
                 txtPIC.Clear();
@@ -404,11 +406,13 @@ namespace InventoriApp_Karanglewas
         private void updateBK()
         {
             DateTime dateBK = dtBK.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_barangkeluar SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangBK.Text + "'), tanggal='" + dateBK + "', jumlah = '" + int.Parse(txtJumlahBK.Text) + "', pic = '" + txtPIC.Text + "' " +
+                string queryUpdate = "UPDATE tb_barangkeluar SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangBK.Text + "'), tanggal='" + dateBK + "', jumlah = '" + int.Parse(txtJumlahBK.Text) + "', pic = '" + PIC + "' " +
                   "WHERE kode_bk= '" + txtKodeBK.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();

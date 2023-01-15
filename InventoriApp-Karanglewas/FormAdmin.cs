@@ -99,6 +99,8 @@ namespace InventoriApp_Karanglewas
 
         private void simpanAdmin()
         {
+            string Nama = txtNamaAdmin.Text;
+            Nama = Nama.Replace("'", "''");
             try
             {
 
@@ -113,7 +115,7 @@ namespace InventoriApp_Karanglewas
                 SqlParameter pass = new SqlParameter("@password", SqlDbType.VarChar);
 
                 username.Value = txtUsernameAdmin.Text;
-                namaPanjang.Value = txtNamaAdmin.Text;
+                namaPanjang.Value = Nama;
                 pass.Value = txtPasswordAdmin.Text;
 
                 cmd.Parameters.Add(username);
@@ -183,6 +185,15 @@ namespace InventoriApp_Karanglewas
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtNamaAdmin_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtNamaAdmin.Text, "[^A-Za-z'\\s]"))
+            {
+                MessageBox.Show("Input Nama hanya bisa dimasukan huruf.");
+                txtNamaAdmin.Clear();
+            }
         }
     }
     

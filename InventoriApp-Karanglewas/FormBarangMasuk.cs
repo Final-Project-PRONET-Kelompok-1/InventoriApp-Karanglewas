@@ -169,12 +169,14 @@ namespace InventoriApp_Karanglewas
         {
             date = Convert.ToDateTime(dtBM.Text);
             DateTime dateBK = dtBM.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
                 conn.Open();
                 string query = "INSERT INTO tb_barangmasuk (kode_bm, id_barang, jumlah, tanggal, pic)\n" +
-                                "SELECT '" + txtKodeBM.Text + "', b.id_barang, '" + txtJumlahBM.Text + "','" + dateBK + "','" + txtPIC.Text + "'" +
+                                "SELECT '" + txtKodeBM.Text + "', b.id_barang, '" + txtJumlahBM.Text + "','" + dateBK + "','" + PIC + "'" +
                                 "FROM tb_barang b " +
                                 "WHERE b.nama_barang = '" + cbBarangBM.Text + "' ";
                 cmd = new SqlCommand(query, conn);
@@ -190,11 +192,13 @@ namespace InventoriApp_Karanglewas
         private void updateBM()
         {
             DateTime dateBK = dtBM.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
 
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_barangmasuk SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangBM.Text + "'), tanggal='" + dateBK + "', jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + txtPIC.Text + "' " +
+                string queryUpdate = "UPDATE tb_barangmasuk SET id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '" + cbBarangBM.Text + "'), tanggal='" + dateBK + "', jumlah = '" + int.Parse(txtJumlahBM.Text) + "', pic = '" + PIC + "' " +
                   "WHERE kode_bm= '" + txtKodeBM.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
