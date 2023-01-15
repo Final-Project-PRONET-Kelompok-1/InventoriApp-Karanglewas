@@ -151,21 +151,33 @@ namespace InventoriApp_Karanglewas
         {
             try
             {
+
                 conn.Open();
-                string query = "INSERT INTO tb_barang(kode_barang, id_kategori, nama_barang) " +
-                                "SELECT '" + txtKodeBarang.Text + "', tb_kategori.id_kategori, '" + txtNamaBarang.Text + "' " +
-                                "FROM tb_kategori " +
-                                "WHERE tb_kategori.nama_kategori = '" + cbKategoriBarang.Text + "'";
-                var cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "sp_addBarang";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter kodeBarang = new SqlParameter("@kode_barang", SqlDbType.VarChar);
+                SqlParameter namaKategori = new SqlParameter("@nama_kategori", SqlDbType.VarChar);
+                SqlParameter namaBarang = new SqlParameter("@nama_barang", SqlDbType.VarChar);
+
+                kodeBarang.Value = txtKodeBarang.Text;
+                namaKategori.Value = cbKategoriBarang.Text;
+                namaBarang.Value = txtNamaBarang.Text;
+
+                cmd.Parameters.Add(kodeBarang);
+                cmd.Parameters.Add(namaKategori);
+                cmd.Parameters.Add(namaBarang);
+
                 cmd.ExecuteNonQuery();
+
                 conn.Close();
+
                 MessageBox.Show("Barang berhasil ditambahkan !");
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 conn.Close();
             }
             autoKode();
@@ -174,6 +186,7 @@ namespace InventoriApp_Karanglewas
             cekKode();
         }
 
+
         private DataTable getDataBarang()
         {
             try
@@ -181,15 +194,12 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT b.id_barang,b.id_kategori, b.kode_barang as Kode, k.nama_kategori as Kategori, b.nama_barang as Barang " +
-                                "FROM tb_barang b " +
-                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
-                                "ORDER BY b.id_kategori ";
+                string query = "sp_showBarang";
                 cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
                 conn.Close();
-
             }
             catch (Exception ex)
             {
@@ -255,9 +265,9 @@ namespace InventoriApp_Karanglewas
             {
                 DataGridViewRow row = dataBarang.Rows[e.RowIndex];
                 id_barang = int.Parse(row.Cells["id_barang"].Value.ToString());
-                txtKodeBarang.Text = row.Cells["Kode"].Value.ToString();
                 cbKategoriBarang.Text = row.Cells["Kategori"].Value.ToString();
                 txtNamaBarang.Text = row.Cells["Barang"].Value.ToString();
+                txtKodeBarang.Text = row.Cells["Kode"].Value.ToString();
             }
             cekKode();
         }
@@ -275,10 +285,20 @@ namespace InventoriApp_Karanglewas
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_barang WHERE kode_barang = '"+txtKodeBarang.Text+"' ";
-                var cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "sp_delBarang";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter kodeBarang = new SqlParameter("@kode_barang", SqlDbType.VarChar);
+
+                kodeBarang.Value = txtKodeBarang.Text;
+                cmd.Parameters.Add(kodeBarang);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
+
+                MessageBox.Show("barang berhasil dihapus !");
             }
         }
 

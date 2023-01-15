@@ -50,10 +50,22 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "INSERT INTO tb_kategori (kode_kategori, nama_kategori)\n" +
-                                "VALUES ('" + txtKodeKategori.Text + "','" + txtNamaKategori.Text + "')";
-                var cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "sp_addKategori";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter kodeKategori = new SqlParameter("@kode_kategori", SqlDbType.VarChar);
+                SqlParameter namaKategori = new SqlParameter("@nama_kategori", SqlDbType.VarChar);
+
+                kodeKategori.Value = txtKodeKategori.Text;
+                namaKategori.Value = txtNamaKategori.Text;
+
+                cmd.Parameters.Add(kodeKategori);
+                cmd.Parameters.Add(namaKategori);
+
                 cmd.ExecuteNonQuery();
+
                 conn.Close();
                 MessageBox.Show("Kategori berhasil ditambahkan !");
 
@@ -175,10 +187,9 @@ namespace InventoriApp_Karanglewas
                 dataTable.Reset();
                 dataTable = new DataTable();
                 conn.Open();
-                string query = "SELECT  kode_kategori as Kode, nama_kategori as Kategori " +
-                                "FROM tb_kategori " +
-                                "ORDER BY id_kategori ";
+                string query = "sp_showKategori";
                 cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
                 conn.Close();
@@ -261,12 +272,20 @@ namespace InventoriApp_Karanglewas
             if (tanya == DialogResult.Yes)
             {
                 conn.Open();
-                string query = "DELETE FROM tb_kategori WHERE kode_kategori = '" + txtKodeKategori.Text + "' ";
-                var cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "sp_delKategori";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter kodeKategori = new SqlParameter("@kode_kategori", SqlDbType.VarChar);
+
+                kodeKategori.Value = txtKodeKategori.Text;
+                cmd.Parameters.Add(kodeKategori);
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                resetForm();
-                fillDataKategori();
+
+
+                MessageBox.Show("Kategori berhasil dihaopus !");
             }
         }
 

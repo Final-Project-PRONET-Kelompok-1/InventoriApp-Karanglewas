@@ -354,7 +354,7 @@ namespace InventoriApp_Karanglewas
 
         private void txtPIC_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-Za-z'\\s]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-z]"))
             {
                 MessageBox.Show("Input PIC hanya bisa dimasukan nama.");
                 txtPIC.Clear();
