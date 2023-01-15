@@ -15,10 +15,7 @@ namespace InventoriApp_Karanglewas
 {
     public partial class FormBarangMasuk : Form
     {
-        //SqlConnection conn = new SqlConnection(dbConfig.conn);
-        //SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
-
-        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = dbConfig.conn;
         SqlCommand cmd;
         SqlDataReader reader;
         string kategori,validasi;
@@ -392,9 +389,9 @@ namespace InventoriApp_Karanglewas
 
         private void txtPIC_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-z]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPIC.Text, "[^A-Za-z'\\s]"))
             {
-                MessageBox.Show("Input jumlah hanya bisa dimasukan nama.");
+                MessageBox.Show("Input PIC hanya bisa dimasukan nama.");
                 txtPIC.Clear();
             }
         }
