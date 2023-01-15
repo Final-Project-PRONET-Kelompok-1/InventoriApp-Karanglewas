@@ -71,9 +71,9 @@
             this.panelLogo.Controls.Add(this.logo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(183, 107);
+            this.panelLogo.Size = new System.Drawing.Size(244, 132);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
             // 
@@ -82,10 +82,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(30, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(40, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 34);
+            this.label1.Size = new System.Drawing.Size(149, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "KECAMATAN \r\nKARANGLEWAS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,10 +93,10 @@
             // logo
             // 
             this.logo.Image = global::InventoriApp_Karanglewas.Gambar.logo_Banyumas;
-            this.logo.Location = new System.Drawing.Point(48, 0);
-            this.logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logo.Location = new System.Drawing.Point(64, 0);
+            this.logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(71, 71);
+            this.logo.Size = new System.Drawing.Size(95, 87);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
@@ -110,9 +109,9 @@
             this.panelMenu.Controls.Add(this.panelSidebar);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(183, 609);
+            this.panelMenu.Size = new System.Drawing.Size(244, 892);
             this.panelMenu.TabIndex = 1;
             // 
             // panelSidebar
@@ -133,10 +132,10 @@
             this.panelSidebar.Controls.Add(this.label3);
             this.panelSidebar.Controls.Add(this.btDataBarang);
             this.panelSidebar.Controls.Add(this.pictureBox1);
-            this.panelSidebar.Location = new System.Drawing.Point(0, 112);
-            this.panelSidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSidebar.Location = new System.Drawing.Point(0, 138);
+            this.panelSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(183, 497);
+            this.panelSidebar.Size = new System.Drawing.Size(244, 754);
             this.panelSidebar.TabIndex = 10;
             // 
             // btnKeluar
@@ -153,11 +152,11 @@
             this.btnKeluar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKeluar.IconSize = 52;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 394);
-            this.btnKeluar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 488);
+            this.btnKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKeluar.Name = "btnKeluar";
-            this.btnKeluar.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnKeluar.Size = new System.Drawing.Size(183, 46);
+            this.btnKeluar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnKeluar.Size = new System.Drawing.Size(244, 57);
             this.btnKeluar.TabIndex = 26;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,11 +178,11 @@
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmin.IconSize = 52;
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 348);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 431);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(183, 46);
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(244, 57);
             this.btnAdmin.TabIndex = 25;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,11 +204,11 @@
             this.btnRiwayat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRiwayat.IconSize = 52;
             this.btnRiwayat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayat.Location = new System.Drawing.Point(0, 302);
-            this.btnRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRiwayat.Location = new System.Drawing.Point(0, 374);
+            this.btnRiwayat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnRiwayat.Size = new System.Drawing.Size(183, 46);
+            this.btnRiwayat.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnRiwayat.Size = new System.Drawing.Size(244, 57);
             this.btnRiwayat.TabIndex = 22;
             this.btnRiwayat.Text = "Riwayat";
             this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,11 +230,11 @@
             this.btnLaporan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLaporan.IconSize = 52;
             this.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLaporan.Location = new System.Drawing.Point(0, 256);
-            this.btnLaporan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLaporan.Location = new System.Drawing.Point(0, 317);
+            this.btnLaporan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLaporan.Name = "btnLaporan";
-            this.btnLaporan.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnLaporan.Size = new System.Drawing.Size(183, 46);
+            this.btnLaporan.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnLaporan.Size = new System.Drawing.Size(244, 57);
             this.btnLaporan.TabIndex = 24;
             this.btnLaporan.Text = "Laporan";
             this.btnLaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,11 +256,11 @@
             this.btnStockOpname.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStockOpname.IconSize = 52;
             this.btnStockOpname.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockOpname.Location = new System.Drawing.Point(0, 210);
-            this.btnStockOpname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStockOpname.Location = new System.Drawing.Point(0, 260);
+            this.btnStockOpname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStockOpname.Name = "btnStockOpname";
-            this.btnStockOpname.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnStockOpname.Size = new System.Drawing.Size(183, 46);
+            this.btnStockOpname.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnStockOpname.Size = new System.Drawing.Size(244, 57);
             this.btnStockOpname.TabIndex = 23;
             this.btnStockOpname.Text = "Stock Opname";
             this.btnStockOpname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,11 +282,11 @@
             this.btnBarangKeluar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBarangKeluar.IconSize = 52;
             this.btnBarangKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBarangKeluar.Location = new System.Drawing.Point(0, 164);
-            this.btnBarangKeluar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBarangKeluar.Location = new System.Drawing.Point(0, 203);
+            this.btnBarangKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBarangKeluar.Name = "btnBarangKeluar";
-            this.btnBarangKeluar.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnBarangKeluar.Size = new System.Drawing.Size(183, 46);
+            this.btnBarangKeluar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnBarangKeluar.Size = new System.Drawing.Size(244, 57);
             this.btnBarangKeluar.TabIndex = 21;
             this.btnBarangKeluar.Text = "Barang Keluar";
             this.btnBarangKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -309,11 +308,11 @@
             this.btnBarangMasuk.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBarangMasuk.IconSize = 52;
             this.btnBarangMasuk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBarangMasuk.Location = new System.Drawing.Point(0, 114);
-            this.btnBarangMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBarangMasuk.Location = new System.Drawing.Point(0, 141);
+            this.btnBarangMasuk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBarangMasuk.Name = "btnBarangMasuk";
-            this.btnBarangMasuk.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnBarangMasuk.Size = new System.Drawing.Size(183, 50);
+            this.btnBarangMasuk.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnBarangMasuk.Size = new System.Drawing.Size(244, 62);
             this.btnBarangMasuk.TabIndex = 20;
             this.btnBarangMasuk.Text = "Barang Masuk";
             this.btnBarangMasuk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,10 +327,10 @@
             this.panelChildSliding.Controls.Add(this.button1);
             this.panelChildSliding.Controls.Add(this.iconButton1);
             this.panelChildSliding.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelChildSliding.Location = new System.Drawing.Point(0, 46);
-            this.panelChildSliding.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelChildSliding.Location = new System.Drawing.Point(0, 57);
+            this.panelChildSliding.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelChildSliding.Name = "panelChildSliding";
-            this.panelChildSliding.Size = new System.Drawing.Size(183, 68);
+            this.panelChildSliding.Size = new System.Drawing.Size(244, 84);
             this.panelChildSliding.TabIndex = 10;
             // 
             // button3
@@ -341,11 +340,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(0, 48);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(0, 60);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(183, 24);
+            this.button3.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(244, 30);
             this.button3.TabIndex = 4;
             this.button3.Text = "List Barang";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,11 +358,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(0, 24);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(0, 30);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(183, 24);
+            this.button2.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(244, 30);
             this.button2.TabIndex = 3;
             this.button2.Text = "List Kategori";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,10 +377,10 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(49, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(183, 24);
+            this.button1.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(244, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Stok Barang";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -404,10 +403,10 @@
             this.iconButton1.IconSize = 52;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 2);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton1.Size = new System.Drawing.Size(183, 46);
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.iconButton1.Size = new System.Drawing.Size(244, 57);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Data Barang";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,10 +420,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.7F);
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(68, 473);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(91, 724);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(74, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Purwokerto";
             // 
@@ -434,10 +432,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.7F);
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(30, 460);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(40, 708);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.Size = new System.Drawing.Size(126, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Universitas Amikom";
             // 
@@ -447,10 +444,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(64, 446);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(85, 691);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Supported by";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -472,10 +468,10 @@
             this.btDataBarang.IconSize = 52;
             this.btDataBarang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btDataBarang.Location = new System.Drawing.Point(0, 0);
-            this.btDataBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btDataBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDataBarang.Name = "btDataBarang";
-            this.btDataBarang.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btDataBarang.Size = new System.Drawing.Size(183, 46);
+            this.btDataBarang.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btDataBarang.Size = new System.Drawing.Size(244, 57);
             this.btDataBarang.TabIndex = 1;
             this.btDataBarang.Text = "Data Barang";
             this.btDataBarang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,10 +483,10 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = global::InventoriApp_Karanglewas.Gambar.Logo_Amikom__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 448);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(172, 693);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -502,17 +498,17 @@
             this.panel2.Controls.Add(this.lblChildForm);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(629, 32);
+            this.panel2.Size = new System.Drawing.Size(836, 39);
             this.panel2.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(0, 34);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 42);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(541, 379);
+            this.panel3.Size = new System.Drawing.Size(721, 466);
             this.panel3.TabIndex = 3;
             // 
             // lblChildForm
@@ -521,11 +517,10 @@
             this.lblChildForm.AutoSize = true;
             this.lblChildForm.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChildForm.ForeColor = System.Drawing.Color.White;
-            this.lblChildForm.Location = new System.Drawing.Point(148, 7);
-            this.lblChildForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblChildForm.MinimumSize = new System.Drawing.Size(321, 24);
+            this.lblChildForm.Location = new System.Drawing.Point(196, 9);
+            this.lblChildForm.MinimumSize = new System.Drawing.Size(428, 30);
             this.lblChildForm.Name = "lblChildForm";
-            this.lblChildForm.Size = new System.Drawing.Size(340, 24);
+            this.lblChildForm.Size = new System.Drawing.Size(428, 30);
             this.lblChildForm.TabIndex = 0;
             this.lblChildForm.Text = "INVENTARIS KECAMATAN KARANGLEWAS";
             // 
@@ -533,25 +528,25 @@
             // 
             this.panelDesktop.Controls.Add(this.panel2);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(183, 0);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDesktop.Location = new System.Drawing.Point(244, 0);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(629, 609);
+            this.panelDesktop.Size = new System.Drawing.Size(836, 892);
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // FormMaster
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 609);
+            this.ClientSize = new System.Drawing.Size(1080, 892);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(828, 630);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1080, 892);
             this.Name = "FormMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMaster";
+            this.Text = "Kec. Karanglewas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMaster_FormClosing);
             this.Load += new System.EventHandler(this.FormMaster_Load);
             this.panelLogo.ResumeLayout(false);
