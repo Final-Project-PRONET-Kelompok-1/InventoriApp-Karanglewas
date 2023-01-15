@@ -43,16 +43,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(29, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 20);
+            this.label2.Size = new System.Drawing.Size(209, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pilih laporan yang akan dicetak:";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.btnCetak);
             this.panel1.Controls.Add(this.cbPilih);
             this.panel1.Controls.Add(this.label2);
@@ -89,7 +89,7 @@
             "Stok Opname"});
             this.cbPilih.Location = new System.Drawing.Point(313, 7);
             this.cbPilih.Name = "cbPilih";
-            this.cbPilih.Size = new System.Drawing.Size(219, 28);
+            this.cbPilih.Size = new System.Drawing.Size(219, 25);
             this.cbPilih.TabIndex = 7;
             this.cbPilih.SelectedIndexChanged += new System.EventHandler(this.cbPilih_SelectedIndexChanged);
             // 
@@ -122,7 +122,7 @@
             // 
             // FormLaporan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 749);
             this.Controls.Add(this.panel2);

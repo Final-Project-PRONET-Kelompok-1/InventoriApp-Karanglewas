@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSO = new System.Windows.Forms.DataGridView();
             this.txtPIC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +47,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelFilterKategori = new System.Windows.Forms.Panel();
+            this.cbFilterKategori = new System.Windows.Forms.ComboBox();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.txtStokFisik = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelFilterText = new System.Windows.Forms.Panel();
             this.btCariText = new System.Windows.Forms.Button();
             this.txtFilterBarang = new System.Windows.Forms.TextBox();
@@ -53,17 +61,11 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panelFilterKategori = new System.Windows.Forms.Panel();
-            this.cbFilterKategori = new System.Windows.Forms.ComboBox();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.txtStokFisik = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSO)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelFilterKategori.SuspendLayout();
             this.panelFilterText.SuspendLayout();
             this.panelFilterTanggal.SuspendLayout();
-            this.panelFilterKategori.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSO
@@ -75,8 +77,25 @@
             this.dataSO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataSO.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataSO.BackgroundColor = System.Drawing.Color.White;
-            this.dataSO.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataSO.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataSO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataSO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataSO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataSO.GridColor = System.Drawing.Color.White;
             this.dataSO.Location = new System.Drawing.Point(11, 211);
             this.dataSO.Margin = new System.Windows.Forms.Padding(2);
             this.dataSO.Name = "dataSO";
@@ -253,7 +272,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Salmon;
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.panelFilterKategori);
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.txtStokFisik);
@@ -283,6 +302,75 @@
             this.panel2.Size = new System.Drawing.Size(641, 206);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panelFilterKategori
+            // 
+            this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
+            this.panelFilterKategori.Location = new System.Drawing.Point(173, 171);
+            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFilterKategori.Name = "panelFilterKategori";
+            this.panelFilterKategori.Size = new System.Drawing.Size(158, 32);
+            this.panelFilterKategori.TabIndex = 22;
+            // 
+            // cbFilterKategori
+            // 
+            this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbFilterKategori.FormattingEnabled = true;
+            this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
+            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilterKategori.Name = "cbFilterKategori";
+            this.cbFilterKategori.Size = new System.Drawing.Size(133, 21);
+            this.cbFilterKategori.TabIndex = 19;
+            this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged_1);
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Semua Data",
+            "By Tanggal",
+            "By Kategori",
+            "By Text"});
+            this.cbFilter.Location = new System.Drawing.Point(34, 171);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter.TabIndex = 21;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged_1);
+            // 
+            // txtStokFisik
+            // 
+            this.txtStokFisik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtStokFisik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStokFisik.Location = new System.Drawing.Point(516, 62);
+            this.txtStokFisik.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStokFisik.Name = "txtStokFisik";
+            this.txtStokFisik.Size = new System.Drawing.Size(63, 20);
+            this.txtStokFisik.TabIndex = 17;
+            this.txtStokFisik.TextChanged += new System.EventHandler(this.txtStokFisik_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(316, 63);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Stok Fisik";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(316, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Tanggal";
             // 
             // panelFilterText
             // 
@@ -369,79 +457,11 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // panelFilterKategori
-            // 
-            this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
-            this.panelFilterKategori.Location = new System.Drawing.Point(173, 171);
-            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(2);
-            this.panelFilterKategori.Name = "panelFilterKategori";
-            this.panelFilterKategori.Size = new System.Drawing.Size(158, 32);
-            this.panelFilterKategori.TabIndex = 22;
-            // 
-            // cbFilterKategori
-            // 
-            this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbFilterKategori.FormattingEnabled = true;
-            this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
-            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFilterKategori.Name = "cbFilterKategori";
-            this.cbFilterKategori.Size = new System.Drawing.Size(133, 21);
-            this.cbFilterKategori.TabIndex = 19;
-            this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged_1);
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Items.AddRange(new object[] {
-            "Semua Data",
-            "By Tanggal",
-            "By Kategori",
-            "By Text"});
-            this.cbFilter.Location = new System.Drawing.Point(34, 171);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(121, 21);
-            this.cbFilter.TabIndex = 21;
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged_1);
-            // 
-            // txtStokFisik
-            // 
-            this.txtStokFisik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtStokFisik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStokFisik.Location = new System.Drawing.Point(516, 62);
-            this.txtStokFisik.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStokFisik.Name = "txtStokFisik";
-            this.txtStokFisik.Size = new System.Drawing.Size(63, 20);
-            this.txtStokFisik.TabIndex = 17;
-            this.txtStokFisik.TextChanged += new System.EventHandler(this.txtStokFisik_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(316, 63);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Stok Fisik";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 32);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Tanggal";
-            // 
             // FormStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(641, 450);
             this.Controls.Add(this.dataSO);
             this.Controls.Add(this.panel2);
@@ -452,11 +472,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSO)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelFilterKategori.ResumeLayout(false);
             this.panelFilterText.ResumeLayout(false);
             this.panelFilterText.PerformLayout();
             this.panelFilterTanggal.ResumeLayout(false);
             this.panelFilterTanggal.PerformLayout();
-            this.panelFilterKategori.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

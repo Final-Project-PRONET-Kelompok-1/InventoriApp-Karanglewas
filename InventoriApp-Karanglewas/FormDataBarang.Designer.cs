@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelFilterText = new System.Windows.Forms.Panel();
             this.btCariText = new System.Windows.Forms.Button();
@@ -44,7 +46,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Salmon;
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.panelFilterText);
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.panelFilterKategori);
@@ -130,12 +132,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDB.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDB.ColumnHeadersHeight = 29;
-            this.dgvDB.Location = new System.Drawing.Point(9, 60);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDB.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDB.Location = new System.Drawing.Point(12, 69);
             this.dgvDB.Name = "dgvDB";
             this.dgvDB.RowHeadersWidth = 51;
-            this.dgvDB.Size = new System.Drawing.Size(596, 632);
+            this.dgvDB.Size = new System.Drawing.Size(588, 559);
             this.dgvDB.TabIndex = 6;
             this.dgvDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDB_CellContentClick);
             // 
@@ -143,6 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(608, 640);
             this.Controls.Add(this.dgvDB);
             this.Controls.Add(this.panel2);

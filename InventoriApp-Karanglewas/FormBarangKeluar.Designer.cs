@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelFilterText = new System.Windows.Forms.Panel();
             this.btCariText = new System.Windows.Forms.Button();
@@ -65,7 +69,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Salmon;
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.panelFilterText);
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.panelFilterKategori);
@@ -98,7 +102,7 @@
             this.panelFilterText.Controls.Add(this.btCariText);
             this.panelFilterText.Controls.Add(this.txtFilterBarang);
             this.panelFilterText.Location = new System.Drawing.Point(169, 130);
-            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterText.Name = "panelFilterText";
             this.panelFilterText.Size = new System.Drawing.Size(182, 49);
             this.panelFilterText.TabIndex = 24;
@@ -107,7 +111,7 @@
             // 
             this.btCariText.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCariText.Location = new System.Drawing.Point(133, 0);
-            this.btCariText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariText.Margin = new System.Windows.Forms.Padding(2);
             this.btCariText.Name = "btCariText";
             this.btCariText.Size = new System.Drawing.Size(49, 20);
             this.btCariText.TabIndex = 21;
@@ -119,7 +123,7 @@
             // 
             this.txtFilterBarang.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtFilterBarang.Location = new System.Drawing.Point(0, 0);
-            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilterBarang.Name = "txtFilterBarang";
             this.txtFilterBarang.Size = new System.Drawing.Size(133, 20);
             this.txtFilterBarang.TabIndex = 22;
@@ -135,7 +139,7 @@
             "By Kategori",
             "By Text"});
             this.cbFilter.Location = new System.Drawing.Point(76, 130);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 22;
@@ -145,7 +149,7 @@
             // 
             this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
             this.panelFilterKategori.Location = new System.Drawing.Point(168, 129);
-            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterKategori.Name = "panelFilterKategori";
             this.panelFilterKategori.Size = new System.Drawing.Size(158, 32);
             this.panelFilterKategori.TabIndex = 25;
@@ -155,7 +159,7 @@
             this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbFilterKategori.FormattingEnabled = true;
             this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
-            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterKategori.Name = "cbFilterKategori";
             this.cbFilterKategori.Size = new System.Drawing.Size(133, 21);
             this.cbFilterKategori.TabIndex = 19;
@@ -168,7 +172,7 @@
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker1);
             this.panelFilterTanggal.Location = new System.Drawing.Point(168, 130);
-            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
             this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
             this.panelFilterTanggal.TabIndex = 23;
@@ -177,7 +181,7 @@
             // 
             this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
-            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTanggal.Name = "btCariTanggal";
             this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggal.TabIndex = 19;
@@ -189,7 +193,7 @@
             // 
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker2.Location = new System.Drawing.Point(196, 0);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker2.TabIndex = 20;
@@ -209,7 +213,7 @@
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker1.TabIndex = 19;
@@ -219,7 +223,7 @@
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPIC.Location = new System.Drawing.Point(489, 52);
-            this.txtPIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPIC.Margin = new System.Windows.Forms.Padding(2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(158, 20);
             this.txtPIC.TabIndex = 14;
@@ -240,7 +244,7 @@
             // 
             this.btSimpanBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btSimpanBK.Location = new System.Drawing.Point(591, 89);
-            this.btSimpanBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSimpanBK.Margin = new System.Windows.Forms.Padding(2);
             this.btSimpanBK.Name = "btSimpanBK";
             this.btSimpanBK.Size = new System.Drawing.Size(56, 28);
             this.btSimpanBK.TabIndex = 12;
@@ -252,7 +256,7 @@
             // 
             this.btResetBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btResetBK.Location = new System.Drawing.Point(520, 89);
-            this.btResetBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btResetBK.Margin = new System.Windows.Forms.Padding(2);
             this.btResetBK.Name = "btResetBK";
             this.btResetBK.Size = new System.Drawing.Size(56, 28);
             this.btResetBK.TabIndex = 11;
@@ -264,7 +268,7 @@
             // 
             this.btHapusBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btHapusBK.Location = new System.Drawing.Point(453, 89);
-            this.btHapusBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btHapusBK.Margin = new System.Windows.Forms.Padding(2);
             this.btHapusBK.Name = "btHapusBK";
             this.btHapusBK.Size = new System.Drawing.Size(56, 28);
             this.btHapusBK.TabIndex = 10;
@@ -276,7 +280,7 @@
             // 
             this.btEditBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btEditBK.Location = new System.Drawing.Point(388, 90);
-            this.btEditBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditBK.Margin = new System.Windows.Forms.Padding(2);
             this.btEditBK.Name = "btEditBK";
             this.btEditBK.Size = new System.Drawing.Size(56, 26);
             this.btEditBK.TabIndex = 9;
@@ -288,7 +292,7 @@
             // 
             this.dtBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtBK.Location = new System.Drawing.Point(464, 18);
-            this.dtBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtBK.Margin = new System.Windows.Forms.Padding(2);
             this.dtBK.Name = "dtBK";
             this.dtBK.Size = new System.Drawing.Size(183, 20);
             this.dtBK.TabIndex = 8;
@@ -297,7 +301,7 @@
             // 
             this.txtJumlahBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtJumlahBK.Location = new System.Drawing.Point(148, 92);
-            this.txtJumlahBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtJumlahBK.Margin = new System.Windows.Forms.Padding(2);
             this.txtJumlahBK.Name = "txtJumlahBK";
             this.txtJumlahBK.Size = new System.Drawing.Size(159, 20);
             this.txtJumlahBK.TabIndex = 7;
@@ -308,7 +312,7 @@
             this.cbBarangBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbBarangBK.FormattingEnabled = true;
             this.cbBarangBK.Location = new System.Drawing.Point(148, 67);
-            this.cbBarangBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBarangBK.Margin = new System.Windows.Forms.Padding(2);
             this.cbBarangBK.Name = "cbBarangBK";
             this.cbBarangBK.Size = new System.Drawing.Size(159, 21);
             this.cbBarangBK.TabIndex = 6;
@@ -319,7 +323,7 @@
             this.cbKategoriBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriBK.FormattingEnabled = true;
             this.cbKategoriBK.Location = new System.Drawing.Point(148, 42);
-            this.cbKategoriBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbKategoriBK.Margin = new System.Windows.Forms.Padding(2);
             this.cbKategoriBK.Name = "cbKategoriBK";
             this.cbKategoriBK.Size = new System.Drawing.Size(159, 21);
             this.cbKategoriBK.TabIndex = 5;
@@ -330,7 +334,7 @@
             this.txtKodeBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtKodeBK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKodeBK.Location = new System.Drawing.Point(150, 18);
-            this.txtKodeBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKodeBK.Margin = new System.Windows.Forms.Padding(2);
             this.txtKodeBK.Name = "txtKodeBK";
             this.txtKodeBK.Size = new System.Drawing.Size(158, 20);
             this.txtKodeBK.TabIndex = 11;
@@ -388,14 +392,41 @@
             this.dataBK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataBK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataBK.BackgroundColor = System.Drawing.Color.White;
-            this.dataBK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataBK.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataBK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataBK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBK.Location = new System.Drawing.Point(11, 173);
-            this.dataBK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataBK.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataBK.GridColor = System.Drawing.Color.White;
+            this.dataBK.Location = new System.Drawing.Point(0, 173);
+            this.dataBK.Margin = new System.Windows.Forms.Padding(2);
             this.dataBK.Name = "dataBK";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataBK.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataBK.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataBK.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataBK.RowTemplate.Height = 24;
-            this.dataBK.Size = new System.Drawing.Size(700, 421);
+            this.dataBK.Size = new System.Drawing.Size(722, 387);
             this.dataBK.TabIndex = 4;
             this.dataBK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBK_CellContentClick);
             // 
@@ -403,6 +434,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(722, 571);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataBK);

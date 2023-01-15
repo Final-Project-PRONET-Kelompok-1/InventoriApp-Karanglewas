@@ -54,17 +54,19 @@
             // txtKBarang
             // 
             this.txtKBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKBarang.Location = new System.Drawing.Point(41, 72);
+            this.txtKBarang.Location = new System.Drawing.Point(31, 58);
+            this.txtKBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKBarang.Name = "txtKBarang";
-            this.txtKBarang.Size = new System.Drawing.Size(144, 22);
+            this.txtKBarang.Size = new System.Drawing.Size(109, 20);
             this.txtKBarang.TabIndex = 0;
             // 
             // btTambahKBarang
             // 
             this.btTambahKBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTambahKBarang.Location = new System.Drawing.Point(191, 70);
+            this.btTambahKBarang.Location = new System.Drawing.Point(143, 57);
+            this.btTambahKBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btTambahKBarang.Name = "btTambahKBarang";
-            this.btTambahKBarang.Size = new System.Drawing.Size(96, 31);
+            this.btTambahKBarang.Size = new System.Drawing.Size(72, 25);
             this.btTambahKBarang.TabIndex = 1;
             this.btTambahKBarang.Text = "TAMBAH";
             this.btTambahKBarang.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@
             this.cbKBarang.DataSource = this.tbkategoriBindingSource;
             this.cbKBarang.DisplayMember = "jenis_kategori";
             this.cbKBarang.FormattingEnabled = true;
-            this.cbKBarang.Location = new System.Drawing.Point(494, 70);
+            this.cbKBarang.Location = new System.Drawing.Point(370, 57);
+            this.cbKBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbKBarang.Name = "cbKBarang";
-            this.cbKBarang.Size = new System.Drawing.Size(153, 24);
+            this.cbKBarang.Size = new System.Drawing.Size(116, 21);
             this.cbKBarang.TabIndex = 4;
             this.cbKBarang.ValueMember = "jenis_kategori";
             this.cbKBarang.SelectedIndexChanged += new System.EventHandler(this.cbKBarang_SelectedIndexChanged);
@@ -96,18 +99,20 @@
             // txtTambahBarang
             // 
             this.txtTambahBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTambahBarang.Location = new System.Drawing.Point(494, 113);
+            this.txtTambahBarang.Location = new System.Drawing.Point(370, 92);
+            this.txtTambahBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTambahBarang.Multiline = true;
             this.txtTambahBarang.Name = "txtTambahBarang";
-            this.txtTambahBarang.Size = new System.Drawing.Size(153, 26);
+            this.txtTambahBarang.Size = new System.Drawing.Size(116, 22);
             this.txtTambahBarang.TabIndex = 5;
             // 
             // btTambahBarang
             // 
             this.btTambahBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTambahBarang.Location = new System.Drawing.Point(653, 72);
+            this.btTambahBarang.Location = new System.Drawing.Point(490, 58);
+            this.btTambahBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btTambahBarang.Name = "btTambahBarang";
-            this.btTambahBarang.Size = new System.Drawing.Size(91, 31);
+            this.btTambahBarang.Size = new System.Drawing.Size(68, 25);
             this.btTambahBarang.TabIndex = 6;
             this.btTambahBarang.Text = "TAMBAH";
             this.btTambahBarang.UseVisualStyleBackColor = true;
@@ -116,18 +121,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 29);
+            this.label1.Location = new System.Drawing.Point(31, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Kategori";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 29);
+            this.label2.Location = new System.Drawing.Point(368, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Barang";
             // 
@@ -157,10 +164,10 @@
             // 
             // FormKategoriBarang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Salmon;
-            this.ClientSize = new System.Drawing.Size(800, 205);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(600, 167);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btTambahBarang);
@@ -168,6 +175,7 @@
             this.Controls.Add(this.cbKBarang);
             this.Controls.Add(this.btTambahKBarang);
             this.Controls.Add(this.txtKBarang);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormKategoriBarang";
             this.Text = "FormKategoriBarang";
             this.Load += new System.EventHandler(this.FormKategoriBarang_Load);

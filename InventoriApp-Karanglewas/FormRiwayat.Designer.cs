@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataRiwayat = new System.Windows.Forms.DataGridView();
             this.cbFilterRiwayat = new System.Windows.Forms.ComboBox();
@@ -47,7 +51,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.panelFilterText);
             this.panel1.Controls.Add(this.panelFilterTanggal);
             this.panel1.Controls.Add(this.cbFilterRiwayat);
@@ -65,19 +72,50 @@
             this.dataRiwayat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataRiwayat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataRiwayat.BackgroundColor = System.Drawing.Color.White;
-            this.dataRiwayat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataRiwayat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataRiwayat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataRiwayat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataRiwayat.Location = new System.Drawing.Point(1, 47);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataRiwayat.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataRiwayat.GridColor = System.Drawing.Color.White;
+            this.dataRiwayat.Location = new System.Drawing.Point(11, 47);
             this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.dataRiwayat.Name = "dataRiwayat";
+            this.dataRiwayat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataRiwayat.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataRiwayat.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataRiwayat.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataRiwayat.RowTemplate.Height = 24;
-            this.dataRiwayat.Size = new System.Drawing.Size(800, 403);
+            this.dataRiwayat.Size = new System.Drawing.Size(778, 389);
             this.dataRiwayat.TabIndex = 3;
             // 
             // cbFilterRiwayat
             // 
-            this.cbFilterRiwayat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFilterRiwayat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbFilterRiwayat.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilterRiwayat.FormattingEnabled = true;
             this.cbFilterRiwayat.Items.AddRange(new object[] {
             "Semua Data",
@@ -86,7 +124,7 @@
             this.cbFilterRiwayat.Location = new System.Drawing.Point(10, 10);
             this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterRiwayat.Name = "cbFilterRiwayat";
-            this.cbFilterRiwayat.Size = new System.Drawing.Size(121, 21);
+            this.cbFilterRiwayat.Size = new System.Drawing.Size(121, 23);
             this.cbFilterRiwayat.TabIndex = 18;
             this.cbFilterRiwayat.SelectedIndexChanged += new System.EventHandler(this.cbFilterRiwayat_SelectedIndexChanged);
             // 
@@ -103,6 +141,7 @@
             // btCariTextRwt
             // 
             this.btCariTextRwt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTextRwt.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTextRwt.Location = new System.Drawing.Point(133, 0);
             this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTextRwt.Name = "btCariTextRwt";
@@ -115,10 +154,11 @@
             // txtFilterRiwayat
             // 
             this.txtFilterRiwayat.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtFilterRiwayat.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.txtFilterRiwayat.Location = new System.Drawing.Point(0, 0);
             this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilterRiwayat.Name = "txtFilterRiwayat";
-            this.txtFilterRiwayat.Size = new System.Drawing.Size(133, 20);
+            this.txtFilterRiwayat.Size = new System.Drawing.Size(133, 22);
             this.txtFilterRiwayat.TabIndex = 22;
             // 
             // panelFilterTanggal
@@ -136,6 +176,7 @@
             // btCariTanggal
             // 
             this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTanggal.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
             this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTanggal.Name = "btCariTanggal";
@@ -148,10 +189,11 @@
             // dateTimePicker3
             // 
             this.dateTimePicker3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimePicker3.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker3.Location = new System.Drawing.Point(196, 0);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(183, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker3.TabIndex = 20;
             // 
             // label6
@@ -168,16 +210,18 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker2.Location = new System.Drawing.Point(0, 0);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(183, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker2.TabIndex = 19;
             // 
             // FormRiwayat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 447);
             this.Controls.Add(this.dataRiwayat);
             this.Controls.Add(this.panel1);

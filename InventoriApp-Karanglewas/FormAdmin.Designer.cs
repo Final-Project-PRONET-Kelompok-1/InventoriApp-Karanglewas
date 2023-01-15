@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPasswordAdmin = new System.Windows.Forms.TextBox();
             this.txtNamaAdmin = new System.Windows.Forms.TextBox();
@@ -44,7 +47,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Salmon;
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.txtPasswordAdmin);
             this.panel2.Controls.Add(this.txtNamaAdmin);
             this.panel2.Controls.Add(this.txtUsernameAdmin);
@@ -55,9 +58,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(811, 207);
+            this.panel2.Size = new System.Drawing.Size(608, 168);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -65,40 +68,41 @@
             // 
             this.txtPasswordAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPasswordAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPasswordAdmin.Location = new System.Drawing.Point(556, 66);
-            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPasswordAdmin.Location = new System.Drawing.Point(417, 54);
+            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordAdmin.Name = "txtPasswordAdmin";
             this.txtPasswordAdmin.PasswordChar = '*';
-            this.txtPasswordAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtPasswordAdmin.Size = new System.Drawing.Size(132, 20);
             this.txtPasswordAdmin.TabIndex = 16;
             // 
             // txtNamaAdmin
             // 
             this.txtNamaAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNamaAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNamaAdmin.Location = new System.Drawing.Point(133, 110);
-            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNamaAdmin.Location = new System.Drawing.Point(100, 89);
+            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNamaAdmin.Name = "txtNamaAdmin";
-            this.txtNamaAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtNamaAdmin.Size = new System.Drawing.Size(132, 20);
             this.txtNamaAdmin.TabIndex = 15;
             // 
             // txtUsernameAdmin
             // 
             this.txtUsernameAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtUsernameAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsernameAdmin.Location = new System.Drawing.Point(133, 66);
-            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsernameAdmin.Location = new System.Drawing.Point(100, 54);
+            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsernameAdmin.Name = "txtUsernameAdmin";
-            this.txtUsernameAdmin.Size = new System.Drawing.Size(175, 22);
+            this.txtUsernameAdmin.Size = new System.Drawing.Size(132, 20);
             this.txtUsernameAdmin.TabIndex = 14;
             // 
             // btSimpanAdmin
             // 
             this.btSimpanAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btSimpanAdmin.Location = new System.Drawing.Point(656, 124);
-            this.btSimpanAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSimpanAdmin.Font = new System.Drawing.Font("Lucida Sans", 9F);
+            this.btSimpanAdmin.Location = new System.Drawing.Point(477, 101);
+            this.btSimpanAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btSimpanAdmin.Name = "btSimpanAdmin";
-            this.btSimpanAdmin.Size = new System.Drawing.Size(75, 34);
+            this.btSimpanAdmin.Size = new System.Drawing.Size(74, 28);
             this.btSimpanAdmin.TabIndex = 12;
             this.btSimpanAdmin.Text = "Simpan";
             this.btSimpanAdmin.UseVisualStyleBackColor = true;
@@ -107,10 +111,11 @@
             // btResetAdmin
             // 
             this.btResetAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btResetAdmin.Location = new System.Drawing.Point(563, 124);
-            this.btResetAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btResetAdmin.Font = new System.Drawing.Font("Lucida Sans", 9F);
+            this.btResetAdmin.Location = new System.Drawing.Point(417, 101);
+            this.btResetAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btResetAdmin.Name = "btResetAdmin";
-            this.btResetAdmin.Size = new System.Drawing.Size(75, 34);
+            this.btResetAdmin.Size = new System.Drawing.Size(56, 28);
             this.btResetAdmin.TabIndex = 11;
             this.btResetAdmin.Text = "Reset";
             this.btResetAdmin.UseVisualStyleBackColor = true;
@@ -120,9 +125,11 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(443, 69);
+            this.label4.Font = new System.Drawing.Font("Lucida Sans", 9F);
+            this.label4.Location = new System.Drawing.Point(332, 56);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 16);
+            this.label4.Size = new System.Drawing.Size(63, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Password";
             // 
@@ -130,9 +137,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 112);
+            this.label3.Font = new System.Drawing.Font("Lucida Sans", 9F);
+            this.label3.Location = new System.Drawing.Point(24, 91);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nama";
             // 
@@ -140,9 +149,11 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 71);
+            this.label2.Font = new System.Drawing.Font("Lucida Sans", 9F);
+            this.label2.Location = new System.Drawing.Point(23, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
             // 
@@ -155,25 +166,51 @@
             this.dgvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAdmin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAdmin.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAdmin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdmin.Location = new System.Drawing.Point(11, 219);
-            this.dgvAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAdmin.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAdmin.GridColor = System.Drawing.Color.White;
+            this.dgvAdmin.Location = new System.Drawing.Point(11, 173);
+            this.dgvAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAdmin.Name = "dgvAdmin";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAdmin.RowHeadersWidth = 51;
             this.dgvAdmin.RowTemplate.Height = 24;
-            this.dgvAdmin.Size = new System.Drawing.Size(787, 610);
+            this.dgvAdmin.Size = new System.Drawing.Size(586, 456);
             this.dgvAdmin.TabIndex = 4;
             // 
             // FormAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 788);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(608, 640);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
