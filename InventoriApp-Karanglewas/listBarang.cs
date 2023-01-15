@@ -293,6 +293,46 @@ namespace InventoriApp_Karanglewas
             cekKode();
         }
 
+        private void txtFilterText_TextChanged(object sender, EventArgs e)
+        {
+            if(txtFilterText.Text == "")
+            {
+                fillDataBarang();
+            }
+        }
+
+        private void btCari_Click(object sender, EventArgs e)
+        {
+            filterByText();
+        }
+
+        private void filterByText()
+        {
+            try
+            {
+
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT b.kode_barang as Kode, k.nama_kategori as Kategori, b.nama_barang as Barang " +
+                                "FROM tb_barang b " +
+                                "INNER JOIN tb_kategori k ON b.id_kategori  = k.id_kategori " +
+                                "WHERE (b.kode_barang LIKE '%"+txtFilterText.Text+"%' OR b.nama_barang LIKE '%" + txtFilterText.Text +"%' OR k.nama_kategori LIKE '%"+ txtFilterText.Text +"%') " +
+                                "ORDER BY b.id_kategori ";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+
+                dataBarang.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void cekKode()
         {
             try

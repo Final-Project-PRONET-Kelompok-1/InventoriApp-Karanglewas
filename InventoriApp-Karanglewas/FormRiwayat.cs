@@ -197,5 +197,13 @@ namespace InventoriApp_Karanglewas
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtFilterRiwayat_TextChanged_1(object sender, EventArgs e)
+        {
+            if(txtFilterRiwayat.Text == "")
+            {
+                fillDataRiwayat();
+            }
+        }
     }
 }

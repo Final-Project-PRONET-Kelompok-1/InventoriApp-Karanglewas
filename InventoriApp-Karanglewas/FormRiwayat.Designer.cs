@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.panelFilterTanggal);
             this.panel1.Controls.Add(this.cbFilterRiwayat);
             this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 62);
             this.panel1.TabIndex = 0;
@@ -96,6 +96,7 @@
             this.txtFilterRiwayat.Name = "txtFilterRiwayat";
             this.txtFilterRiwayat.Size = new System.Drawing.Size(176, 25);
             this.txtFilterRiwayat.TabIndex = 22;
+            this.txtFilterRiwayat.TextChanged += new System.EventHandler(this.txtFilterRiwayat_TextChanged_1);
             // 
             // panelFilterTanggal
             // 
@@ -225,7 +226,7 @@
             this.ClientSize = new System.Drawing.Size(1067, 550);
             this.Controls.Add(this.dataRiwayat);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRiwayat";
             this.Text = "FormRiwayat";
             this.Load += new System.EventHandler(this.FormRiwayat_Load);

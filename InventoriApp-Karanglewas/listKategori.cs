@@ -280,5 +280,44 @@ namespace InventoriApp_Karanglewas
             fillDataKategori();
             cekKode();
         }
+
+        private void btCari_Click(object sender, EventArgs e)
+        {
+            filterByText();
+        }
+
+        private void filterByText()
+        {
+            try
+            {
+
+                dataTable.Reset();
+                dataTable = new DataTable();
+                conn.Open();
+                string query = "SELECT  kode_kategori as Kode, nama_kategori as Kategori " +
+                                "FROM tb_kategori " +
+                                "WHERE kode_kategori LIKE '%"+ txtFilterText.Text + "%' OR nama_kategori LIKE '%"+ txtFilterText.Text +"%' " +
+                                "ORDER BY id_kategori ";
+                cmd = new SqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+                dataTable.Load(reader);
+                conn.Close();
+
+                dataKategori.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtFilterText_TextChanged(object sender, EventArgs e)
+        {
+            if(txtFilterText.Text == "")
+            {
+                fillDataKategori();
+            }
+        }
     }
 }

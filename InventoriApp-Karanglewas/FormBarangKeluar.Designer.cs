@@ -93,7 +93,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(963, 207);
+            this.panel2.Size = new System.Drawing.Size(793, 207);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -101,7 +101,7 @@
             // 
             this.panelFilterText.Controls.Add(this.btCariText);
             this.panelFilterText.Controls.Add(this.txtFilterBarang);
-            this.panelFilterText.Location = new System.Drawing.Point(225, 160);
+            this.panelFilterText.Location = new System.Drawing.Point(191, 160);
             this.panelFilterText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFilterText.Name = "panelFilterText";
             this.panelFilterText.Size = new System.Drawing.Size(243, 60);
@@ -138,7 +138,7 @@
             "By Tanggal",
             "By Kategori",
             "By Text"});
-            this.cbFilter.Location = new System.Drawing.Point(101, 160);
+            this.cbFilter.Location = new System.Drawing.Point(16, 160);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(160, 24);
@@ -148,7 +148,7 @@
             // panelFilterKategori
             // 
             this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
-            this.panelFilterKategori.Location = new System.Drawing.Point(224, 159);
+            this.panelFilterKategori.Location = new System.Drawing.Point(190, 159);
             this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFilterKategori.Name = "panelFilterKategori";
             this.panelFilterKategori.Size = new System.Drawing.Size(211, 39);
@@ -171,7 +171,7 @@
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker1);
-            this.panelFilterTanggal.Location = new System.Drawing.Point(224, 160);
+            this.panelFilterTanggal.Location = new System.Drawing.Point(190, 160);
             this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
             this.panelFilterTanggal.Size = new System.Drawing.Size(583, 30);
@@ -221,7 +221,7 @@
             // 
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPIC.Location = new System.Drawing.Point(652, 64);
+            this.txtPIC.Location = new System.Drawing.Point(517, 64);
             this.txtPIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPIC.Name = "txtPIC";
             this.txtPIC.Size = new System.Drawing.Size(210, 22);
@@ -232,7 +232,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(572, 66);
+            this.label5.Location = new System.Drawing.Point(437, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 16);
             this.label5.TabIndex = 13;
@@ -241,7 +241,7 @@
             // btSimpanBK
             // 
             this.btSimpanBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btSimpanBK.Location = new System.Drawing.Point(788, 110);
+            this.btSimpanBK.Location = new System.Drawing.Point(703, 110);
             this.btSimpanBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSimpanBK.Name = "btSimpanBK";
             this.btSimpanBK.Size = new System.Drawing.Size(75, 34);
@@ -253,7 +253,7 @@
             // btResetBK
             // 
             this.btResetBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btResetBK.Location = new System.Drawing.Point(693, 110);
+            this.btResetBK.Location = new System.Drawing.Point(608, 110);
             this.btResetBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btResetBK.Name = "btResetBK";
             this.btResetBK.Size = new System.Drawing.Size(75, 34);
@@ -265,7 +265,7 @@
             // btHapusBK
             // 
             this.btHapusBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btHapusBK.Location = new System.Drawing.Point(604, 110);
+            this.btHapusBK.Location = new System.Drawing.Point(519, 110);
             this.btHapusBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btHapusBK.Name = "btHapusBK";
             this.btHapusBK.Size = new System.Drawing.Size(75, 34);
@@ -277,7 +277,7 @@
             // btEditBK
             // 
             this.btEditBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btEditBK.Location = new System.Drawing.Point(517, 111);
+            this.btEditBK.Location = new System.Drawing.Point(432, 111);
             this.btEditBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEditBK.Name = "btEditBK";
             this.btEditBK.Size = new System.Drawing.Size(75, 32);
@@ -289,7 +289,7 @@
             // dtBK
             // 
             this.dtBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dtBK.Location = new System.Drawing.Point(619, 22);
+            this.dtBK.Location = new System.Drawing.Point(432, 22);
             this.dtBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtBK.Name = "dtBK";
             this.dtBK.Size = new System.Drawing.Size(243, 22);
@@ -298,7 +298,7 @@
             // txtJumlahBK
             // 
             this.txtJumlahBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtJumlahBK.Location = new System.Drawing.Point(197, 113);
+            this.txtJumlahBK.Location = new System.Drawing.Point(112, 113);
             this.txtJumlahBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtJumlahBK.Name = "txtJumlahBK";
             this.txtJumlahBK.Size = new System.Drawing.Size(211, 22);
@@ -309,7 +309,7 @@
             // 
             this.cbBarangBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbBarangBK.FormattingEnabled = true;
-            this.cbBarangBK.Location = new System.Drawing.Point(197, 82);
+            this.cbBarangBK.Location = new System.Drawing.Point(112, 82);
             this.cbBarangBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbBarangBK.Name = "cbBarangBK";
             this.cbBarangBK.Size = new System.Drawing.Size(211, 24);
@@ -320,7 +320,7 @@
             // 
             this.cbKategoriBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriBK.FormattingEnabled = true;
-            this.cbKategoriBK.Location = new System.Drawing.Point(197, 52);
+            this.cbKategoriBK.Location = new System.Drawing.Point(112, 52);
             this.cbKategoriBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKategoriBK.Name = "cbKategoriBK";
             this.cbKategoriBK.Size = new System.Drawing.Size(211, 24);
@@ -331,7 +331,7 @@
             // 
             this.txtKodeBK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtKodeBK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKodeBK.Location = new System.Drawing.Point(200, 22);
+            this.txtKodeBK.Location = new System.Drawing.Point(115, 22);
             this.txtKodeBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKodeBK.Name = "txtKodeBK";
             this.txtKodeBK.Size = new System.Drawing.Size(210, 22);
@@ -341,7 +341,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 117);
+            this.label4.Location = new System.Drawing.Point(12, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 3;
@@ -351,7 +351,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 85);
+            this.label3.Location = new System.Drawing.Point(14, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 2;
@@ -361,7 +361,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 52);
+            this.label2.Location = new System.Drawing.Point(14, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 1;
@@ -371,7 +371,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 22);
+            this.label1.Location = new System.Drawing.Point(14, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 0;
@@ -405,7 +405,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataBK.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataBK.GridColor = System.Drawing.Color.White;
-            this.dataBK.Location = new System.Drawing.Point(0, 213);
+            this.dataBK.Location = new System.Drawing.Point(0, 202);
             this.dataBK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataBK.Name = "dataBK";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -420,7 +420,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataBK.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataBK.RowTemplate.Height = 24;
-            this.dataBK.Size = new System.Drawing.Size(963, 476);
+            this.dataBK.Size = new System.Drawing.Size(793, 541);
             this.dataBK.TabIndex = 4;
             this.dataBK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBK_CellContentClick);
             // 
@@ -429,10 +429,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(963, 703);
+            this.ClientSize = new System.Drawing.Size(793, 741);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataBK);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBarangKeluar";
             this.Text = "FormBarangKeluar";
             this.Load += new System.EventHandler(this.FormBarangKeluar_Load);
