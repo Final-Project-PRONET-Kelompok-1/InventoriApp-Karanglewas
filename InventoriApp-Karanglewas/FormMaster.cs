@@ -275,7 +275,7 @@ namespace InventoriApp_Karanglewas
         private void btnAdmin_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormAdmin());
+          //  OpenChildForm(new FormAdmin());
             showChildAdmin(panelChildAdmin);
             customDesignChild();
         }
@@ -343,6 +343,24 @@ namespace InventoriApp_Karanglewas
             this.Hide();
             FL.ShowDialog(); // Show Form3 and
             this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormAdmin());
+            lblChildForm.Text = "Admin";
+        }
+
+        private void btnRiwayatAdmin_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormRiwayatAdmin());
+            lblChildForm.Text = "Admin - Riwayat Admin";
+        }
+
+        private void btnLogAdmin_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormLogAdmin());
+            lblChildForm.Text = "Admin - Log Admin";
         }
     }
 }
