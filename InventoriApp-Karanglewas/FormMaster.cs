@@ -36,15 +36,22 @@ namespace InventoriApp_Karanglewas
 
             getAdmin();
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void customDesignChild()
         {
             panelChildSliding.Visible = false;
+           
+        }
+
+        private void customDesignChildAdmin()
+        {
+           
             panelChildAdmin.Visible = false;
         }
 
-         
+
 
         private void hideChildMenu()
         {
@@ -222,6 +229,7 @@ namespace InventoriApp_Karanglewas
         //    OpenChildForm(new FormDataBarang());
             showChildMenu(panelChildSliding);
             button1_Click(sender, e);
+            customDesignChildAdmin();
         }
 
         private void btnBarangMasuk_Click_1(object sender, EventArgs e)
@@ -229,6 +237,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangMasuk());
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void btnBarangKeluar_Click_1(object sender, EventArgs e)
@@ -236,6 +245,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangKeluar());
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void btnStockOpname_Click_1(object sender, EventArgs e)
@@ -243,6 +253,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormStock());
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void btnLaporan_Click_1(object sender, EventArgs e)
@@ -250,6 +261,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormLaporan());
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void btnRiwayat_Click_1(object sender, EventArgs e)
@@ -257,6 +269,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormRiwayat());
             customDesignChild();
+            customDesignChildAdmin();
         }
 
         private void btnAdmin_Click_1(object sender, EventArgs e)
@@ -264,7 +277,7 @@ namespace InventoriApp_Karanglewas
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormAdmin());
             showChildAdmin(panelChildAdmin);
-          //  customDesignChild();
+            customDesignChild();
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
