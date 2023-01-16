@@ -35,41 +35,20 @@ namespace InventoriApp_Karanglewas
             panelSidebar.Controls.Add(leftBorderBtn);
 
             getAdmin();
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
-        private void customDesignChild()
+        private void hideChild(Panel child)
         {
-            panelChildSliding.Visible = false;
+            child.Visible = false;
            
         }
 
-        private void customDesignChildAdmin()
-        {
-           
-            panelChildAdmin.Visible = false;
-        }
-
-
-
-        private void hideChildMenu()
-        {
-            if (panelChildSliding.Visible == true)
-                panelChildSliding.Visible = false;
-        }
-
-        private void hideChildAdmin()
-        {
-            if (panelChildAdmin.Visible == true)
-                panelChildAdmin.Visible = false;
-        }
-
-        private void showChildMenu(Panel childMenu)
+        private void showChild(Panel childMenu)
         {
             if (childMenu.Visible == false)
             {
-                hideChildMenu();
                 childMenu.Visible = true;
             }
             else
@@ -78,18 +57,6 @@ namespace InventoriApp_Karanglewas
             }
         }
 
-        private void showChildAdmin(Panel childAdmin)
-        {
-            if (childAdmin.Visible == false)
-            {
-                hideChildAdmin();
-                childAdmin.Visible = true;
-            }
-            else
-            {
-                childAdmin.Visible = false;
-            }
-        }
 
         public string getAdmin()
         {
@@ -217,6 +184,9 @@ namespace InventoriApp_Karanglewas
             leftBorderBtn.Visible = false;
             OpenChildForm(new FormBeranda());
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
+
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
 
@@ -227,57 +197,65 @@ namespace InventoriApp_Karanglewas
         {
             ActivateButton(sender, RGBColors.color1);
         //    OpenChildForm(new FormDataBarang());
-            showChildMenu(panelChildSliding);
+            showChild(panelChildSliding);
             button1_Click(sender, e);
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
         }
 
         private void btnBarangMasuk_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangMasuk());
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void btnBarangKeluar_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormBarangKeluar());
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void btnStockOpname_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormStock());
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void btnLaporan_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormLaporan());
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void btnRiwayat_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormRiwayat());
-            customDesignChild();
-            customDesignChildAdmin();
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void btnAdmin_Click_1(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormAdmin());
-            showChildAdmin(panelChildAdmin);
-            customDesignChild();
+            if(getAdmin() == "admin")
+            {
+                ActivateButton(sender, RGBColors.color1);
+                OpenChildForm(new FormAdmin());
+                showChild(panelChildAdmin);
+            }
+            else
+            {
+                ActivateButton(sender, RGBColors.color1);
+                OpenChildForm(new FormAdmin());
+            }
+            //customDesignChild();
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
@@ -289,12 +267,16 @@ namespace InventoriApp_Karanglewas
         {
             OpenChildForm(new FormBeranda());
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormBeranda());
             lblChildForm.Text = "Inventaris Kecamatan Karanglewas";
+            hideChild(panelChildAdmin);
+            hideChild(panelChildSliding);
         }
 
 
