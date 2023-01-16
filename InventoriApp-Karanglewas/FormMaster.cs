@@ -244,13 +244,9 @@ namespace InventoriApp_Karanglewas
 
         private void btnAdmin_Click_1(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             ActivateButton(sender, RGBColors.color1);
-          //  OpenChildForm(new FormAdmin());
-            showChildAdmin(panelChildAdmin);
-            customDesignChild();
-=======
-            if(getAdmin() == "admin")
+            //  OpenChildForm(new FormAdmin());
+            if (getAdmin() == "admin")
             {
                 ActivateButton(sender, RGBColors.color1);
                 OpenChildForm(new FormAdmin());
@@ -262,7 +258,6 @@ namespace InventoriApp_Karanglewas
                 OpenChildForm(new FormAdmin());
             }
             //customDesignChild();
->>>>>>> 75be7ede0a84d7a4ce705bcb89035a2e1bb1a88d
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
@@ -342,13 +337,13 @@ namespace InventoriApp_Karanglewas
 
         private void btnRiwayatAdmin_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormRiwayatAdmin());
+            OpenChildForm(new FormRiwayatAdmin1());
             lblChildForm.Text = "Admin - Riwayat Admin";
         }
 
         private void btnLogAdmin_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormLogAdmin());
+            OpenChildForm(new FormLogAdmin1());
             lblChildForm.Text = "Admin - Log Admin";
         }
     }

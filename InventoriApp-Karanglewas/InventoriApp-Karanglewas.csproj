@@ -115,6 +115,12 @@
       <DependentUpon>.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLogAdmin1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogAdmin1.Designer.cs">
+      <DependentUpon>FormLogAdmin1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     </Compile>
     <Compile Include="FormRiwayat.Designer.cs">
       <DependentUpon>FormRiwayat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRiwayatAdmin1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRiwayatAdmin1.Designer.cs">
+      <DependentUpon>FormRiwayatAdmin1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStock.cs">
       <SubType>Form</SubType>
