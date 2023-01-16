@@ -34,6 +34,10 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnKeluar = new FontAwesome.Sharp.IconButton();
+            this.panelChildAdmin = new System.Windows.Forms.Panel();
+            this.btnLogAdmin = new System.Windows.Forms.Button();
+            this.btnRiwayatAdmin = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.btnRiwayat = new FontAwesome.Sharp.IconButton();
             this.btnLaporan = new FontAwesome.Sharp.IconButton();
@@ -58,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelSidebar.SuspendLayout();
+            this.panelChildAdmin.SuspendLayout();
             this.panelChildSliding.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,6 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
             this.panelSidebar.Controls.Add(this.btnKeluar);
+            this.panelSidebar.Controls.Add(this.panelChildAdmin);
             this.panelSidebar.Controls.Add(this.btnAdmin);
             this.panelSidebar.Controls.Add(this.btnRiwayat);
             this.panelSidebar.Controls.Add(this.btnLaporan);
@@ -152,17 +158,79 @@
             this.btnKeluar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKeluar.IconSize = 52;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 488);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 588);
             this.btnKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.btnKeluar.Size = new System.Drawing.Size(244, 57);
-            this.btnKeluar.TabIndex = 26;
+            this.btnKeluar.TabIndex = 28;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKeluar.UseVisualStyleBackColor = false;
-            this.btnKeluar.Click += new System.EventHandler(this.btnKeluar_Click_1);
+            this.btnKeluar.Click += new System.EventHandler(this.btnKeluar_Click);
+            // 
+            // panelChildAdmin
+            // 
+            this.panelChildAdmin.Controls.Add(this.btnLogAdmin);
+            this.panelChildAdmin.Controls.Add(this.btnRiwayatAdmin);
+            this.panelChildAdmin.Controls.Add(this.button6);
+            this.panelChildAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelChildAdmin.Location = new System.Drawing.Point(0, 488);
+            this.panelChildAdmin.Name = "panelChildAdmin";
+            this.panelChildAdmin.Size = new System.Drawing.Size(244, 100);
+            this.panelChildAdmin.TabIndex = 27;
+            // 
+            // btnLogAdmin
+            // 
+            this.btnLogAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogAdmin.FlatAppearance.BorderSize = 0;
+            this.btnLogAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnLogAdmin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogAdmin.Location = new System.Drawing.Point(0, 60);
+            this.btnLogAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogAdmin.Name = "btnLogAdmin";
+            this.btnLogAdmin.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.btnLogAdmin.Size = new System.Drawing.Size(244, 30);
+            this.btnLogAdmin.TabIndex = 7;
+            this.btnLogAdmin.Text = "Log Admin";
+            this.btnLogAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogAdmin.UseVisualStyleBackColor = true;
+            // 
+            // btnRiwayatAdmin
+            // 
+            this.btnRiwayatAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRiwayatAdmin.FlatAppearance.BorderSize = 0;
+            this.btnRiwayatAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnRiwayatAdmin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRiwayatAdmin.Location = new System.Drawing.Point(0, 30);
+            this.btnRiwayatAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRiwayatAdmin.Name = "btnRiwayatAdmin";
+            this.btnRiwayatAdmin.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.btnRiwayatAdmin.Size = new System.Drawing.Size(244, 30);
+            this.btnRiwayatAdmin.TabIndex = 6;
+            this.btnRiwayatAdmin.Text = "Riwayat Admin";
+            this.btnRiwayatAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatAdmin.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(244, 30);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Admin";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // btnAdmin
             // 
@@ -555,6 +623,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
+            this.panelChildAdmin.ResumeLayout(false);
             this.panelChildSliding.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -584,7 +653,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnKeluar;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private FontAwesome.Sharp.IconButton btnRiwayat;
         private FontAwesome.Sharp.IconButton btnLaporan;
@@ -592,5 +660,10 @@
         private FontAwesome.Sharp.IconButton btnBarangKeluar;
         private FontAwesome.Sharp.IconButton btnBarangMasuk;
         private FontAwesome.Sharp.IconButton btDataBarang;
+        private FontAwesome.Sharp.IconButton btnKeluar;
+        private System.Windows.Forms.Panel panelChildAdmin;
+        private System.Windows.Forms.Button btnLogAdmin;
+        private System.Windows.Forms.Button btnRiwayatAdmin;
+        private System.Windows.Forms.Button button6;
     }
 }

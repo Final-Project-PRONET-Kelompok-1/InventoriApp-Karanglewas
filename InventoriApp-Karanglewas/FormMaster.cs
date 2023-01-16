@@ -41,12 +41,21 @@ namespace InventoriApp_Karanglewas
         private void customDesignChild()
         {
             panelChildSliding.Visible = false;
+            panelChildAdmin.Visible = false;
         }
+
+         
 
         private void hideChildMenu()
         {
             if (panelChildSliding.Visible == true)
                 panelChildSliding.Visible = false;
+        }
+
+        private void hideChildAdmin()
+        {
+            if (panelChildAdmin.Visible == true)
+                panelChildAdmin.Visible = false;
         }
 
         private void showChildMenu(Panel childMenu)
@@ -59,6 +68,19 @@ namespace InventoriApp_Karanglewas
             else
             {
                 childMenu.Visible = false;
+            }
+        }
+
+        private void showChildAdmin(Panel childAdmin)
+        {
+            if (childAdmin.Visible == false)
+            {
+                hideChildAdmin();
+                childAdmin.Visible = true;
+            }
+            else
+            {
+                childAdmin.Visible = false;
             }
         }
 
@@ -241,16 +263,8 @@ namespace InventoriApp_Karanglewas
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormAdmin());
-            customDesignChild();
-        }
-
-        private void btnKeluar_Click_1(object sender, EventArgs e)
-        {
-            simpanLog("Logout");
-            Form_Login FL = new Form_Login(); // Instantiate a Form3 object.
-            this.Hide();
-            FL.ShowDialog(); // Show Form3 and
-            this.Close();
+            showChildAdmin(panelChildAdmin);
+          //  customDesignChild();
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
@@ -307,6 +321,15 @@ namespace InventoriApp_Karanglewas
         {
             OpenChildForm(new listKategori());
             lblChildForm.Text = "Data Barang - List Kategori";
+        }
+
+        private void btnKeluar_Click(object sender, EventArgs e)
+        {
+            simpanLog("Logout");
+            Form_Login FL = new Form_Login(); // Instantiate a Form3 object.
+            this.Hide();
+            FL.ShowDialog(); // Show Form3 and
+            this.Close();
         }
     }
 }
