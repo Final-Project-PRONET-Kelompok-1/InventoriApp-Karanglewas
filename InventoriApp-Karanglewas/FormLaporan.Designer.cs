@@ -95,6 +95,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.dgvLaporan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 42);
@@ -112,12 +113,12 @@
             this.dgvLaporan.BackgroundColor = System.Drawing.Color.White;
             this.dgvLaporan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaporan.Location = new System.Drawing.Point(0, 0);
+            this.dgvLaporan.Location = new System.Drawing.Point(12, 20);
             this.dgvLaporan.Name = "dgvLaporan";
             this.dgvLaporan.RowHeadersWidth = 51;
             this.dgvLaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvLaporan.RowTemplate.Height = 24;
-            this.dgvLaporan.Size = new System.Drawing.Size(811, 703);
+            this.dgvLaporan.Size = new System.Drawing.Size(787, 675);
             this.dgvLaporan.TabIndex = 0;
             // 
             // FormLaporan

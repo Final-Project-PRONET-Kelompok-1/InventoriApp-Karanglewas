@@ -61,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 62);
+            this.panel1.Size = new System.Drawing.Size(793, 253);
             this.panel1.TabIndex = 0;
             // 
             // panelFilterText
@@ -179,6 +179,7 @@
             this.dataRiwayat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataRiwayat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataRiwayat.BackgroundColor = System.Drawing.Color.White;
+            this.dataRiwayat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataRiwayat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -215,7 +216,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataRiwayat.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataRiwayat.RowTemplate.Height = 24;
-            this.dataRiwayat.Size = new System.Drawing.Size(1037, 479);
+            this.dataRiwayat.Size = new System.Drawing.Size(763, 670);
             this.dataRiwayat.TabIndex = 3;
             // 
             // FormRiwayat
@@ -223,9 +224,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1067, 550);
+            this.ClientSize = new System.Drawing.Size(793, 741);
             this.Controls.Add(this.dataRiwayat);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRiwayat";
             this.Text = "FormRiwayat";

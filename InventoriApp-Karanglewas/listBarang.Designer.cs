@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSimpanBarang = new System.Windows.Forms.Button();
             this.btEditBarang = new System.Windows.Forms.Button();
             this.txtKodeBarang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btCari = new System.Windows.Forms.Button();
+            this.txtFilterText = new System.Windows.Forms.TextBox();
             this.btHapusBarang = new System.Windows.Forms.Button();
             this.btResetBarang = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbKategoriBarang = new System.Windows.Forms.ComboBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.dataBarang = new System.Windows.Forms.DataGridView();
-            this.btCari = new System.Windows.Forms.Button();
-            this.txtFilterText = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBarang)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +124,29 @@
             this.panel2.Size = new System.Drawing.Size(811, 173);
             this.panel2.TabIndex = 7;
             // 
+            // btCari
+            // 
+            this.btCari.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btCari.Location = new System.Drawing.Point(192, 140);
+            this.btCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCari.Name = "btCari";
+            this.btCari.Size = new System.Drawing.Size(75, 31);
+            this.btCari.TabIndex = 19;
+            this.btCari.Text = "Cari";
+            this.btCari.UseVisualStyleBackColor = true;
+            this.btCari.Click += new System.EventHandler(this.btCari_Click);
+            // 
+            // txtFilterText
+            // 
+            this.txtFilterText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtFilterText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFilterText.Location = new System.Drawing.Point(11, 147);
+            this.txtFilterText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFilterText.Name = "txtFilterText";
+            this.txtFilterText.Size = new System.Drawing.Size(175, 22);
+            this.txtFilterText.TabIndex = 18;
+            this.txtFilterText.TextChanged += new System.EventHandler(this.txtFilterText_TextChanged);
+            // 
             // btHapusBarang
             // 
             this.btHapusBarang.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -183,51 +208,46 @@
             this.dataBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataBarang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataBarang.BackgroundColor = System.Drawing.Color.White;
             this.dataBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataBarang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataBarang.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataBarang.Location = new System.Drawing.Point(12, 179);
             this.dataBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataBarang.Name = "dataBarang";
             this.dataBarang.RowHeadersWidth = 51;
             this.dataBarang.RowTemplate.Height = 24;
-            this.dataBarang.Size = new System.Drawing.Size(787, 431);
+            this.dataBarang.Size = new System.Drawing.Size(787, 599);
             this.dataBarang.TabIndex = 6;
             this.dataBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBarang_CellContentClick);
-            // 
-            // btCari
-            // 
-            this.btCari.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCari.Location = new System.Drawing.Point(192, 140);
-            this.btCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btCari.Name = "btCari";
-            this.btCari.Size = new System.Drawing.Size(75, 31);
-            this.btCari.TabIndex = 19;
-            this.btCari.Text = "Cari";
-            this.btCari.UseVisualStyleBackColor = true;
-            this.btCari.Click += new System.EventHandler(this.btCari_Click);
-            // 
-            // txtFilterText
-            // 
-            this.txtFilterText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtFilterText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterText.Location = new System.Drawing.Point(11, 147);
-            this.txtFilterText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFilterText.Name = "txtFilterText";
-            this.txtFilterText.Size = new System.Drawing.Size(175, 22);
-            this.txtFilterText.TabIndex = 18;
-            this.txtFilterText.TextChanged += new System.EventHandler(this.txtFilterText_TextChanged);
             // 
             // listBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(811, 620);
+            this.ClientSize = new System.Drawing.Size(811, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataBarang);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "listBarang";
             this.Text = "listBarang";

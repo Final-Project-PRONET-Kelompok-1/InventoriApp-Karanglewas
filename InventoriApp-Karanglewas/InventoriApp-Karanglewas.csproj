@@ -240,6 +240,9 @@
     <EmbeddedResource Include=".resx">
       <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogAdmin1.resx">
+      <DependentUpon>FormLogAdmin1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMaster.resx">
       <DependentUpon>FormMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +252,9 @@
     <EmbeddedResource Include="FormRiwayat.resx">
       <DependentUpon>FormRiwayat.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRiwayatAdmin1.resx">
+      <DependentUpon>FormRiwayatAdmin1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.cs</DependentUpon>

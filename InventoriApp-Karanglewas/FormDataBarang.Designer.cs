@@ -132,6 +132,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDB.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -151,7 +152,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDB.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDB.Location = new System.Drawing.Point(16, 85);
-            this.dgvDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDB.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDB.Name = "dgvDB";
             this.dgvDB.RowHeadersWidth = 51;
             this.dgvDB.Size = new System.Drawing.Size(784, 688);
@@ -167,7 +168,7 @@
             this.Controls.Add(this.dgvDB);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDataBarang";
             this.Text = "FormDataBarang";
             this.Load += new System.EventHandler(this.FormDataBarang_Load);
