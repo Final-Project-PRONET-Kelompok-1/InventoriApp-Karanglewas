@@ -15,7 +15,7 @@ namespace InventoriApp_Karanglewas
     
     public partial class Form_Login : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-GUA\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
         string admin, validasi;
         
@@ -125,6 +125,11 @@ namespace InventoriApp_Karanglewas
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nomor Telp/WA Admin Master: 14045", "Hubungi Admin Master terdekat");
         }
 
         private void txtPass_KeyDown(object sender, KeyEventArgs e)

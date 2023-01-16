@@ -25,12 +25,14 @@ namespace InventoriApp_Karanglewas
 
         DataTable dataTable = new DataTable();
 
-        FormMaster f1 = new FormMaster();
+       
         public FormStock()
         {
             InitializeComponent();
             cekKode();
             cbKategori(cbKategoriSO);
+
+            dataSO.ReadOnly = true;
             cbFilter.Text = "Semua Data";
 
         }
@@ -411,8 +413,8 @@ namespace InventoriApp_Karanglewas
                 txtPIC.Text = row.Cells["PIC"].Value.ToString();
                 txtStokFisik.Text = row.Cells["StokFisik"].Value.ToString();
                 txtStokSistem.Text = row.Cells["StokSistem"].Value.ToString();
-                cbBarangSO.Text = row.Cells["Barang"].Value.ToString();
                 cbKategoriSO.Text = row.Cells["Kategori"].Value.ToString();
+                cbBarangSO.Text = row.Cells["Barang"].Value.ToString();
                 txtKodeSO.Text = row.Cells["Kode"].Value.ToString();
                 dtSO.Text = row.Cells["Tanggal"].Value.ToString();
             }

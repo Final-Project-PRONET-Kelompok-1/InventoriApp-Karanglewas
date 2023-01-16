@@ -27,6 +27,8 @@ namespace InventoriApp_Karanglewas
             autoKode();
             fillDataKategori();
             cekKode();
+
+            dataKategori.ReadOnly = true;
             txtKodeKategori.Enabled = false;
         }
 

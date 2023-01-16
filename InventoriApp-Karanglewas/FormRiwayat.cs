@@ -30,7 +30,9 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
             fillDataRiwayat();
 
+            dataRiwayat.ReadOnly = true;
             cbFilterRiwayat.Text = "Semua Data";
+
         }
 
         private DataTable tampilSemua()

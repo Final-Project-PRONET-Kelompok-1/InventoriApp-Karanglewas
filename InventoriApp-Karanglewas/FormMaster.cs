@@ -23,7 +23,7 @@ namespace InventoriApp_Karanglewas
         SqlDataReader reader;
        
 
-        string admin;
+        public string admin;
         
 
 

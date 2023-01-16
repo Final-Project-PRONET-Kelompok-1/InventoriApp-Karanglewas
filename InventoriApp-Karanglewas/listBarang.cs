@@ -26,12 +26,12 @@ namespace InventoriApp_Karanglewas
         {
             InitializeComponent();
             cbKategori();
-
-            txtKodeBarang.Enabled = false;
-            txtKodeBarang.Text = "";
-
             fillDataBarang();
             cekKode();
+
+            dataBarang.ReadOnly = true;
+            txtKodeBarang.Enabled = false;
+            txtKodeBarang.Text = "";
 
         }
 
@@ -178,6 +178,7 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 conn.Close();
             }
             autoKode();

@@ -27,6 +27,7 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
             fillDataBarang();
 
+            dgvDB.ReadOnly = true;
             cbFilter.Text = "Semua Data";
         }
 

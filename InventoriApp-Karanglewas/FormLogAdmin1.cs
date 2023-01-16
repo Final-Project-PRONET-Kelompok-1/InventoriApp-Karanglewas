@@ -27,6 +27,7 @@ namespace InventoriApp_Karanglewas
             InitializeComponent();
             fillDataRiwayat();
 
+            dataRiwayat.ReadOnly = true;
             cbFilterRiwayat.Text = "Semua Data";
         }
         private DataTable tampilSemua()
@@ -40,6 +41,7 @@ namespace InventoriApp_Karanglewas
                     "FROM tb_log l\n" +
                     "LEFT JOIN tb_admin a ON a.id_admin = l.id_admin\n" +
                     "ORDER BY waktu DESC";
+                cmd = new SqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
                 conn.Close();

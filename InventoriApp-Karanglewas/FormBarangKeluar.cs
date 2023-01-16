@@ -38,6 +38,7 @@ namespace InventoriApp_Karanglewas
 
             cekKode();
 
+            dataBK.ReadOnly = true;
             txtKodeBK.Enabled = false;
             cbFilter.Text = "Semua Data";
         }
@@ -611,6 +612,11 @@ namespace InventoriApp_Karanglewas
         {
             conn.Close();
             filterByKategori();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

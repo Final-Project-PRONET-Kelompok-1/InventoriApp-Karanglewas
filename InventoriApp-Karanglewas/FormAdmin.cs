@@ -22,7 +22,7 @@ namespace InventoriApp_Karanglewas
 
         SqlCommand cmd;
         SqlDataReader reader;
-        string validasi, adminMaster, admin;
+        string validasi, admin;
 
         DataTable dataTable = new DataTable();
         FormMaster f1 = new FormMaster();
@@ -30,6 +30,8 @@ namespace InventoriApp_Karanglewas
         {
             InitializeComponent();
             cekAdminMaster();
+
+            dgvAdmin.ReadOnly = true;
         }
 
 
@@ -130,6 +132,7 @@ namespace InventoriApp_Karanglewas
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 conn.Close();
             }
         }
@@ -271,9 +274,11 @@ namespace InventoriApp_Karanglewas
             }
         }
 
+        
+
         private void dgvAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (f1.getAdmin() == "admin")
+            if (f1.admin == "admin")
             {
                 txtUsernameAdmin.Enabled = false;
                 if (e.RowIndex >= 0)
@@ -292,7 +297,7 @@ namespace InventoriApp_Karanglewas
         {
             
 
-            if (f1.getAdmin() == "admin")
+            if (f1.admin == "admin")
             {
                 btHapusAdmin.Visible = true;
                 btEditAdmin.Visible = true;

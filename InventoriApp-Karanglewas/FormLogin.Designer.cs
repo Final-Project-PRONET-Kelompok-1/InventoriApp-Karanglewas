@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btClose = new FontAwesome.Sharp.IconButton();
             this.btMasuk = new System.Windows.Forms.Button();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.icon2 = new FontAwesome.Sharp.IconButton();
+            this.icon1 = new FontAwesome.Sharp.IconButton();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,10 +57,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(125)))), ((int)(((byte)(194)))));
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btClose);
             this.panel1.Controls.Add(this.btMasuk);
-            this.panel1.Controls.Add(this.iconButton2);
-            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.icon2);
+            this.panel1.Controls.Add(this.icon1);
             this.panel1.Controls.Add(this.txtPass);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.label1);
@@ -68,6 +74,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 398);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Magenta;
+            this.label7.Location = new System.Drawing.Point(212, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 32);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "K";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label6.Location = new System.Drawing.Point(166, 89);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 32);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "SU";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(144, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 16);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Lupa password?";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btClose
             // 
@@ -87,55 +129,57 @@
             // 
             // btMasuk
             // 
-            this.btMasuk.BackColor = System.Drawing.Color.White;
+            this.btMasuk.BackColor = System.Drawing.Color.Crimson;
+            this.btMasuk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btMasuk.FlatAppearance.BorderSize = 0;
             this.btMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btMasuk.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btMasuk.Location = new System.Drawing.Point(128, 262);
+            this.btMasuk.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMasuk.ForeColor = System.Drawing.Color.White;
+            this.btMasuk.Location = new System.Drawing.Point(160, 221);
             this.btMasuk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btMasuk.Name = "btMasuk";
-            this.btMasuk.Size = new System.Drawing.Size(97, 39);
+            this.btMasuk.Size = new System.Drawing.Size(90, 27);
             this.btMasuk.TabIndex = 5;
             this.btMasuk.Text = "Masuk";
             this.btMasuk.UseVisualStyleBackColor = false;
             this.btMasuk.Click += new System.EventHandler(this.btMasuk_Click);
             // 
-            // iconButton2
+            // icon2
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(75, 218);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(28, 23);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.icon2.FlatAppearance.BorderSize = 0;
+            this.icon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icon2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.icon2.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.icon2.IconColor = System.Drawing.Color.White;
+            this.icon2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icon2.IconSize = 25;
+            this.icon2.Location = new System.Drawing.Point(75, 185);
+            this.icon2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.icon2.Name = "icon2";
+            this.icon2.Size = new System.Drawing.Size(28, 23);
+            this.icon2.TabIndex = 4;
+            this.icon2.UseVisualStyleBackColor = true;
             // 
-            // iconButton1
+            // icon1
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(75, 174);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(28, 23);
-            this.iconButton1.TabIndex = 3;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.icon1.FlatAppearance.BorderSize = 0;
+            this.icon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icon1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.icon1.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
+            this.icon1.IconColor = System.Drawing.Color.White;
+            this.icon1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icon1.IconSize = 25;
+            this.icon1.Location = new System.Drawing.Point(75, 141);
+            this.icon1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.icon1.Name = "icon1";
+            this.icon1.Size = new System.Drawing.Size(28, 23);
+            this.icon1.TabIndex = 3;
+            this.icon1.UseVisualStyleBackColor = true;
             // 
             // txtPass
             // 
             this.txtPass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPass.Location = new System.Drawing.Point(117, 218);
+            this.txtPass.Location = new System.Drawing.Point(117, 185);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -146,7 +190,7 @@
             // txtUsername
             // 
             this.txtUsername.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtUsername.Location = new System.Drawing.Point(117, 174);
+            this.txtUsername.Location = new System.Drawing.Point(117, 141);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(133, 22);
@@ -155,13 +199,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(122, 113);
+            this.label1.Font = new System.Drawing.Font("Lucida Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(111, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 32);
+            this.label1.Size = new System.Drawing.Size(62, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MASUK";
+            this.label1.Text = "MA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
@@ -191,11 +235,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Mistral", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(44, 2);
+            this.label4.Location = new System.Drawing.Point(68, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(400, 25);
+            this.label4.Size = new System.Drawing.Size(374, 34);
             this.label4.TabIndex = 8;
             this.label4.Text = "INOVASI, INTEGRITAS, TRANSPARAN";
             // 
@@ -216,11 +260,11 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("FORQUE", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(197, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 36);
+            this.label3.Size = new System.Drawing.Size(185, 40);
             this.label3.TabIndex = 7;
             this.label3.Text = "KARANGLEWAS";
             // 
@@ -229,11 +273,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("FORQUE", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(197, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 36);
+            this.label2.Size = new System.Drawing.Size(155, 40);
             this.label2.TabIndex = 6;
             this.label2.Text = "KECAMATAN";
             // 
@@ -291,8 +335,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btMasuk;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton icon2;
+        private FontAwesome.Sharp.IconButton icon1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
@@ -301,6 +345,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btClose;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 

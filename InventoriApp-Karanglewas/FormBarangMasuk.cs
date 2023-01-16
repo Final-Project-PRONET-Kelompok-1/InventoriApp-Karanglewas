@@ -34,8 +34,9 @@ namespace InventoriApp_Karanglewas
             autoKode();
             fillDataBM();
             cekKode();
-            txtKodeBM.Enabled = false;
 
+            dataBM.ReadOnly = true;
+            txtKodeBM.Enabled = false;
             cbFilter.Text = "Semua Data";
         }
 

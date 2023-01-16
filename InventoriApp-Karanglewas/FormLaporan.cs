@@ -122,19 +122,22 @@ namespace InventoriApp_Karanglewas
             if (cbPilih.Text.ToString() == "Barang Masuk")
             {
                 dgvLaporan.DataSource = getDataBM();
+                dgvLaporan.ReadOnly = true;
 
             }
 
             if (cbPilih.Text.ToString() == "Barang Keluar")
             {
                 dgvLaporan.DataSource = getDataBK();
+                dgvLaporan.ReadOnly = true;
 
             }
 
             if (cbPilih.Text.ToString() == "Stok Opname")
             {
                 dgvLaporan.DataSource = getDataSO();
-                
+                dgvLaporan.ReadOnly = true;
+
             }
 
         }
