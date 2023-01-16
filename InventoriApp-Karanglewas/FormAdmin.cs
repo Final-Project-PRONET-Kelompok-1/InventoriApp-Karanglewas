@@ -22,12 +22,14 @@ namespace InventoriApp_Karanglewas
 
         SqlCommand cmd;
         SqlDataReader reader;
-        string validasi;
+        string validasi, adminMaster, admin;
 
         DataTable dataTable = new DataTable();
+        FormMaster f1 = new FormMaster();
         public FormAdmin()
         {
             InitializeComponent();
+            cekAdminMaster();
         }
 
 
@@ -175,6 +177,8 @@ namespace InventoriApp_Karanglewas
             txtNamaAdmin.Text = "";
             txtUsernameAdmin.Text = "";
             txtPasswordAdmin.Text = "";
+            txtUsernameAdmin.Enabled = true;
+            cekAdminMaster();
         }
 
         private void btResetAdmin_Click(object sender, EventArgs e)
@@ -195,6 +199,125 @@ namespace InventoriApp_Karanglewas
                 txtNamaAdmin.Clear();
             }
         }
+
+        private void btHapusAdmin_Click(object sender, EventArgs e)
+        {
+            if(txtUsernameAdmin.Text == "admin")
+            {
+                MessageBox.Show("Akun dengan username = '"+txtUsernameAdmin.Text+"' tidak bisa dihapus");
+                resetData();
+            }
+            else
+            {
+                var tanya = MessageBox.Show("Apakah anda yakin \n" +
+                "akan menghapus akun dengan username = " + txtUsernameAdmin.Text + " ?", "Hapus", MessageBoxButtons.YesNo);
+                if (tanya == DialogResult.Yes)
+                {
+                    conn.Open();
+                    string query = "DELETE FROM tb_admin WHERE username = '" + txtUsernameAdmin.Text + "'";
+                    var cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data berhasil dihapus");
+                    conn.Close();
+                    resetData();
+                    fillDataAdmin();
+                }
+            }
+        }
+
+        private void btEditAdmin_Click(object sender, EventArgs e)
+        {
+            updateAdmin();
+            resetData();
+            fillDataAdmin();
+        }
+
+        public string getPassword()
+        {
+            conn.Open();
+            string query = "SELECT password FROM tb_admin " +
+                "WHERE username = '"+txtUsernameAdmin.Text+"' ";
+            cmd = new SqlCommand(query, conn);
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows && reader != null)
+            {
+                reader.Read();
+                admin = reader["password"].ToString();
+                txtPasswordAdmin.Text = admin;
+            }
+            conn.Close();
+
+            return admin;
+        }
+
+        private void updateAdmin()
+        {
+            string nama = txtNamaAdmin.Text;
+            nama = nama.Replace("'", "''");
+
+            try
+            {
+                conn.Open();
+                string queryUpdate = "UPDATE tb_admin SET nama_panjang = '"+nama+ "', password = HASHBYTES('MD5','" + txtPasswordAdmin.Text + "') " +
+                  "WHERE username= '" + txtUsernameAdmin.Text + "' ";
+                cmd = new SqlCommand(queryUpdate, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (f1.getAdmin() == "admin")
+            {
+                txtUsernameAdmin.Enabled = false;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dgvAdmin.Rows[e.RowIndex];
+                    txtUsernameAdmin.Text = row.Cells["Username"].Value.ToString();
+                    txtNamaAdmin.Text = row.Cells["Nama"].Value.ToString();
+                }
+            }
+            getPassword();
+            cekAdminMaster();
+
+        }
+
+        private void cekAdminMaster()
+        {
+            
+
+            if (f1.getAdmin() == "admin")
+            {
+                btHapusAdmin.Visible = true;
+                btEditAdmin.Visible = true;
+
+                if(txtUsernameAdmin.Text == "")
+                {
+                    btHapusAdmin.Enabled = false;
+                    btEditAdmin.Enabled = false;
+                    btSimpanAdmin.Enabled = true;
+                }
+                else
+                {
+                    btHapusAdmin.Enabled = true;
+                    btEditAdmin.Enabled = true;
+                    btSimpanAdmin.Enabled = false;
+                }
+            }
+            else
+            {
+                btHapusAdmin.Visible = false;
+                btEditAdmin.Visible = false;
+            }
+       
+        }
+
     }
     
 }
