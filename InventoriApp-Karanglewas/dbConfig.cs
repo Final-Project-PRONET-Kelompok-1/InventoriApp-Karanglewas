@@ -12,7 +12,7 @@ namespace InventoriApp_Karanglewas
     internal class dbConfig
     {
         //public static string conn = @"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True";
-        public static SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-GUA\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
         public void Open()
         {

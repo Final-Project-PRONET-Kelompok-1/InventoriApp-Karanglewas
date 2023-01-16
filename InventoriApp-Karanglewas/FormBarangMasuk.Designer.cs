@@ -86,7 +86,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataBM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataBM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
@@ -94,8 +94,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataBM.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataBM.Location = new System.Drawing.Point(12, 249);
-            this.dataBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataBM.Location = new System.Drawing.Point(9, 202);
+            this.dataBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataBM.Name = "dataBM";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -107,7 +107,7 @@
             this.dataBM.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataBM.RowHeadersWidth = 51;
             this.dataBM.RowTemplate.Height = 24;
-            this.dataBM.Size = new System.Drawing.Size(787, 526);
+            this.dataBM.Size = new System.Drawing.Size(590, 427);
             this.dataBM.TabIndex = 2;
             this.dataBM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBM_CellContentClick);
             // 
@@ -135,9 +135,9 @@
             this.panel2.Controls.Add(this.panelFilterTanggal);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(811, 242);
+            this.panel2.Size = new System.Drawing.Size(608, 197);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -145,20 +145,20 @@
             // 
             this.panelFilterText.Controls.Add(this.btCariText);
             this.panelFilterText.Controls.Add(this.txtFilterBarang);
-            this.panelFilterText.Location = new System.Drawing.Point(216, 201);
-            this.panelFilterText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelFilterText.Location = new System.Drawing.Point(162, 163);
+            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFilterText.Name = "panelFilterText";
-            this.panelFilterText.Size = new System.Drawing.Size(243, 60);
+            this.panelFilterText.Size = new System.Drawing.Size(182, 49);
             this.panelFilterText.TabIndex = 20;
             this.panelFilterText.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterText_Paint);
             // 
             // btCariText
             // 
             this.btCariText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btCariText.Location = new System.Drawing.Point(176, 0);
-            this.btCariText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCariText.Location = new System.Drawing.Point(133, 0);
+            this.btCariText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btCariText.Name = "btCariText";
-            this.btCariText.Size = new System.Drawing.Size(67, 25);
+            this.btCariText.Size = new System.Drawing.Size(49, 20);
             this.btCariText.TabIndex = 21;
             this.btCariText.Text = "Cari";
             this.btCariText.UseVisualStyleBackColor = true;
@@ -168,9 +168,9 @@
             // 
             this.txtFilterBarang.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtFilterBarang.Location = new System.Drawing.Point(0, 0);
-            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFilterBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFilterBarang.Name = "txtFilterBarang";
-            this.txtFilterBarang.Size = new System.Drawing.Size(176, 22);
+            this.txtFilterBarang.Size = new System.Drawing.Size(133, 20);
             this.txtFilterBarang.TabIndex = 22;
             this.txtFilterBarang.TextChanged += new System.EventHandler(this.txtFilterBarang_TextChanged);
             // 
@@ -183,10 +183,10 @@
             "By Tanggal",
             "By Kategori",
             "By Text"});
-            this.cbFilter.Location = new System.Drawing.Point(35, 201);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Location = new System.Drawing.Point(26, 163);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(160, 24);
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 17;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
@@ -194,10 +194,10 @@
             // 
             this.txtPIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPIC.Location = new System.Drawing.Point(507, 80);
-            this.txtPIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPIC.Location = new System.Drawing.Point(380, 65);
+            this.txtPIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPIC.Name = "txtPIC";
-            this.txtPIC.Size = new System.Drawing.Size(210, 22);
+            this.txtPIC.Size = new System.Drawing.Size(158, 20);
             this.txtPIC.TabIndex = 16;
             this.txtPIC.TextChanged += new System.EventHandler(this.txtPIC_TextChanged);
             // 
@@ -205,19 +205,20 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(427, 82);
+            this.label5.Location = new System.Drawing.Point(320, 67);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 16);
+            this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "PIC";
             // 
             // btSimpanBM
             // 
             this.btSimpanBM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btSimpanBM.Location = new System.Drawing.Point(656, 142);
-            this.btSimpanBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSimpanBM.Location = new System.Drawing.Point(492, 115);
+            this.btSimpanBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btSimpanBM.Name = "btSimpanBM";
-            this.btSimpanBM.Size = new System.Drawing.Size(75, 34);
+            this.btSimpanBM.Size = new System.Drawing.Size(56, 28);
             this.btSimpanBM.TabIndex = 12;
             this.btSimpanBM.Text = "Simpan";
             this.btSimpanBM.UseVisualStyleBackColor = true;
@@ -226,10 +227,10 @@
             // btResetBM
             // 
             this.btResetBM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btResetBM.Location = new System.Drawing.Point(563, 142);
-            this.btResetBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btResetBM.Location = new System.Drawing.Point(422, 115);
+            this.btResetBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btResetBM.Name = "btResetBM";
-            this.btResetBM.Size = new System.Drawing.Size(75, 34);
+            this.btResetBM.Size = new System.Drawing.Size(56, 28);
             this.btResetBM.TabIndex = 11;
             this.btResetBM.Text = "Reset";
             this.btResetBM.UseVisualStyleBackColor = true;
@@ -238,10 +239,10 @@
             // btHapusBM
             // 
             this.btHapusBM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btHapusBM.Location = new System.Drawing.Point(472, 142);
-            this.btHapusBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btHapusBM.Location = new System.Drawing.Point(354, 115);
+            this.btHapusBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btHapusBM.Name = "btHapusBM";
-            this.btHapusBM.Size = new System.Drawing.Size(75, 34);
+            this.btHapusBM.Size = new System.Drawing.Size(56, 28);
             this.btHapusBM.TabIndex = 10;
             this.btHapusBM.Text = "Hapus";
             this.btHapusBM.UseVisualStyleBackColor = true;
@@ -250,10 +251,10 @@
             // btEditBM
             // 
             this.btEditBM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btEditBM.Location = new System.Drawing.Point(385, 144);
-            this.btEditBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btEditBM.Location = new System.Drawing.Point(289, 117);
+            this.btEditBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btEditBM.Name = "btEditBM";
-            this.btEditBM.Size = new System.Drawing.Size(75, 32);
+            this.btEditBM.Size = new System.Drawing.Size(56, 26);
             this.btEditBM.TabIndex = 9;
             this.btEditBM.Text = "Edit";
             this.btEditBM.UseVisualStyleBackColor = true;
@@ -262,19 +263,19 @@
             // dtBM
             // 
             this.dtBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dtBM.Location = new System.Drawing.Point(475, 39);
-            this.dtBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtBM.Location = new System.Drawing.Point(356, 32);
+            this.dtBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtBM.Name = "dtBM";
-            this.dtBM.Size = new System.Drawing.Size(243, 22);
+            this.dtBM.Size = new System.Drawing.Size(183, 20);
             this.dtBM.TabIndex = 8;
             // 
             // txtJumlahBM
             // 
             this.txtJumlahBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtJumlahBM.Location = new System.Drawing.Point(132, 154);
-            this.txtJumlahBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtJumlahBM.Location = new System.Drawing.Point(99, 125);
+            this.txtJumlahBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtJumlahBM.Name = "txtJumlahBM";
-            this.txtJumlahBM.Size = new System.Drawing.Size(176, 22);
+            this.txtJumlahBM.Size = new System.Drawing.Size(133, 20);
             this.txtJumlahBM.TabIndex = 7;
             this.txtJumlahBM.TextChanged += new System.EventHandler(this.txtJumlahBM_TextChanged);
             // 
@@ -282,20 +283,20 @@
             // 
             this.cbBarangBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbBarangBM.FormattingEnabled = true;
-            this.cbBarangBM.Location = new System.Drawing.Point(132, 114);
-            this.cbBarangBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbBarangBM.Location = new System.Drawing.Point(99, 93);
+            this.cbBarangBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbBarangBM.Name = "cbBarangBM";
-            this.cbBarangBM.Size = new System.Drawing.Size(176, 24);
+            this.cbBarangBM.Size = new System.Drawing.Size(133, 21);
             this.cbBarangBM.TabIndex = 6;
             // 
             // cbKategoriBM
             // 
             this.cbKategoriBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbKategoriBM.FormattingEnabled = true;
-            this.cbKategoriBM.Location = new System.Drawing.Point(132, 71);
-            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbKategoriBM.Location = new System.Drawing.Point(99, 58);
+            this.cbKategoriBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbKategoriBM.Name = "cbKategoriBM";
-            this.cbKategoriBM.Size = new System.Drawing.Size(176, 24);
+            this.cbKategoriBM.Size = new System.Drawing.Size(133, 21);
             this.cbKategoriBM.TabIndex = 5;
             this.cbKategoriBM.SelectedIndexChanged += new System.EventHandler(this.cbKategoriBM_SelectedIndexChanged);
             // 
@@ -303,10 +304,10 @@
             // 
             this.txtKodeBM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtKodeBM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKodeBM.Location = new System.Drawing.Point(132, 30);
-            this.txtKodeBM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKodeBM.Location = new System.Drawing.Point(99, 24);
+            this.txtKodeBM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKodeBM.Name = "txtKodeBM";
-            this.txtKodeBM.Size = new System.Drawing.Size(175, 22);
+            this.txtKodeBM.Size = new System.Drawing.Size(132, 20);
             this.txtKodeBM.TabIndex = 11;
             this.txtKodeBM.TextChanged += new System.EventHandler(this.txtKodeBM_TextChanged);
             // 
@@ -314,9 +315,10 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 158);
+            this.label4.Location = new System.Drawing.Point(23, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Jumlah";
             // 
@@ -324,9 +326,10 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 117);
+            this.label3.Location = new System.Drawing.Point(23, 95);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Barang";
             // 
@@ -334,9 +337,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 71);
+            this.label2.Location = new System.Drawing.Point(23, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kategori";
             // 
@@ -344,19 +348,20 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 30);
+            this.label1.Location = new System.Drawing.Point(23, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kode";
             // 
             // panelFilterKategori
             // 
             this.panelFilterKategori.Controls.Add(this.cbFilterKategori);
-            this.panelFilterKategori.Location = new System.Drawing.Point(216, 199);
-            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelFilterKategori.Location = new System.Drawing.Point(162, 162);
+            this.panelFilterKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFilterKategori.Name = "panelFilterKategori";
-            this.panelFilterKategori.Size = new System.Drawing.Size(211, 39);
+            this.panelFilterKategori.Size = new System.Drawing.Size(158, 32);
             this.panelFilterKategori.TabIndex = 21;
             this.panelFilterKategori.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterKategori_Paint);
             // 
@@ -365,9 +370,9 @@
             this.cbFilterKategori.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbFilterKategori.FormattingEnabled = true;
             this.cbFilterKategori.Location = new System.Drawing.Point(0, 0);
-            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilterKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilterKategori.Name = "cbFilterKategori";
-            this.cbFilterKategori.Size = new System.Drawing.Size(176, 24);
+            this.cbFilterKategori.Size = new System.Drawing.Size(133, 21);
             this.cbFilterKategori.TabIndex = 19;
             this.cbFilterKategori.SelectedIndexChanged += new System.EventHandler(this.cbFilterKategori_SelectedIndexChanged);
             // 
@@ -377,20 +382,20 @@
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker1);
-            this.panelFilterTanggal.Location = new System.Drawing.Point(216, 201);
-            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelFilterTanggal.Location = new System.Drawing.Point(162, 163);
+            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
-            this.panelFilterTanggal.Size = new System.Drawing.Size(583, 30);
+            this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
             this.panelFilterTanggal.TabIndex = 18;
             this.panelFilterTanggal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFilterTanggal_Paint);
             // 
             // btCariTanggal
             // 
             this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btCariTanggal.Location = new System.Drawing.Point(501, 0);
-            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btCariTanggal.Name = "btCariTanggal";
-            this.btCariTanggal.Size = new System.Drawing.Size(82, 25);
+            this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggal.TabIndex = 19;
             this.btCariTanggal.Text = "Cari";
             this.btCariTanggal.UseVisualStyleBackColor = true;
@@ -399,19 +404,20 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dateTimePicker2.Location = new System.Drawing.Point(258, 0);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(196, 0);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker2.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Location = new System.Drawing.Point(243, 0);
+            this.label6.Location = new System.Drawing.Point(183, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "--";
             // 
@@ -419,21 +425,21 @@
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
             // FormBarangMasuk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(811, 788);
+            this.ClientSize = new System.Drawing.Size(608, 640);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataBM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBarangMasuk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBarangMasuk";

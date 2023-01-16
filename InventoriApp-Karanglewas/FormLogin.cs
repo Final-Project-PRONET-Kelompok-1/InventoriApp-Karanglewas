@@ -15,7 +15,7 @@ namespace InventoriApp_Karanglewas
     
     public partial class Form_Login : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(local);Initial Catalog=InventoriKaranglewas; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-GUA\SQLEXPRESS;Initial Catalog=InventoriKaranglewas; Integrated Security=True");
 
         string admin, validasi;
         
