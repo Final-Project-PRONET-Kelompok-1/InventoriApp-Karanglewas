@@ -68,7 +68,7 @@
             this.panelFilterText.Controls.Add(this.btCariTextRwt);
             this.panelFilterText.Controls.Add(this.txtFilterRiwayat);
             this.panelFilterText.Location = new System.Drawing.Point(132, 10);
-            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterText.Name = "panelFilterText";
             this.panelFilterText.Size = new System.Drawing.Size(182, 32);
             this.panelFilterText.TabIndex = 21;
@@ -78,7 +78,7 @@
             this.btCariTextRwt.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCariTextRwt.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTextRwt.Location = new System.Drawing.Point(133, 0);
-            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTextRwt.Name = "btCariTextRwt";
             this.btCariTextRwt.Size = new System.Drawing.Size(49, 20);
             this.btCariTextRwt.TabIndex = 21;
@@ -91,7 +91,7 @@
             this.txtFilterRiwayat.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtFilterRiwayat.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.txtFilterRiwayat.Location = new System.Drawing.Point(0, 0);
-            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilterRiwayat.Name = "txtFilterRiwayat";
             this.txtFilterRiwayat.Size = new System.Drawing.Size(133, 22);
             this.txtFilterRiwayat.TabIndex = 22;
@@ -104,7 +104,7 @@
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
             this.panelFilterTanggal.Location = new System.Drawing.Point(135, 10);
-            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
             this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
             this.panelFilterTanggal.TabIndex = 23;
@@ -114,7 +114,7 @@
             this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCariTanggal.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
-            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTanggal.Name = "btCariTanggal";
             this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggal.TabIndex = 19;
@@ -127,7 +127,7 @@
             this.dateTimePicker3.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker3.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker3.Location = new System.Drawing.Point(196, 0);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker3.TabIndex = 20;
@@ -148,7 +148,7 @@
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker2.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker2.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker2.TabIndex = 19;
@@ -164,7 +164,7 @@
             "By Tanggal",
             "By Text"});
             this.cbFilterRiwayat.Location = new System.Drawing.Point(10, 10);
-            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterRiwayat.Name = "cbFilterRiwayat";
             this.cbFilterRiwayat.Size = new System.Drawing.Size(121, 23);
             this.cbFilterRiwayat.TabIndex = 18;
@@ -200,7 +200,7 @@
             this.dataRiwayat.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataRiwayat.GridColor = System.Drawing.Color.White;
             this.dataRiwayat.Location = new System.Drawing.Point(11, 47);
-            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.dataRiwayat.Name = "dataRiwayat";
             this.dataRiwayat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
