@@ -68,6 +68,7 @@ namespace InventoriApp_Karanglewas
 
         private void simpanPassBaru()
         {
+            
             try
             {
                 conn.Open();
