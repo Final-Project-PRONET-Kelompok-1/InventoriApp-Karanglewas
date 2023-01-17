@@ -87,18 +87,30 @@ namespace InventoriApp_Karanglewas
         private void btSimpanPassword_Click(object sender, EventArgs e)
         {
 
-            FormAdmin fa = new FormAdmin();
-            var mainForm = Application.OpenForms.OfType<FormAdmin>().Single();
-            if (cekPasswordLama() == "oke")
+            if (txtPassLama.Text == "")
             {
-                simpanPassBaru();
-                txtPassBaru.Text = "";
-                txtPassLama.Text = "";
-                this.Close();
-                mainForm.simpanRiwayat("Edit  Password");
-                mainForm.resetData();
-                mainForm.fillDataAdmin();
-                MessageBox.Show("Password berhasil diubah!");
+                MessageBox.Show("Password lama harus diisi!");
+                txtPassLama.Focus();
+            }
+            else if (txtPassBaru.Text == "")
+            {
+                MessageBox.Show("Password baru harus diisi!");
+                txtPassBaru.Focus();
+            }
+            else
+            {
+                FormAdmin fa = new FormAdmin();
+                var mainForm = Application.OpenForms.OfType<FormAdmin>().Single();
+                if (cekPasswordLama() == "oke")
+                {
+                    simpanPassBaru();
+                    txtPassBaru.Text = "";
+                    txtPassLama.Text = "";
+                    this.Close();
+                    mainForm.resetData();
+                    mainForm.fillDataAdmin();
+                    MessageBox.Show("Password berhasil diubah!");
+                }
             }
         }
     }
