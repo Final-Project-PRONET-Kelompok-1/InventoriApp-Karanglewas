@@ -26,7 +26,7 @@ namespace InventoriApp_Karanglewas
 
         DataTable dataTable = new DataTable();
 
-        public string getUsername;
+        public static string getUsername;
         public FormAdmin()
         {
             InitializeComponent();
@@ -334,8 +334,6 @@ namespace InventoriApp_Karanglewas
                 btUbah.Visible = true;
                 getUsername = txtUsernameAdmin.Text;
 
-                FormPassword fp = new FormPassword();
-                fp.username = getUsername;
 
                 cekAdminMaster();
             }
@@ -347,7 +345,6 @@ namespace InventoriApp_Karanglewas
         {
             getUsername = txtUsernameAdmin.Text;
             FormPassword fp = new FormPassword();
-            fp.username = getUsername;
             fp.Show();
 
         }
