@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static InventoriApp_Karanglewas.dataTransfer;
 
 namespace InventoriApp_Karanglewas
 {
@@ -24,7 +25,6 @@ namespace InventoriApp_Karanglewas
        
 
         public string admin;
-        
 
 
         public FormMaster()

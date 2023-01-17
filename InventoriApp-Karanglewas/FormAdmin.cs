@@ -22,22 +22,26 @@ namespace InventoriApp_Karanglewas
 
         SqlCommand cmd;
         SqlDataReader reader;
-        string validasi, admin;
+        string validasi, admin, adminReady;
 
         DataTable dataTable = new DataTable();
-        FormMaster f1 = new FormMaster();
+
+        public string getUsername;
         public FormAdmin()
         {
             InitializeComponent();
             cekAdminMaster();
 
             dgvAdmin.ReadOnly = true;
+            btUbah.Visible = false;
+            getAdmin();
+
+            fillDataAdmin();
         }
 
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            fillDataAdmin();
         }
         private string cekValidasi()
         {
@@ -169,18 +173,20 @@ namespace InventoriApp_Karanglewas
             return dataTable;
         }
 
-        private void fillDataAdmin()
+        public void fillDataAdmin()
         {
 
             dgvAdmin.DataSource = getDataAdmin();
         }
 
-        private void resetData()
+        public void resetData()
         {
             txtNamaAdmin.Text = "";
             txtUsernameAdmin.Text = "";
             txtPasswordAdmin.Text = "";
             txtUsernameAdmin.Enabled = true;
+            txtPasswordAdmin.Enabled = true;
+            btUbah.Visible = false;
             cekAdminMaster();
         }
 
@@ -230,9 +236,47 @@ namespace InventoriApp_Karanglewas
 
         private void btEditAdmin_Click(object sender, EventArgs e)
         {
-            updateAdmin();
-            resetData();
-            fillDataAdmin();
+            if(cekValidasi() == "oke" && cekNama() == "oke")
+            {
+                updateAdmin();
+                resetData();
+                fillDataAdmin();
+
+            }
+        }
+
+        private string cekNama()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_admin WHERE nama_panjang = '" + txtNamaAdmin.Text + "' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Tidak ada perubahan data, cek kembali!");
+                    txtNamaAdmin.Focus();
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
         }
 
         public string getPassword()
@@ -262,7 +306,7 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string queryUpdate = "UPDATE tb_admin SET nama_panjang = '"+nama+ "', password = HASHBYTES('MD5','" + txtPasswordAdmin.Text + "') " +
+                string queryUpdate = "UPDATE tb_admin SET nama_panjang = '"+nama+ "'" +
                   "WHERE username= '" + txtUsernameAdmin.Text + "' ";
                 cmd = new SqlCommand(queryUpdate, conn);
                 cmd.ExecuteNonQuery();
@@ -274,30 +318,63 @@ namespace InventoriApp_Karanglewas
             }
         }
 
-        
-
-        private void dgvAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvAdmin_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (f1.admin == "admin")
+            if (adminReady == "admin")
             {
-                txtUsernameAdmin.Enabled = false;
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvAdmin.Rows[e.RowIndex];
                     txtUsernameAdmin.Text = row.Cells["Username"].Value.ToString();
                     txtNamaAdmin.Text = row.Cells["Nama"].Value.ToString();
                 }
-            }
-            getPassword();
-            cekAdminMaster();
+                txtUsernameAdmin.Enabled = false;
+                txtPasswordAdmin.Text = "123456";
+                txtPasswordAdmin.Enabled = false;
+                btUbah.Visible = true;
+                getUsername = txtUsernameAdmin.Text;
 
+                FormPassword fp = new FormPassword();
+                fp.username = getUsername;
+
+                cekAdminMaster();
+            }
+                
+
+        }
+
+        private void btUbah_Click(object sender, EventArgs e)
+        {
+            getUsername = txtUsernameAdmin.Text;
+            FormPassword fp = new FormPassword();
+            fp.username = getUsername;
+            fp.Show();
+
+        }
+
+        private string getAdmin()
+        {
+            conn.Open();
+            string query = "SELECT a.username FROM tb_log l INNER JOIN tb_admin a ON l.id_admin = a.id_admin ORDER BY id_log DESC";
+            cmd = new SqlCommand(query, conn);
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows && reader != null)
+            {
+                reader.Read();
+                adminReady = reader["username"].ToString();
+
+            }
+            conn.Close();
+
+            return adminReady;
         }
 
         private void cekAdminMaster()
         {
             
 
-            if (f1.admin == "admin")
+            if (adminReady == "admin")
             {
                 btHapusAdmin.Visible = true;
                 btEditAdmin.Visible = true;
