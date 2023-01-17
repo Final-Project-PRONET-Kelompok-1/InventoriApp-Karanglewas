@@ -87,14 +87,15 @@ namespace InventoriApp_Karanglewas
         {
 
             FormAdmin fa = new FormAdmin();
+            var mainForm = Application.OpenForms.OfType<FormAdmin>().Single();
             if (cekPasswordLama() == "oke")
             {
                 simpanPassBaru();
                 txtPassBaru.Text = "";
                 txtPassLama.Text = "";
                 this.Close();
-                fa.resetData();
-                fa.fillDataAdmin();
+                mainForm.resetData();
+                mainForm.fillDataAdmin();
                 MessageBox.Show("Password berhasil diubah!");
             }
         }
