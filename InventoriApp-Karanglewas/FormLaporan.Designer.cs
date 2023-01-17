@@ -71,7 +71,7 @@
             this.btnCetak.FlatAppearance.BorderSize = 0;
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCetak.Location = new System.Drawing.Point(633, 8);
+            this.btnCetak.Location = new System.Drawing.Point(673, 8);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(84, 28);
             this.btnCetak.TabIndex = 8;
@@ -113,12 +113,12 @@
             this.dgvLaporan.BackgroundColor = System.Drawing.Color.White;
             this.dgvLaporan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaporan.Location = new System.Drawing.Point(12, 20);
+            this.dgvLaporan.Location = new System.Drawing.Point(12, 6);
             this.dgvLaporan.Name = "dgvLaporan";
             this.dgvLaporan.RowHeadersWidth = 51;
             this.dgvLaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvLaporan.RowTemplate.Height = 24;
-            this.dgvLaporan.Size = new System.Drawing.Size(787, 675);
+            this.dgvLaporan.Size = new System.Drawing.Size(787, 689);
             this.dgvLaporan.TabIndex = 0;
             // 
             // FormLaporan

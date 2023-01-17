@@ -89,12 +89,17 @@ namespace InventoriApp_Karanglewas
 
             if (txtPassLama.Text == "")
             {
-                MessageBox.Show("Password lama harus diisi!");
+                MessageBox.Show("Password lama harus diisi!","Peringatan");
                 txtPassLama.Focus();
             }
             else if (txtPassBaru.Text == "")
             {
-                MessageBox.Show("Password baru harus diisi!");
+                MessageBox.Show("Password baru harus diisi!","Peringatan");
+                txtPassBaru.Focus();
+            }
+            else if (txtPassLama.Text == txtPassBaru.Text)
+            {
+                MessageBox.Show("Password baru anda sama dengan password yang lama!", "Peringatan");
                 txtPassBaru.Focus();
             }
             else

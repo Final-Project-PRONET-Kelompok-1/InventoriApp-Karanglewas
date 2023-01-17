@@ -58,19 +58,20 @@
             this.panel1.Controls.Add(this.panelFilterText);
             this.panel1.Controls.Add(this.panelFilterTanggal);
             this.panel1.Controls.Add(this.cbFilterRiwayat);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(595, 206);
+            this.panel1.Size = new System.Drawing.Size(793, 254);
             this.panel1.TabIndex = 4;
             // 
             // panelFilterText
             // 
             this.panelFilterText.Controls.Add(this.btCariTextRwt);
             this.panelFilterText.Controls.Add(this.txtFilterRiwayat);
-            this.panelFilterText.Location = new System.Drawing.Point(143, 9);
-            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFilterText.Location = new System.Drawing.Point(191, 11);
+            this.panelFilterText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFilterText.Name = "panelFilterText";
-            this.panelFilterText.Size = new System.Drawing.Size(182, 32);
+            this.panelFilterText.Size = new System.Drawing.Size(243, 39);
             this.panelFilterText.TabIndex = 21;
             // 
             // btCariTextRwt
@@ -81,10 +82,10 @@
             this.btCariTextRwt.FlatAppearance.BorderSize = 0;
             this.btCariTextRwt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTextRwt.Font = new System.Drawing.Font("Lucida Sans", 9F);
-            this.btCariTextRwt.Location = new System.Drawing.Point(133, 0);
-            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2);
+            this.btCariTextRwt.Location = new System.Drawing.Point(176, 0);
+            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCariTextRwt.Name = "btCariTextRwt";
-            this.btCariTextRwt.Size = new System.Drawing.Size(49, 24);
+            this.btCariTextRwt.Size = new System.Drawing.Size(67, 30);
             this.btCariTextRwt.TabIndex = 21;
             this.btCariTextRwt.Text = "Cari";
             this.btCariTextRwt.UseVisualStyleBackColor = false;
@@ -95,9 +96,9 @@
             this.txtFilterRiwayat.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtFilterRiwayat.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.txtFilterRiwayat.Location = new System.Drawing.Point(0, 0);
-            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFilterRiwayat.Name = "txtFilterRiwayat";
-            this.txtFilterRiwayat.Size = new System.Drawing.Size(133, 22);
+            this.txtFilterRiwayat.Size = new System.Drawing.Size(176, 25);
             this.txtFilterRiwayat.TabIndex = 22;
             this.txtFilterRiwayat.TextChanged += new System.EventHandler(this.txtFilterRiwayat_TextChanged);
             // 
@@ -107,10 +108,10 @@
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker3);
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
-            this.panelFilterTanggal.Location = new System.Drawing.Point(147, 10);
-            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFilterTanggal.Location = new System.Drawing.Point(196, 12);
+            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
-            this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
+            this.panelFilterTanggal.Size = new System.Drawing.Size(583, 30);
             this.panelFilterTanggal.TabIndex = 23;
             // 
             // btCariTanggal
@@ -121,10 +122,10 @@
             this.btCariTanggal.FlatAppearance.BorderSize = 0;
             this.btCariTanggal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTanggal.Font = new System.Drawing.Font("Lucida Sans", 9F);
-            this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
-            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
+            this.btCariTanggal.Location = new System.Drawing.Point(501, 0);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCariTanggal.Name = "btCariTanggal";
-            this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
+            this.btCariTanggal.Size = new System.Drawing.Size(82, 25);
             this.btCariTanggal.TabIndex = 19;
             this.btCariTanggal.Text = "Cari";
             this.btCariTanggal.UseVisualStyleBackColor = false;
@@ -134,20 +135,19 @@
             // 
             this.dateTimePicker3.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker3.Font = new System.Drawing.Font("Lucida Sans", 9F);
-            this.dateTimePicker3.Location = new System.Drawing.Point(196, 0);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker3.Location = new System.Drawing.Point(258, 0);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(183, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(243, 25);
             this.dateTimePicker3.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Location = new System.Drawing.Point(183, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(243, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.Size = new System.Drawing.Size(15, 16);
             this.label6.TabIndex = 19;
             this.label6.Text = "--";
             // 
@@ -156,9 +156,9 @@
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker2.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker2.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(183, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(243, 25);
             this.dateTimePicker2.TabIndex = 19;
             // 
             // cbFilterRiwayat
@@ -171,10 +171,10 @@
             "Semua Data",
             "By Tanggal",
             "By Text"});
-            this.cbFilterRiwayat.Location = new System.Drawing.Point(10, 10);
-            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilterRiwayat.Location = new System.Drawing.Point(13, 12);
+            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilterRiwayat.Name = "cbFilterRiwayat";
-            this.cbFilterRiwayat.Size = new System.Drawing.Size(121, 23);
+            this.cbFilterRiwayat.Size = new System.Drawing.Size(160, 25);
             this.cbFilterRiwayat.TabIndex = 18;
             this.cbFilterRiwayat.SelectedIndexChanged += new System.EventHandler(this.cbFilterRiwayat_SelectedIndexChanged);
             // 
@@ -207,8 +207,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataRiwayat.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataRiwayat.GridColor = System.Drawing.Color.White;
-            this.dataRiwayat.Location = new System.Drawing.Point(14, 46);
-            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2);
+            this.dataRiwayat.Location = new System.Drawing.Point(19, 57);
+            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataRiwayat.Name = "dataRiwayat";
             this.dataRiwayat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -224,19 +224,19 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataRiwayat.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataRiwayat.RowTemplate.Height = 24;
-            this.dataRiwayat.Size = new System.Drawing.Size(572, 544);
+            this.dataRiwayat.Size = new System.Drawing.Size(763, 670);
             this.dataRiwayat.TabIndex = 5;
             // 
             // FormLogAdmin1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataRiwayat);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormLogAdmin1";
             this.Text = "FormLogAdmin1";
             this.panel1.ResumeLayout(false);
