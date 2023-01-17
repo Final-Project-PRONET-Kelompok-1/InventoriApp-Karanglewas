@@ -36,7 +36,7 @@ namespace InventoriApp_Karanglewas
         {
             if (txtNamaKategori.Text == "")
             {
-                MessageBox.Show("Nama Kategori tidak boleh kosong!");
+                MessageBox.Show("Nama Kategori tidak boleh kosong!","Peringatan");
                 validasi = "gagal";
 
             } else
@@ -69,7 +69,7 @@ namespace InventoriApp_Karanglewas
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
-                MessageBox.Show("Kategori berhasil ditambahkan !");
+                MessageBox.Show("Kategori berhasil ditambahkan","Info");
 
 
             }
@@ -261,10 +261,45 @@ namespace InventoriApp_Karanglewas
 
         private void btEditKategori_Click(object sender, EventArgs e)
         {
-            if (cekInput() == "oke")
+            if (cekInput() == "oke" && cekData() == "oke")
             {
                 updateKategori();
+                MessageBox.Show("Kategori berhasil diedit", "Info");
             }
+        }
+
+        private string cekData()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_kategori WHERE kode_kategori = '" + txtKodeKategori.Text + "'AND nama_kategori = '" + txtNamaKategori.Text + "' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Tidak ada perubahan data, cek kembali!", "Peringatan");
+                    txtNamaKategori.Focus();
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
         }
 
         private void hapusKategori()
@@ -287,7 +322,7 @@ namespace InventoriApp_Karanglewas
                 conn.Close();
 
 
-                MessageBox.Show("Kategori berhasil dihaopus !");
+                MessageBox.Show("Kategori berhasil dihaopus","Info");
             }
         }
 

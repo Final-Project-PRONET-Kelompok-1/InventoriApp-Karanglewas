@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 
 namespace InventoriApp_Karanglewas
@@ -174,7 +175,7 @@ namespace InventoriApp_Karanglewas
 
                 conn.Close();
 
-                MessageBox.Show("Barang berhasil ditambahkan !");
+                MessageBox.Show("Barang berhasil ditambahkan", "Info");
             }
             catch (Exception ex)
             {
@@ -229,10 +230,49 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBarang_Click(object sender, EventArgs e)
         {
-            if (cekInput() == "oke")
+            if (cekInput() == "oke" && cekData() == "oke")
             {
                 updateBarang();
+
+                MessageBox.Show("Barang berhasil diedit","Info");
             }
+        }
+
+        private string cekData()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) " +
+                    "FROM tb_barang " +
+                    "WHERE id_kategori = (SELECT id_kategori FROM tb_kategori WHERE nama_kategori = '" + cbKategoriBarang.Text + "') " +
+                    "AND nama_barang = '" + txtNamaBarang.Text + "'";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Tidak ada perubahan data, cek kembali!","Peringatan");
+                    txtNamaBarang.Focus();
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
         }
 
         private void updateBarang()
@@ -299,7 +339,7 @@ namespace InventoriApp_Karanglewas
                 conn.Close();
 
 
-                MessageBox.Show("barang berhasil dihapus !");
+                MessageBox.Show("Barang berhasil dihapus","Info");
             }
         }
 
@@ -387,14 +427,14 @@ namespace InventoriApp_Karanglewas
         {
             if (cbKategoriBarang.Text == "Pilih Kategori")
             {
-                MessageBox.Show("Pilih kategori dulu!");
+                MessageBox.Show("Pilih kategori dulu!","Peringatan");
                 cbKategoriBarang.Focus();
                 validasi = "gagal";
 
             }
             else if (txtNamaBarang.Text == "")
             {
-                MessageBox.Show("Nama Barang tidak boleh kosong!");
+                MessageBox.Show("Nama Barang tidak boleh kosong!", "Peringatan");
                 txtNamaBarang.Focus();
                 validasi = "gagal";
             }

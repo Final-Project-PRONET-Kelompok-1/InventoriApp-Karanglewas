@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -428,16 +429,53 @@ namespace InventoriApp_Karanglewas
 
         private void btEditBK_Click(object sender, EventArgs e)
         {
-            if (cekValidasi() == "oke")
+            if (cekValidasi() == "oke" && cekData() == "oke")
             {
                 updateBK();
                 simpanRiwayat("Edit");
                 resetForm();
-                MessageBox.Show("Data berhasil diedit");
+                MessageBox.Show("Data berhasil diedit","Info");
                 fillDataBK();
                 cekKode();
             }
             
+        }
+
+        private string cekData()
+        {
+
+            DateTime dateBK = dtBK.Value;
+            string PIC = txtPIC.Text;
+            PIC = PIC.Replace("'", "''");
+            try
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tb_barangkeluar WHERE kode_bk = '"+txtKodeBK.Text+"' AND id_barang = (SELECT id_barang FROM tb_barang WHERE nama_barang = '"+cbBarangBK.Text+"') AND jumlah = '"+int.Parse(txtJumlahBK.Text)+"' AND tanggal = '"+dateBK+"' AND pic = '"+PIC+"' ";
+
+                //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
+                var cmd = new SqlCommand(query, conn);
+
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Tidak ada perubahan data, cek kembali!", "Peringatan");
+
+                    validasi = "gagal";
+                }
+                else
+                {
+                    validasi = "oke";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return validasi;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

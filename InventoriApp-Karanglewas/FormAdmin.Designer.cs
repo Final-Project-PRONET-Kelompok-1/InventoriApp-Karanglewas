@@ -151,6 +151,7 @@
             this.txtUsernameAdmin.Name = "txtUsernameAdmin";
             this.txtUsernameAdmin.Size = new System.Drawing.Size(175, 22);
             this.txtUsernameAdmin.TabIndex = 14;
+            this.txtUsernameAdmin.TextChanged += new System.EventHandler(this.txtUsernameAdmin_TextChanged);
             // 
             // btSimpanAdmin
             // 

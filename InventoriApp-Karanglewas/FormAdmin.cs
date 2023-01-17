@@ -32,11 +32,12 @@ namespace InventoriApp_Karanglewas
         public FormAdmin()
         {
             InitializeComponent();
-            cekAdminMaster();
 
             dgvAdmin.ReadOnly = true;
             btUbah.Visible = false;
             getAdmin();
+
+            cekAdminMaster();
 
             fillDataAdmin();
         }
@@ -370,6 +371,15 @@ namespace InventoriApp_Karanglewas
             conn.Close();
 
             return adminReady;
+        }
+
+        private void txtUsernameAdmin_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtUsernameAdmin.Text, "[^A-Za-z0-9]"))
+            {
+                MessageBox.Show("Username hanya bisa dimasukan huruf dan angka.");
+                txtUsernameAdmin.Clear();
+            }
         }
 
         private void cekAdminMaster()
