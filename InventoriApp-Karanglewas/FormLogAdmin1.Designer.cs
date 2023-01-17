@@ -68,22 +68,26 @@
             this.panelFilterText.Controls.Add(this.btCariTextRwt);
             this.panelFilterText.Controls.Add(this.txtFilterRiwayat);
             this.panelFilterText.Location = new System.Drawing.Point(143, 9);
-            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterText.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterText.Name = "panelFilterText";
             this.panelFilterText.Size = new System.Drawing.Size(182, 32);
             this.panelFilterText.TabIndex = 21;
             // 
             // btCariTextRwt
             // 
+            this.btCariTextRwt.BackColor = System.Drawing.Color.Salmon;
+            this.btCariTextRwt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCariTextRwt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTextRwt.FlatAppearance.BorderSize = 0;
+            this.btCariTextRwt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTextRwt.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTextRwt.Location = new System.Drawing.Point(133, 0);
-            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTextRwt.Name = "btCariTextRwt";
-            this.btCariTextRwt.Size = new System.Drawing.Size(49, 20);
+            this.btCariTextRwt.Size = new System.Drawing.Size(49, 24);
             this.btCariTextRwt.TabIndex = 21;
             this.btCariTextRwt.Text = "Cari";
-            this.btCariTextRwt.UseVisualStyleBackColor = true;
+            this.btCariTextRwt.UseVisualStyleBackColor = false;
             this.btCariTextRwt.Click += new System.EventHandler(this.btCariTextRwt_Click);
             // 
             // txtFilterRiwayat
@@ -91,7 +95,7 @@
             this.txtFilterRiwayat.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtFilterRiwayat.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.txtFilterRiwayat.Location = new System.Drawing.Point(0, 0);
-            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilterRiwayat.Name = "txtFilterRiwayat";
             this.txtFilterRiwayat.Size = new System.Drawing.Size(133, 22);
             this.txtFilterRiwayat.TabIndex = 22;
@@ -104,22 +108,26 @@
             this.panelFilterTanggal.Controls.Add(this.label6);
             this.panelFilterTanggal.Controls.Add(this.dateTimePicker2);
             this.panelFilterTanggal.Location = new System.Drawing.Point(147, 10);
-            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
             this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
             this.panelFilterTanggal.TabIndex = 23;
             // 
             // btCariTanggal
             // 
+            this.btCariTanggal.BackColor = System.Drawing.Color.Salmon;
+            this.btCariTanggal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTanggal.FlatAppearance.BorderSize = 0;
+            this.btCariTanggal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTanggal.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
-            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTanggal.Name = "btCariTanggal";
             this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggal.TabIndex = 19;
             this.btCariTanggal.Text = "Cari";
-            this.btCariTanggal.UseVisualStyleBackColor = true;
+            this.btCariTanggal.UseVisualStyleBackColor = false;
             this.btCariTanggal.Click += new System.EventHandler(this.btCariTanggal_Click);
             // 
             // dateTimePicker3
@@ -127,7 +135,7 @@
             this.dateTimePicker3.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker3.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker3.Location = new System.Drawing.Point(196, 0);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker3.TabIndex = 20;
@@ -148,7 +156,7 @@
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimePicker2.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.dateTimePicker2.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker2.TabIndex = 19;
@@ -164,7 +172,7 @@
             "By Tanggal",
             "By Text"});
             this.cbFilterRiwayat.Location = new System.Drawing.Point(10, 10);
-            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilterRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterRiwayat.Name = "cbFilterRiwayat";
             this.cbFilterRiwayat.Size = new System.Drawing.Size(121, 23);
             this.cbFilterRiwayat.TabIndex = 18;
@@ -190,7 +198,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataRiwayat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataRiwayat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
@@ -200,7 +208,7 @@
             this.dataRiwayat.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataRiwayat.GridColor = System.Drawing.Color.White;
             this.dataRiwayat.Location = new System.Drawing.Point(14, 46);
-            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataRiwayat.Margin = new System.Windows.Forms.Padding(2);
             this.dataRiwayat.Name = "dataRiwayat";
             this.dataRiwayat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -228,7 +236,7 @@
             this.Controls.Add(this.dataRiwayat);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogAdmin1";
             this.Text = "FormLogAdmin1";
             this.panel1.ResumeLayout(false);

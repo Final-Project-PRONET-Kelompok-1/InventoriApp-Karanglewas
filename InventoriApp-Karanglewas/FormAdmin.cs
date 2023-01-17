@@ -24,6 +24,7 @@ namespace InventoriApp_Karanglewas
         SqlCommand cmd;
         SqlDataReader reader;
         string validasi, admin, adminReady;
+        FormMaster f1 = new FormMaster();
 
         DataTable dataTable = new DataTable();
 
@@ -147,6 +148,7 @@ namespace InventoriApp_Karanglewas
             if (cekValidasi() == "oke" && cekUsername() == "oke")
             {
                 simpanAdmin();
+                simpanRiwayat("Simpan");
                 resetData();
                 MessageBox.Show("Data berhasil disimpan");
                 fillDataAdmin();
@@ -229,6 +231,7 @@ namespace InventoriApp_Karanglewas
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Data berhasil dihapus");
                     conn.Close();
+                    simpanRiwayat("Hapus");
                     resetData();
                     fillDataAdmin();
                 }
@@ -240,9 +243,10 @@ namespace InventoriApp_Karanglewas
             if(cekValidasi() == "oke" && cekNama() == "oke")
             {
                 updateAdmin();
+                simpanRiwayat("Edit Nama");
                 resetData();
                 fillDataAdmin();
-
+                MessageBox.Show("Data berhasil diedit");
             }
         }
 
@@ -251,7 +255,7 @@ namespace InventoriApp_Karanglewas
             try
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM tb_admin WHERE nama_panjang = '" + txtNamaAdmin.Text + "' ";
+                string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '"+ txtUsernameAdmin.Text+"' AND nama_panjang = '" + txtNamaAdmin.Text + "' ";
 
                 //string query = "SELECT COUNT(*) FROM tb_admin WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPass.Text + "'";
                 var cmd = new SqlCommand(query, conn);
@@ -396,6 +400,27 @@ namespace InventoriApp_Karanglewas
                 btEditAdmin.Visible = false;
             }
        
+        }
+        public void simpanRiwayat(string status)
+        {
+            string keterangan = status;
+            DateTime date = DateTime.Now;
+            try
+            {
+                conn.Open();
+                string query = "INSERT INTO tb_riwayatadmin (tanggal , username, keterangan, id_admin) \n" +
+                                        "SELECT '" + date + "', '" + txtUsernameAdmin.Text + "', '" + keterangan + "', a.id_admin \n" +
+                                        "FROM tb_admin a \n" +
+                                        "WHERE a.username = '" + adminReady + "' ";
+                var cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
     }

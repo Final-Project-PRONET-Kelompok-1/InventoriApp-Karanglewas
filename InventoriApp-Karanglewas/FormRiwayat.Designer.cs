@@ -75,15 +75,18 @@
             // 
             // btCariTextRwt
             // 
+            this.btCariTextRwt.BackColor = System.Drawing.Color.Salmon;
             this.btCariTextRwt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTextRwt.FlatAppearance.BorderSize = 0;
+            this.btCariTextRwt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTextRwt.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTextRwt.Location = new System.Drawing.Point(133, 0);
             this.btCariTextRwt.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTextRwt.Name = "btCariTextRwt";
-            this.btCariTextRwt.Size = new System.Drawing.Size(49, 20);
+            this.btCariTextRwt.Size = new System.Drawing.Size(49, 22);
             this.btCariTextRwt.TabIndex = 21;
             this.btCariTextRwt.Text = "Cari";
-            this.btCariTextRwt.UseVisualStyleBackColor = true;
+            this.btCariTextRwt.UseVisualStyleBackColor = false;
             this.btCariTextRwt.Click += new System.EventHandler(this.btCariTextRwt_Click_1);
             // 
             // txtFilterRiwayat
@@ -106,20 +109,22 @@
             this.panelFilterTanggal.Location = new System.Drawing.Point(135, 10);
             this.panelFilterTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.panelFilterTanggal.Name = "panelFilterTanggal";
-            this.panelFilterTanggal.Size = new System.Drawing.Size(437, 24);
+            this.panelFilterTanggal.Size = new System.Drawing.Size(448, 32);
             this.panelFilterTanggal.TabIndex = 23;
             // 
             // btCariTanggal
             // 
-            this.btCariTanggal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTanggal.BackColor = System.Drawing.Color.Salmon;
+            this.btCariTanggal.FlatAppearance.BorderSize = 0;
+            this.btCariTanggal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTanggal.Font = new System.Drawing.Font("Lucida Sans", 9F);
-            this.btCariTanggal.Location = new System.Drawing.Point(379, 0);
+            this.btCariTanggal.Location = new System.Drawing.Point(388, 0);
             this.btCariTanggal.Margin = new System.Windows.Forms.Padding(2);
             this.btCariTanggal.Name = "btCariTanggal";
             this.btCariTanggal.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggal.TabIndex = 19;
             this.btCariTanggal.Text = "Cari";
-            this.btCariTanggal.UseVisualStyleBackColor = true;
+            this.btCariTanggal.UseVisualStyleBackColor = false;
             this.btCariTanggal.Click += new System.EventHandler(this.btCariTanggal_Click);
             // 
             // dateTimePicker3

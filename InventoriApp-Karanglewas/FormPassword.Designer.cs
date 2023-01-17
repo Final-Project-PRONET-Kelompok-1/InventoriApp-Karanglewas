@@ -41,7 +41,7 @@
             this.txtPassBaru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPassBaru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassBaru.Location = new System.Drawing.Point(146, 84);
-            this.txtPassBaru.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassBaru.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassBaru.Name = "txtPassBaru";
             this.txtPassBaru.Size = new System.Drawing.Size(132, 20);
             this.txtPassBaru.TabIndex = 19;
@@ -52,7 +52,7 @@
             this.txtPassLama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPassLama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassLama.Location = new System.Drawing.Point(146, 50);
-            this.txtPassLama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassLama.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassLama.Name = "txtPassLama";
             this.txtPassLama.Size = new System.Drawing.Size(132, 20);
             this.txtPassLama.TabIndex = 18;
@@ -85,14 +85,18 @@
             // btSimpanPassword
             // 
             this.btSimpanPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btSimpanPassword.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btSimpanPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSimpanPassword.FlatAppearance.BorderSize = 0;
+            this.btSimpanPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSimpanPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btSimpanPassword.Location = new System.Drawing.Point(203, 130);
-            this.btSimpanPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSimpanPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btSimpanPassword.Name = "btSimpanPassword";
             this.btSimpanPassword.Size = new System.Drawing.Size(74, 28);
             this.btSimpanPassword.TabIndex = 20;
             this.btSimpanPassword.Text = "Simpan";
-            this.btSimpanPassword.UseVisualStyleBackColor = true;
+            this.btSimpanPassword.UseVisualStyleBackColor = false;
             this.btSimpanPassword.Click += new System.EventHandler(this.btSimpanPassword_Click);
             // 
             // lblUsername
@@ -109,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(326, 198);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btSimpanPassword);
@@ -116,7 +121,7 @@
             this.Controls.Add(this.txtPassLama);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPassword";

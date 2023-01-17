@@ -95,6 +95,7 @@ namespace InventoriApp_Karanglewas
                 txtPassBaru.Text = "";
                 txtPassLama.Text = "";
                 this.Close();
+                mainForm.simpanRiwayat("Edit  Password");
                 mainForm.resetData();
                 mainForm.fillDataAdmin();
                 MessageBox.Show("Password berhasil diubah!");

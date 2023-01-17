@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFilterTextadmin = new System.Windows.Forms.Panel();
             this.btCariTextRwtadmin = new System.Windows.Forms.Button();
@@ -75,7 +75,11 @@
             // 
             // btCariTextRwtadmin
             // 
+            this.btCariTextRwtadmin.BackColor = System.Drawing.Color.Salmon;
+            this.btCariTextRwtadmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCariTextRwtadmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTextRwtadmin.FlatAppearance.BorderSize = 0;
+            this.btCariTextRwtadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTextRwtadmin.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTextRwtadmin.Location = new System.Drawing.Point(133, 0);
             this.btCariTextRwtadmin.Margin = new System.Windows.Forms.Padding(2);
@@ -83,7 +87,7 @@
             this.btCariTextRwtadmin.Size = new System.Drawing.Size(49, 20);
             this.btCariTextRwtadmin.TabIndex = 21;
             this.btCariTextRwtadmin.Text = "Cari";
-            this.btCariTextRwtadmin.UseVisualStyleBackColor = true;
+            this.btCariTextRwtadmin.UseVisualStyleBackColor = false;
             this.btCariTextRwtadmin.Click += new System.EventHandler(this.btCariTextRwtadmin_Click);
             // 
             // txtFilterRiwayatadmin
@@ -110,7 +114,11 @@
             // 
             // btCariTanggaladmin
             // 
+            this.btCariTanggaladmin.BackColor = System.Drawing.Color.Salmon;
+            this.btCariTanggaladmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCariTanggaladmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCariTanggaladmin.FlatAppearance.BorderSize = 0;
+            this.btCariTanggaladmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCariTanggaladmin.Font = new System.Drawing.Font("Lucida Sans", 9F);
             this.btCariTanggaladmin.Location = new System.Drawing.Point(379, 0);
             this.btCariTanggaladmin.Margin = new System.Windows.Forms.Padding(2);
@@ -118,7 +126,7 @@
             this.btCariTanggaladmin.Size = new System.Drawing.Size(58, 20);
             this.btCariTanggaladmin.TabIndex = 19;
             this.btCariTanggaladmin.Text = "Cari";
-            this.btCariTanggaladmin.UseVisualStyleBackColor = true;
+            this.btCariTanggaladmin.UseVisualStyleBackColor = false;
             this.btCariTanggaladmin.Click += new System.EventHandler(this.btCariTanggaladmin_Click);
             // 
             // dateTimePicker3
@@ -180,40 +188,40 @@
             this.dataRiwayatadmin.BackgroundColor = System.Drawing.Color.White;
             this.dataRiwayatadmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataRiwayatadmin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataRiwayatadmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataRiwayatadmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataRiwayatadmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataRiwayatadmin.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataRiwayatadmin.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataRiwayatadmin.GridColor = System.Drawing.Color.White;
             this.dataRiwayatadmin.Location = new System.Drawing.Point(11, 48);
             this.dataRiwayatadmin.Margin = new System.Windows.Forms.Padding(2);
             this.dataRiwayatadmin.Name = "dataRiwayatadmin";
             this.dataRiwayatadmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataRiwayatadmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataRiwayatadmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataRiwayatadmin.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dataRiwayatadmin.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataRiwayatadmin.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataRiwayatadmin.RowTemplate.Height = 24;
             this.dataRiwayatadmin.Size = new System.Drawing.Size(573, 548);
             this.dataRiwayatadmin.TabIndex = 5;

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btUbah = new System.Windows.Forms.Button();
             this.btEditAdmin = new System.Windows.Forms.Button();
@@ -72,40 +72,52 @@
             // btUbah
             // 
             this.btUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btUbah.BackColor = System.Drawing.Color.Magenta;
+            this.btUbah.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btUbah.FlatAppearance.BorderSize = 0;
+            this.btUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btUbah.Location = new System.Drawing.Point(474, 80);
-            this.btUbah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btUbah.Margin = new System.Windows.Forms.Padding(2);
             this.btUbah.Name = "btUbah";
             this.btUbah.Size = new System.Drawing.Size(74, 28);
             this.btUbah.TabIndex = 19;
             this.btUbah.Text = "Ubah";
-            this.btUbah.UseVisualStyleBackColor = true;
+            this.btUbah.UseVisualStyleBackColor = false;
             this.btUbah.Click += new System.EventHandler(this.btUbah_Click);
             // 
             // btEditAdmin
             // 
             this.btEditAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btEditAdmin.BackColor = System.Drawing.Color.Khaki;
+            this.btEditAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btEditAdmin.FlatAppearance.BorderSize = 0;
+            this.btEditAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btEditAdmin.Location = new System.Drawing.Point(296, 122);
-            this.btEditAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditAdmin.Location = new System.Drawing.Point(306, 122);
+            this.btEditAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btEditAdmin.Name = "btEditAdmin";
             this.btEditAdmin.Size = new System.Drawing.Size(56, 28);
             this.btEditAdmin.TabIndex = 18;
             this.btEditAdmin.Text = "Edit";
-            this.btEditAdmin.UseVisualStyleBackColor = true;
+            this.btEditAdmin.UseVisualStyleBackColor = false;
             this.btEditAdmin.Click += new System.EventHandler(this.btEditAdmin_Click);
             // 
             // btHapusAdmin
             // 
             this.btHapusAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btHapusAdmin.BackColor = System.Drawing.Color.Tomato;
+            this.btHapusAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHapusAdmin.FlatAppearance.BorderSize = 0;
+            this.btHapusAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btHapusAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btHapusAdmin.Location = new System.Drawing.Point(356, 122);
-            this.btHapusAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btHapusAdmin.Location = new System.Drawing.Point(366, 122);
+            this.btHapusAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btHapusAdmin.Name = "btHapusAdmin";
             this.btHapusAdmin.Size = new System.Drawing.Size(56, 28);
             this.btHapusAdmin.TabIndex = 17;
             this.btHapusAdmin.Text = "Hapus";
-            this.btHapusAdmin.UseVisualStyleBackColor = true;
+            this.btHapusAdmin.UseVisualStyleBackColor = false;
             this.btHapusAdmin.Click += new System.EventHandler(this.btHapusAdmin_Click);
             // 
             // txtPasswordAdmin
@@ -113,7 +125,7 @@
             this.txtPasswordAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPasswordAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPasswordAdmin.Location = new System.Drawing.Point(417, 54);
-            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasswordAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtPasswordAdmin.Name = "txtPasswordAdmin";
             this.txtPasswordAdmin.PasswordChar = '*';
             this.txtPasswordAdmin.Size = new System.Drawing.Size(132, 20);
@@ -124,7 +136,7 @@
             this.txtNamaAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNamaAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNamaAdmin.Location = new System.Drawing.Point(100, 89);
-            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNamaAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtNamaAdmin.Name = "txtNamaAdmin";
             this.txtNamaAdmin.Size = new System.Drawing.Size(132, 20);
             this.txtNamaAdmin.TabIndex = 15;
@@ -135,7 +147,7 @@
             this.txtUsernameAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtUsernameAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsernameAdmin.Location = new System.Drawing.Point(100, 54);
-            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsernameAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsernameAdmin.Name = "txtUsernameAdmin";
             this.txtUsernameAdmin.Size = new System.Drawing.Size(132, 20);
             this.txtUsernameAdmin.TabIndex = 14;
@@ -143,27 +155,35 @@
             // btSimpanAdmin
             // 
             this.btSimpanAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btSimpanAdmin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btSimpanAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSimpanAdmin.FlatAppearance.BorderSize = 0;
+            this.btSimpanAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSimpanAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btSimpanAdmin.Location = new System.Drawing.Point(477, 122);
-            this.btSimpanAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSimpanAdmin.Location = new System.Drawing.Point(487, 122);
+            this.btSimpanAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btSimpanAdmin.Name = "btSimpanAdmin";
-            this.btSimpanAdmin.Size = new System.Drawing.Size(74, 28);
+            this.btSimpanAdmin.Size = new System.Drawing.Size(62, 28);
             this.btSimpanAdmin.TabIndex = 12;
             this.btSimpanAdmin.Text = "Simpan";
-            this.btSimpanAdmin.UseVisualStyleBackColor = true;
+            this.btSimpanAdmin.UseVisualStyleBackColor = false;
             this.btSimpanAdmin.Click += new System.EventHandler(this.btSimpanAdmin_Click);
             // 
             // btResetAdmin
             // 
             this.btResetAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btResetAdmin.BackColor = System.Drawing.Color.CadetBlue;
+            this.btResetAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btResetAdmin.FlatAppearance.BorderSize = 0;
+            this.btResetAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btResetAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btResetAdmin.Location = new System.Drawing.Point(417, 122);
-            this.btResetAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btResetAdmin.Location = new System.Drawing.Point(427, 122);
+            this.btResetAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btResetAdmin.Name = "btResetAdmin";
             this.btResetAdmin.Size = new System.Drawing.Size(56, 28);
             this.btResetAdmin.TabIndex = 11;
             this.btResetAdmin.Text = "Reset";
-            this.btResetAdmin.UseVisualStyleBackColor = true;
+            this.btResetAdmin.UseVisualStyleBackColor = false;
             this.btResetAdmin.Click += new System.EventHandler(this.btResetAdmin_Click);
             // 
             // label4
@@ -211,26 +231,26 @@
             this.dgvAdmin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAdmin.BackgroundColor = System.Drawing.Color.White;
             this.dgvAdmin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAdmin.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(129)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAdmin.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAdmin.GridColor = System.Drawing.Color.White;
             this.dgvAdmin.Location = new System.Drawing.Point(9, 174);
-            this.dgvAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdmin.Name = "dgvAdmin";
             this.dgvAdmin.RowHeadersWidth = 51;
             this.dgvAdmin.RowTemplate.Height = 24;
@@ -247,7 +267,7 @@
             this.Controls.Add(this.dgvAdmin);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
